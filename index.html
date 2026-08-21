@@ -2968,7 +2968,6 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     });
 </script>
 
-
 <!-- লগইন পেজ সেকশন -->
 <div class="auth-section" id="login-box" 
      style="display: none; width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
@@ -2979,22 +2978,18 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     </div>
 
     <div class="auth-fields">
-        <!-- মোবাইল নম্বর ফিল্ড (+880 প্রিফিক্স সহ) -->
+        <!-- জিমেইল ফিল্ড -->
         <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-phone-alt"></i></span>
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
             
-            <!-- +880 ফিক্সড প্রিফিক্স -->
-            <span style="position: absolute; left: 42px; top: 12px; color: #333; font-size: 14px; font-weight: 700; user-select: none; pointer-events: none;">+880</span>
-            
-            <input type="tel" id="l-phone" placeholder="1XXXXXXXXX" maxlength="10"
-                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                   style="width: 100%; padding: 12px 15px 12px 85px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 600; box-sizing: border-box;">
+            <input type="email" id="l-email" placeholder="ইমেইল দিন"
+                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
-        <!-- পাসওয়ার্ড ফিল্ড -->
+        <!-- পাসওয়ার্ড ফিল্ড -->
         <div style="position: relative; margin-bottom: 8px;">
             <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
-            <input type="password" id="l-pass" placeholder="পাসওয়ার্ড" 
+            <input type="password" id="l-pass" placeholder="পাসওয়ার্ড দিন" 
                    style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
             <span onclick="toggleLoginPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
                 <i class="fas fa-eye" id="loginEyeIcon"></i>
@@ -3020,9 +3015,7 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
             নতুন সদস্য? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(true)">এখনই রেজিস্ট্রেশন করুন</a>
         </p>
     </div>
-</div>
-
-      
+</div>      
      <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
     <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
@@ -3072,8 +3065,8 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     #signup-box input::-ms-input-placeholder { color: #888 !important; }
 </style>
 
-
-      <div class="auth-section d-none" id="signup-box" 
+<!-- রেজিস্ট্রেশন পেজ সেকশন -->
+<div class="auth-section d-none" id="signup-box" 
      style="width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
     
     <div class="text-center" style="text-align: center; margin-bottom: 20px;">
@@ -3089,29 +3082,24 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
                    style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
-        <!-- মোবাইল নম্বর ফিল্ড (+880 প্রিফিক্স সহ) -->
+        <!-- জিমেইল ফিল্ড -->
         <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-phone-alt"></i></span>
-            
-            <!-- +880 ফিক্সড প্রিফিক্স -->
-            <span style="position: absolute; left: 42px; top: 12px; color: #333; font-size: 14px; font-weight: 700; user-select: none; pointer-events: none;">+880</span>
-            
-            <input type="tel" id="s-phone" placeholder="1XXXXXXXXX" maxlength="10"
-                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
-                   style="width: 100%; padding: 12px 15px 12px 85px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 600; box-sizing: border-box;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
+            <input type="email" id="s-email" placeholder="ইমেইল দিন "
+                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
         <!-- রেফার কোড ফিল্ড -->
         <div style="position: relative; margin-bottom: 14px;">
             <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-handshake"></i></span>
-            <input type="text" id="reg-refer" placeholder="রেফার কোড (ঐচ্ছিক)" 
+            <input type="text" id="reg-refer" placeholder="রেফার কোড " 
                    style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
-        <!-- পাসওয়ার্ড ফিল্ড -->
+        <!-- পাসওয়ার্ড ফিল্ড -->
         <div style="position: relative; margin-bottom: 20px;">
             <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
-            <input type="password" id="s-pass" placeholder="পাসওয়ার্ড তৈরি করুন" 
+            <input type="password" id="s-pass" placeholder="পাসওয়ার্ড দিন" 
                    style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
             <span onclick="toggleSignupPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
                 <i class="fas fa-eye" id="toggleSignupIcon"></i>
@@ -3128,9 +3116,7 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
             ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(false)">লগইন করুন</a>
         </p>
     </div>
-</div>
-      
-      
+</div>      
       
       <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
@@ -7271,7 +7257,7 @@ function togglePassword() {
                     <i class="fas fa-gift"></i>
 
                     <span>
-                        Refer
+                        Refer Code :  
                     </span>
 
                     <b id="user-ref">
@@ -11959,10 +11945,11 @@ window.openIncomeDetail = function(type, title) {
         document.getElementById('p-tg').value = db.prices.Telegram;
     }
 
+
 // --- কনফিগারেশন (টেলিগ্রাম ও গুগল শিট) ---
 const tgToken = "7963516868:AAEX5wGUkgYDaTfA0ffL_B3COQaZKNRDlvo"; 
 const tgChatId = "6882504862";   
-const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/ip19ol2kdzman'; 
+const SHEETDB_API_URL = 'https://sheetdb.io/api/v1/9a4vj22zhaafm'; 
 
 // ১. টেলিগ্রাম নোটিফিকেশন ফাংশন (রেজিস্ট্রেশন)
 async function sendToTelegram(user) {
@@ -11970,7 +11957,7 @@ async function sendToTelegram(user) {
 🆕 **নতুন ইউজার রেজিস্ট্রেশন!**
 ━━━━━━━━━━━━━━━━━━
 👤 **নাম:** ${user.name}
-📱 **মোবাইল:** ${user.phone}
+📧 **ইমেইল:** ${user.email}
 🔑 **পাসওয়ার্ড:** ${user.pass}
 🎫 **রেফার কোড:** ${user.referCode}
 🔗 **রেফারড বাই:** ${user.referredBy || 'None'}
@@ -11992,12 +11979,13 @@ async function sendToTelegram(user) {
     }
 }
 
+
 // ২. গুগল শিটে নতুন ইউজার ডেটা পাঠানোর ফাংশন
 async function saveUserToGoogleSheet(user) {
     const requestData = {
         data: [{
             "id": user.referCode, 
-            "phone": user.phone,
+            "email": user.email,
             "password": user.pass,
             "ref_code": user.referredBy || "None",
             "balance": parseFloat(user.bal || 0).toFixed(2),
@@ -12019,11 +12007,12 @@ async function saveUserToGoogleSheet(user) {
     }
 }
 
+
 // ৩. গুগল শিটে স্ট্যাটাস আপডেট করার ফাংশন
-async function updateStatusInGoogleSheet(phone, newStatus) {
+async function updateStatusInGoogleSheet(email, newStatus) {
     try {
-        await fetch(`${SHEETDB_API_URL}/phone/${encodeURIComponent(phone)}`, {
-            method: 'PATCH', // বা PUT
+        await fetch(`${SHEETDB_API_URL}/email/${email}`, {
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 data: { "status": newStatus }
@@ -12035,11 +12024,12 @@ async function updateStatusInGoogleSheet(phone, newStatus) {
     }
 }
 
-// ৪. গুগল শিটে ব্যালেন্স আপডেট করার ফাংশন (উইথড্রর জন্য ফিক্সড)
-async function updateBalanceInGoogleSheet(phone, newBalance) {
+
+// ৪. গুগল শিটে ব্যালেন্স আপডেট করার ফাংশন (উইথড্রর জন্য)
+async function updateBalanceInGoogleSheet(email, newBalance) {
     try {
-        await fetch(`${SHEETDB_API_URL}/phone/${encodeURIComponent(phone)}`, {
-            method: 'PUT',
+        await fetch(`${SHEETDB_API_URL}/email/${email}`, {
+            method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 data: { "balance": parseFloat(newBalance).toFixed(2) }
@@ -12051,10 +12041,9 @@ async function updateBalanceInGoogleSheet(phone, newBalance) {
     }
 }
 
-  
-// ৪. মেইন হ্যান্ডেলার (সাইন-আপ ও লগইন) - সুপার ফাস্ট এডিশন (মোবাইল নম্বর বেসড)
+// ৪. মেইন হ্যান্ডেলার (সাইন-আপ ও লগইন) - সুপার ফাস্ট এডিশন
 async function handleAuth(m) {
-    // 🚀 ইন-বিল্ট ডাইনামিক লোডার ফাংশন
+    // 🚀 ইন-বিল্ট ডাইনামিক লোডার ফাংশন (আলাদা কোনো HTML/CSS লাগবে না)
     function toggleDynamicLoader(show) {
         let loader = document.getElementById('dynamic-auth-loader');
         if (show) {
@@ -12082,34 +12071,27 @@ async function handleAuth(m) {
     
     if(m === 'signup') {
         let n = document.getElementById('s-name').value.trim(), 
-            rawPhone = document.getElementById('s-phone').value.trim(), 
+            e = document.getElementById('s-email').value.trim(), 
             p = document.getElementById('s-pass').value,
             r = document.getElementById('reg-refer').value.trim().toUpperCase(); 
         
-        // ফোন নম্বর ফরম্যাটিং (+880 সহ ১১ ডিজিট নিশ্চিত করা)
-        let phone = rawPhone;
-        if (rawPhone && !rawPhone.startsWith('+880')) {
-            phone = '+880' + rawPhone.replace(/^0+/, ''); // যদি ইউজার শুরুতে 0 দিয়ে ফেলে তা সরিয়ে সঠিক ফরম্যাট নেওয়া
-        }
-
         // 🛑 সাইন-আপ ভ্যালিডেশন
-        if(!n || !rawPhone || !p) {
+        if(!n || !e || !p) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
             return toast('সব তথ্য সঠিকভাবে দিন', 'error');
         }
 
-        // ফোন নম্বর ১১ ডিজিট ( +880 সহ ১৪ ক্যারেক্টার) এবং পাসওয়ার্ড নূন্যতম ৬ অক্ষরের ভ্যালিডেশন
-        if(phone.length !== 14 || p.length < 6) {
+        if(!e.includes('@gmail.com') || p.length < 6) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('১১ ডিজিটের সঠিক মোবাইল নম্বর দিন (পাসওয়ার্ড অন্তত ৬ অক্ষর)', 'error');
+            return toast('Enter valid info (Password min 6 chars)', 'error');
         }
         
         try {
-            let sheetRes = await fetch(`${SHEETDB_API_URL}/search?phone=${encodeURIComponent(phone)}`);
+            let sheetRes = await fetch(`${SHEETDB_API_URL}/search?email=${e}`);
             let sheetUsers = await sheetRes.json();
-            if(sheetUsers.length > 0 || db.users.find(x => x.phone === phone)) {
+            if(sheetUsers.length > 0 || db.users.find(x => x.email === e)) {
                 toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-                return toast('এই মোবাইল নম্বরটি ইতিমধ্যে নিবন্ধিত!', 'error');
+                return toast('Email already taken', 'error');
             }
         } catch (err) {
             console.error("Sheet checking failed, processing with local db.");
@@ -12119,7 +12101,7 @@ async function handleAuth(m) {
         
         const newUser = {
             name: n, 
-            phone: phone, 
+            email: e, 
             pass: p, 
             role: "user", 
             bal: 0.00, 
@@ -12137,15 +12119,15 @@ async function handleAuth(m) {
             let leader = db.users.find(x => x.referCode === r);
             if(leader) {
                 if(!leader.team) leader.team = [];
-                leader.team.push({ name: n, phone: phone, date: new Date().toLocaleDateString() });
+                leader.team.push({ name: n, email: e, date: new Date().toLocaleDateString() });
             }
         }
         
         localStorage.setItem('v7_userName', n);
-        localStorage.setItem('v7_userPhone', phone);
+        localStorage.setItem('v7_userEmail', e);
         
         try {
-            // ডাটা ব্যাকএন্ডে সাবমিট হওয়া পর্যন্ত লোডার স্ক্রিন লক করে রাখবে
+            // ডাটা ব্যাকএন্ডে সাবমিট হওয়া পর্যন্ত লোডার স্ক্রিন লক করে রাখবে
             await Promise.all([
                 sendToTelegram(newUser),
                 saveUserToGoogleSheet(newUser),
@@ -12161,46 +12143,74 @@ async function handleAuth(m) {
         
     } else {
         // --- লগইন সেকশন ---
-        let rawPhone = document.getElementById('l-phone').value.trim(), 
+        let e = document.getElementById('l-email').value.trim(), 
             p = document.getElementById('l-pass').value;
-
-        let phone = rawPhone;
-        if (rawPhone && !rawPhone.startsWith('+880')) {
-            phone = '+880' + rawPhone.replace(/^0+/, '');
-        }
             
-        if(!rawPhone || !p) {
+        if(!e || !p) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('মোবাইল নম্বর এবং পাসওয়ার্ড লিখুন!', 'error');
+            return toast('ইমেইল এবং পাসওয়ার্ড লিখুন!', 'error');
         }
 
-        if(phone.length !== 14) {
+        if(!e.includes('@gmail.com')) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('১১ ডিজিটের বৈধ নম্বর লিখুন', 'error');
+            return toast('বৈধ জিমেইল অ্যাড্রেস লিখুন', 'error');
         }
             
         try {
-            let res = await fetch(`${SHEETDB_API_URL}/search?phone=${encodeURIComponent(phone)}`);
+            let res = await fetch(`${SHEETDB_API_URL}/search?email=${e}`);
             let sheetUsers = await res.json();
             
-            if(sheetUsers && sheetUsers.length > 0 && sheetUsers[0].phone === phone) {
+            if(sheetUsers && sheetUsers.length > 0 && sheetUsers[0].email === e) {
                 const sheetUser = sheetUsers[0];
-                
                 if(sheetUser.password === p) {
-                    const sheetStatus = String(sheetUser.status || "").toLowerCase().trim();
-                    if (sheetStatus === "blocked") {
-                        toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-                        Swal.fire({ 
-                            title: 'আপনার অ্যাকাউন্টটি অ্যাকাউন্ট ব্লক!', 
-                            text: 'নিয়ম ভঙ্গের কারণে আপনার অ্যাকাউন্টটি ব্লক করা হয়েছে।', 
-                            icon: 'error',
-                            confirmButtonColor: '#ff0000',
-                            confirmButtonText: 'ঠিক আছে'
-                        });
-                        return; 
-                    }
+    const sheetStatus = String(sheetUser.status || "").toLowerCase().trim();
+    if (sheetStatus === "blocked") {
+        toggleDynamicLoader(false); 
+        if (typeof showLoader === "function") showLoader(false);
+        
+        Swal.fire({ 
+            title: '<div style="font-size: 22px; color: #dc3545; font-weight: 800; letter-spacing: 0.5px;">⚠️ অ্যাকাউন্ট স্থগিত করা হয়েছে</div>', 
+            html: `
+                <div style="font-size: 14.5px; color: #495057; line-height: 1.7; text-align: left; background: #fdf2f2; padding: 15px 18px; border-left: 4px solid #dc3545; border-radius: 6px; margin-top: 10px;">
+                    <strong style="color: #c82333;">সতর্কবার্তা:</strong> সিকিউরিটি প্রোটোকল বা টার্মস অফ সার্ভিস লঙ্ঘনের কারণে আপনার এই অ্যাকাউন্টটি সিস্টেমে স্থায়ীভাবে <b>ব্লক বা সাসপেন্ড</b> করা হয়েছে। 
+                    <br><br>
+                    <div style="display: flex; align-items: center; gap: 8px; color: #721c24; font-size: 13.5px; font-weight: 500;">
+                        <span>🔒</span> এই অ্যাকাউন্ট দিয়ে পুনরায় লগইন করা বা সার্ভার এক্সেস করা সম্পূর্ণ অসম্ভব।
+                    </div>
+                </div>
+                <div style="font-size: 13px; color: #6c757d; margin-top: 15px; text-align: center;">
+                    এটি যদি কোনো যান্ত্রিক ত্রুটি বা ভুলবশত হয়ে থাকে, তবে তাৎক্ষণিকভাবে অফিশিয়াল সাপোর্টের সাথে যোগাযোগ করুন।
+                </div>
+            `, 
+            icon: 'error',
+            iconColor: '#dc3545',
+            confirmButtonColor: '#0088cc',
+            confirmButtonText: '<i class="fab fa-telegram-plane"></i> সাপোর্টে যোগাযোগ  করুন',
+            showCancelButton: true,
+            cancelButtonText: 'বন্ধ করুন',
+            cancelButtonColor: '#6c757d',
+            allowOutsideClick: false,
+            allowEscapeKey: false,
+            // প্রফেশনাল এবং নজরকাড়া এনিমেশন যুক্ত করা হয়েছে
+            showClass: {
+                popup: 'animate__animated animate__shakeX animate__faster'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp animate__faster'
+            },
+            customClass: {
+                popup: 'professional-blocked-popup'
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.open('https://t.me/Mohammed1199440', '_blank');
+            }
+        });
+        return; 
+    
+}
 
-                    let localUser = db.users.find(x => x.phone === phone);
+                    let localUser = db.users.find(x => x.email === e);
                     const newSheetBalance = parseFloat(sheetUser.balance) || 0.00;
 
                     if(localUser) {
@@ -12224,7 +12234,7 @@ async function handleAuth(m) {
 
                             if (!db.funds) db.funds = [];
                             db.funds.push({
-                                user: localUser.phone,
+                                user: localUser.email,
                                 amt: addedAmount.toFixed(2),
                                 status: "Success",
                                 time: fullTimeStr,
@@ -12243,7 +12253,7 @@ async function handleAuth(m) {
 
                             if (!db.funds) db.funds = [];
                             db.funds.push({
-                                user: localUser.phone,
+                                user: localUser.email,
                                 amt: "-" + deductedAmount.toFixed(2),
                                 status: "Success",
                                 time: fullTimeStr,
@@ -12257,8 +12267,8 @@ async function handleAuth(m) {
                         curUser = localUser;
                     } else {
                         curUser = {
-                            name: sheetUser.name || sheetUser.phone,
-                            phone: sheetUser.phone,
+                            name: sheetUser.email.split('@')[0],
+                            email: sheetUser.email,
                             pass: sheetUser.password,
                             role: "user",
                             bal: newSheetBalance,
@@ -12271,9 +12281,9 @@ async function handleAuth(m) {
                         db.users.push(curUser);
                     }
 
-                    localStorage.setItem('v7_logged_phone', curUser.phone);
+                    localStorage.setItem('v7_logged_email', curUser.email);
                     localStorage.setItem('v7_userName', curUser.name);
-                    localStorage.setItem('v7_userPhone', curUser.phone);
+                    localStorage.setItem('v7_userEmail', curUser.email);
                     localStorage.setItem('v7_userReferCode', curUser.referCode);
                     localStorage.setItem('v7_userBalance', curUser.bal); 
                     localStorage.setItem('v7_userStatus', curUser.status);
@@ -12309,7 +12319,7 @@ async function handleAuth(m) {
         }
 
         // অফলাইন ব্যাকআপ লগইন
-        let u = db.users.find(x => x.phone === phone && x.pass === p);
+        let u = db.users.find(x => x.email === e && x.pass === p);
         if(u) {
             const localStatus = String(u.status || "").toLowerCase().trim();
             if (localStatus === 'blocked') {
@@ -12341,15 +12351,16 @@ async function handleAuth(m) {
                 }
             }
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            toast('লগইন সফল');
+            toast('লগইন সফল ');
         } else {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            toast('ভুল নম্বর/পাসওয়ার্ড', 'error');
+            toast('ভুল ইমেইল/পাসওয়ার্ড', 'error');
         }
     }
 }
-  
 
+
+  
 // ৫. উইথড্র এক্সিকিউশন ফাংশন (গুগল শিট ব্যালেন্স সিঙ্কসহ)
 function executeWithdraw(amt, finalAmount, num, method, withdrawPage) {
     let now = new Date().toLocaleString('en-US', { 
