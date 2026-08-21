@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -2568,27 +2567,33 @@ div[onclick="toggleBloodModal()"]:active {
     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
 <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 12px 15px; color: white; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15); position: sticky; top: 0; z-index: 100; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
-    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 500px; margin: 0 auto; width: 100%; position: relative; box-sizing: border-box;">
+    
+    <div style="display: flex; align-items: center; justify-content: space-between; max-width: 500px; margin: 0 auto; width: 100%; position: relative; box-sizing: border-box;">
         
-        <span style="font-size: 24px; cursor: pointer; position: absolute; left: 0; user-select: none;" onclick="openNav()">&#9776;</span>
-        
-        <div style="display: flex; align-items: center; gap: 12px; margin: 0 35px;">
-            <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/FB_IMG_1782142091511.jpg" 
-                 alt="Logo" 
-                 style="height: 38px; width: auto; max-width: 150px; object-fit: contain; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25)); border-radius: 5px;">
-            <span style="color: white; font-size: 22px; font-weight: 700; letter-spacing: 1px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">Aypoth</span>
+        <!-- LEFT : HAMBURGER MENU -->
+        <span style="font-size: 22px; cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; line-height: 1;" onclick="openNav()">&#9776;</span>
+
+        <!-- CENTER : BRAND -->
+        <div class="aypoth-brand" style="display: flex; align-items: center; gap: 8px;">
+            <div class="brand-logo-wrap" style="display: flex; align-items: center;">
+                <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/FB_IMG_1782142091511.jpg" alt="Aypoth" class="brand-logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.8);">
+            </div>
+            <div class="brand-text" style="display: flex; flex-direction: column; text-align: left;">
+                <span class="brand-name" style="font-size: 16px; font-weight: 700; leading-trim: both; line-height: 1.1;">Free Time Earn</span>
+                <span class="brand-tagline" style="font-size: 9px; opacity: 0.9; font-weight: 400; letter-spacing: 0.3px;">Premium Digital Platform</span>
+            </div>
         </div>
 
-        <a href="javascript:void(0)" onclick="toggleNotificationPopup(event)" style="text-decoration: none; color: white; position: absolute; right: 0; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" title="Notifications">
-            <i class="fas fa-bell" style="font-size: 16px;"></i>
-<span id="noti-dot" style="position: absolute; top: -2px; right: -2px; width: 16px; height: 16px; background: #ff3b30; border-radius: 50%; border: 1px solid #ffffff; color: white; font-size: 10px; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1; pointer-events: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">1</span>
+        <!-- RIGHT : NOTIFICATION BUTTON -->
+        <a href="javascript:void(0)" onclick="toggleNotificationPopup(event)" style="text-decoration: none; color: white; position: relative; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" title="Notifications">
+            <i class="fas fa-bell" style="font-size: 15px;"></i>
+            <span id="noti-dot" style="position: absolute; top: -2px; right: -2px; width: 16px; height: 16px; background: #ff3b30; border-radius: 50%; border: 1.5px solid #ffffff; color: white; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1; pointer-events: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">1</span>
         </a>
 
+        <!-- NOTIFICATION POPUP -->
         <div id="noti-popup" style="display: none; position: absolute; top: 48px; right: 0; width: 260px; background: white; color: #333; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 15px; z-index: 200; border: 1px solid rgba(0,0,0,0.05); box-sizing: border-box;" onclick="event.stopPropagation()">
-            <div style="position: absolute; top: -6px; right: 12px; width: 12px; height: 12px; background: white; transform: rotate(45deg); border-left: 1px solid rgba(0,0,0,0.05); border-top: 1px solid rgba(0,0,0,0.05);">
-            </div>
+            <div style="position: absolute; top: -6px; right: 12px; width: 12px; height: 12px; background: white; transform: rotate(45deg); border-left: 1px solid rgba(0,0,0,0.05); border-top: 1px solid rgba(0,0,0,0.05);"></div>
             
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px;">
                 <span style="font-weight: 700; font-size: 14px; color: #ff5500;">🔔 নোটিফিকেশন</span>
@@ -2596,13 +2601,12 @@ div[onclick="toggleBloodModal()"]:active {
             </div>
             
             <p style="margin: 0; font-size: 12px; color: #555; line-height: 1.5; text-align: left; white-space: normal;">
-                স্বাগতম! <b>Aypoth</b>-এ আপনাকে স্বাগতম। আমাদের নতুন আপডেট এবং অফারগুলো দেখতে নিয়মিত লক্ষ্য রাখুন।
+                স্বাগতম! <b>Aypoth</b>-এ আপনাকে স্বাগতম। আমাদের নতুন আপডেট এবং অফারগুলো দেখতে নিয়মিত লক্ষ্য রাখুন।
             </p>
         </div>
 
     </div>
 </div>
-
 <script>
 function toggleNotificationPopup(event) {
     // বাটনে ক্লিক করলে যেন পেজ রিফ্রেশ বা অন্য সমস্যা না হয়
@@ -2715,7 +2719,7 @@ s0.parentNode.insertBefore(s1,s0);
 
     <!-- সোশ্যাল মিডিয়া সেকশন -->
     <div style="padding: 18px; border-top: 2px solid #f1f5f9; background: #ffffff; flex-shrink: 0;">
-        <span style="display: block; color: #475569; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-align: left;">Follow Us:</span>
+        <span style="display: block; color: #475569; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-align: left;"></span>
         
         <!-- সোশ্যাল আইকন মেম্বারশিপ রো (আইকনগুলোর সাইজ বড় করা হয়েছে) -->
         <div style="display: flex; gap: 18px; align-items: center; justify-content: flex-start;">
@@ -2779,70 +2783,60 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
 
 
 </div>
+
 <!-- লেন্ডিং পেজ সেকশন -->
-<div id="landing-page" style="width: 100%; max-width: 650px; margin: 20px auto; padding: 30px 15px 15px 15px; font-family: 'Hind Siliguri', sans-serif; background: #ffffff; border-radius: 15px; border: 2px solid; border-image: linear-gradient(135deg, #ff0000, #ffcc00) 1; box-shadow: 0 10px 25px rgba(0,0,0,0.1); box-sizing: border-box; text-align: center;">
-    
-    <div style="width: 90px; height: 90px; background: linear-gradient(135deg, #ff416c, #f39c12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 2px solid #FFD700; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-        <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" 
-             alt="Logo" 
-             style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+<div id="landing-page" style="width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px 70px 10px; font-family: 'Hind Siliguri', sans-serif; background: #ffffff; border-radius: 0; box-shadow: none; box-sizing: border-box; text-align: center;">
+
+    <!-- লোগো সেকশন -->
+    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff0000, #ffcc00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; padding: 3px; box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2); box-sizing: border-box;">
+        <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #ffffff;">
     </div>
         
-    <h2 style="font-weight: 800; color: #1a1a1a; margin-bottom: 12px; font-size: 28px; letter-spacing: -0.5px;">স্বাগতম!</h2>
-    <p style="font-size: 15px; color: #666; margin-bottom: 25px; font-weight: 500;">আমাদের প্ল্যাটফর্মে প্রবেশ করতে নিচের বাটনে ক্লিক করুন</p>
+    <h2 style="font-weight: 800; color: #111111; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">স্বাগতম!</h2>
+    <p style="font-size: 13px; color: #555555; margin: 0 0 15px 0; font-weight: 500; line-height: 1.4;">আমাদের প্ল্যাটফর্মে প্রবেশ করতে নিচের বাটনে ক্লিক করুন</p>
     
     <!-- প্রবেশ করুন বাটন -->
-    <button onclick="openLoginBox()" 
-            style="width: 100%; max-width: 300px; height: 55px; border-radius: 12px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 16px; letter-spacing: 0.5px; margin-bottom: 30px;">
+    <button onclick="openLoginBox()" style="width: 100%; max-width: 300px; height: 46px; border-radius: 8px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); font-size: 15px; letter-spacing: 0.5px; margin-bottom: 15px; font-family: 'Hind Siliguri', sans-serif;">
         প্রবেশ করুন
     </button>
 
     <!-- ইউজার কাউন্টার সেকশন -->
-    <div style="display: flex; justify-content: space-around; background: #fff5f5; padding: 15px; border-radius: 10px; margin-bottom: 25px; border: 1px dashed #ff9900;">
-        <div>
-            <p style="font-size: 13px; color: #666; margin: 0 0 5px;">নতুন ইউজার (আজ)</p>
-            <h3 id="new-users" style="font-size: 20px; color: #ff0000; margin: 0; font-weight: 700;">12</h3>
+    <div style="display: flex; justify-content: space-around; background: linear-gradient(135deg, #fff5f5 0%, #fff9e6 100%); padding: 10px 6px; border-radius: 10px; margin-bottom: 15px;">
+        <div style="flex: 1;">
+            <p style="font-size: 11px; color: #666666; margin: 0 0 2px 0; font-weight: 600;">নতুন ইউজার (আজ)</p>
+            <h3 id="new-users" style="font-size: 18px; color: #ff0000; margin: 0; font-weight: 800;">12</h3>
         </div>
-        <div style="border-left: 1px solid #ddd; padding-left: 20px;">
-            <p style="font-size: 13px; color: #666; margin: 0 0 5px;">সর্বমোট ইউজার</p>
-            <h3 id="total-users" style="font-size: 20px; color: #ff9900; margin: 0; font-weight: 700;">1,450</h3>
-        </div>
-    </div>
-
-    <!-- পেমেন্ট মেথড সেকশন -->
-    <div style="margin-bottom: 35px;">
-        <p style="font-size: 14px; color: #444; margin-bottom: 12px; font-weight: 600;">ব্যালেন্স উইথড্র করলে সরাসরি পেমেন্ট পান:</p>
-        <div style="display: flex; justify-content: center; gap: 15px; align-items: center;">
-            <div style="background: #e2136e; color: #ffffff; padding: 8px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 10px rgba(226, 19, 110, 0.3);">
-                বিকাশ
-            </div>
-            <div style="background: #f15a24; color: #ffffff; padding: 8px 20px; border-radius: 8px; font-weight: 700; font-size: 14px; box-shadow: 0 4px 10px rgba(241, 90, 36, 0.3);">
-                নগদ
-            </div>
+        <div style="border-left: 1px solid #ffd699; flex: 1;">
+            <p style="font-size: 11px; color: #666666; margin: 0 0 2px 0; font-weight: 600;">সর্বমোট ইউজার</p>
+            <h3 id="total-users" style="font-size: 18px; color: #e67e00; margin: 0; font-weight: 800;">1,450</h3>
         </div>
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #eee; margin-bottom: 30px;">
+    
+    <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,153,0,0.4), rgba(255,0,0,0)); margin-bottom: 15px;">
 
     <!-- ফেসবুক স্টাইল পোস্ট ফিড সেকশন -->
     <div style="text-align: left;">
-        <h3 style="font-size: 20px; color: #333; margin-bottom: 20px; text-align: center; font-weight: 700;">সদস্যদের পেমেন্ট ও ইনকাম প্রুফ</h3>
+        <h3 style="font-size: 16px; color: #222222; margin-bottom: 12px; text-align: center; font-weight: 800; background: linear-gradient(135deg, #ff0000, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+            সদস্যদের পেমেন্ট ও ইনকাম প্রুফ
+        </h3>
         
         <!-- পোস্ট কন্টেইনার -->
         <div id="fb-posts-container"></div>
     </div>
 
- <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
-    <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
-<p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
-    Developed by 
-    <a href="https://t.me/DEVELOPER_SUFIAN" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
-</p>
-</div>
+    <!-- ফিক্সড ফুটার বার -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #fee6e6; padding: 8px 0; text-align: center; box-shadow: 0 -3px 12px rgba(0,0,0,0.05); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
+        <p style="font-size: 11px; color: #444444; margin: 0 0 2px 0; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
+        <p style="font-size: 10px; color: #777777; margin: 0; font-weight: 500;">
+            Developed by 
+            <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: 700;">Abu Sufian</a>
+        </p>
+    </div>
 
 </div>
-<!-- অটোমেটিক ইউজার সংখ্যা বৃদ্ধি এবং ফেসবুক পোস্ট লোড করার জাভাস্ক্রিপ্ট -->
+
+<!-- জাভাস্ক্রিপ্ট সেকশন -->
 <script>
     if (!localStorage.getItem('totalUsers')) {
         localStorage.setItem('totalUsers', '1450');
@@ -2872,7 +2866,6 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     }, 10000);
 
     const postsData = [
-        // প্রথম ৫টি পোস্ট (ছবিসহ)
         { 
             name: "রিফাত আহমেদ", 
             time: "১০ মিনিট আগে", 
@@ -2908,7 +2901,6 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
             caption: "পেমেন্ট প্রুফ দিলাম! এই সাইট থেকে ইনকাম করে ফাইনালি আজ আমি আমার ড্রিম আইফোন কিনে ফেললাম! আলহামদুলিল্লাহ। ✨📱", 
             image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-211232.png" 
         },
-        // পরবর্তী ৫টি পোস্ট (শুধু টেক্সট, কোনো ছবি নেই)
         { 
             name: "ইমরান হোসেন", 
             time: "৪ ঘণ্টা আগে", 
@@ -2927,14 +2919,14 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
             name: "রাশেদুল ইসলাম", 
             time: "৬ ঘণ্টা আগে", 
             profile: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80", 
-            caption: "আলহামদুলিল্লাহ, এই প্ল্যাটফর্মের ইনকাম দিয়ে নিজের পছন্দের আইফোন হাতে পেলাম। কাজ একদম পানির মতো সহজ! 🌟", 
+            caption: "আলহামদুলিল্লাহ, এই প্ল্যাটফর্মের ইনকাম দিয়ে নিজের পছন্দের আইফোন হাতে পেলাম। কাজ একদম পানির মতো সহজ! 🌟", 
             image: "" 
         },
         { 
             name: "সুমাইয়া রহমান", 
             time: "৭ ঘণ্টা আগে", 
             profile: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80", 
-            caption: "পেমেন্ট নিয়ে কোনো টেনশন করতে হয় না। উইথড্র দেওয়ার সাথে সাথেই বিকাশ বা নগদ এ টাকা চলে আসে। 💛", 
+            caption: "পেমেন্ট নিয়ে কোনো টেনশন করতে হয় না। উইথড্র দেওয়ার সাথে সাথেই বিকাশ বা নগদ এ টাকা চলে আসে। 💛", 
             image: "" 
         },
         { 
@@ -2950,96 +2942,97 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     
     postsData.forEach(post => {
         const postCard = document.createElement('div');
-        postCard.style.cssText = "background: #f9f9f9; border: 1px solid #e1e1e1; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); text-align: left;";
+        postCard.style.cssText = "background: #fdfdfd; border-radius: 8px; padding: 10px; margin-bottom: 10px; text-align: left;";
         
         let imageHtml = "";
         if (post.image && post.image.trim() !== "") {
             imageHtml = `
-                <!-- মোবাইলের ফুল স্ক্রিন সাইজ (9:16 রেশিও লম্বা ছবি) -->
-                <div style="width: 100%; height: 600px; border-radius: 8px; overflow: hidden; border: 1px solid #ddd; background: #000;">
-                    <img src="${post.image}" alt="Post Image" style="width: 100%; height: 100%; display: block; object-fit: cover;">
+                <div style="width: 100%; max-height: 500px; border-radius: 6px; overflow: hidden; background: #000; margin-top: 6px;">
+                    <img src="${post.image}" alt="Post Image" style="width: 100%; height: auto; max-height: 500px; display: block; object-fit: contain; margin: 0 auto;">
                 </div>
             `;
         }
 
         postCard.innerHTML = `
-            <!-- প্রোফাইল হেড -->
-            <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                <img src="${post.profile}" alt="Profile" style="width: 45px; height: 45px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 1px solid #ddd;">
+            <div style="display: flex; align-items: center; margin-bottom: 6px;">
+                <img src="${post.profile}" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 8px;">
                 <div>
-                    <h4 style="margin: 0; font-size: 15px; color: #222; font-weight: 700;">${post.name}</h4>
-                    <span style="font-size: 12px; color: #777;">${post.time} • <span style="color: #1877f2;">🌐</span></span>
+                    <h4 style="margin: 0; font-size: 13px; color: #111; font-weight: 700;">${post.name}</h4>
+                    <span style="font-size: 10px; color: #888;">${post.time} • <span style="color: #ff5500;">🌐</span></span>
                 </div>
             </div>
-            <!-- ক্যাপশন -->
-            <p style="font-size: 14px; color: #333; margin-bottom: 12px; line-height: 1.5;">${post.caption}</p>
+            <p style="font-size: 12px; color: #333333; margin: 0 0 4px 0; line-height: 1.4; font-weight: 500;">${post.caption}</p>
             ${imageHtml}
         `;
         container.appendChild(postCard);
     });
 </script>
 
-<!-- লগইন পেজ সেকশন (প্রথমে হাইড করা থাকবে) -->
+
+<!-- লগইন পেজ সেকশন -->
 <div class="auth-section" id="login-box" 
-     style="display: none; width: 95%; max-width: 700px; margin: 20px auto; padding: 35px 25px; font-family: 'Hind Siliguri', sans-serif; 
-            background: #ffffff; border-radius: 15px; border: 2px solid; border-image: linear-gradient(135deg, #ff0000, #ffcc00) 1;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); box-sizing: border-box;">
+     style="display: none; width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
     
-    <div class="text-center" style="text-align: center;">
-        <div style="width: 75px; height: 75px; background: linear-gradient(135deg, #ff416c, #f39c12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 2px solid #FFD700; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-            <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" 
-                 alt="Logo" 
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
-        </div>
-        
-        <h3 style="font-weight: 800; color: #1a1a1a; margin-bottom: 8px; font-size: 26px; letter-spacing: -0.5px;">লগইন করুন</h3>
-        <p style="font-size: 14px; color: #777; margin-bottom: 35px; font-weight: 500;">আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন</p>
+    <div class="text-center" style="text-align: center; margin-bottom: 20px;">
+        <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">লগইন করুন</h3>
+        <p style="font-size: 13px; color: #777; margin: 0; font-weight: 500;">আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন</p>
     </div>
 
     <div class="auth-fields">
-        <div style="position: relative; margin-bottom: 20px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 16px;"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="l-email" placeholder="ইমেইল অ্যাড্রেস" 
-                   style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+        <!-- মোবাইল নম্বর ফিল্ড (+880 প্রিফিক্স সহ) -->
+        <div style="position: relative; margin-bottom: 14px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-phone-alt"></i></span>
+            
+            <!-- +880 ফিক্সড প্রিফিক্স -->
+            <span style="position: absolute; left: 42px; top: 12px; color: #333; font-size: 14px; font-weight: 700; user-select: none; pointer-events: none;">+880</span>
+            
+            <input type="tel" id="l-phone" placeholder="1XXXXXXXXX" maxlength="10"
+                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                   style="width: 100%; padding: 12px 15px 12px 85px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 600; box-sizing: border-box;">
         </div>
 
-        <div style="position: relative; margin-bottom: 10px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 16px;"><i class="fas fa-lock"></i></span>
+        <!-- পাসওয়ার্ড ফিল্ড -->
+        <div style="position: relative; margin-bottom: 8px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
             <input type="password" id="l-pass" placeholder="পাসওয়ার্ড" 
-                   style="width: 100%; padding: 15px 50px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-            <span onclick="toggleLoginPassword()" style="position: absolute; right: 18px; top: 15px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
+                   style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+            <span onclick="toggleLoginPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
                 <i class="fas fa-eye" id="loginEyeIcon"></i>
             </span>
         </div>
 
-        <!-- পাসওয়ার্ড ভুলে গেছেন বাটন -->
-        <div style="text-align: right; margin-bottom: 25px;">
+        <!-- পাসওয়ার্ড ভুলে গেছেন লিংক -->
+        <div style="text-align: right; margin-bottom: 20px;">
             <a href="javascript:void(0)" 
                onclick="showForgotPopup()" 
-               style="color: #ff0000; font-size: 13px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; padding: 5px;">
-               <i class="fas fa-key" style="margin-right: 5px;"></i> পাসওয়ার্ড ভুলে গেছেন?
+               style="color: #ff0000; font-size: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; padding: 2px 0;">
+               <i class="fas fa-key" style="margin-right: 4px;"></i> পাসওয়ার্ড ভুলে গেছেন?
             </a>
         </div>
 
+        <!-- বাটন -->
         <button onclick="handleAuth('login')" 
-                style="width: 100%; height: 55px; border-radius: 12px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 16px; letter-spacing: 0.5px;">
+                style="width: 100%; height: 48px; border-radius: 10px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 15px; letter-spacing: 0.5px;">
             লগইন করুন
         </button>
 
-        <p style="font-size: 14px; color: #666; margin-top: 30px; text-align: center;">
+        <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
             নতুন সদস্য? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(true)">এখনই রেজিস্ট্রেশন করুন</a>
         </p>
     </div>
+</div>
+
+      
      <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
     <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
     <p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
     Developed by 
-    <a href="https://t.me/DEVELOPER_SUFIAN" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
+    <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
 </p>
 
 </div>
-</div>
+
 
 <!-- جاভা স্ক্রিপ্ট ফাংশন -->
 <script>
@@ -3078,60 +3071,68 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     #signup-box input:-ms-input-placeholder { color: #888 !important; }
     #signup-box input::-ms-input-placeholder { color: #888 !important; }
 </style>
-<div class="auth-section d-none" id="signup-box" 
-     style="width: 95%; max-width: 700px; margin: 1px auto; padding: 35px 25px; font-family: 'Hind Siliguri', sans-serif; 
-            background: #ffffff; border-radius: 15px; border: 2px solid; border-image: linear-gradient(135deg, #ff0000, #ffcc00) 1;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1); box-sizing: border-box;">
+
+
+      <div class="auth-section d-none" id="signup-box" 
+     style="width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
     
-<div class="text-center" style="text-align: center;">
-        <div style="width: 75px; height: 75px; background: linear-gradient(135deg, #ff416c, #f39c12); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 2px solid #FFD700; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
-            <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" 
-                 alt="Logo" 
-                 style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; animation: pulse 1.5s infinite;">
-        </div>
-        
-        <h3 style="font-weight: 800; color: #1a1a1a; margin-bottom: 8px; font-size: 26px; letter-spacing: -0.5px;">রেজিষ্ট্রেশন করুন</h3>
-        <p style="font-size: 14px; color: #777; margin-bottom: 30px; font-weight: 500;">নতুন অ্যাকাউন্টের জন্য নিবন্ধন করুন</p>
+    <div class="text-center" style="text-align: center; margin-bottom: 20px;">
+        <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">রেজিস্ট্রেশন করুন</h3>
+        <p style="font-size: 13px; color: #777; margin: 0; font-weight: 500;">নতুন অ্যাকাউন্টের জন্য নিবন্ধন করুন</p>
     </div>
 
     <div class="auth-fields">
-        <div style="position: relative; margin-bottom: 18px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 15px;"><i class="fas fa-user"></i></span>
+        <!-- নাম ফিল্ড -->
+        <div style="position: relative; margin-bottom: 14px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-user"></i></span>
             <input type="text" id="s-name" placeholder="আপনার পূর্ণ নাম" 
-                   style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
-        <div style="position: relative; margin-bottom: 18px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="s-email" placeholder="ইমেইল অ্যাড্রেস" 
-                   style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+        <!-- মোবাইল নম্বর ফিল্ড (+880 প্রিফিক্স সহ) -->
+        <div style="position: relative; margin-bottom: 14px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-phone-alt"></i></span>
+            
+            <!-- +880 ফিক্সড প্রিফিক্স -->
+            <span style="position: absolute; left: 42px; top: 12px; color: #333; font-size: 14px; font-weight: 700; user-select: none; pointer-events: none;">+880</span>
+            
+            <input type="tel" id="s-phone" placeholder="1XXXXXXXXX" maxlength="10"
+                   oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                   style="width: 100%; padding: 12px 15px 12px 85px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 600; box-sizing: border-box;">
         </div>
 
-        <div style="position: relative; margin-bottom: 18px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 15px;"><i class="fas fa-handshake"></i></span>
+        <!-- রেফার কোড ফিল্ড -->
+        <div style="position: relative; margin-bottom: 14px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-handshake"></i></span>
             <input type="text" id="reg-refer" placeholder="রেফার কোড (ঐচ্ছিক)" 
-                   style="width: 100%; padding: 15px 15px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
         </div>
 
-        <div style="position: relative; margin-bottom: 30px;">
-            <span style="position: absolute; left: 18px; top: 15px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
-            <input type="password" id="s-pass" placeholder="পাসওয়ার্ড তৈরি করুন" 
-                   style="width: 100%; padding: 15px 50px 15px 50px; border-radius: 12px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-            <span onclick="toggleSignupPassword()" style="position: absolute; right: 18px; top: 15px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
+        <!-- পাসওয়ার্ড ফিল্ড -->
+        <div style="position: relative; margin-bottom: 20px;">
+            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
+            <input type="password" id="s-pass" placeholder="পাসওয়ার্ড তৈরি করুন" 
+                   style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
+            <span onclick="toggleSignupPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
                 <i class="fas fa-eye" id="toggleSignupIcon"></i>
             </span>
         </div>
 
+        <!-- বাটন -->
         <button onclick="handleAuth('signup')" 
-                style="width: 100%; height: 55px; border-radius: 12px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 16px; letter-spacing: 0.5px;">
+                style="width: 100%; height: 48px; border-radius: 10px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 15px; letter-spacing: 0.5px;">
             রেজিস্ট্রেশন করুন
         </button>
 
-        <p style="font-size: 14px; color: #666; margin-top: 30px; text-align: center;">
+        <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
             ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(false)">লগইন করুন</a>
         </p>
     </div>
-     <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
+</div>
+      
+      
+      
+      <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
 <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
     <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
         <p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
@@ -3139,8 +3140,6 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     <a href="https://t.me/DEVELOPER_SUFIAN" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
 </p>
     
-
-</div>
 </div>
 
 <script>
@@ -3225,7 +3224,7 @@ function toggleSignupPassword() {
         <div class="brand-text">
 
             <span class="brand-name">
-                Aypoth
+                Free Time Earn
             </span>
 
             <span class="brand-tagline">
@@ -6839,18 +6838,20 @@ function togglePassword() {
 
 
         /* =========================================
-           MENU
+           MENU (SCROLL FIX & SMOOTH TOUCH)
         ========================================= */
 
         .scrollable-menu{
             flex:1;
 
             overflow-y:auto;
+            -webkit-overflow-scrolling: touch; /* iOS স্মুথ স্ক্রলিং এর জন্য */
 
             padding:16px 13px 14px;
 
             scrollbar-width:thin;
             scrollbar-color:#d6d9df transparent;
+            touch-action: pan-y;
         }
 
         .scrollable-menu::-webkit-scrollbar{
@@ -6870,7 +6871,7 @@ function togglePassword() {
 
 
         /* =========================================
-           MENU BUTTON
+           MENU BUTTON (ANIMATION FIX)
         ========================================= */
 
         .custom-menu-btn{
@@ -6902,15 +6903,17 @@ function togglePassword() {
             cursor:pointer;
 
             overflow:hidden;
+            outline:none;
+            -webkit-tap-highlight-color: transparent;
 
             transition:
-                transform .18s ease,
-                box-shadow .18s ease,
-                border-color .18s ease;
+                transform .2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow .2s ease,
+                border-color .2s ease;
         }
 
 
-        /* left active line */
+        /* Left active line */
 
         .custom-menu-btn:before{
             content:"";
@@ -6921,7 +6924,7 @@ function togglePassword() {
             top:12px;
             bottom:12px;
 
-            width:3px;
+            width:4px;
 
             border-radius:0 6px 6px 0;
 
@@ -6937,8 +6940,11 @@ function togglePassword() {
         }
 
 
-        .custom-menu-btn:hover{
-            transform:translateX(-2px);
+        /* Hover and Active/Touch Feedback */
+
+        .custom-menu-btn:hover,
+        .custom-menu-btn:focus{
+            transform:translateX(4px); /* ডান দিকে হালকা সরবে */
 
             border-color:#e7e9ed !important;
 
@@ -6946,12 +6952,13 @@ function togglePassword() {
                 0 9px 22px rgba(15,23,42,.075) !important;
         }
 
-        .custom-menu-btn:hover:before{
+        .custom-menu-btn:hover:before,
+        .custom-menu-btn:focus:before{
             opacity:1;
         }
 
         .custom-menu-btn:active{
-            transform:scale(.965);
+            transform:scale(0.96) translateX(2px);
 
             box-shadow:
                 0 3px 8px rgba(15,23,42,.06) !important;
@@ -6984,7 +6991,7 @@ function togglePassword() {
 
             overflow:hidden;
 
-            transition:.2s ease;
+            transition:transform .2s ease;
         }
 
         .icon-box:after{
@@ -7004,10 +7011,9 @@ function togglePassword() {
                 rgba(255,255,255,.22);
         }
 
-        .custom-menu-btn:hover .icon-box{
-            transform:
-                translateY(-1px)
-                scale(1.06);
+        .custom-menu-btn:hover .icon-box,
+        .custom-menu-btn:active .icon-box{
+            transform:scale(1.08);
         }
 
 
@@ -7025,7 +7031,7 @@ function togglePassword() {
             font-family:
                 'Hind Siliguri',
                 'Poppins',
-                sans-serif;
+                'sans-serif';
 
             font-size:12.5px;
             font-weight:700;
@@ -7058,12 +7064,13 @@ function togglePassword() {
             transition:.2s ease;
         }
 
-        .custom-menu-btn:hover .menu-arrow{
+        .custom-menu-btn:hover .menu-arrow,
+        .custom-menu-btn:active .menu-arrow{
             color:#e60000;
 
             background:#fff1ef;
 
-            transform:translateX(-2px);
+            transform:translateX(2px);
         }
 
 
@@ -7118,6 +7125,8 @@ function togglePassword() {
                 0 5px 14px rgba(225,29,72,.05) !important;
 
             cursor:pointer;
+            outline:none;
+            -webkit-tap-highlight-color: transparent;
 
             transition:.2s ease;
         }
@@ -7160,7 +7169,7 @@ function togglePassword() {
             font-family:
                 'Hind Siliguri',
                 'Poppins',
-                sans-serif;
+                'sans-serif';
 
             font-size:12px;
             font-weight:850;
@@ -7634,6 +7643,8 @@ function togglePassword() {
     </div>
 
 </div>
+
+
 
       
 <div id="p-admin-profile" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
@@ -9270,351 +9281,156 @@ function closeSuccessPopup() {
 
 
 
-<div id="p-wallet" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column;">
+
+      <div id="p-wallet" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column;">
     
-<div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 25px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.15); border-radius: 0px;">
-    
-    <div style="display: flex; align-items: center; gap: 15px;">
-        <div onclick="closePage('p-wallet')" style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: 0.2s;">
-            <i class="fas fa-chevron-left" style="font-size: 16px; color: white;"></i>
-        </div>
-        <h4 style="margin: 0; font-weight: 700; color: white; font-size: 20px; font-family: 'Poppins', sans-serif;">My Wallet</h4>
-    </div>
-    
-    <div style="background: rgba(255, 255, 255, 0.2); padding: 6px 12px; border-radius: 4px; color: white; font-size: 10px; font-weight: 800; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px); font-family: 'Poppins', sans-serif; letter-spacing: 0.5px;">
-        <i class="fas fa-shield-alt"></i> SECURED
-    </div>
-
-</div>
-
-
-
-
-<div class="container px-3 mt-4" style="flex: 1;">
-    <div style="margin: 3px; background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); padding: 30px 25px; border-radius: 0px; color: white; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.2);">
-        
-        <div style="position: absolute; top: -20%; right: -10%; width: 140px; height: 140px; background: rgba(255,255,255,0.08); border-radius: 15px; transform: rotate(45deg);"></div>
-        
-        <div style="position: relative; z-index: 2;">
-            <p style="margin: 0; font-size: 12px; font-weight: 600; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px; font-family: 'Poppins', sans-serif;"> বর্তমান বেলেন্স </p>
-            <h1 style="font-weight: 800; margin: 10px 0; font-size: 42px; color: white; font-family: 'Poppins', sans-serif;">
-                <span style="font-weight: 400;">৳</span><span id="u-bal">0.00</span>
-            </h1>
-            
-            <div style="font-size: 10px; font-weight: 700; background: rgba(255,255,255,0.15); display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.25); font-family: 'Poppins', sans-serif; text-transform: uppercase; letter-spacing: 0.5px;">
-                <i class="fas fa-gem" style="color: #fff200;"></i> Aypoth  
+    <!-- স্টিকি প্রিমিয়াম হেডার -->
+    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff6a00 100%); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <div onclick="closePage('p-wallet')" class="w-btn-effect" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.25);">
+                <i class="fas fa-arrow-left" style="font-size: 16px; color: white;"></i>
             </div>
+            <div>
+                <h4 style="margin: 0; font-weight: 800; color: white; font-size: 18px; letter-spacing: 0.3px;">My Wallet</h4>
+                <span style="font-size: 10px; color: rgba(255,255,255,0.85); font-weight: 500;">Account Overview</span>
+            </div>
+        </div>
+        
+        <div style="background: rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 20px; color: white; font-size: 10px; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px); display: flex; align-items: center; gap: 5px;">
+            <i class="fas fa-shield-alt" style="color: #ffe600;"></i> SECURED
         </div>
     </div>
 
-
+    <!-- প্রধান কন্টেন্ট -->
+    <div class="container px-3 mt-3" style="flex: 1; max-width: 480px; margin: 0 auto; width: 100%;">
         
-
-        <!-- ইনকাম ডিটেইলস সেকশন -->
-        <div style="display: flex; flex-direction: column; gap: 10px; padding-bottom: 50px;">
+        <!-- প্রফেশনাল ডিজিটাল ব্যালেন্স কার্ড (আগের কালার থিম) -->
+        <div class="main-balance-card" style="background: linear-gradient(135deg, #ff0000 0%, #ff5200 50%, #ff8c00 100%); padding: 24px 20px; border-radius: 24px; color: white; box-shadow: 0 15px 35px rgba(255, 0, 0, 0.25); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.25); margin-bottom: 20px;">
             
-            <!-- কার্ডের স্টাইল: ব্যালেন্স কার্ডের মতো ৩পিএক্স মার্জিন সহ -->
+            <!-- ব্যাকগ্রাউন্ড ডিজাইন শেপ -->
+            <div style="position: absolute; top: -30px; right: -20px; width: 130px; height: 130px; background: rgba(255,255,255,0.12); border-radius: 50%;"></div>
+            <div style="position: absolute; bottom: -40px; left: -20px; width: 110px; height: 110px; background: rgba(0,0,0,0.08); border-radius: 50%;"></div>
             
-            <!-- Today Income -->
-            <div onclick="openIncomeDetail('today', 'আজকের ইনকাম  ')" style="margin: 3px; background: white; border-radius: 20px; display: flex; align-items: center; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #edf2f7; cursor: pointer;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ff0000, #ff5f5f); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 5px 12px rgba(255,0,0,0.15);">
-                    <i class="fas fa-calendar-day"></i>
+            <!-- কার্ড হেডার: টাইটেল ও অ্যাপ নেম -->
+            <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <span style="width: 8px; height: 8px; background: #ffe600; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #ffe600;"></span>
+                    <p style="margin: 0; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 1px;">বর্তমান ব্যালেন্স</p>
                 </div>
-                <div style="flex: 1; margin-left: 15px;">
-                    <span style="display: block; font-size: 15px; font-weight: 700; color: #2d3748;">আজকের ইনকাম </span>
-                    <span style="display: block; font-size: 11px; color: #718096;">Earnings for today</span>
+
+                <div style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(6px); display: flex; align-items: center; gap: 5px;">
+                    <i class="fas fa-gem" style="color: #ffe600; font-size: 10px;"></i>
+                    <span style="font-size: 10px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">Free Time Earn</span>
                 </div>
-                <div style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-chevron-right"></i></div>
             </div>
 
-            <!-- Yesterday Income -->
-            <div onclick="openIncomeDetail('yesterday', ' গতকালের ইনকাম')" style="margin: 3px; background: white; border-radius: 20px; display: flex; align-items: center; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #edf2f7; cursor: pointer;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ff9900, #ffcc00); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 5px 12px rgba(255,153,0,0.15);">
-                    <i class="fas fa-history"></i>
-                </div>
-                <div style="flex: 1; margin-left: 15px;">
-                    <span style="display: block; font-size: 15px; font-weight: 700; color: #2d3748;">গতকালের ইনকাম </span>
-                    <span style="display: block; font-size: 11px; color: #718096;">Earnings from yesterday</span>
-                </div>
-                <div style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-chevron-right"></i></div>
+            <!-- ব্যালেন্স ডিসপ্লে -->
+            <div style="position: relative; z-index: 2; margin-bottom: 18px;">
+                <h1 style="font-weight: 900; margin: 0; font-size: 40px; color: #ffffff; line-height: 1; font-family: 'Montserrat', sans-serif; letter-spacing: -1px; text-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                    <span style="font-weight: 700; color: #ffe600; margin-right: 4px; font-size: 32px;">৳</span><span id="u-bal">0.00</span>
+                </h1>
             </div>
 
-            <!-- Weekly Income -->
-            <div onclick="openIncomeDetail('7days', '৭ দিনের ইনকাম  ')" style="margin: 3px; background: white; border-radius: 20px; display: flex; align-items: center; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #edf2f7; cursor: pointer;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #3182ce, #63b3ed); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 5px 12px rgba(49,130,206,0.15);">
-                    <i class="fas fa-chart-line"></i>
+            <!-- লাইভ তারিখ ও সময় -->
+            <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(255,255,255,0.95); font-weight: 500;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <i class="far fa-calendar-alt" style="color: #ffe600;"></i>
+                    <span id="wallet-current-date">--/--/----</span>
                 </div>
-                <div style="flex: 1; margin-left: 15px;">
-                    <span style="display: block; font-size: 15px; font-weight: 700; color: #2d3748;">৭ দিনের ইনকাম </span>
-                    <span style="display: block; font-size: 11px; color: #718096;">Total of last 7 days</span>
+                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.18); padding: 3px 8px; border-radius: 8px;">
+                    <i class="far fa-clock" style="color: #ffe600;"></i>
+                    <span id="wallet-current-time">00:00 AM</span>
                 </div>
-                <div style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-chevron-right"></i></div>
             </div>
-<!-- Monthly Income -->
-<div onclick="openIncomeDetail('30days', ' ৩০ দিনের ইনকাম ')" style="margin: 3px; background: white; border-radius: 20px; display: flex; align-items: center; padding: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #edf2f7; cursor: pointer;">
-    <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #9b59b6, #8e44ad); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 5px 12px rgba(155,89,182,0.15);">
-        <i class="fas fa-calendar-alt"></i>
-    </div>
-    <div style="flex: 1; margin-left: 15px;">
-        <span style="display: block; font-size: 15px; font-weight: 700; color: #2d3748;">৩০ দিনের ইনকাম </span>
-        <span style="display: block; font-size: 11px; color: #718096;">Earnings of this month</span>
-    </div>
-    <div style="color: #cbd5e1; font-size: 14px;"><i class="fas fa-chevron-right"></i></div>
-</div>
-            <!-- Lifetime Income -->
-            <div onclick="openIncomeDetail('total', ' সর্বমোট ইনকাম ')" style="margin: 3px; background: linear-gradient(135deg, #ffffff, #fffdf0); border-radius: 20px; display: flex; align-items: center; padding: 18px; box-shadow: 0 8px 20px rgba(255,153,0,0.1); border: 1.5px solid #ffcc00; cursor: pointer;">
-                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #ff0000, #ff9900); border-radius: 15px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; box-shadow: 0 5px 15px rgba(255,0,0,0.2);">
-                    <i class="fas fa-crown"></i>
+        </div>
+
+        <!-- অ্যাকশন সেকশন টাইটেল -->
+        <div style="margin-bottom: 12px; padding: 0 2px;">
+            <h6 style="margin: 0; font-weight: 700; color: #334155; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Quick Actions</h6>
+        </div>
+
+        <!-- ডিপোজিট ও উইথড্র কার্ড -->
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 30px;">
+            
+            <!-- ডিপোজিট কার্ড -->
+            <div onclick="openPage('p-fund')" class="action-card w-btn-effect" style="background: #ffffff; padding: 16px 18px; border-radius: 18px; border: 1px solid #fed7aa; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 106, 0, 0.05); transition: all 0.2s ease;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #ea580c; font-size: 20px; border: 1px solid #fdba74;">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <div>
+                        <h6 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 700; color: #0f172a;">ডিপোজিট করুন</h6>
+                        <p style="margin: 0; font-size: 11px; color: #64748b; font-weight: 500;">অ্যাডেড ফান্ডস উইথ সিকিউর গেটওয়ে</p>
+                    </div>
                 </div>
-                <div style="flex: 1; margin-left: 15px;">
-                    <span style="display: block; font-size: 15px; font-weight: 800; color: #ff0000; letter-spacing: 0.3px;"> সর্বমোট ইনকাম </span>
-                    <span style="display: block; font-size: 11px; color: #b7791f; font-weight: 600;">Overall account earnings</span>
+                <div style="width: 32px; height: 32px; background: #fff7ed; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ea580c;">
+                    <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
                 </div>
-                <div style="color: #ff9900; font-size: 14px;"><i class="fas fa-chevron-right"></i></div>
+            </div>
+
+            <!-- উইথড্র কার্ড -->
+            <div onclick="openPage('p-withdraw')" class="action-card w-btn-effect" style="background: #ffffff; padding: 16px 18px; border-radius: 18px; border: 1px solid #fecaca; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.05); transition: all 0.2s ease;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #fef2f2, #fee2e2); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #dc2626; font-size: 20px; border: 1px solid #fca5a5;">
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                    </div>
+                    <div>
+                        <h6 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 700; color: #0f172a;">উইথড্র করুন</h6>
+                        <p style="margin: 0; font-size: 11px; color: #64748b; font-weight: 500;">আপনার ব্যালেন্স ক্যাশআউট করুন</p>
+                    </div>
+                </div>
+                <div style="width: 32px; height: 32px; background: #fef2f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #dc2626;">
+                    <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
+                </div>
             </div>
 
         </div>
     </div>
 </div>
+
 <style>
-    .action-card {
-        transition: all 0.2s ease;
-        cursor: pointer;
-    }
     .action-card:active {
-        transform: scale(0.95);
-        background: #f8fafc !important;
-    }
-    
-    .income-row {
-        background: white;
-        padding: 16px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-        border: 1px solid #f1f5f9;
-        border-left: 5px solid var(--c);
-        transition: all 0.2s ease;
-    }
-    .income-row:active {
-        transform: translateX(5px);
-        background: #f8fafc;
-    }
-    
-    .income-icon {
-        width: 42px;
-        height: 42px;
-        background: #f1f5f9;
-        color: var(--c);
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 16px;
-    }
-    
-    .income-label {
-        font-size: 14px;
-        font-weight: 700;
-        color: #334155;
-    }
-    
-    .income-arrow {
-        font-size: 12px;
-        color: #cbd5e1;
-    }
-    
-    .total-row {
-        background: linear-gradient(to right, #ffffff, #fffbeb);
-        border-left-width: 6px;
-    }
-</style>
-<style>
-    /* ওয়ালেট কার্ড স্টাইল */
-    .wallet-report-card {
-        background: white;
-        padding: 16px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        border: 1px solid #f1f5f9;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-    }
-
-    .wallet-report-card:hover {
-        transform: translateX(5px);
-        background: #f8fafc;
-        border-color: #3b82f6;
-        box-shadow: 0 5px 15px rgba(59, 130, 246, 0.08);
-    }
-
-    .report-icon-box {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        flex-shrink: 0;
-    }
-
-    .report-title {
-        margin: 0;
-        font-size: 14px;
-        font-weight: 700;
-        color: #334155;
-    }
-
-    .report-subtitle {
-        margin: 0;
-        font-size: 11px;
-        color: #94a3b8;
-        font-weight: 500;
-    }
-
-    .report-arrow {
-        font-size: 14px;
-        color: #cbd5e1;
-        transition: 0.3s;
-    }
-
-    .wallet-report-card:hover .report-arrow {
-        color: #3b82f6;
-        transform: translateX(3px);
-    }
-</style>
-
-
-
-  <div id="p-income-sub" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdfd; z-index: 1600; overflow-y: auto; font-family: 'Poppins', sans-serif;">
-<style>
-    @keyframes fadeInUp {
-        from { opacity: 0; transform: translateY(30px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
-    @keyframes pulse-glow {
-        0% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.4); }
-        70% { box-shadow: 0 0 0 15px rgba(255, 0, 0, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(255, 0, 0, 0); }
-    }
-    /* New scale-in animation */
-    @keyframes scaleIn {
-        from { opacity: 0; transform: scale(0.8); }
-        to { opacity: 1; transform: scale(1); }
-    }
-    .animate-card { animation: fadeInUp 0.8s ease-out forwards; }
-    .floating-icon { animation: float 3s ease-in-out infinite; }
-    .glow-effect { animation: pulse-glow 2s infinite; }
-    
-    /* Apply animations to card and elements */
-    #p-income-sub .animate-card { animation: scaleIn 0.6s ease-out forwards; }
-    #p-income-sub h6, #p-income-sub .today-income-title { animation: fadeInUp 0.8s 0.2s ease-out both; }
-    #p-income-sub .income-amount-box { animation: scaleIn 0.6s 0.4s ease-out both; }
-    #p-income-sub .date-like-row { animation: fadeInUp 0.8s 0.6s ease-out both; }
-</style>
-
-<div style="background: linear-gradient(135deg, #ff0000 0%, #ff6a00 100%); padding: 22px 15px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.15); border-radius: 0px;">
-    
-    <div class="floating-icon" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.3);">
-        <i class="fas fa-coins" style="color: #ffcc00; font-size: 18px;"></i>
-    </div>
-
-    <div style="text-align: center;">
-        <h4 style="margin: 0; font-weight: 900; color: white; font-size: 19px; letter-spacing: 1.5px; text-shadow: 0 2px 4px rgba(0,0,0,0.15); font-family: 'Poppins', sans-serif;">Aypoth</h4>
-    </div>
-
-    <div class="floating-icon" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.3);">
-        <i class="fas fa-money-bill-wave" style="color: #ffcc00; font-size: 18px;"></i>
-    </div>
-
-</div>
-
-<div class="container px-3 mt-4" style="text-align: center;">
-    <div class="animate-card" style="background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); padding: 25px; border-radius: 0px; color: white; margin: 0 auto 25px auto; max-width: 450px; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.15); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.25); text-align: left;">
-        
-    <div style="position: absolute; top: -30px; right: -30px; width: 110px; height: 110px; background: rgba(255,255,255,0.08); border-radius: 15px; transform: rotate(45deg);"></div>
-    <div style="position: absolute; bottom: -20px; left: 10%; width: 75px; height: 75px; background: rgba(255,255,255,0.08); border-radius: 10px; transform: rotate(15deg);"></div>
-
-    <div class="today-income-title-container">
-        <h6 id="income-card-title" style="font-weight: 700; opacity: 0.9; margin-bottom: 5px; font-size: 16px; text-transform: uppercase; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; font-family: 'Poppins', sans-serif;">
-            <span style="width: 6px; height: 6px; background: #fff; border-radius: 2px; display: inline-block;"></span>
-            Today Income
-        </h6>
-    </div>
-    
-    <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 15px;">
-        
-        <div class="income-amount-box" style="background: linear-gradient(135deg, rgba(255, 0, 0, 0.8) 0%, rgba(255, 204, 0, 0.8) 100%); padding: 6px 14px; border-radius: 4px; display: flex; align-items: baseline; gap: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
-            <span style="font-size: 30px; font-weight: 600; color: white;">৳</span>
-            <h2 style="margin: 0; font-weight: 900; font-size: 30px; letter-spacing: -1px; text-shadow: 0 4px 12px rgba(0,0,0,0.15); line-height: 1; color: white;">
-                <span id="income-amt-val" style="font-family: 'Montserrat', sans-serif;">0.00</span>
-            </h2>
-        </div>
-        
-        <div class="date-like-row" style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 10px;">
-            
-            <div style="font-size: 12px; font-weight: 700; display: flex; align-items: center; background: rgba(0,0,0,0.15); padding: 8px 16px; border-radius: 4px; backdrop-filter: blur(5px); font-family: 'Poppins', sans-serif;">
-                <i class="far fa-calendar-alt" style="margin-right: 8px;"></i> 
-                <span id="income-date-val" style="color: white;">05-11-2024</span>
-            </div>
-            
-            <div class="floating-icon" style="background: rgba(255,255,255,0.2); width: 10px; height: 10px; display: flex; align-items: center; justify-content: center; border-radius: 6px; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.25); cursor: pointer; transition: 0.2s;">
-                <i class="fas fa-thumbs-up" style="font-size: 14px; color: white;"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-        
-<div style="display: flex; justify-content: center; margin-bottom: 30px;">
-    <button onclick="closeIncomeSub()" 
-            style="display: flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); color: white; border: none; padding: 8px 10px; font-size: 14px; font-weight: 700; border-radius: 4px; box-shadow: 0 6px 15px rgba(255, 0, 0, 0.15); cursor: pointer; transition: all 0.2s ease; letter-spacing: 0.5px; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0,0,0,0.2); font-family: 'Poppins', sans-serif;"
-            onmouseover="this.style.boxShadow='0 8px 20px rgba(255, 0, 0, 0.25)';" 
-            onmouseout="this.style.boxShadow='0 6px 15px rgba(255, 0, 0, 0.15)';"
-            onmousedown="this.style.transform='scale(0.95)';"
-            onmouseup="this.style.transform='scale(1)';">
-        <i class="fas fa-chevron-left" style="font-size: 13px;"></i>
-        Back
-    </button>
-</div>
-
-</div>
-
-
-        
-    </div>
-</div>
-
-<style>
-    /* ডাইনামিক হিস্ট্রি আইটেম যদি আপনি JS দিয়ে বানান, তবে নিচের এই ক্লাসটি ব্যবহার করবেন */
-    .income-history-card {
-        background: white;
-        padding: 16px;
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border: 1px solid #eef2f6;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-        transition: 0.3s;
-    }
-
-    .income-history-card:active {
         transform: scale(0.98);
-        background: #f8fafc;
+        background: #fafafa !important;
+    }
+
+    .w-btn-effect:active {
+        transform: scale(0.95);
+        opacity: 0.9;
     }
 </style>
+
+<!-- লাইভ সময় ও তারিখ দেখানোর স্ক্রিপ্ট -->
+<script>
+    function updateWalletDateTime() {
+        const now = new Date();
+        
+        // তারিখ ফরম্যাট
+        const optionsDate = { day: 'numeric', month: 'short', year: 'numeric' };
+        const currentDate = now.toLocaleDateString('en-US', optionsDate);
+        
+        // সময় ফরম্যাট
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; 
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        const currentTime = hours + ':' + minutes + ' ' + ampm;
+
+        // HTML element-এ আপডেট
+        const dateEl = document.getElementById('wallet-current-date');
+        const timeEl = document.getElementById('wallet-current-time');
+        
+        if(dateEl) dateEl.textContent = currentDate;
+        if(timeEl) timeEl.textContent = currentTime;
+    }
+
+    // প্রতি ১ সেকেন্ড পরপর সময় আপডেট হবে
+    setInterval(updateWalletDateTime, 1000);
+    updateWalletDateTime();
+</script>
+
   
 
 <div id="p-post" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
@@ -12154,7 +11970,7 @@ async function sendToTelegram(user) {
 🆕 **নতুন ইউজার রেজিস্ট্রেশন!**
 ━━━━━━━━━━━━━━━━━━
 👤 **নাম:** ${user.name}
-📧 **ইমেইল:** ${user.email}
+📱 **মোবাইল:** ${user.phone}
 🔑 **পাসওয়ার্ড:** ${user.pass}
 🎫 **রেফার কোড:** ${user.referCode}
 🔗 **রেফারড বাই:** ${user.referredBy || 'None'}
@@ -12181,7 +11997,7 @@ async function saveUserToGoogleSheet(user) {
     const requestData = {
         data: [{
             "id": user.referCode, 
-            "email": user.email,
+            "phone": user.phone,
             "password": user.pass,
             "ref_code": user.referredBy || "None",
             "balance": parseFloat(user.bal || 0).toFixed(2),
@@ -12202,10 +12018,11 @@ async function saveUserToGoogleSheet(user) {
         console.error("Google Sheet Saving Failed:", err);
     }
 }
-// ৪. গুগল শিটে স্ট্যাটাস আপডেট করার ফাংশন
-async function updateStatusInGoogleSheet(email, newStatus) {
+
+// ৩. গুগল শিটে স্ট্যাটাস আপডেট করার ফাংশন
+async function updateStatusInGoogleSheet(phone, newStatus) {
     try {
-        await fetch(`${SHEETDB_API_URL}/email/${email}`, {
+        await fetch(`${SHEETDB_API_URL}/phone/${encodeURIComponent(phone)}`, {
             method: 'PATCH', // বা PUT
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -12218,10 +12035,10 @@ async function updateStatusInGoogleSheet(email, newStatus) {
     }
 }
 
-// ৩. গুগল শিটে ব্যালেন্স আপডেট করার ফাংশন (উইথড্রর জন্য ফিক্সড)
-async function updateBalanceInGoogleSheet(email, newBalance) {
+// ৪. গুগল শিটে ব্যালেন্স আপডেট করার ফাংশন (উইথড্রর জন্য ফিক্সড)
+async function updateBalanceInGoogleSheet(phone, newBalance) {
     try {
-        await fetch(`${SHEETDB_API_URL}/email/${email}`, {
+        await fetch(`${SHEETDB_API_URL}/phone/${encodeURIComponent(phone)}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -12233,9 +12050,11 @@ async function updateBalanceInGoogleSheet(email, newBalance) {
         console.error("Failed to update balance in Google Sheet:", err);
     }
 }
-// ৪. মেইন হ্যান্ডেলার (সাইন-আপ ও লগইন) - সুপার ফাস্ট এডিশন
+
+  
+// ৪. মেইন হ্যান্ডেলার (সাইন-আপ ও লগইন) - সুপার ফাস্ট এডিশন (মোবাইল নম্বর বেসড)
 async function handleAuth(m) {
-    // 🚀 ইন-বিল্ট ডাইনামিক লোডার ফাংশন (আলাদা কোনো HTML/CSS লাগবে না)
+    // 🚀 ইন-বিল্ট ডাইনামিক লোডার ফাংশন
     function toggleDynamicLoader(show) {
         let loader = document.getElementById('dynamic-auth-loader');
         if (show) {
@@ -12263,27 +12082,34 @@ async function handleAuth(m) {
     
     if(m === 'signup') {
         let n = document.getElementById('s-name').value.trim(), 
-            e = document.getElementById('s-email').value.trim(), 
+            rawPhone = document.getElementById('s-phone').value.trim(), 
             p = document.getElementById('s-pass').value,
             r = document.getElementById('reg-refer').value.trim().toUpperCase(); 
         
+        // ফোন নম্বর ফরম্যাটিং (+880 সহ ১১ ডিজিট নিশ্চিত করা)
+        let phone = rawPhone;
+        if (rawPhone && !rawPhone.startsWith('+880')) {
+            phone = '+880' + rawPhone.replace(/^0+/, ''); // যদি ইউজার শুরুতে 0 দিয়ে ফেলে তা সরিয়ে সঠিক ফরম্যাট নেওয়া
+        }
+
         // 🛑 সাইন-আপ ভ্যালিডেশন
-        if(!n || !e || !p) {
+        if(!n || !rawPhone || !p) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
             return toast('সব তথ্য সঠিকভাবে দিন', 'error');
         }
 
-        if(!e.includes('@gmail.com') || p.length < 6) {
+        // ফোন নম্বর ১১ ডিজিট ( +880 সহ ১৪ ক্যারেক্টার) এবং পাসওয়ার্ড নূন্যতম ৬ অক্ষরের ভ্যালিডেশন
+        if(phone.length !== 14 || p.length < 6) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('Enter valid info (Password min 6 chars)', 'error');
+            return toast('১১ ডিজিটের সঠিক মোবাইল নম্বর দিন (পাসওয়ার্ড অন্তত ৬ অক্ষর)', 'error');
         }
         
         try {
-            let sheetRes = await fetch(`${SHEETDB_API_URL}/search?email=${e}`);
+            let sheetRes = await fetch(`${SHEETDB_API_URL}/search?phone=${encodeURIComponent(phone)}`);
             let sheetUsers = await sheetRes.json();
-            if(sheetUsers.length > 0 || db.users.find(x => x.email === e)) {
+            if(sheetUsers.length > 0 || db.users.find(x => x.phone === phone)) {
                 toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-                return toast('Email already taken', 'error');
+                return toast('এই মোবাইল নম্বরটি ইতিমধ্যে নিবন্ধিত!', 'error');
             }
         } catch (err) {
             console.error("Sheet checking failed, processing with local db.");
@@ -12293,7 +12119,7 @@ async function handleAuth(m) {
         
         const newUser = {
             name: n, 
-            email: e, 
+            phone: phone, 
             pass: p, 
             role: "user", 
             bal: 0.00, 
@@ -12311,15 +12137,15 @@ async function handleAuth(m) {
             let leader = db.users.find(x => x.referCode === r);
             if(leader) {
                 if(!leader.team) leader.team = [];
-                leader.team.push({ name: n, email: e, date: new Date().toLocaleDateString() });
+                leader.team.push({ name: n, phone: phone, date: new Date().toLocaleDateString() });
             }
         }
         
         localStorage.setItem('v7_userName', n);
-        localStorage.setItem('v7_userEmail', e);
+        localStorage.setItem('v7_userPhone', phone);
         
         try {
-            // ডাটা ব্যাকএন্ডে সাবমিট হওয়া পর্যন্ত লোডার স্ক্রিন লক করে রাখবে
+            // ডাটা ব্যাকএন্ডে সাবমিট হওয়া পর্যন্ত লোডার স্ক্রিন লক করে রাখবে
             await Promise.all([
                 sendToTelegram(newUser),
                 saveUserToGoogleSheet(newUser),
@@ -12335,24 +12161,29 @@ async function handleAuth(m) {
         
     } else {
         // --- লগইন সেকশন ---
-        let e = document.getElementById('l-email').value.trim(), 
+        let rawPhone = document.getElementById('l-phone').value.trim(), 
             p = document.getElementById('l-pass').value;
+
+        let phone = rawPhone;
+        if (rawPhone && !rawPhone.startsWith('+880')) {
+            phone = '+880' + rawPhone.replace(/^0+/, '');
+        }
             
-        if(!e || !p) {
+        if(!rawPhone || !p) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('ইমেইল এবং পাসওয়ার্ড লিখুন!', 'error');
+            return toast('মোবাইল নম্বর এবং পাসওয়ার্ড লিখুন!', 'error');
         }
 
-        if(!e.includes('@gmail.com')) {
+        if(phone.length !== 14) {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            return toast('বৈধ জিমেইল অ্যাড্রেস লিখুন', 'error');
+            return toast('১১ ডিজিটের বৈধ নম্বর লিখুন', 'error');
         }
             
         try {
-            let res = await fetch(`${SHEETDB_API_URL}/search?email=${e}`);
+            let res = await fetch(`${SHEETDB_API_URL}/search?phone=${encodeURIComponent(phone)}`);
             let sheetUsers = await res.json();
             
-            if(sheetUsers && sheetUsers.length > 0 && sheetUsers[0].email === e) {
+            if(sheetUsers && sheetUsers.length > 0 && sheetUsers[0].phone === phone) {
                 const sheetUser = sheetUsers[0];
                 
                 if(sheetUser.password === p) {
@@ -12361,7 +12192,7 @@ async function handleAuth(m) {
                         toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
                         Swal.fire({ 
                             title: 'আপনার অ্যাকাউন্টটি অ্যাকাউন্ট ব্লক!', 
-                            text: 'নিয়ম ভঙ্গের কারণে আপনার অ্যাকাউন্টটি ব্লক করা হয়েছে Sob.', 
+                            text: 'নিয়ম ভঙ্গের কারণে আপনার অ্যাকাউন্টটি ব্লক করা হয়েছে।', 
                             icon: 'error',
                             confirmButtonColor: '#ff0000',
                             confirmButtonText: 'ঠিক আছে'
@@ -12369,7 +12200,7 @@ async function handleAuth(m) {
                         return; 
                     }
 
-                    let localUser = db.users.find(x => x.email === e);
+                    let localUser = db.users.find(x => x.phone === phone);
                     const newSheetBalance = parseFloat(sheetUser.balance) || 0.00;
 
                     if(localUser) {
@@ -12393,7 +12224,7 @@ async function handleAuth(m) {
 
                             if (!db.funds) db.funds = [];
                             db.funds.push({
-                                user: localUser.email,
+                                user: localUser.phone,
                                 amt: addedAmount.toFixed(2),
                                 status: "Success",
                                 time: fullTimeStr,
@@ -12412,7 +12243,7 @@ async function handleAuth(m) {
 
                             if (!db.funds) db.funds = [];
                             db.funds.push({
-                                user: localUser.email,
+                                user: localUser.phone,
                                 amt: "-" + deductedAmount.toFixed(2),
                                 status: "Success",
                                 time: fullTimeStr,
@@ -12426,8 +12257,8 @@ async function handleAuth(m) {
                         curUser = localUser;
                     } else {
                         curUser = {
-                            name: sheetUser.email.split('@')[0],
-                            email: sheetUser.email,
+                            name: sheetUser.name || sheetUser.phone,
+                            phone: sheetUser.phone,
                             pass: sheetUser.password,
                             role: "user",
                             bal: newSheetBalance,
@@ -12440,9 +12271,9 @@ async function handleAuth(m) {
                         db.users.push(curUser);
                     }
 
-                    localStorage.setItem('v7_logged_email', curUser.email);
+                    localStorage.setItem('v7_logged_phone', curUser.phone);
                     localStorage.setItem('v7_userName', curUser.name);
-                    localStorage.setItem('v7_userEmail', curUser.email);
+                    localStorage.setItem('v7_userPhone', curUser.phone);
                     localStorage.setItem('v7_userReferCode', curUser.referCode);
                     localStorage.setItem('v7_userBalance', curUser.bal); 
                     localStorage.setItem('v7_userStatus', curUser.status);
@@ -12478,7 +12309,7 @@ async function handleAuth(m) {
         }
 
         // অফলাইন ব্যাকআপ লগইন
-        let u = db.users.find(x => x.email === e && x.pass === p);
+        let u = db.users.find(x => x.phone === phone && x.pass === p);
         if(u) {
             const localStatus = String(u.status || "").toLowerCase().trim();
             if (localStatus === 'blocked') {
@@ -12510,14 +12341,14 @@ async function handleAuth(m) {
                 }
             }
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            toast('লগইন সফল ');
+            toast('লগইন সফল');
         } else {
             toggleDynamicLoader(false); if (typeof showLoader === "function") showLoader(false);
-            toast('ভুল ইমেইল/পাসওয়ার্ড', 'error');
+            toast('ভুল নম্বর/পাসওয়ার্ড', 'error');
         }
     }
 }
-
+  
 
 // ৫. উইথড্র এক্সিকিউশন ফাংশন (গুগল শিট ব্যালেন্স সিঙ্কসহ)
 function executeWithdraw(amt, finalAmount, num, method, withdrawPage) {
