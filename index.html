@@ -4065,24 +4065,6 @@ function toggleSidebar() {
                 style="width: 100%; background: linear-gradient(135deg, #ff0000 0%, #ff6b00 100%); border: none; height: 54px; border-radius: 18px; font-weight: 800; font-size: 15px; color: white; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.25); text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; margin-bottom: 30px;">
             Save Changes
         </button>
-
-        <div class="upline-section" style="text-align: left; margin-bottom: 30px;">
-            <h6 style="color: #475569; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 0 8px 6px;">Upline Details</h6>
-            <div style="background: linear-gradient(135deg, #fefcf6 0%, #fef3c7 100%); padding: 18px; border-radius: 20px; border: 1.5px solid #fde68a; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px;">
-                    <span style="color: #64748b; font-weight: 600;"><i class="fas fa-user-tie me-2" style="color: #d97706; width: 16px;"></i> Leader Name:</span>
-                    <span id="upline-name" style="color: #1e293b; font-weight: 700; text-align: right;">Loading...</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; font-size: 13px;">
-                    <span style="color: #64748b; font-weight: 600;"><i class="fas fa-envelope me-2" style="color: #d97706; width: 16px;"></i> Leader Email:</span>
-                    <span id="upline-email" style="color: #1e293b; font-weight: 700; text-align: right; word-break: break-all; max-width: 180px;">Loading...</span>
-                </div>
-                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 13px; border-top: 1px dashed #fcd34d; padding-top: 8px; margin-top: 4px;">
-                    <span style="color: #64748b; font-weight: 600;"><i class="fas fa-qrcode me-2" style="color: #ff0000; width: 16px;"></i> Refer Code:</span>
-                    <span id="upline-code" style="color: #ff0000; font-weight: 900; letter-spacing: 0.5px; text-align: right;">Loading...</span>
-                </div>
-            </div>
-        </div>
         
         <div style="height: 1px; background: #e2e8f0; margin-bottom: 25px;"></div>
 
@@ -6496,9 +6478,6 @@ function togglePassword() {
 
 }
 
-
-/* Reduce motion */
-
 @media(prefers-reduced-motion:reduce){
 
     .service-card,
@@ -6513,9 +6492,6 @@ function togglePassword() {
 </style>
 
 
-
-
-      
 <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
 <!-- ================= PREMIUM RIGHT SIDEBAR ================= -->
@@ -6526,7 +6502,7 @@ function togglePassword() {
         <style>
 
         /* =========================================
-           PREMIUM SIDEBAR
+            PREMIUM SIDEBAR (MAROON / KHAYERI THEME)
         ========================================= */
 
         .drawer-content{
@@ -6537,24 +6513,24 @@ function togglePassword() {
             flex-direction:column;
             overflow:hidden;
 
-            color:#202020;
+            color:#4a0e17;
             font-family:'Poppins','Hind Siliguri',sans-serif;
 
             background:
                 radial-gradient(
                     circle at 100% 0%,
-                    rgba(255,190,0,.08),
+                    rgba(128,0,32,.08),
                     transparent 28%
                 ),
-                #f7f8fb;
+                #fcf8f8;
 
             box-shadow:
-                -18px 0 55px rgba(0,0,0,.16);
+                -18px 0 55px rgba(42,10,15,.15);
         }
 
 
         /* =========================================
-           HEADER
+            HEADER
         ========================================= */
 
         .drawer-header{
@@ -6572,21 +6548,21 @@ function togglePassword() {
                 ),
                 radial-gradient(
                     circle at 8% 100%,
-                    rgba(255,210,0,.18),
+                    rgba(217,119,6,.2),
                     transparent 30%
                 ),
                 linear-gradient(
                     145deg,
-                    #8f0000 0%,
-                    #d90000 38%,
-                    #ff5a00 72%,
-                    #ffb300 100%
+                    #2b0409 0%,
+                    #4a0e17 38%,
+                    #701a28 72%,
+                    #800020 100%
                 );
 
             border-radius:0 0 28px 28px;
 
             box-shadow:
-                0 14px 35px rgba(180,0,0,.25);
+                0 14px 35px rgba(74,14,23,.35);
         }
 
 
@@ -6605,7 +6581,7 @@ function togglePassword() {
             border-radius:50%;
 
             background:
-                rgba(255,255,255,.13);
+                rgba(255,255,255,.12);
 
             box-shadow:
                 0 0 50px rgba(255,255,255,.08);
@@ -6624,12 +6600,12 @@ function togglePassword() {
             border-radius:50%;
 
             background:
-                rgba(255,255,255,.09);
+                rgba(255,255,255,.08);
         }
 
 
         /* =========================================
-           PROFILE
+            PROFILE
         ========================================= */
 
         .profile-wrap{
@@ -6678,9 +6654,9 @@ function togglePassword() {
 
             border-radius:50%;
 
-            background:#22c55e;
+            background:#10b981;
 
-            border:3px solid #e33a13;
+            border:3px solid #701a28;
 
             box-shadow:
                 0 0 0 3px rgba(255,255,255,.12),
@@ -6740,7 +6716,7 @@ function togglePassword() {
 
 
         /* =========================================
-           REFERRAL CARD
+            REFERRAL CARD
         ========================================= */
 
         .ref-card-modern{
@@ -6824,19 +6800,19 @@ function togglePassword() {
 
 
         /* =========================================
-           MENU (SCROLL FIX & SMOOTH TOUCH)
+            MENU
         ========================================= */
 
         .scrollable-menu{
             flex:1;
 
             overflow-y:auto;
-            -webkit-overflow-scrolling: touch; /* iOS স্মুথ স্ক্রলিং এর জন্য */
+            -webkit-overflow-scrolling: touch;
 
             padding:16px 13px 14px;
 
             scrollbar-width:thin;
-            scrollbar-color:#d6d9df transparent;
+            scrollbar-color:#e2d3d5 transparent;
             touch-action: pan-y;
         }
 
@@ -6845,7 +6821,7 @@ function togglePassword() {
         }
 
         .scrollable-menu::-webkit-scrollbar-thumb{
-            background:#d5d9df;
+            background:#e2d3d5;
             border-radius:20px;
         }
 
@@ -6857,7 +6833,7 @@ function togglePassword() {
 
 
         /* =========================================
-           MENU BUTTON (ANIMATION FIX)
+            MENU BUTTON
         ========================================= */
 
         .custom-menu-btn{
@@ -6874,17 +6850,17 @@ function togglePassword() {
 
             box-sizing:border-box;
 
-            border:1px solid #eceef2 !important;
+            border:1px solid #f1e5e6 !important;
             border-radius:16px !important;
 
             background:
                 rgba(255,255,255,.96) !important;
 
             box-shadow:
-                0 4px 13px rgba(15,23,42,.035),
-                0 1px 2px rgba(15,23,42,.035) !important;
+                0 4px 13px rgba(74,14,23,.035),
+                0 1px 2px rgba(74,14,23,.035) !important;
 
-            color:#30343b;
+            color:#4a0e17;
 
             cursor:pointer;
 
@@ -6916,8 +6892,8 @@ function togglePassword() {
 
             background:
                 linear-gradient(
-                    #e60000,
-                    #ffb000
+                    #701a28,
+                    #800020
                 );
 
             opacity:0;
@@ -6926,16 +6902,16 @@ function togglePassword() {
         }
 
 
-        /* Hover and Active/Touch Feedback */
+        /* Hover and Active Feedback */
 
         .custom-menu-btn:hover,
         .custom-menu-btn:focus{
-            transform:translateX(4px); /* ডান দিকে হালকা সরবে */
+            transform:translateX(4px);
 
-            border-color:#e7e9ed !important;
+            border-color:#e2d3d5 !important;
 
             box-shadow:
-                0 9px 22px rgba(15,23,42,.075) !important;
+                0 9px 22px rgba(74,14,23,.075) !important;
         }
 
         .custom-menu-btn:hover:before,
@@ -6947,12 +6923,12 @@ function togglePassword() {
             transform:scale(0.96) translateX(2px);
 
             box-shadow:
-                0 3px 8px rgba(15,23,42,.06) !important;
+                0 3px 8px rgba(74,14,23,.06) !important;
         }
 
 
         /* =========================================
-           ICON
+            ICON
         ========================================= */
 
         .icon-box{
@@ -7004,7 +6980,7 @@ function togglePassword() {
 
 
         /* =========================================
-           TEXT
+            TEXT
         ========================================= */
 
         .menu-text{
@@ -7012,7 +6988,7 @@ function togglePassword() {
 
             text-align:left;
 
-            color:#343840;
+            color:#2b0409;
 
             font-family:
                 'Hind Siliguri',
@@ -7027,7 +7003,7 @@ function togglePassword() {
 
 
         /* =========================================
-           ARROW
+            ARROW
         ========================================= */
 
         .menu-arrow{
@@ -7041,9 +7017,9 @@ function togglePassword() {
 
             border-radius:9px;
 
-            background:#f7f8fa;
+            background:#f8f1f2;
 
-            color:#a4a8af;
+            color:#b8999c;
 
             font-size:8px;
 
@@ -7052,16 +7028,16 @@ function togglePassword() {
 
         .custom-menu-btn:hover .menu-arrow,
         .custom-menu-btn:active .menu-arrow{
-            color:#e60000;
+            color:#701a28;
 
-            background:#fff1ef;
+            background:#f3e8e9;
 
             transform:translateX(2px);
         }
 
 
         /* =========================================
-           FOOTER
+            FOOTER
         ========================================= */
 
         .drawer-footer{
@@ -7073,7 +7049,7 @@ function togglePassword() {
                 rgba(255,255,255,.96);
 
             border-top:
-                1px solid #eceef2;
+                1px solid #f1e5e6;
 
             box-shadow:
                 0 -7px 18px rgba(0,0,0,.035);
@@ -7098,17 +7074,17 @@ function togglePassword() {
 
             border-radius:15px !important;
 
-            border:1px solid #ffe0e3 !important;
+            border:1px solid #f9e2e5 !important;
 
             background:
                 linear-gradient(
                     135deg,
-                    #fff8f8,
-                    #fff0f2
+                    #fdf2f4,
+                    #f9e2e5
                 ) !important;
 
             box-shadow:
-                0 5px 14px rgba(225,29,72,.05) !important;
+                0 5px 14px rgba(128,0,32,.05) !important;
 
             cursor:pointer;
             outline:none;
@@ -7140,17 +7116,17 @@ function togglePassword() {
             background:
                 linear-gradient(
                     135deg,
-                    #ffe2e6,
-                    #ffd5da
+                    #f3c2c7,
+                    #ea99a1
                 );
 
-            color:#e11d48;
+            color:#800020;
 
             font-size:11px;
         }
 
         .logout-text{
-            color:#dc183f;
+            color:#800020;
 
             font-family:
                 'Hind Siliguri',
@@ -7163,7 +7139,7 @@ function togglePassword() {
 
 
         /* =========================================
-           MOBILE
+            MOBILE RESPONSIVE
         ========================================= */
 
         @media(max-width:360px){
@@ -7299,8 +7275,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #1e3c72,
-                            #2a5298
+                            #701a28,
+                            #4a0e17
                         );
                         color:#fff;"
                     >
@@ -7323,44 +7299,7 @@ function togglePassword() {
                 </button>
 
 
-
-                <!-- BALANCE -->
-
-                <button
-                    class="custom-menu-btn"
-                    onclick="openPage('p-fund'); toggleSidebar()"
-                >
-
-                    <span
-                        class="icon-box"
-                        style="
-                        background:linear-gradient(
-                            135deg,
-                            #11998e,
-                            #38ef7d
-                        );
-                        color:#fff;"
-                    >
-
-                        <i
-                            class="fas fa-plus-circle"
-                            style="font-size:11px;"
-                        ></i>
-
-                    </span>
-
-                    <span class="menu-text">
-                        ভাউচার বেলেন্স
-                    </span>
-
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
-
-                </button>
-
-
-
+                
                 <!-- WITHDRAW -->
 
                 <button
@@ -7373,8 +7312,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #ff4e50,
-                            #f9d423
+                            #800020,
+                            #991b1b
                         );
                         color:#fff;"
                     >
@@ -7410,8 +7349,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #654ea3,
-                            #eaafc8
+                            #581c87,
+                            #701a28
                         );
                         color:#fff;"
                     >
@@ -7447,8 +7386,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #617ca5,
-                            #2b384e
+                            #451a03,
+                            #78350f
                         );
                         color:#fff;"
                     >
@@ -7484,8 +7423,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #f857a6,
-                            #ff5858
+                            #831843,
+                            #be123c
                         );
                         color:#fff;"
                     >
@@ -7521,8 +7460,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #00c6ff,
-                            #0072ff
+                            #0f766e,
+                            #701a28
                         );
                         color:#fff;"
                     >
@@ -7558,8 +7497,8 @@ function togglePassword() {
                         style="
                         background:linear-gradient(
                             135deg,
-                            #f43f5e,
-                            #85144b
+                            #800020,
+                            #450a0a
                         );
                         color:#fff;"
                     >
@@ -7614,7 +7553,7 @@ function togglePassword() {
                 <span
                     style="
                     margin-left:auto;
-                    color:#fda4af;
+                    color:#ea99a1;
                     font-size:9px;"
                 >
 
@@ -7629,9 +7568,7 @@ function togglePassword() {
     </div>
 
 </div>
-
-
-
+      
       
 <div id="p-admin-profile" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
 
@@ -8395,6 +8332,2924 @@ function togglePassword() {
         </div>
     </div>
 </div>
+
+
+<!-- =========================================================
+     PREMIUM DEPOSIT SYSTEM
+     FontAwesome + SweetAlert2
+========================================================= -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+/* =========================================================
+   PREMIUM DEPOSIT GLOBAL STYLE
+========================================================= */
+.deposit-premium * {
+    box-sizing: border-box;
+}
+
+.deposit-premium {
+    font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.deposit-premium button,
+.deposit-premium input {
+    font-family: inherit;
+}
+
+.deposit-premium .method-card {
+    transition: all .25s ease;
+}
+
+.deposit-premium .method-card:active {
+    transform: scale(.97);
+}
+
+.deposit-premium .premium-btn {
+    transition: all .2s ease;
+}
+
+.deposit-premium .premium-btn:active {
+    transform: scale(.98);
+}
+
+.deposit-premium .copy-number-btn {
+    transition: all .2s ease;
+}
+
+.deposit-premium .copy-number-btn:active {
+    transform: scale(.94);
+}
+
+.deposit-premium .glass-btn {
+    transition: all .2s ease;
+}
+
+.deposit-premium .glass-btn:active {
+    transform: scale(.94);
+}
+
+/* Scrollbar */
+.deposit-premium::-webkit-scrollbar {
+    width: 4px;
+}
+
+.deposit-premium::-webkit-scrollbar-thumb {
+    background: rgba(139,0,0,.35);
+    border-radius: 10px;
+}
+
+/* Input focus */
+#p-fund-step1 #f-amt:focus {
+    outline: none;
+}
+
+#p-fund-step3 #f-trx:focus {
+    box-shadow: 0 0 0 3px rgba(255,255,255,.18);
+}
+
+/* Method selected */
+.method-card.selected {
+    border-color: #8B0000 !important;
+    box-shadow: 0 8px 25px rgba(139,0,0,.12);
+    transform: translateY(-2px);
+}
+
+/* History card */
+.deposit-history-item {
+    transition: all .2s ease;
+}
+
+.deposit-history-item:active {
+    transform: scale(.99);
+}
+
+/* Safe area for mobile */
+.deposit-bottom-bar {
+    padding-bottom: calc(15px + env(safe-area-inset-bottom));
+}
+</style>
+
+
+<!-- =========================================================
+     1. STEP 1 — AMOUNT & HISTORY
+========================================================= -->
+<div id="p-fund-step1"
+     class="p-page d-none deposit-premium"
+     style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#f6f8fb;
+        z-index:1000;
+        overflow-y:auto;
+     ">
+
+    <!-- Premium Header -->
+    <div style="
+        background:linear-gradient(135deg,#650000 0%,#8B0000 45%,#D35400 100%);
+        padding:15px 18px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        position:sticky;
+        top:0;
+        z-index:102;
+        box-shadow:0 5px 20px rgba(90,0,0,.25);
+    ">
+
+        <div style="display:flex;align-items:center;gap:11px;">
+
+            <div onclick="closeDepositSystem()"
+                 class="glass-btn"
+                 style="
+                    width:38px;
+                    height:38px;
+                    border-radius:13px;
+                    background:rgba(255,255,255,.13);
+                    border:1px solid rgba(255,255,255,.22);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    cursor:pointer;
+                    backdrop-filter:blur(10px);
+                 ">
+                <i class="fas fa-chevron-left"
+                   style="font-size:14px;color:#fff;"></i>
+            </div>
+
+            <div>
+                <div style="
+                    color:#fff;
+                    font-size:17px;
+                    font-weight:800;
+                    line-height:1.2;
+                ">
+                    Add Deposit
+                </div>
+
+                <div style="
+                    color:rgba(255,255,255,.72);
+                    font-size:9px;
+                    margin-top:3px;
+                    font-weight:500;
+                ">
+                    Secure & Fast Payment
+                </div>
+            </div>
+        </div>
+
+        <div style="
+            display:flex;
+            align-items:center;
+            gap:5px;
+            background:rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.2);
+            color:#fff;
+            padding:6px 10px;
+            border-radius:20px;
+            font-size:9px;
+            font-weight:800;
+            backdrop-filter:blur(8px);
+        ">
+            <i class="fas fa-shield-alt" style="color:#FFD700;"></i>
+            SECURED
+        </div>
+    </div>
+
+
+    <!-- Main Content -->
+    <div style="
+        max-width:480px;
+        width:100%;
+        margin:0 auto;
+        padding:15px 14px 45px;
+    ">
+
+        <!-- Balance Card -->
+        <div style="
+            background:
+            linear-gradient(135deg,#650000 0%,#8B0000 42%,#C84600 100%);
+            padding:16px 18px;
+            border-radius:20px;
+            color:#fff;
+            box-shadow:0 12px 30px rgba(139,0,0,.22);
+            position:relative;
+            overflow:hidden;
+            margin-bottom:17px;
+        ">
+
+            <div style="
+                position:absolute;
+                width:140px;
+                height:140px;
+                right:-60px;
+                top:-65px;
+                background:rgba(255,255,255,.08);
+                border-radius:50%;
+            "></div>
+
+            <div style="
+                position:absolute;
+                width:90px;
+                height:90px;
+                left:-40px;
+                bottom:-55px;
+                background:rgba(0,0,0,.08);
+                border-radius:50%;
+            "></div>
+
+            <div style="
+                position:relative;
+                z-index:2;
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin-bottom:10px;
+            ">
+
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:7px;
+                ">
+                    <span style="
+                        width:7px;
+                        height:7px;
+                        background:#FFD700;
+                        border-radius:50%;
+                        box-shadow:0 0 8px #FFD700;
+                    "></span>
+
+                    <span style="
+                        font-size:10px;
+                        font-weight:800;
+                        letter-spacing:.6px;
+                    ">
+                        CURRENT BALANCE
+                    </span>
+                </div>
+
+                <div style="
+                    background:rgba(255,255,255,.12);
+                    border:1px solid rgba(255,255,255,.18);
+                    border-radius:20px;
+                    padding:4px 8px;
+                    font-size:8px;
+                    font-weight:800;
+                ">
+                    <i class="fas fa-gem"
+                       style="color:#FFD700;margin-right:3px;"></i>
+                    FREE TIME EARN
+                </div>
+            </div>
+
+
+            <div style="
+                position:relative;
+                z-index:2;
+                margin-bottom:13px;
+            ">
+                <div style="
+                    display:flex;
+                    align-items:baseline;
+                    gap:4px;
+                ">
+                    <span style="
+                        color:#FFD700;
+                        font-size:22px;
+                        font-weight:900;
+                    ">
+                        ৳
+                    </span>
+
+                    <span id="u-bal"
+                          style="
+                            color:#fff;
+                            font-size:30px;
+                            line-height:1;
+                            font-weight:900;
+                            letter-spacing:-.7px;
+                          ">
+                        0.00
+                    </span>
+                </div>
+            </div>
+
+
+            <div style="
+                position:relative;
+                z-index:2;
+                border-top:1px solid rgba(255,255,255,.15);
+                padding-top:9px;
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                color:rgba(255,255,255,.9);
+                font-size:9px;
+                font-weight:600;
+            ">
+
+                <div style="display:flex;align-items:center;gap:5px;">
+                    <i class="far fa-calendar-alt"
+                       style="color:#FFD700;"></i>
+                    <span id="wallet-current-date">
+                        --/--/----
+                    </span>
+                </div>
+
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:5px;
+                    background:rgba(0,0,0,.15);
+                    padding:4px 8px;
+                    border-radius:8px;
+                ">
+                    <i class="far fa-clock"
+                       style="color:#FFD700;"></i>
+
+                    <span id="wallet-current-time">
+                        00:00 AM
+                    </span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Deposit Form -->
+        <div style="
+            background:#fff;
+            padding:19px;
+            border-radius:20px;
+            border:1px solid #edf0f5;
+            box-shadow:0 8px 30px rgba(15,23,42,.05);
+        ">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                gap:9px;
+                margin-bottom:13px;
+            ">
+                <div style="
+                    width:34px;
+                    height:34px;
+                    border-radius:11px;
+                    background:#fff1f2;
+                    color:#8B0000;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                ">
+                    <i class="fas fa-wallet"></i>
+                </div>
+
+                <div>
+                    <div style="
+                        color:#172033;
+                        font-size:14px;
+                        font-weight:800;
+                    ">
+                        Deposit Amount
+                    </div>
+
+                    <div style="
+                        color:#94a3b8;
+                        font-size:9px;
+                        margin-top:2px;
+                    ">
+                        Minimum deposit ৳100
+                    </div>
+                </div>
+            </div>
+
+
+            <div style="
+                display:flex;
+                align-items:center;
+                background:#f8fafc;
+                padding:4px 14px;
+                height:58px;
+                border-radius:15px;
+                border:1.5px solid #e8edf3;
+                margin-bottom:14px;
+            ">
+
+                <span style="
+                    font-size:20px;
+                    font-weight:900;
+                    color:#8B0000;
+                    margin-right:9px;
+                ">
+                    ৳
+                </span>
+
+                <input
+                    type="number"
+                    id="f-amt"
+                    min="100"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="100.00"
+                    style="
+                        border:none;
+                        background:transparent;
+                        width:100%;
+                        height:100%;
+                        outline:none;
+                        font-weight:800;
+                        font-size:21px;
+                        color:#8B0000;
+                    "
+                >
+            </div>
+
+
+            <button
+                onclick="goToStep2()"
+                class="premium-btn"
+                style="
+                    width:100%;
+                    height:53px;
+                    background:linear-gradient(135deg,#650000,#8B0000,#D35400);
+                    color:#fff;
+                    border:none;
+                    border-radius:15px;
+                    font-weight:800;
+                    font-size:14px;
+                    box-shadow:0 9px 22px rgba(139,0,0,.22);
+                    cursor:pointer;
+                ">
+                <i class="fas fa-arrow-right"
+                   style="margin-right:7px;"></i>
+                Continue Deposit
+            </button>
+
+        </div>
+
+
+        <!-- Deposit History -->
+        <div style="margin-top:23px;">
+
+            <div style="
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+                margin-bottom:11px;
+            ">
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:8px;
+                ">
+                    <i class="fas fa-history"
+                       style="color:#8B0000;font-size:13px;"></i>
+
+                    <span style="
+                        color:#172033;
+                        font-size:14px;
+                        font-weight:800;
+                    ">
+                        Deposit History
+                    </span>
+                </div>
+
+                <span style="
+                    color:#94a3b8;
+                    font-size:9px;
+                    font-weight:600;
+                ">
+                    Recent Activity
+                </span>
+            </div>
+
+            <div id="deposit-history-list"
+                 style="
+                    display:flex;
+                    flex-direction:column;
+                    gap:9px;
+                 ">
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     LIVE DATE / TIME
+========================================================= -->
+<script>
+function updateWalletDateTime() {
+    const now = new Date();
+
+    const optionsDate = {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric'
+    };
+
+    const currentDate =
+        now.toLocaleDateString('en-US', optionsDate);
+
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    const ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+
+    minutes = minutes < 10
+        ? '0' + minutes
+        : minutes;
+
+    const currentTime =
+        hours + ':' + minutes + ' ' + ampm;
+
+    const dateEl =
+        document.getElementById('wallet-current-date');
+
+    const timeEl =
+        document.getElementById('wallet-current-time');
+
+    if (dateEl) dateEl.textContent = currentDate;
+    if (timeEl) timeEl.textContent = currentTime;
+}
+
+updateWalletDateTime();
+setInterval(updateWalletDateTime, 1000);
+</script>
+
+
+<!-- =========================================================
+     2. STEP 2 — PAYMENT METHOD
+========================================================= -->
+<div id="p-fund-step2"
+     class="p-page d-none deposit-premium"
+     style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#f6f8fb;
+        z-index:1000;
+        overflow-y:auto;
+     ">
+
+    <!-- Header -->
+    <div style="
+        background:#fff;
+        padding:15px 18px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:1px solid #edf0f4;
+        position:sticky;
+        top:0;
+        z-index:20;
+    ">
+
+        <button
+            onclick="goBackToStep(1)"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#f8fafc;
+                color:#334155;
+                cursor:pointer;
+            ">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div style="text-align:center;">
+            <div style="
+                font-size:15px;
+                font-weight:800;
+                color:#172033;
+            ">
+                Payment Method
+            </div>
+
+            <div style="
+                font-size:9px;
+                color:#94a3b8;
+                margin-top:2px;
+            ">
+                Select your payment gateway
+            </div>
+        </div>
+
+        <button
+            onclick="startCancelTimer()"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#fff1f2;
+                color:#ef4444;
+                cursor:pointer;
+            ">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+
+    <div style="
+        max-width:500px;
+        width:100%;
+        margin:0 auto;
+        padding:15px 14px 105px;
+    ">
+
+        <!-- Brand Card -->
+        <div style="
+            background:linear-gradient(135deg,#650000,#8B0000,#D35400);
+            border-radius:22px;
+            padding:20px;
+            color:#fff;
+            text-align:center;
+            box-shadow:0 10px 28px rgba(139,0,0,.18);
+            margin-bottom:15px;
+            position:relative;
+            overflow:hidden;
+        ">
+
+            <div style="
+                position:absolute;
+                width:120px;
+                height:120px;
+                top:-70px;
+                right:-40px;
+                background:rgba(255,255,255,.08);
+                border-radius:50%;
+            "></div>
+
+            <div style="
+                width:67px;
+                height:67px;
+                background:#fff;
+                border-radius:19px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                margin:0 auto 10px;
+                padding:4px;
+                box-shadow:0 8px 20px rgba(0,0,0,.15);
+                position:relative;
+                z-index:2;
+            ">
+                <img
+                    src="https://raw.githubusercontent.com/a01868293471-collab/Zizz-tfd/refs/heads/main/1785080656387.jpg"
+                    alt="Logo"
+                    style="
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                        border-radius:15px;
+                    "
+                >
+            </div>
+
+            <div style="
+                font-size:18px;
+                font-weight:900;
+                position:relative;
+                z-index:2;
+            ">
+                Earn Flow
+            </div>
+
+            <div style="
+                font-size:9px;
+                color:rgba(255,255,255,.75);
+                margin-top:3px;
+                position:relative;
+                z-index:2;
+            ">
+                Secure payment gateway
+            </div>
+
+
+            <div style="
+                display:flex;
+                justify-content:center;
+                gap:8px;
+                margin-top:15px;
+                position:relative;
+                z-index:2;
+            ">
+
+                <a href="p-support-center"
+                   style="
+                    width:40px;
+                    height:40px;
+                    border-radius:12px;
+                    background:rgba(255,255,255,.12);
+                    border:1px solid rgba(255,255,255,.2);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#fff;
+                    text-decoration:none;
+                   ">
+                    <i class="fas fa-headset"></i>
+                </a>
+
+                <a href="https://t.me/Mohammed1199440"
+                   target="_blank"
+                   style="
+                    width:40px;
+                    height:40px;
+                    border-radius:12px;
+                    background:rgba(255,255,255,.12);
+                    border:1px solid rgba(255,255,255,.2);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    color:#fff;
+                    text-decoration:none;
+                   ">
+                    <i class="fab fa-telegram-plane"></i>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- Amount Summary -->
+        <div style="
+            background:#fff;
+            border:1px solid #edf0f4;
+            border-radius:16px;
+            padding:13px 15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:15px;
+        ">
+
+            <div>
+                <div style="
+                    font-size:9px;
+                    color:#94a3b8;
+                    font-weight:700;
+                ">
+                    DEPOSIT AMOUNT
+                </div>
+
+                <div style="
+                    font-size:20px;
+                    font-weight:900;
+                    color:#8B0000;
+                    margin-top:2px;
+                ">
+                    ৳<span id="display-amt-btn">0</span>
+                </div>
+            </div>
+
+            <div style="
+                width:42px;
+                height:42px;
+                border-radius:13px;
+                background:#fff7ed;
+                color:#d35400;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            ">
+                <i class="fas fa-money-bill-wave"></i>
+            </div>
+        </div>
+
+
+        <!-- Gateway Title -->
+        <div style="
+            font-size:13px;
+            font-weight:800;
+            color:#172033;
+            margin:4px 0 10px;
+        ">
+            Choose Mobile Banking
+        </div>
+
+
+        <!-- Methods -->
+        <div style="
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:11px;
+        ">
+
+            <div
+                onclick="selectMethodStep2('Bkash','01868293471')"
+                class="method-card"
+                id="card-Bkash"
+                style="
+                    background:#fff;
+                    border-radius:17px;
+                    padding:17px 10px;
+                    text-align:center;
+                    border:2px solid #edf0f4;
+                    cursor:pointer;
+                    min-height:90px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                ">
+
+                <img
+                    src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(1).png"
+                    alt="Bkash"
+                    style="
+                        max-width:100%;
+                        height:38px;
+                        object-fit:contain;
+                    "
+                >
+            </div>
+
+
+            <div
+                onclick="selectMethodStep2('Nagad','01346199480')"
+                class="method-card"
+                id="card-Nagad"
+                style="
+                    background:#fff;
+                    border-radius:17px;
+                    padding:17px 10px;
+                    text-align:center;
+                    border:2px solid #edf0f4;
+                    cursor:pointer;
+                    min-height:90px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                ">
+
+                <img
+                    src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(2).png"
+                    alt="Nagad"
+                    style="
+                        max-width:100%;
+                        height:38px;
+                        object-fit:contain;
+                    "
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Bottom Pay Button -->
+    <div class="deposit-bottom-bar"
+         style="
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:rgba(255,255,255,.96);
+            backdrop-filter:blur(12px);
+            padding:12px 14px;
+            box-shadow:0 -6px 20px rgba(15,23,42,.07);
+            z-index:30;
+         ">
+
+        <button
+            onclick="goToStep3()"
+            id="pay-btn-step2"
+            disabled
+            style="
+                width:100%;
+                height:53px;
+                background:#e2e8f0;
+                color:#94a3b8;
+                border:none;
+                border-radius:15px;
+                font-weight:800;
+                font-size:14px;
+                cursor:pointer;
+            ">
+            <i class="fas fa-lock"
+               style="margin-right:6px;"></i>
+            Select Payment Method
+        </button>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     3. STEP 3 — PAYMENT INSTRUCTION / TRX ID
+========================================================= -->
+<div id="p-fund-step3"
+     class="p-page d-none deposit-premium"
+     style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#f6f8fb;
+        z-index:1000;
+        overflow-y:auto;
+     ">
+
+    <!-- Header -->
+    <div style="
+        background:#fff;
+        padding:15px 18px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:1px solid #edf0f4;
+        position:sticky;
+        top:0;
+        z-index:20;
+    ">
+
+        <button
+            onclick="goBackToStep(2)"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#f8fafc;
+                color:#334155;
+                cursor:pointer;
+            ">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div style="text-align:center;">
+            <div style="
+                font-size:15px;
+                font-weight:800;
+                color:#172033;
+            ">
+                Payment Instructions
+            </div>
+
+            <div style="
+                font-size:9px;
+                color:#94a3b8;
+                margin-top:2px;
+            ">
+                Complete your payment
+            </div>
+        </div>
+
+        <button
+            onclick="startCancelTimer()"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#fff1f2;
+                color:#ef4444;
+                cursor:pointer;
+            ">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+
+    <div style="
+        max-width:500px;
+        width:100%;
+        margin:0 auto;
+        padding:15px 14px 100px;
+    ">
+
+        <!-- Payment Summary -->
+        <div style="
+            background:#fff;
+            border-radius:18px;
+            padding:13px 15px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            margin-bottom:12px;
+            border:1px solid #edf0f4;
+            box-shadow:0 5px 18px rgba(15,23,42,.04);
+        ">
+
+            <div style="
+                width:65px;
+                height:48px;
+                display:flex;
+                align-items:center;
+                justify-content:flex-start;
+            ">
+                <img
+                    id="step3-logo"
+                    src=""
+                    style="
+                        max-width:65px;
+                        max-height:42px;
+                        object-fit:contain;
+                    "
+                >
+            </div>
+
+            <div style="
+                font-size:24px;
+                font-weight:900;
+                color:#172033;
+            ">
+                ৳<span id="step3-amt">0</span>
+            </div>
+        </div>
+
+
+        <!-- Note -->
+        <div style="
+            background:#fffbeb;
+            border:1px solid #fde68a;
+            padding:11px 13px;
+            border-radius:13px;
+            font-size:11px;
+            color:#a16207;
+            margin-bottom:13px;
+            display:flex;
+            align-items:flex-start;
+            gap:8px;
+            line-height:1.6;
+        ">
+            <i class="fas fa-info-circle"
+               style="margin-top:2px;"></i>
+
+            <span>
+                <b>নোট:</b>
+                টাকা পাঠানোর ৫-১০ সেকেন্ড পর Transaction ID দিয়ে Verify করুন।
+            </span>
+        </div>
+
+
+        <!-- Instruction Card -->
+        <div
+            id="step3-card-bg"
+            style="
+                background:linear-gradient(135deg,#8B0000,#D31317);
+                border-radius:22px;
+                padding:19px;
+                color:#fff;
+                box-shadow:0 12px 30px rgba(139,0,0,.18);
+            ">
+
+            <div style="
+                text-align:center;
+                margin-bottom:15px;
+            ">
+                <div style="
+                    width:45px;
+                    height:45px;
+                    margin:0 auto 8px;
+                    background:rgba(255,255,255,.14);
+                    border:1px solid rgba(255,255,255,.2);
+                    border-radius:14px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                ">
+                    <i class="fas fa-paper-plane"
+                       style="font-size:17px;"></i>
+                </div>
+
+                <div style="
+                    font-weight:900;
+                    font-size:16px;
+                ">
+                    Transaction ID দিন
+                </div>
+
+                <div style="
+                    font-size:9px;
+                    color:rgba(255,255,255,.72);
+                    margin-top:3px;
+                ">
+                    Enter the transaction ID after payment
+                </div>
+            </div>
+
+
+            <!-- Trx Input -->
+            <input
+                type="text"
+                id="f-trx"
+                placeholder="Transaction ID লিখুন"
+                autocomplete="off"
+                autocapitalize="characters"
+                style="
+                    width:100%;
+                    height:52px;
+                    background:#fff;
+                    border:none;
+                    padding:0 14px;
+                    border-radius:13px;
+                    text-align:center;
+                    font-weight:800;
+                    color:#172033;
+                    outline:none;
+                    margin-bottom:18px;
+                    font-size:14px;
+                "
+            >
+
+
+            <div style="
+                font-size:11px;
+                font-weight:900;
+                letter-spacing:.8px;
+                border-bottom:1px solid rgba(255,255,255,.2);
+                padding-bottom:9px;
+                margin-bottom:11px;
+            ">
+                <i class="fas fa-list-check"
+                   style="margin-right:6px;"></i>
+                PAYMENT INSTRUCTIONS
+            </div>
+
+
+            <ul style="
+                padding-left:18px;
+                margin:0;
+                font-size:11px;
+                font-weight:600;
+                line-height:1.9;
+            ">
+
+                <li>
+                    <b id="step3-dial">*167#</b>
+                    ডায়াল করে
+                    <b id="step3-method-name">NAGAD</b>
+                    মেনুতে যান অথবা অ্যাপে যান।
+                </li>
+
+                <li>
+                    <b>"Send Money"</b>
+                    অপশনে ক্লিক করুন।
+                </li>
+
+                <li>
+                    প্রাপক নম্বর:
+                    <span
+                        id="step3-num"
+                        style="
+                            font-weight:900;
+                            font-size:13px;
+                            margin-left:3px;
+                        ">
+                        01234567890
+                    </span>
+
+                    
+                </li>
+
+                <li>
+                    পরিমাণ:
+                    <b id="step3-amt-ins">0</b>
+                    টাকা দিয়ে
+                    <b>SUBMIT</b>
+                    করুন।
+                </li>
+
+                <li>
+                    <b>Transaction ID</b>
+                    দিয়ে
+                    <b>VERIFY</b>
+                    করুন।
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- Verify Button -->
+    <div class="deposit-bottom-bar"
+         style="
+            position:fixed;
+            bottom:0;
+            left:0;
+            width:100%;
+            background:rgba(255,255,255,.96);
+            backdrop-filter:blur(12px);
+            padding:12px 14px;
+            box-shadow:0 -6px 20px rgba(15,23,42,.07);
+            z-index:30;
+         ">
+
+        <button
+            id="step3-verify-btn"
+            onclick="fundReq()"
+            style="
+                width:100%;
+                height:53px;
+                background:#8B0000;
+                color:#fff;
+                border:none;
+                border-radius:15px;
+                font-weight:900;
+                font-size:14px;
+                cursor:pointer;
+            ">
+            <i class="fas fa-shield-check"
+               style="margin-right:6px;"></i>
+            VERIFY TRANSACTION
+        </button>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     4. STEP 4 — SUCCESS RECEIPT
+========================================================= -->
+<div id="p-fund-step4"
+     class="p-page d-none deposit-premium"
+     style="
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#f6f8fb;
+        z-index:1000;
+        overflow-y:auto;
+     ">
+
+    <!-- Header -->
+    <div style="
+        background:#fff;
+        padding:15px 18px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        border-bottom:1px solid #edf0f4;
+        position:sticky;
+        top:0;
+        z-index:20;
+    ">
+
+        <button
+            onclick="goBackToStep(3)"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#f8fafc;
+                color:#334155;
+                cursor:pointer;
+            ">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div style="text-align:center;">
+            <div style="
+                font-size:15px;
+                font-weight:800;
+                color:#172033;
+            ">
+                Deposit Submitted
+            </div>
+
+            <div style="
+                font-size:9px;
+                color:#94a3b8;
+            ">
+                Payment receipt
+            </div>
+        </div>
+
+        <button
+            onclick="startCancelTimer()"
+            style="
+                width:38px;
+                height:38px;
+                border:none;
+                border-radius:12px;
+                background:#fff1f2;
+                color:#ef4444;
+                cursor:pointer;
+            ">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+
+    <div style="
+        max-width:450px;
+        width:100%;
+        margin:0 auto;
+        padding:25px 14px 40px;
+    ">
+
+        <div style="
+            background:#fff;
+            border-radius:24px;
+            padding:28px 19px;
+            text-align:center;
+            box-shadow:0 12px 35px rgba(15,23,42,.06);
+            border:1px solid #edf0f4;
+        ">
+
+            <!-- Success Icon -->
+            <div style="
+                width:78px;
+                height:78px;
+                background:linear-gradient(135deg,#16a34a,#22c55e);
+                border-radius:50%;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                margin:0 auto 17px;
+                color:#fff;
+                font-size:34px;
+                box-shadow:0 12px 25px rgba(34,197,94,.25);
+            ">
+                <i class="fas fa-check"></i>
+            </div>
+
+
+            <h3 style="
+                margin:0;
+                font-weight:900;
+                color:#172033;
+                font-size:21px;
+            ">
+                পেমেন্ট রিকোয়েস্ট সফল!
+            </h3>
+
+            <p style="
+                color:#64748b;
+                font-size:11px;
+                margin:7px 0 21px;
+                line-height:1.6;
+            ">
+                আপনার ডিপোজিট রিকোয়েস্ট সফলভাবে জমা হয়েছে।
+            </p>
+
+
+            <!-- Receipt -->
+            <div style="
+                background:#f8fafc;
+                border-radius:17px;
+                padding:17px;
+                text-align:left;
+                border:1px solid #edf0f4;
+                font-size:12px;
+            ">
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    margin-bottom:12px;
+                    border-bottom:1px dashed #cbd5e1;
+                    padding-bottom:10px;
+                ">
+                    <span style="color:#64748b;">
+                        পরিমাণ
+                    </span>
+
+                    <b style="
+                        color:#16a34a;
+                        font-size:18px;
+                    ">
+                        ৳<span id="s4-amt">0</span>
+                    </b>
+                </div>
+
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    margin-bottom:11px;
+                ">
+                    <span style="color:#64748b;">
+                        মেথড
+                    </span>
+
+                    <b style="color:#172033;"
+                       id="s4-method">
+                        -
+                    </b>
+                </div>
+
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    margin-bottom:11px;
+                    gap:10px;
+                ">
+                    <span style="color:#64748b;">
+                        TrxID
+                    </span>
+
+                    <b style="
+                        color:#172033;
+                        font-family:monospace;
+                        word-break:break-all;
+                        text-align:right;
+                    "
+                    id="s4-trx">
+                        -
+                    </b>
+                </div>
+
+
+                <div style="
+                    display:flex;
+                    justify-content:space-between;
+                    gap:10px;
+                ">
+                    <span style="color:#64748b;">
+                        সময় ও তারিখ
+                    </span>
+
+                    <b style="
+                        color:#172033;
+                        font-size:10px;
+                        text-align:right;
+                    "
+                    id="s4-time">
+                        -
+                    </b>
+                </div>
+
+            </div>
+
+
+            <button
+                onclick="closeDepositSystem()"
+                style="
+                    width:100%;
+                    height:53px;
+                    background:linear-gradient(135deg,#16a34a,#22c55e);
+                    color:#fff;
+                    border:none;
+                    border-radius:15px;
+                    font-weight:900;
+                    font-size:14px;
+                    margin-top:21px;
+                    cursor:pointer;
+                    box-shadow:0 9px 22px rgba(34,197,94,.2);
+                ">
+                <i class="fas fa-home"
+                   style="margin-right:7px;"></i>
+                হোমপেজে ফিরে যান
+            </button>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     CANCEL TIMER MODAL
+========================================================= -->
+<div id="cancel-timer-modal"
+     style="
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(8,12,20,.72);
+        z-index:2000;
+        justify-content:center;
+        align-items:center;
+        backdrop-filter:blur(7px);
+     ">
+
+    <div style="
+        background:#fff;
+        padding:28px 22px;
+        border-radius:25px;
+        text-align:center;
+        box-shadow:0 25px 55px rgba(0,0,0,.25);
+        width:82%;
+        max-width:300px;
+    ">
+
+        <div style="
+            position:relative;
+            width:105px;
+            height:105px;
+            margin:0 auto 17px;
+        ">
+
+            <svg
+                style="
+                    width:105px;
+                    height:105px;
+                    transform:rotate(-90deg);
+                "
+                viewBox="0 0 100 100">
+
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="42"
+                    stroke="#e2e8f0"
+                    stroke-width="8"
+                    fill="none"
+                />
+
+                <circle
+                    id="timer-progress"
+                    cx="50"
+                    cy="50"
+                    r="42"
+                    stroke="#ef4444"
+                    stroke-width="8"
+                    fill="none"
+                    stroke-dasharray="264"
+                    stroke-dashoffset="0"
+                    stroke-linecap="round"
+                    style="
+                        transition:stroke-dashoffset 1s linear;
+                    "
+                />
+
+            </svg>
+
+
+            <div
+                id="cancel-btn-inside"
+                onclick="abortCancelTimer()"
+                style="
+                    position:absolute;
+                    top:50%;
+                    left:50%;
+                    transform:translate(-50%,-50%);
+                    width:72px;
+                    height:72px;
+                    background:#ef4444;
+                    color:#fff;
+                    border-radius:50%;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    font-weight:900;
+                    font-size:13px;
+                    cursor:pointer;
+                    box-shadow:0 5px 15px rgba(239,68,68,.35);
+                ">
+                Cancel
+            </div>
+        </div>
+
+
+        <div style="
+            font-size:15px;
+            font-weight:900;
+            color:#172033;
+            margin-bottom:5px;
+        ">
+            Cancel Transaction?
+        </div>
+
+        <p style="
+            margin:0;
+            font-size:11px;
+            color:#64748b;
+            font-weight:600;
+            line-height:1.6;
+        ">
+            ট্রানজেকশন বাতিল হতে কয়েক সেকেন্ড সময় লাগবে।
+        </p>
+
+    </div>
+</div>
+
+
+<!-- =========================================================
+     DEPOSIT SYSTEM LOGIC
+========================================================= -->
+<script>
+
+let selectedMethod = "";
+let selectedNumber = "";
+let depositAmount = 0;
+let currentStep = 1;
+
+
+/* =========================================================
+   GLOBAL FALLBACK
+========================================================= */
+if (typeof db === 'undefined') {
+    window.db = {};
+}
+
+if (!db.funds) {
+    db.funds =
+        JSON.parse(localStorage.getItem('deposit_history')) || [];
+}
+
+if (typeof curUser === 'undefined') {
+    window.curUser = {
+        email: "user@gmail.com"
+    };
+}
+
+
+/* =========================================================
+   OPEN DEPOSIT PAGE
+========================================================= */
+function openDepositPage() {
+
+    document.querySelectorAll('.p-page').forEach(page => {
+        page.classList.add('d-none');
+        page.style.display = 'none';
+    });
+
+    setTimeout(() => {
+
+        const step1 =
+            document.getElementById('p-fund-step1');
+
+        if (step1) {
+            step1.classList.remove('d-none');
+            step1.style.display = 'block';
+        }
+
+        currentStep = 1;
+
+        pushStateForStep(1);
+
+        renderDepositHistory();
+
+        updateWalletDateTime();
+
+    }, 20);
+}
+
+
+/* =========================================================
+   STEP 1 → STEP 2
+========================================================= */
+function goToStep2() {
+
+    const input =
+        document.getElementById('f-amt');
+
+    const amtInput =
+        input ? input.value.trim() : "";
+
+    depositAmount =
+        parseFloat(amtInput);
+
+    if (
+        !amtInput ||
+        isNaN(depositAmount) ||
+        depositAmount < 100
+    ) {
+
+        Swal.fire({
+            icon:'warning',
+            title:'Minimum Deposit',
+            text:'মিনিমাম ১০০ টাকা ডিপোজিট করতে হবে',
+            toast:true,
+            position:'top',
+            showConfirmButton:false,
+            timer:2200
+        });
+
+        return;
+    }
+
+    if (!isFinite(depositAmount)) {
+        return;
+    }
+
+    depositAmount =
+        Math.round(depositAmount * 100) / 100;
+
+    const amountBtn =
+        document.getElementById('display-amt-btn');
+
+    if (amountBtn) {
+        amountBtn.innerText =
+            depositAmount.toFixed(2);
+    }
+
+    switchStep(1,2);
+}
+
+
+/* =========================================================
+   SELECT PAYMENT METHOD
+========================================================= */
+function selectMethodStep2(method, number) {
+
+    selectedMethod = method;
+    selectedNumber = number;
+
+    document
+        .querySelectorAll('.method-card')
+        .forEach(card => {
+            card.classList.remove('selected');
+            card.style.borderColor = '#edf0f4';
+        });
+
+    const selectedCard =
+        document.getElementById(
+            'card-' + method
+        );
+
+    if (selectedCard) {
+        selectedCard.classList.add('selected');
+        selectedCard.style.borderColor = '#8B0000';
+    }
+
+    const payBtn =
+        document.getElementById('pay-btn-step2');
+
+    if (payBtn) {
+
+        payBtn.disabled = false;
+
+        payBtn.style.background =
+            'linear-gradient(135deg,#650000,#8B0000,#D35400)';
+
+        payBtn.style.color = '#fff';
+
+        payBtn.innerHTML =
+            '<i class="fas fa-arrow-right" style="margin-right:6px;"></i>' +
+            'Pay ৳' +
+            Number(depositAmount).toFixed(2);
+    }
+}
+
+
+/* =========================================================
+   STEP 2 → STEP 3
+========================================================= */
+function goToStep3() {
+
+    if (!selectedMethod) {
+
+        Swal.fire({
+            icon:'warning',
+            title:'Select Payment Method',
+            text:'প্রথমে একটি পেমেন্ট মেথড নির্বাচন করুন।',
+            toast:true,
+            position:'top',
+            showConfirmButton:false,
+            timer:2000
+        });
+
+        return;
+    }
+
+    const isBkash =
+        selectedMethod === 'Bkash';
+
+    const themeColor =
+        isBkash
+            ? '#d12053'
+            : '#d31317';
+
+    const logoUrl =
+        isBkash
+            ? 'https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(1).png'
+            : 'https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(2).png';
+
+
+    const logo =
+        document.getElementById('step3-logo');
+
+    if (logo) {
+        logo.src = logoUrl;
+    }
+
+
+    const amount =
+        document.getElementById('step3-amt');
+
+    const amountIns =
+        document.getElementById('step3-amt-ins');
+
+    if (amount) {
+        amount.innerText =
+            Number(depositAmount).toFixed(2);
+    }
+
+    if (amountIns) {
+        amountIns.innerText =
+            Number(depositAmount).toFixed(2);
+    }
+
+
+    const cardBg =
+        document.getElementById('step3-card-bg');
+
+    const verifyBtn =
+        document.getElementById('step3-verify-btn');
+
+    if (cardBg) {
+        cardBg.style.background =
+            'linear-gradient(135deg,' +
+            themeColor +
+            ',' +
+            themeColor +
+            'cc)';
+    }
+
+    if (verifyBtn) {
+        verifyBtn.style.background =
+            themeColor;
+    }
+
+
+    const methodName =
+        document.getElementById('step3-method-name');
+
+    const dial =
+        document.getElementById('step3-dial');
+
+    const number =
+        document.getElementById('step3-num');
+
+    if (methodName) {
+        methodName.innerText =
+            selectedMethod.toUpperCase();
+    }
+
+    if (dial) {
+        dial.innerText =
+            isBkash ? '*247#' : '*167#';
+    }
+
+    if (number) {
+        number.innerText =
+            selectedNumber;
+    }
+
+
+    switchStep(2,3);
+}
+
+
+/* =========================================================
+   FIXED COPY NUMBER FUNCTION
+========================================================= */
+async function copyNumber() {
+
+    const numberElement =
+        document.getElementById('step3-num');
+
+    if (!numberElement) {
+        showCopyError();
+        return;
+    }
+
+    const number =
+        numberElement.textContent.trim();
+
+    if (!number) {
+        showCopyError();
+        return;
+    }
+
+
+    /* Modern Clipboard API */
+    try {
+
+        if (
+            navigator.clipboard &&
+            window.isSecureContext
+        ) {
+
+            await navigator.clipboard.writeText(number);
+
+            showCopySuccess(number);
+
+            return;
+        }
+
+    } catch (error) {
+        console.log(
+            'Clipboard API failed:',
+            error
+        );
+    }
+
+
+    /* Android / Older Browser Fallback */
+    try {
+
+        const tempInput =
+            document.createElement('input');
+
+        tempInput.value = number;
+
+        tempInput.setAttribute(
+            'readonly',
+            ''
+        );
+
+        tempInput.style.position = 'fixed';
+        tempInput.style.left = '-9999px';
+        tempInput.style.top = '0';
+        tempInput.style.opacity = '0';
+
+        document.body.appendChild(tempInput);
+
+        tempInput.focus();
+        tempInput.select();
+        tempInput.setSelectionRange(
+            0,
+            tempInput.value.length
+        );
+
+        const successful =
+            document.execCommand('copy');
+
+        document.body.removeChild(tempInput);
+
+        if (successful) {
+            showCopySuccess(number);
+        } else {
+            showCopyError();
+        }
+
+    } catch (error) {
+
+        console.error(
+            'Copy failed:',
+            error
+        );
+
+        showCopyError();
+    }
+}
+
+
+/* =========================================================
+   COPY SUCCESS
+========================================================= */
+function showCopySuccess(number) {
+
+    Swal.fire({
+        icon:'success',
+        title:'Copied!',
+        text:number + ' কপি হয়েছে',
+        toast:true,
+        position:'top',
+        showConfirmButton:false,
+        timer:1600,
+        timerProgressBar:true
+    });
+}
+
+
+/* =========================================================
+   COPY ERROR
+========================================================= */
+function showCopyError() {
+
+    Swal.fire({
+        icon:'error',
+        title:'Copy Failed',
+        text:'নম্বরটি কপি করা যায়নি। আবার চেষ্টা করুন।',
+        toast:true,
+        position:'top',
+        showConfirmButton:false,
+        timer:2200
+    });
+}
+
+
+/* =========================================================
+   STEP 3 — FUND REQUEST
+========================================================= */
+function fundReq() {
+
+    const trxInput =
+        document.getElementById('f-trx');
+
+    const trx =
+        trxInput
+            ? trxInput.value.trim()
+            : "";
+
+    const now =
+        new Date().toLocaleString(
+            'bn-BD',
+            { hour12:true }
+        );
+
+    const verifyBtn =
+        document.getElementById(
+            'step3-verify-btn'
+        );
+
+
+    if (!trx) {
+
+        Swal.fire({
+            icon:'error',
+            title:'Transaction ID Required',
+            text:'ট্রান্সজেকশন আইডি প্রদান করুন',
+            toast:true,
+            position:'top',
+            showConfirmButton:false,
+            timer:2200
+        });
+
+        if (trxInput) {
+            trxInput.focus();
+        }
+
+        return;
+    }
+
+
+    if (!selectedMethod || !selectedNumber) {
+
+        Swal.fire({
+            icon:'warning',
+            text:'পেমেন্ট মেথড সঠিকভাবে নির্বাচন করুন।',
+            toast:true,
+            position:'top',
+            showConfirmButton:false,
+            timer:2000
+        });
+
+        return;
+    }
+
+
+    if (verifyBtn) {
+
+        verifyBtn.disabled = true;
+
+        verifyBtn.innerHTML =
+            '<i class="fas fa-spinner fa-spin" style="margin-right:7px;"></i>' +
+            'Verifying...';
+
+        verifyBtn.style.opacity = '.8';
+    }
+
+
+    setTimeout(() => {
+
+        const record = {
+
+            id: Date.now(),
+
+            user:
+                curUser &&
+                curUser.email
+                    ? curUser.email
+                    : 'user@gmail.com',
+
+            amt:
+                depositAmount,
+
+            method:
+                selectedMethod,
+
+            trx:
+                trx,
+
+            status:
+                'Success',
+
+            time:
+                now
+        };
+
+
+        saveTransactionRecord(record);
+
+
+        /* =====================================================
+           TELEGRAM NOTIFICATION
+           IMPORTANT:
+           Production-এ bot token frontend-এ রাখা নিরাপদ নয়।
+        ===================================================== */
+
+        const tgToken =
+            "7963516868:AAEX5wGUkgYDaTfA0ffL_B3COQaZKNRDlvo";
+
+        const tgChatId =
+            "6882504862 ";
+
+        const userEmail =
+            curUser &&
+            curUser.email
+                ? curUser.email
+                : 'user@gmail.com';
+
+
+        const telegramMessage =
+`
+🔔 *নতুন ডিপোজিট রিকোয়েস্ট এসেছে!*
+━━━━━━━━━━━━━━━━━━
+👤 *ইউজার:* ${userEmail}
+💰 *পরিমাণ:* ${depositAmount} ৳
+💳 *মেথড:* ${selectedMethod}
+🆔 *TrxID:* \`${trx}\`
+🕒 *সময়:* ${now}
+━━━━━━━━━━━━━━━━━━
+`;
+
+
+        fetch(
+            'https://api.telegram.org/bot' +
+            tgToken +
+            '/sendMessage',
+            {
+                method:'POST',
+
+                headers:{
+                    'Content-Type':
+                        'application/json'
+                },
+
+                body:JSON.stringify({
+                    chat_id:tgChatId,
+                    text:telegramMessage,
+                    parse_mode:'Markdown'
+                })
+            }
+        )
+        .catch(error => {
+            console.error(
+                'Telegram notification failed:',
+                error
+            );
+        });
+
+
+        /* Restore button */
+        if (verifyBtn) {
+
+            verifyBtn.disabled = false;
+
+            verifyBtn.style.opacity = '1';
+
+            verifyBtn.innerHTML =
+                '<i class="fas fa-shield-check" style="margin-right:6px;"></i>' +
+                'VERIFY TRANSACTION';
+        }
+
+
+        /* Receipt */
+        const s4Amt =
+            document.getElementById('s4-amt');
+
+        const s4Method =
+            document.getElementById('s4-method');
+
+        const s4Trx =
+            document.getElementById('s4-trx');
+
+        const s4Time =
+            document.getElementById('s4-time');
+
+
+        if (s4Amt) {
+            s4Amt.innerText =
+                Number(depositAmount).toFixed(2);
+        }
+
+        if (s4Method) {
+            s4Method.innerText =
+                selectedMethod;
+        }
+
+        if (s4Trx) {
+            s4Trx.innerText =
+                trx;
+        }
+
+        if (s4Time) {
+            s4Time.innerText =
+                now;
+        }
+
+
+        switchStep(3,4);
+
+
+        if (typeof renderUser === 'function') {
+            renderUser();
+        }
+
+
+    },2000);
+}
+
+
+/* =========================================================
+   STEP SWITCH
+========================================================= */
+function switchStep(fromStep,toStep) {
+
+    const currentEl =
+        document.getElementById(
+            'p-fund-step' + fromStep
+        );
+
+    const nextEl =
+        document.getElementById(
+            'p-fund-step' + toStep
+        );
+
+
+    if (currentEl) {
+
+        currentEl.classList.add('d-none');
+
+        currentEl.style.display =
+            'none';
+    }
+
+
+    if (nextEl) {
+
+        nextEl.classList.remove('d-none');
+
+        nextEl.style.display =
+            'block';
+
+        nextEl.scrollTop = 0;
+    }
+
+
+    currentStep =
+        toStep;
+
+    pushStateForStep(toStep);
+}
+
+
+/* =========================================================
+   BACK TO STEP
+========================================================= */
+function goBackToStep(targetStep) {
+
+    if (
+        !targetStep ||
+        targetStep < 1 ||
+        targetStep > 4
+    ) {
+        return;
+    }
+
+
+    const currentEl =
+        document.getElementById(
+            'p-fund-step' + currentStep
+        );
+
+    const targetEl =
+        document.getElementById(
+            'p-fund-step' + targetStep
+        );
+
+
+    if (currentEl) {
+
+        currentEl.classList.add('d-none');
+
+        currentEl.style.display =
+            'none';
+    }
+
+
+    if (targetEl) {
+
+        targetEl.classList.remove('d-none');
+
+        targetEl.style.display =
+            'block';
+
+        targetEl.scrollTop = 0;
+    }
+
+
+    currentStep =
+        targetStep;
+
+
+    if (targetStep === 1) {
+        renderDepositHistory();
+    }
+}
+
+
+/* =========================================================
+   CLOSE DEPOSIT
+========================================================= */
+function closeDepositSystem() {
+
+    for (
+        let i = 1;
+        i <= 4;
+        i++
+    ) {
+
+        const el =
+            document.getElementById(
+                'p-fund-step' + i
+            );
+
+        if (el) {
+
+            el.classList.add('d-none');
+
+            el.style.display =
+                'none';
+        }
+    }
+
+
+    currentStep = 0;
+
+
+    if (typeof openPage === 'function') {
+        openPage('p-home');
+    }
+}
+
+
+/* =========================================================
+   HISTORY STATE
+========================================================= */
+function pushStateForStep(step) {
+
+    try {
+
+        history.pushState(
+            {
+                depositStep:step
+            },
+            '',
+            '#deposit-step' + step
+        );
+
+    } catch(error) {
+
+        console.log(
+            'History state error:',
+            error
+        );
+    }
+}
+
+
+/* =========================================================
+   PHONE BACK BUTTON
+========================================================= */
+window.addEventListener(
+    'popstate',
+    function(event) {
+
+        if (currentStep > 1) {
+
+            goBackToStep(
+                currentStep - 1
+            );
+
+        } else if (currentStep === 1) {
+
+            closeDepositSystem();
+        }
+    }
+);
+
+
+/* =========================================================
+   SAVE TRANSACTION
+========================================================= */
+function saveTransactionRecord(record) {
+
+    if (!Array.isArray(db.funds)) {
+        db.funds = [];
+    }
+
+
+    db.funds.unshift(record);
+
+
+    localStorage.setItem(
+        'deposit_history',
+        JSON.stringify(db.funds)
+    );
+
+
+    if (typeof save === 'function') {
+
+        try {
+            save();
+        } catch(error) {
+
+            console.log(
+                'Database save error:',
+                error
+            );
+        }
+    }
+
+
+    renderDepositHistory();
+}
+
+
+/* =========================================================
+   RENDER HISTORY
+========================================================= */
+function renderDepositHistory() {
+
+    const listContainer =
+        document.getElementById(
+            'deposit-history-list'
+        );
+
+    if (!listContainer) {
+        return;
+    }
+
+
+    let history = [];
+
+
+    try {
+
+        history =
+            JSON.parse(
+                localStorage.getItem(
+                    'deposit_history'
+                )
+            ) || [];
+
+    } catch(error) {
+
+        history = [];
+    }
+
+
+    if (
+        !history.length &&
+        Array.isArray(db.funds)
+    ) {
+        history = db.funds;
+    }
+
+
+    if (!history.length) {
+
+        listContainer.innerHTML = `
+            <div style="
+                text-align:center;
+                color:#94a3b8;
+                font-size:11px;
+                padding:25px 15px;
+                background:#fff;
+                border-radius:16px;
+                border:1px solid #edf0f4;
+            ">
+                <div style="
+                    width:42px;
+                    height:42px;
+                    border-radius:13px;
+                    background:#f8fafc;
+                    margin:0 auto 9px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                ">
+                    <i class="fas fa-receipt"
+                       style="color:#cbd5e1;"></i>
+                </div>
+
+                কোন ডিপোজিট হিস্টোরি পাওয়া যায়নি
+            </div>
+        `;
+
+        return;
+    }
+
+
+    let html = '';
+
+
+    history.forEach(item => {
+
+        const isSuccess =
+            String(item.status).toLowerCase() ===
+            'success';
+
+        const isPending =
+            String(item.status).toLowerCase() ===
+            'pending';
+
+
+        let statusColor =
+            '#ef4444';
+
+        let statusBg =
+            '#fef2f2';
+
+        let statusIcon =
+            'fa-times-circle';
+
+
+        if (isSuccess) {
+
+            statusColor =
+                '#16a34a';
+
+            statusBg =
+                '#f0fdf4';
+
+            statusIcon =
+                'fa-check-circle';
+
+        } else if (isPending) {
+
+            statusColor =
+                '#d97706';
+
+            statusBg =
+                '#fffbeb';
+
+            statusIcon =
+                'fa-clock';
+        }
+
+
+        const method =
+            item.method ||
+            'Deposit';
+
+        const trx =
+            item.trx ||
+            'N/A';
+
+        const amount =
+            Number(item.amt || 0)
+                .toFixed(2);
+
+        const time =
+            item.time ||
+            '';
+
+
+        html += `
+
+            <div
+                class="deposit-history-item"
+                style="
+                    background:#fff;
+                    border-radius:17px;
+                    padding:13px;
+                    border:1px solid #edf0f4;
+                    display:flex;
+                    justify-content:space-between;
+                    align-items:center;
+                    gap:10px;
+                    box-shadow:0 3px 12px rgba(15,23,42,.035);
+                ">
+
+                <div style="
+                    display:flex;
+                    align-items:center;
+                    gap:10px;
+                    min-width:0;
+                ">
+
+                    <div style="
+                        width:39px;
+                        height:39px;
+                        flex:0 0 39px;
+                        border-radius:12px;
+                        background:#fff7ed;
+                        color:#b45309;
+                        display:flex;
+                        align-items:center;
+                        justify-content:center;
+                    ">
+                        <i class="fas fa-wallet"
+                           style="font-size:13px;"></i>
+                    </div>
+
+
+                    <div style="min-width:0;">
+
+                        <div style="
+                            font-weight:800;
+                            color:#172033;
+                            font-size:12px;
+                        ">
+                            ${escapeHTML(method)}
+                        </div>
+
+                        <div style="
+                            font-size:9px;
+                            color:#94a3b8;
+                            margin-top:3px;
+                            white-space:nowrap;
+                            overflow:hidden;
+                            text-overflow:ellipsis;
+                            max-width:170px;
+                        ">
+                            TrxID:
+                            <span style="
+                                font-family:monospace;
+                            ">
+                                ${escapeHTML(trx)}
+                            </span>
+                        </div>
+
+                        <div style="
+                            font-size:8px;
+                            color:#cbd5e1;
+                            margin-top:3px;
+                        ">
+                            ${escapeHTML(time)}
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div style="
+                    text-align:right;
+                    flex:0 0 auto;
+                ">
+
+                    <div style="
+                        font-weight:900;
+                        font-size:14px;
+                        color:#172033;
+                    ">
+                        ৳${amount}
+                    </div>
+
+                    <span style="
+                        background:${statusBg};
+                        color:${statusColor};
+                        font-size:8px;
+                        font-weight:900;
+                        padding:4px 8px;
+                        border-radius:8px;
+                        display:inline-flex;
+                        align-items:center;
+                        gap:4px;
+                        margin-top:4px;
+                    ">
+                        <i class="fas ${statusIcon}"></i>
+                        ${escapeHTML(item.status || 'Unknown')}
+                    </span>
+
+                </div>
+
+            </div>
+        `;
+    });
+
+
+    listContainer.innerHTML =
+        html;
+}
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+function escapeHTML(value) {
+
+    return String(value ?? '')
+        .replace(/&/g,'&amp;')
+        .replace(/</g,'&lt;')
+        .replace(/>/g,'&gt;')
+        .replace(/"/g,'&quot;')
+        .replace(/'/g,'&#039;');
+}
+
+
+/* =========================================================
+   CANCEL TIMER
+========================================================= */
+let cancelTimerInterval = null;
+let cancelTimeLeft = 5;
+
+
+function startCancelTimer() {
+
+    if (cancelTimerInterval) {
+
+        clearInterval(
+            cancelTimerInterval
+        );
+
+        cancelTimerInterval =
+            null;
+    }
+
+
+    cancelTimeLeft = 5;
+
+
+    const modal =
+        document.getElementById(
+            'cancel-timer-modal'
+        );
+
+    const circle =
+        document.getElementById(
+            'timer-progress'
+        );
+
+
+    if (modal) {
+        modal.style.display =
+            'flex';
+    }
+
+
+    if (circle) {
+
+        circle.style.strokeDashoffset =
+            '0';
+    }
+
+
+    const totalDash =
+        264;
+
+
+    cancelTimerInterval =
+        setInterval(() => {
+
+            cancelTimeLeft--;
+
+
+            const offset =
+                totalDash -
+                (
+                    cancelTimeLeft / 5
+                ) *
+                totalDash;
+
+
+            if (circle) {
+
+                circle.style.strokeDashoffset =
+                    offset;
+            }
+
+
+            if (cancelTimeLeft <= 0) {
+
+                clearInterval(
+                    cancelTimerInterval
+                );
+
+                cancelTimerInterval =
+                    null;
+
+
+                if (modal) {
+
+                    modal.style.display =
+                        'none';
+                }
+
+
+                const now =
+                    new Date().toLocaleString(
+                        'bn-BD',
+                        { hour12:true }
+                    );
+
+
+                const record = {
+
+                    id:
+                        Date.now(),
+
+                    user:
+                        curUser &&
+                        curUser.email
+                            ? curUser.email
+                            : 'user@gmail.com',
+
+                    amt:
+                        depositAmount || 0,
+
+                    method:
+                        selectedMethod ||
+                        'N/A',
+
+                    trx:
+                        'Cancelled',
+
+                    status:
+                        'Failed',
+
+                    time:
+                        now
+                };
+
+
+                saveTransactionRecord(
+                    record
+                );
+
+
+                closeDepositSystem();
+            }
+
+        },1000);
+}
+
+
+/* =========================================================
+   ABORT CANCEL TIMER
+========================================================= */
+function abortCancelTimer() {
+
+    if (cancelTimerInterval) {
+
+        clearInterval(
+            cancelTimerInterval
+        );
+
+        cancelTimerInterval =
+            null;
+    }
+
+
+    const modal =
+        document.getElementById(
+            'cancel-timer-modal'
+        );
+
+    if (modal) {
+
+        modal.style.display =
+            'none';
+    }
+}
+
+
+/* =========================================================
+   ENTER KEY SUPPORT
+========================================================= */
+document.addEventListener(
+    'keydown',
+    function(event) {
+
+        if (
+            event.key === 'Enter' &&
+            currentStep === 1
+        ) {
+
+            const active =
+                document.activeElement;
+
+            if (
+                active &&
+                active.id === 'f-amt'
+            ) {
+
+                goToStep2();
+            }
+        }
+    }
+);
+
+</script>
+
+
+
+
+
+
+      
 
 
 <!-- Pay Bill Page -->
@@ -9222,7 +12077,7 @@ function closeSuccessPopup() {
                     <i class="fas fa-info-circle" style="color: #ff0000;"></i> Introduction
                 </h6>
                 <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin-top: 10px; text-align: justify;">
-                    Aypoth prioritizes the privacy and security of our users. This Privacy Policy explains how we manage, protect, and use the information you provide or that is generated through your use of our application.
+                    Free Time Earn prioritizes the privacy and security of our users. This Privacy Policy explains how we manage, protect, and use the information you provide or that is generated through your use of our application.
                 </p>
             </section>
 
@@ -9265,157 +12120,6 @@ function closeSuccessPopup() {
 </div>
 
 
-
-
-
-      <div id="p-wallet" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column;">
-    
-    <!-- স্টিকি প্রিমিয়াম হেডার -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff6a00 100%); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.25);">
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <div onclick="closePage('p-wallet')" class="w-btn-effect" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.25);">
-                <i class="fas fa-arrow-left" style="font-size: 16px; color: white;"></i>
-            </div>
-            <div>
-                <h4 style="margin: 0; font-weight: 800; color: white; font-size: 18px; letter-spacing: 0.3px;">My Wallet</h4>
-                <span style="font-size: 10px; color: rgba(255,255,255,0.85); font-weight: 500;">Account Overview</span>
-            </div>
-        </div>
-        
-        <div style="background: rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 20px; color: white; font-size: 10px; font-weight: 700; border: 1px solid rgba(255, 255, 255, 0.3); backdrop-filter: blur(5px); display: flex; align-items: center; gap: 5px;">
-            <i class="fas fa-shield-alt" style="color: #ffe600;"></i> SECURED
-        </div>
-    </div>
-
-    <!-- প্রধান কন্টেন্ট -->
-    <div class="container px-3 mt-3" style="flex: 1; max-width: 480px; margin: 0 auto; width: 100%;">
-        
-        <!-- প্রফেশনাল ডিজিটাল ব্যালেন্স কার্ড (আগের কালার থিম) -->
-        <div class="main-balance-card" style="background: linear-gradient(135deg, #ff0000 0%, #ff5200 50%, #ff8c00 100%); padding: 24px 20px; border-radius: 24px; color: white; box-shadow: 0 15px 35px rgba(255, 0, 0, 0.25); position: relative; overflow: hidden; border: 1px solid rgba(255, 255, 255, 0.25); margin-bottom: 20px;">
-            
-            <!-- ব্যাকগ্রাউন্ড ডিজাইন শেপ -->
-            <div style="position: absolute; top: -30px; right: -20px; width: 130px; height: 130px; background: rgba(255,255,255,0.12); border-radius: 50%;"></div>
-            <div style="position: absolute; bottom: -40px; left: -20px; width: 110px; height: 110px; background: rgba(0,0,0,0.08); border-radius: 50%;"></div>
-            
-            <!-- কার্ড হেডার: টাইটেল ও অ্যাপ নেম -->
-            <div style="position: relative; z-index: 2; display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <span style="width: 8px; height: 8px; background: #ffe600; border-radius: 50%; display: inline-block; box-shadow: 0 0 8px #ffe600;"></span>
-                    <p style="margin: 0; font-size: 11px; font-weight: 700; color: rgba(255,255,255,0.95); text-transform: uppercase; letter-spacing: 1px;">বর্তমান ব্যালেন্স</p>
-                </div>
-
-                <div style="background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(6px); display: flex; align-items: center; gap: 5px;">
-                    <i class="fas fa-gem" style="color: #ffe600; font-size: 10px;"></i>
-                    <span style="font-size: 10px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">Free Time Earn</span>
-                </div>
-            </div>
-
-            <!-- ব্যালেন্স ডিসপ্লে -->
-            <div style="position: relative; z-index: 2; margin-bottom: 18px;">
-                <h1 style="font-weight: 900; margin: 0; font-size: 40px; color: #ffffff; line-height: 1; font-family: 'Montserrat', sans-serif; letter-spacing: -1px; text-shadow: 0 4px 12px rgba(0,0,0,0.15);">
-                    <span style="font-weight: 700; color: #ffe600; margin-right: 4px; font-size: 32px;">৳</span><span id="u-bal">0.00</span>
-                </h1>
-            </div>
-
-            <!-- লাইভ তারিখ ও সময় -->
-            <div style="position: relative; z-index: 2; border-top: 1px solid rgba(255, 255, 255, 0.25); padding-top: 12px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: rgba(255,255,255,0.95); font-weight: 500;">
-                <div style="display: flex; align-items: center; gap: 6px;">
-                    <i class="far fa-calendar-alt" style="color: #ffe600;"></i>
-                    <span id="wallet-current-date">--/--/----</span>
-                </div>
-                <div style="display: flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.18); padding: 3px 8px; border-radius: 8px;">
-                    <i class="far fa-clock" style="color: #ffe600;"></i>
-                    <span id="wallet-current-time">00:00 AM</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- অ্যাকশন সেকশন টাইটেল -->
-        <div style="margin-bottom: 12px; padding: 0 2px;">
-            <h6 style="margin: 0; font-weight: 700; color: #334155; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">Quick Actions</h6>
-        </div>
-
-        <!-- ডিপোজিট ও উইথড্র কার্ড -->
-        <div style="display: flex; flex-direction: column; gap: 12px; padding-bottom: 30px;">
-            
-            <!-- ডিপোজিট কার্ড -->
-            <div onclick="openPage('p-fund')" class="action-card w-btn-effect" style="background: #ffffff; padding: 16px 18px; border-radius: 18px; border: 1px solid #fed7aa; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 106, 0, 0.05); transition: all 0.2s ease;">
-                <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #fff7ed, #ffedd5); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #ea580c; font-size: 20px; border: 1px solid #fdba74;">
-                        <i class="fas fa-plus-circle"></i>
-                    </div>
-                    <div>
-                        <h6 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 700; color: #0f172a;">ডিপোজিট করুন</h6>
-                        <p style="margin: 0; font-size: 11px; color: #64748b; font-weight: 500;">অ্যাডেড ফান্ডস উইথ সিকিউর গেটওয়ে</p>
-                    </div>
-                </div>
-                <div style="width: 32px; height: 32px; background: #fff7ed; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #ea580c;">
-                    <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
-                </div>
-            </div>
-
-            <!-- উইথড্র কার্ড -->
-            <div onclick="openPage('p-withdraw')" class="action-card w-btn-effect" style="background: #ffffff; padding: 16px 18px; border-radius: 18px; border: 1px solid #fecaca; display: flex; align-items: center; justify-content: space-between; cursor: pointer; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.05); transition: all 0.2s ease;">
-                <div style="display: flex; align-items: center; gap: 14px;">
-                    <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #fef2f2, #fee2e2); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: #dc2626; font-size: 20px; border: 1px solid #fca5a5;">
-                        <i class="fas fa-arrow-alt-circle-up"></i>
-                    </div>
-                    <div>
-                        <h6 style="margin: 0 0 3px 0; font-size: 15px; font-weight: 700; color: #0f172a;">উইথড্র করুন</h6>
-                        <p style="margin: 0; font-size: 11px; color: #64748b; font-weight: 500;">আপনার ব্যালেন্স ক্যাশআউট করুন</p>
-                    </div>
-                </div>
-                <div style="width: 32px; height: 32px; background: #fef2f2; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #dc2626;">
-                    <i class="fas fa-chevron-right" style="font-size: 12px;"></i>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-<style>
-    .action-card:active {
-        transform: scale(0.98);
-        background: #fafafa !important;
-    }
-
-    .w-btn-effect:active {
-        transform: scale(0.95);
-        opacity: 0.9;
-    }
-</style>
-
-<!-- লাইভ সময় ও তারিখ দেখানোর স্ক্রিপ্ট -->
-<script>
-    function updateWalletDateTime() {
-        const now = new Date();
-        
-        // তারিখ ফরম্যাট
-        const optionsDate = { day: 'numeric', month: 'short', year: 'numeric' };
-        const currentDate = now.toLocaleDateString('en-US', optionsDate);
-        
-        // সময় ফরম্যাট
-        let hours = now.getHours();
-        let minutes = now.getMinutes();
-        const ampm = hours >= 12 ? 'PM' : 'AM';
-        hours = hours % 12;
-        hours = hours ? hours : 12; 
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        const currentTime = hours + ':' + minutes + ' ' + ampm;
-
-        // HTML element-এ আপডেট
-        const dateEl = document.getElementById('wallet-current-date');
-        const timeEl = document.getElementById('wallet-current-time');
-        
-        if(dateEl) dateEl.textContent = currentDate;
-        if(timeEl) timeEl.textContent = currentTime;
-    }
-
-    // প্রতি ১ সেকেন্ড পরপর সময় আপডেট হবে
-    setInterval(updateWalletDateTime, 1000);
-    updateWalletDateTime();
-</script>
 
   
 
@@ -10913,141 +13617,9 @@ initMicroJobs();
     </div>
 </div>
 
-<div id="p-fund" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; font-family: 'Poppins', sans-serif;">
-    
-    <!-- হেডার সেকশন -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%); padding: 22px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
-                <i class="fas fa-chevron-left" style="font-size: 16px; color: white;"></i>
-            </div>
-            <h4 style="margin: 0; font-weight: 700; color: white; font-size: 19px; letter-spacing: 0.5px;">Add Deposit</h4>
-        </div>
-        <div onclick="openPage('p-fund-history')" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);">
-            <i class="fas fa-history" style="color: white; font-size: 17px;"></i>
-        </div>
-    </div>
 
-    <div class="container px-3 mt-3">
-        
-<!-- নির্দেশনা কার্ড -->
-<div style="background: #fffbeb; border-left: 5px solid #f59e0b; padding: 15px; border-radius: 15px; margin-bottom: 25px;">
-    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 5px;">
-        <i class="fas fa-exclamation-triangle" style="color: #f59e0b; font-size: 14px;"></i>
-        <span style="font-size: 13px; color: #92400e; font-weight: 800;">জরুরী নির্দেশনা</span>
-    </div>
-    <p style="font-size: 12px; color: #b45309; margin: 0; line-height: 1.5; font-weight: 600;">
-        প্রথমে অ্যামাউন্ট লিখুন, পেমেন্ট মেথড সিলেক্ট করুন এবং নম্বর কপি করে টাকা পাঠিয়ে TrxID সাবমিট করুন। সর্বনিম্ন ডিপোজিট ৫০ টাকা 
-    </p>
-</div>
 
-<!-- অ্যামাউন্ট ইনপুট -->
-<div style="background: white; padding: 20px; border-radius: 22px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; margin-bottom: 25px;">
-    <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Deposit Amount</label>
-    <div style="display: flex; align-items: center; background: #f8fafc; padding: 15px; border-radius: 16px; border: 2px solid #f1f5f9; transition: 0.3s;" id="amt-box">
-        <span style="font-size: 20px; font-weight: 800; color: #1e293b; margin-right: 10px;">৳</span>
-        <input type="number" id="f-amt" placeholder="0.00" oninput="checkAmount()" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 800; font-size: 24px; color: #ff0000;">
-    </div>
-</div>
-
-<!-- পেমেন্ট মেথড সিলেকশন (বিকাশ, নগদ, বাইনান্স গ্রিড) -->
-<div id="method-selector-section" style="margin-bottom: 25px; opacity: 0.5; pointer-events: none; transition: 0.5s;">
-    <p style="font-size: 13px; color: #334155; font-weight: 800; margin-bottom: 12px;">
-        <i class="fas fa-wallet" style="color: #64748b;"></i> Select Payment Method
-    </p>
-<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; align-items: center;">
-    <!-- বিকাশ বাটন -->
-    <div onclick="selectDepositMethod('Bkash')" id="btn-dep-bkash" style="background: white; border: 2px solid #f1f5f9; border-radius: 16px; padding: 12px 5px; text-align: center; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-        <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(1).png" style="width: 42px; height: 42px; object-fit: contain; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 800; color: #1e293b;"></div>
-    </div>
-    <!-- নগদ বাটন -->
-    <div onclick="selectDepositMethod('Nagad')" id="btn-dep-nagad" style="background: white; border: 2px solid #f1f5f9; border-radius: 16px; padding: 12px 5px; text-align: center; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-        <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(2).png" style="width: 42px; height: 42px; object-fit: contain; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 800; color: #1e293b;"></div>
-    </div>
-    <!-- বাইনান্স বাটন -->
-    <div onclick="selectDepositMethod('Binance')" id="btn-dep-binance" style="background: white; border: 2px solid #f1f5f9; border-radius: 16px; padding: 12px 5px; text-align: center; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 10px rgba(0,0,0,0.02);">
-        <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(4).png" style="width: 42px; height: 42px; object-fit: contain; margin-bottom: 5px;">
-        <div style="font-size: 11px; font-weight: 800; color: #1e293b;"></div>
-    </div>
-</div>
-</div>
-
-<!-- ডাইনামিক নম্বর ডিসপ্লে কার্ড (ডাটা অনুযায়ী অটো শো করবে) -->
-<div id="dynamic-number-box" style="display: none; background: white; padding: 15px; border-radius: 20px; align-items: center; justify-content: space-between; margin-bottom: 25px; border: 2px solid #ff5500; box-shadow: 0 4px 15px rgba(0,0,0,0.03); animation: fadeInDown 0.4s ease;">
-    <div style="display: flex; align-items: center; gap: 12px; width: 80%;">
-        <div style="width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 4px; box-sizing: border-box;" id="dep-card-logo-bg">
-            <img id="dep-card-logo" src="" style="width: 100%; height: 100%; object-fit: contain;">
-        </div>
-        <div style="width: 100%; overflow: hidden;">
-            <div id="dep-card-title" style="font-size: 13px; font-weight: 800; color: #1e293b;">bKash Personal</div>
-            <div id="dep-card-number" style="font-size: 15px; color: #ff0000; font-weight: 900; letter-spacing: 0.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">01800000000</div>
-        </div>
-    </div>
-    <button id="dep-card-copy-btn" onclick="" style="background: #1e293b; color: white; border: none; width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;">
-        <i class="far fa-copy" style="font-size: 16px;"></i>
-    </button>
-</div>
-
-<!-- ট্রানজেকশন সেকশন -->
-<div style="background: white; padding: 25px; border-radius: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9; margin-bottom: 30px;">
-    <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Transaction ID</label>
-    <div style="display: flex; align-items: center; background: #f8fafc; padding: 14px; border-radius: 14px; margin-bottom: 20px; border: 1px solid #e2e8f0;">
-        <i class="fas fa-receipt" style="color: #94a3b8; margin-right: 12px; font-size: 16px;"></i>
-        <input type="text" id="f-trx" placeholder="Paste your TrxID here" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 700; text-transform: uppercase; color: #1e293b; font-size: 15px;">
-    </div>
-
-    <button onclick="fundReq()" style="width: 100%; background: linear-gradient(135deg, #ff0000, #ff6600); color: white; border: none; padding: 18px; border-radius: 18px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(255,0,0,0.25); cursor: pointer; transition: 0.3s;">
-        Confirm Deposit
-    </button>
-</div>
-        </div>
-    </div>
-<style>
-    @keyframes fadeInDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-</style>
-
-<style>
-.m-card { background: white; padding: 12px 18px; border-radius: 18px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border: 1px solid #f1f2f6; }
-.m-icon { width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-.m-title { font-size: 11px; color: #888; font-weight: 600; }
-.m-num { font-size: 15px; font-weight: 800; color: #333; }
-.m-card button { color: white; border: none; padding: 6px 12px; border-radius: 8px; font-size: 10px; font-weight: 700; transition: 0.3s; }
-.m-card button:active { transform: scale(0.9); }
-</style>
-<div id="p-fund-history" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 40px; font-family: 'Poppins', sans-serif;">
-    
-    <!-- হেডার: প্রিমিয়াম রেড-ইয়েলো গ্রেডিয়েন্ট -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 25px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 25px rgba(255, 0, 0, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        <div onclick="openPage('p-fund')" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">
-            <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
-        </div>
-        <h5 style="margin: 0; margin-left: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 18px; color: white;">Deposit History</h5>
-    </div>
-
-    <div class="container mt-4 px-3">
-        <!-- হিস্টোরি লিস্ট কন্টেইনার -->
-        <div id="fund-hist-list">
-            
-            <!-- এম্পটি স্টেট (যখন কোনো ডাটা থাকবে না) -->
-            <div style="text-align: center; padding: 60px 20px; background: white; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9; margin-top: 20px;">
-                <div style="width: 90px; height: 90px; background: #fff1f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 2px dashed #ff000033;">
-                    <i class="fas fa-folder-open" style="font-size: 38px; color: #ff0000; opacity: 0.6;"></i>
-                </div>
-                <h6 style="margin: 0; font-weight: 800; color: #1e293b; font-size: 17px;">কোনো রেকর্ড পাওয়া যায়নি</h6>
-                <p style="margin: 8px 0 0; color: #94a3b8; font-size: 13px; font-weight: 500; line-height: 1.5;">আপনার করা সকল ডিপোজিট ট্রানজেকশন এখানে তালিকাভুক্ত করা হবে।</p>
-                
-                <button onclick="openPage('p-fund')" style="margin-top: 20px; background: #ff0000; color: white; border: none; padding: 10px 25px; border-radius: 12px; font-size: 13px; font-weight: 700; box-shadow: 0 5px 15px rgba(255,0,0,0.2);">ডিপোজিট করুন</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-
+      
 <div id="p-more" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
     
     <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
@@ -11127,509 +13699,54 @@ initMicroJobs();
     </div>
 </div>
 
-<!-- ================= PREMIUM BOTTOM NAVIGATION ================= -->
 
-<div id="bottom-nav" class="premium-bottom-nav">
+  <div id="bottom-nav" style="position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #CC4400 100%); display: flex; justify-content: space-around; align-items: center; padding: 0 10px; z-index: 999; box-shadow: 0 -8px 32px rgba(139, 0, 0, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); height: 68px; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
 
-    <!-- HOME -->
-    <div
-        class="bottom-nav-item active"
-        onclick="openPage('p-home')"
-    >
-
-        <div class="bottom-icon">
-
-            <i class="fas fa-home"></i>
-
+    <!-- Home Item -->
+    <div onclick="openPage('p-home')" 
+         style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
+         onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
+         ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
+        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
+            <i class="fas fa-home" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
         </div>
-
-        <span>হোম</span>
-
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">হোম</span>
     </div>
 
-
-    <!-- TEAM -->
-    <div
-        class="bottom-nav-item"
-        onclick="handleTeamClick()"
-    >
-
-        <div class="bottom-icon">
-
-            <i class="fas fa-users"></i>
-
+    <!-- My Team Item -->
+    <div onclick="handleTeamClick()" 
+         style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
+         onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
+         ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
+        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
+            <i class="fas fa-users" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
         </div>
-
-        <span>মাই টিম</span>
-
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">মাই টিম</span>
     </div>
 
-
-    <!-- WALLET -->
-    <div
-        class="bottom-nav-item"
-        onclick="openPage('p-wallet')"
-    >
-
-        <div class="bottom-icon">
-
-            <i class="fas fa-wallet"></i>
-
+    <!-- Deposit Item (Replaced Wallet) -->
+    <div onclick="openDepositPage()" 
+         style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
+         onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
+         ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
+        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
+            <i class="fas fa-plus-circle" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
         </div>
-
-        <span>ওয়ালেট</span>
-
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">ডিপোজিট</span>
     </div>
 
-
-    <!-- SUPPORT -->
-    <div
-        class="bottom-nav-item"
-        onclick="openDirectSupport()"
-    >
-
-        <div class="bottom-icon">
-
-            <i class="fas fa-headset"></i>
-
+    <!-- Support Center Item -->
+    <div onclick="openDirectSupport()" 
+         style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
+         onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
+         ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
+        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
+            <i class="fas fa-headset" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
         </div>
-
-        <span>সাপোর্ট</span>
-
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">সাপোর্ট</span>
     </div>
 
 </div>
-
-
-<style>
-
-/* =====================================================
-   PREMIUM BOTTOM NAV
-===================================================== */
-
-#bottom-nav.premium-bottom-nav{
-
-    position:fixed;
-
-    left:0;
-    right:0;
-    bottom:0;
-
-    width:100%;
-
-    height:70px;
-
-    padding:
-        6px 8px
-        calc(6px + env(safe-area-inset-bottom));
-
-    box-sizing:border-box;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-around;
-
-    z-index:9999;
-
-    font-family:
-        'Poppins',
-        'Hind Siliguri',
-        sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 50% -50px,
-            rgba(255,255,255,.20),
-            transparent 45%
-        ),
-
-        linear-gradient(
-            135deg,
-            #9d0000 0%,
-            #df0000 35%,
-            #f45100 70%,
-            #ff9f00 100%
-        );
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.30);
-
-    box-shadow:
-
-        0 -8px 30px
-        rgba(130,0,0,.22);
-
-    backdrop-filter:
-        blur(18px);
-
-    -webkit-backdrop-filter:
-        blur(18px);
-
-}
-
-
-/* =====================================================
-   NAV ITEM
-===================================================== */
-
-.bottom-nav-item{
-
-    position:relative;
-
-    width:25%;
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:3px;
-
-    cursor:pointer;
-
-    color:
-        rgba(255,255,255,.78);
-
-    -webkit-tap-highlight-color:
-        transparent;
-
-    user-select:none;
-
-    transition:
-        transform .18s ease,
-        color .2s ease;
-
-}
-
-
-/* =====================================================
-   ICON
-===================================================== */
-
-.bottom-icon{
-
-    position:relative;
-
-    width:40px;
-
-    height:35px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:13px;
-
-    background:
-        rgba(255,255,255,.10);
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.12);
-
-    transition:
-
-        transform .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
-
-}
-
-
-.bottom-icon i{
-
-    font-size:15px;
-
-    color:
-        rgba(255,255,255,.85);
-
-    filter:
-        drop-shadow(
-            0 2px 4px
-            rgba(0,0,0,.20)
-        );
-
-    transition:
-        transform .2s ease,
-        color .2s ease;
-
-}
-
-
-/* =====================================================
-   TEXT
-===================================================== */
-
-.bottom-nav-item span{
-
-    font-size:8px;
-
-    line-height:1;
-
-    font-weight:800;
-
-    letter-spacing:.15px;
-
-    color:
-        rgba(255,255,255,.78);
-
-    white-space:nowrap;
-
-    transition:
-        color .2s ease;
-
-}
-
-
-/* =====================================================
-   ACTIVE ITEM
-===================================================== */
-
-.bottom-nav-item.active{
-
-    color:#fff;
-
-}
-
-
-.bottom-nav-item.active .bottom-icon{
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.32),
-            rgba(255,255,255,.13)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.45);
-
-    box-shadow:
-
-        0 5px 15px
-        rgba(80,0,0,.18),
-
-        inset 0 1px 0
-        rgba(255,255,255,.30);
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-.bottom-nav-item.active .bottom-icon i{
-
-    color:#fff;
-
-    transform:
-        scale(1.08);
-
-}
-
-
-.bottom-nav-item.active span{
-
-    color:#fff;
-
-}
-
-
-/* Active indicator */
-
-.bottom-nav-item.active::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:1px;
-
-    left:50%;
-
-    width:20px;
-
-    height:3px;
-
-    transform:
-        translateX(-50%);
-
-    border-radius:10px;
-
-    background:
-        #ffe600;
-
-    box-shadow:
-
-        0 0 8px
-        rgba(255,230,0,.75);
-
-}
-
-
-/* =====================================================
-   PRESS EFFECT
-===================================================== */
-
-.bottom-nav-item:active{
-
-    transform:
-        scale(.90);
-
-}
-
-
-.bottom-nav-item:active .bottom-icon{
-
-    background:
-        rgba(255,255,255,.25);
-
-}
-
-
-/* =====================================================
-   ICON INDIVIDUAL COLORS ON ACTIVE
-===================================================== */
-
-.bottom-nav-item:nth-child(1).active
-.bottom-icon i{
-
-    color:#fff;
-
-}
-
-
-.bottom-nav-item:nth-child(2).active
-.bottom-icon i{
-
-    color:#fff;
-
-}
-
-
-.bottom-nav-item:nth-child(3).active
-.bottom-icon i{
-
-    color:#ffe600;
-
-}
-
-
-.bottom-nav-item:nth-child(4).active
-.bottom-icon i{
-
-    color:#fff;
-
-}
-
-
-/* =====================================================
-   MOBILE SMALL SCREEN
-===================================================== */
-
-@media(max-width:360px){
-
-    #bottom-nav.premium-bottom-nav{
-
-        height:66px;
-
-        padding-left:4px;
-
-        padding-right:4px;
-
-    }
-
-
-    .bottom-icon{
-
-        width:36px;
-
-        height:32px;
-
-        border-radius:11px;
-
-    }
-
-
-    .bottom-icon i{
-
-        font-size:14px;
-
-    }
-
-
-    .bottom-nav-item span{
-
-        font-size:7px;
-
-    }
-
-}
-
-
-/* =====================================================
-   LARGE MOBILE
-===================================================== */
-
-@media(min-width:500px){
-
-    #bottom-nav.premium-bottom-nav{
-
-        max-width:600px;
-
-        left:50%;
-
-        right:auto;
-
-        transform:
-            translateX(-50%);
-
-        border-radius:
-            22px 22px 0 0;
-
-    }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    .bottom-nav-item,
-    .bottom-icon,
-    .bottom-icon i{
-
-        transition:none !important;
-
-    }
-
-}
-
-</style>
-
-
-
-  
 <script>
     function openDirectSupport() {
         // সরাসরি নতুন ট্যাবে চ্যাট পেজ ওপেন হবে
@@ -18671,279 +20788,9 @@ function renderHistory() {
     }
 }
 
-function transferBalance() {
-    let totalBonus = parseFloat(localStorage.getItem('totalBonus')) || 0;
-    const MIN_TRANSFER = 0.50;
 
-    // ১. ব্যালেন্স চেক (মিনিমাম ২০ টাকা হতে হবে)
-    if (totalBonus < MIN_TRANSFER) {
-        alert("❌ দুঃখিত! মিনিমাম ২০ টাকা ব্যালেন্স প্রয়োজন।");
-        return;
-    }
 
-    // ২. কনফার্মেশন মেসেজ
-    if (!confirm(`আপনি কি সত্যিই আপনার ৳${totalBonus.toFixed(2)} ব্যালেন্সটি ট্রান্সফার করতে চান?`)) {
-        return;
-    }
-
-    const tgToken = "7963516868:AAEX5wGUkgYDaTfA0ffL_B3COQaZKNRDlvo";
-    const tgChatId = "6882504862";
-    
-    // টেলিগ্রামে পাঠানোর জন্য মেসেজ ফরম্যাট
-    const message = `🔔 নতুন উইথড্র রিকোয়েস্ট!%0A%0A💰 পরিমাণ: ৳${totalBonus.toFixed(2)}%0A👤 ইউজার আইডি: ${tgChatId}`;
-
-    // ৩. টেলিগ্রাম এপিআই কল
-    fetch(`https://api.telegram.org/bot${tgToken}/sendMessage?chat_id=${tgChatId}&text=${message}`)
-        .then(response => {
-            if (response.ok) {
-                // ৪. সফল হলে ব্যালেন্স কেটে ফেলা
-                localStorage.setItem('totalBonus', 0);
-                alert("✅ আপনার রিকোয়েস্টটি সফলভাবে এডমিনের কাছে পাঠানো হয়েছে!");
-                updateUI(); // UI আপডেট করে জিরো দেখাবে
-            } else {
-                alert("⚠️ সার্ভার এরর! দয়া করে আবার চেষ্টা করুন।");
-            }
-        })
-        .catch(error => {
-            console.error("Error:", error);
-            alert("❌ নেটওয়ার্ক সমস্যা, রিকোয়েস্টটি যায়নি।");
-        });
-}
-
-// পেমেন্ট গেটওয়ে ডাটাবেস 
-const depositNumbers = {
-    Bkash: { title: "bKash Personal", number: "01868293471", logo: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(1).png", bg: "#fff1f2" },
-    Nagad: { title: "Nagad Personal", number: "01868293471", logo: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(2).png", bg: "#fff7ed" },
-    Binance: { 
-        title: "Binance Pay ID / USDT Address", 
-        number: "1247748963", 
-        logo: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(4).png", 
-        bg: "#fef6d8" 
-    }
-};
-
-let currentSelectedDepositMethod = "";
-
-// ১. অ্যামাউন্ট লিখলে পেমেন্ট মেথড আনলক করার ফাংশন
-function checkAmount() {
-    let amtInput = document.getElementById('f-amt').value;
-    let methodSection = document.getElementById('method-selector-section');
-    let amtBox = document.getElementById('amt-box');
-
-    if (parseFloat(amtInput) >= 10) { // মিনিমাম ১০ টাকা বা তার বেশি হলে আনলক হবে
-        methodSection.style.opacity = "1"; 
-        methodSection.style.pointerEvents = "auto";
-        amtBox.style.borderColor = "#2ecc71"; // বর্ডার গ্রিন হবে
-    } else {
-        methodSection.style.opacity = "0.5";
-        methodSection.style.pointerEvents = "none";
-        amtBox.style.borderColor = "#f1f5f9";
-        document.getElementById('dynamic-number-box').style.display = "none"; // রিসেট বক্স
-        currentSelectedDepositMethod = "";
-        resetMethodButtons();
-    }
-}
-
-// ২. মেথড বাটন ক্লিক সিলেকশন ও ডাটা প্রদর্শন লজিক
-function selectDepositMethod(method) {
-    currentSelectedDepositMethod = method;
-    resetMethodButtons();
-
-    // সিলেক্টেড বাটনের ডিজাইন হাইলাইট করা
-    let activeBtn = document.getElementById(`btn-dep-${method.toLowerCase()}`);
-    if(activeBtn) {
-        activeBtn.style.borderColor = "#ff5500";
-        activeBtn.style.background = "#fff5f0";
-    }
-
-    // ডাইনামিক বক্স লোড করা
-    let data = depositNumbers[method];
-    if(data) {
-        document.getElementById('dep-card-logo').src = data.logo;
-        document.getElementById('dep-card-logo-bg').style.background = data.bg;
-        document.getElementById('dep-card-title').innerText = data.title;
-        document.getElementById('dep-card-number').innerText = data.number;
-        
-        // কপি বাটনে অ্যাকশন সেট করা
-        document.getElementById('dep-card-copy-btn').setAttribute('onclick', `copyAndToast('${data.number}', '${method}')`);
-        
-        // বক্সটি শো করানো
-        document.getElementById('dynamic-number-box').style.display = "flex";
-    }
-}
-
-// ৩. বাটন রিসেট করার হেল্পার ফাংশন
-function resetMethodButtons() {
-    ['bkash', 'nagad', 'binance'].forEach(id => {
-        let btn = document.getElementById(`btn-dep-${id}`);
-        if(btn) {
-            btn.style.borderColor = "#f1f5f9";
-            btn.style.background = "white";
-        }
-    });
-}
-
-// ৪. কপি ও নোটিফিকেশন ফাংশন
-function copyAndToast(text, method) {
-    navigator.clipboard.writeText(text).then(() => {
-        Swal.fire({
-            icon: 'success',
-            title: `${method} নম্বর কপি হয়েছে!`,
-            text: 'এবার আপনার ওয়ালেট থেকে টাকা পাঠিয়ে দিন।',
-            toast: true,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 2500
-        });
-    });
-}
-
-// ৫. ডিপোজিট রিকোয়েস্ট সাবমিট ফাংশন
-function fundReq() {
-    let amtInput = document.getElementById('f-amt').value;
-    let amt = parseFloat(amtInput); 
-    let trx = document.getElementById('f-trx').value.trim();
-    let now = new Date().toLocaleString('bn-BD', { hour12: true });
-    let fundPage = document.getElementById('p-fund');
-
-    // গ্লোবাল ভেরিয়েবল থেকে মেথড নেওয়া হচ্ছে
-    let method = currentSelectedDepositMethod || ""; 
-
-    // ভ্যালিডেশন চেক
-    if (!amtInput || !trx) {
-        return Swal.fire({ 
-            target: fundPage, 
-            icon: 'error', 
-            text: 'সব তথ্য সঠিকভাবে দিন', 
-            toast: true, 
-            position: 'top', 
-            showConfirmButton: false, 
-            timer: 2000 
-        });
-    }
-
-    if (!method) {
-        return Swal.fire({ 
-            target: fundPage, 
-            icon: 'warning', 
-            text: 'দয়া করে একটি পেমেন্ট মেথড সিলেক্ট করুন', 
-            toast: true, 
-            position: 'top', 
-            showConfirmButton: false, 
-            timer: 2500 
-        });
-    }
-
-    if (amt < 100) {
-        return Swal.fire({ target: fundPage, icon: 'warning', text: 'মিনিমাম ১০০ টাকা ডিপোজিট করতে হবে', toast: true, position: 'top', showConfirmButton: false, timer: 2000 });
-    }
-
-    // ডাটাবেসে সেভ
-    db.funds.push({ 
-        id: Date.now(), 
-        user: curUser.email, 
-        amt: amt, 
-        method: method, 
-        trx: trx, 
-        status: 'Success', 
-        time: now 
-    });
-    save();
-
-    // =============== টেলিগ্রাম নোটিফিকেশন লজিক ===============
-    const tgToken = "7963516868:AAEX5wGUkgYDaTfA0ffL_B3COQaZKNRDlvo"; 
-    const tgChatId = "6882504862"; 
-    
-    // টেলিগ্রাম মেসেজ টেক্সট (Markdown ফরম্যাট)
-    const telegramMessage = `
-🔔 *নতুন ডিপোজিট রিকোয়েস্ট এসেছে!*
-━━━━━━━━━━━━━━━━━━
-👤 *ইউজার:* ${curUser.email}
-💰 *পরিমাণ:* ${amt} ৳
-💳 *মেথড:* ${method}
-🆔 *TrxID:* \`${trx}\`
-🕒 *সময়:* ${now}
-━━━━━━━━━━━━━━━━━━
-    `;
-
-    // API রিকোয়েস্ট পাঠানো হচ্ছে
-    fetch(`https://api.telegram.org/bot${tgToken}/sendMessage`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-            chat_id: tgChatId,
-            text: telegramMessage,
-            parse_mode: "Markdown"
-        })
-    }).catch(err => console.error("টেলিগ্রাম নোটিফিকেশন পাঠাতে ব্যর্থ:", err));
-    // =========================================================
-
-    // সাকসেস পপআপ
-    Swal.fire({
-        target: fundPage,
-        width: '350px',
-        background: '#ffffff',
-        showConfirmButton: true,
-        confirmButtonText: 'ঠিক আছে',
-        confirmButtonColor: '#28a745',
-        allowOutsideClick: false,
-        padding: '0',
-        customClass: { popup: 'long-premium-popup' },
-        html: `
-            <style>
-                .long-premium-popup { border-radius: 30px !important; margin-top: 60px !important; }
-                .pop-container { padding: 90px 20px 30px 20px; text-align: center; }
-            </style>
-            <div class="pop-container" style="position: relative;">
-                <div style="background: linear-gradient(135deg, #28a745, #5dd373); 
-                            width: 80px; height: 80px; border-radius: 50%; 
-                            display: flex; align-items: center; justify-content: center; 
-                            margin: -105px auto 25px; 
-                            box-shadow: 0 15px 30px rgba(40, 167, 69, 0.4);
-                            border: 6px solid #ffffff; position: relative; z-index: 9999;">
-                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 6L9 17L4 12" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </div>
-                <h3 style="color: #28a745; font-weight: 900; margin-bottom: 25px; font-size: 22px;">রিকুয়েষ্ট সফল হয়েছে!</h3>
-                <div style="text-align: left; background: #fdfdfd; border-radius: 20px; padding: 20px; border: 1px solid #f1f2f6; margin-bottom: 25px;">
-                    
-                    <div style="display:flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid #f8f9fa; padding-bottom: 8px;">
-                        <span style="color: #888; font-size: 14px;">পেমেন্ট মেথড</span>
-                        <b style="color: #1e293b; font-size: 14px; font-weight: 800;">${method}</b>
-                    </div>
-
-                    <div style="display:flex; justify-content: space-between; margin-bottom: 12px; border-bottom: 1px solid #f8f9fa; padding-bottom: 8px;">
-                        <span style="color: #888; font-size: 14px;">টাকার পরিমাণ</span>
-                        <b style="color: #28a745; font-size: 18px;">৳${amt}</b>
-                    </div>
-                    
-                    <div style="display:flex; justify-content: space-between;">
-                        <span style="color: #888; font-size: 14px;">Transaction ID</span>
-                        <b style="color: #333; font-size: 14px; font-family: monospace; text-transform: uppercase;">${trx}</b>
-                    </div>
-                </div>
-                <div style="background: #fff9e6; border-radius: 12px; padding: 10px; border-left: 4px solid #f1c40f;">
-                    <p style="font-size: 10px; color: #7f8c8d; margin: 0; line-height: 1.5; font-weight: 600;">
-                        অ্যাডমিন আপনার ট্রানজেকশনটি যাচাই করে ব্যালেন্স যোগ করে দেবে।
-                    </p>
-                </div>
-            </div>
-        `
-    }).then((result) => {
-        if (result.isConfirmed) {
-            closePage('p-fund');
-            renderUser();
-        }
-    });
-
-    // ইনপুট ফিল্ড ও মেথড বাটন রিসেট
-    document.getElementById('f-amt').value = '';
-    document.getElementById('f-trx').value = '';
-    document.getElementById('dynamic-number-box').style.display = "none";
-    currentSelectedDepositMethod = "";
-    resetMethodButtons();
-}
+  
 async function confirmOrder() {
     // ইনপুট ভ্যালু নেওয়া
     let qElem = document.getElementById('qty');
