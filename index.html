@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aypoth</title>
+    <title>Free Time Earn</title>
     <link rel="manifest" href="manifest.json">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
+      
         :root { --main: #6c5ce7; --bg: #f4f7fe; --card: #ffffff; --text: #2d3436; --bkash: #e2136e; --nagad: #f7941d; --rocket: #8c3494; }
         body { background-color: var(--bg); font-family: 'Poppins', 'Hind Siliguri', sans-serif; padding-bottom: 90px; color: var(--text); overflow-x: hidden; }
 
@@ -242,7 +243,8 @@
 
 /* ট্যাগলাইন */
 .splash-tagline {
-    font-size: 14px;
+    f
+      ont-size: 14px;
     color: #7f8c8d;
     margin-bottom: 40px;
     font-weight: 400;
@@ -4821,19 +4823,14 @@ function togglePassword() {
         </div>
 
 
-        <!-- ACTIVATE BUTTON -->
-        <button
-            class="activate-premium-btn"
-            onclick="activateAccountNow()"
-        >
+      <!-- ১. অ্যাক্টিভেশন বাটন -->
+<button class="activate-premium-btn" onclick="activateAccountNow()">
+    <span>ACTIVATE</span>
+    <i class="fas fa-arrow-right"></i>
+</button>
 
-            <span>
-                ACTIVATE
-            </span>
 
-            <i class="fas fa-arrow-right"></i>
-
-        </button>
+        
 
     </div>
 
@@ -7568,6 +7565,80 @@ function togglePassword() {
     </div>
 
 </div>
+
+
+
+<!-- ২. অ্যাকাউন্ট অ্যাক্টিভেশন পেজ (Fixed Structure) -->
+<div id="p-activate-account" class="page-container" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #121212; z-index: 9999; overflow-y: auto; color: #fff; font-family: 'Poppins', sans-serif;">
+    
+    <!-- হেডার বার -->
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; background: #1f1f1f; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+            <i class="fas fa-arrow-left" onclick="showPage('p-home')" style="font-size: 18px; cursor: pointer; color: #fff;"></i>
+            <h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #fff;">একটিভ একাউন্ট</h3>
+        </div>
+        <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #FFD700; font-size: 18px; text-decoration: none;">
+            <i class="fas fa-headset"></i>
+        </a>
+    </div>
+
+    <!-- পেজ কন্টেন্ট -->
+    <div style="padding: 15px 15px 50px 15px; max-width: 480px; margin: 0 auto;">
+        
+        <!-- প্রিমিয়াম ব্যানার সেকশন -->
+        <div style="background: linear-gradient(135deg, #ff416c, #ff4b2b, #f39c12); border-radius: 12px; padding: 15px; text-align: center; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+            <div style="width: 55px; height: 55px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; border: 2px solid #FFD700; overflow: hidden;">
+                <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <span style="background: rgba(0,0,0,0.3); color: #FFD700; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; border: 1px solid rgba(255, 215, 0, 0.5); letter-spacing: 1px;">PREMIUM MEMBERSHIP</span>
+            <h2 style="margin: 8px 0 2px; font-size: 20px; font-weight: 800; color: #fff;">৳100.00</h2>
+            <span style="font-size: 11px; color: rgba(255,255,255,0.8);">লাইফটাইম অ্যাক্টিভেশন ফি</span>
+        </div>
+
+        <!-- কোম্পানির শর্তসমূহ (চিকন কার্ড) -->
+        <div onclick="showTermsPopup()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.15); border-left: 3px solid #f39c12; border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; margin-bottom: 15px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fas fa-file-contract" style="color: #f39c12; font-size: 14px;"></i>
+                <span style="font-size: 12px; font-weight: 500; color: #ddd;">কোম্পানির শর্তসমূহ পড়তে এখানে চাপ দিন</span>
+            </div>
+            <i class="fas fa-chevron-right" style="font-size: 11px; color: #888;"></i>
+        </div>
+
+        <!-- সুবিধাসমূহ (সংক্ষিপ্ত তালিকা) -->
+        <div style="background: #1f1f1f; border-radius: 10px; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05);">
+            <p style="font-size: 12px; font-weight: 700; color: #FFD700; margin: 0 0 10px 0;">একটিভ করলে যেসকল সুবিধা পাবেন:</p>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; color: #ccc; line-height: 1.8;">
+                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> আনলিমিটেড মাইক্রো জবস ও ইনকাম করার সুযোগ।</li>
+                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> ৫-জেনারেশন রেফার কমিশন (L1 এ সরাসরি ৳50)।</li>
+                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> ১ ঘণ্টার মধ্যে ফাস্ট উইথড্রয়াল পেমেন্ট প্রসেসিং।</li>
+                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> লাইফটাইম এক্সেস (কোনো মাসিক ফি নেই)।</li>
+                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> টেলিগ্রাম ও কলে VIP ২৪/৭ সাপোর্ট সুবিধা।</li>
+            </ul>
+        </div>
+
+        <!-- বাধ্যতামূলক টিকমার্ক সেকশন -->
+        <div style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.08);">
+            <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 11px; color: #bbb; cursor: pointer;">
+                <input type="checkbox" id="checkTerms1" style="margin-top: 2px; accent-color: #ff416c;">
+                <span>আমি কোম্পানির সকল নিয়মাবলী ও শর্তাবলীতে সম্মত আছি।</span>
+            </label>
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 11px; color: #bbb; cursor: pointer;">
+                <input type="checkbox" id="checkTerms2" style="margin-top: 2px; accent-color: #ff416c;">
+                <span>আমি নিশ্চিত করছি যে এটি একটি নন-রিফান্ডেবল একটিভেশন প্রসেস।</span>
+            </label>
+        </div>
+
+        <!-- অ্যাক্টিভেশন অপশন বাটন -->
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+            <button onclick="processActivationByBalance()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #2ecc71, #27ae60); border: none; border-radius: 8px; color: #fff; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);">
+                <i class="fas fa-wallet"></i> একাউন্ট ব্যালেন্স দিয়ে একটিভ করুন
+            </button>
+
+        </div>
+
+    </div>
+</div>
+
       
       
 <div id="p-admin-profile" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
@@ -20966,6 +21037,172 @@ function contactForWeb(serviceName) {
     // নতুন ট্যাবে টেলিগ্রাম ওপেন হবে
     window.open(telegramUrl, '_blank');
 }
+
+
+// ১. পেজ পরিবর্তন করার ফাংশন
+function showPage(pageId) {
+    // সকল পেজ হাইড করা
+    const pages = document.querySelectorAll('.page-container');
+    pages.forEach(p => p.style.display = 'none');
+
+    // নির্দিষ্ট পেজটি শো করা
+    const target = document.getElementById(pageId);
+    if (target) {
+        target.style.display = 'block';
+        window.scrollTo(0, 0);
+    }
+}
+
+// ২. বাটনে চাপ দিলে একটিভ পেজ খোলার ফাংশন
+function activateAccountNow() {
+    if (!curUser) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'লগইন করুন!',
+            text: 'অ্যাক্টিভেশন পেজে যেতে আগে একাউন্টে লগইন করুন।',
+            confirmButtonColor: '#ff0000',
+            background: '#1f1f1f',
+            color: '#fff',
+            target: document.body // নিশ্চিত করবে বডির উপরে ওপেন হবে
+        });
+        return;
+    }
+
+    // টিকমার্ক রিমুভ করা
+    const c1 = document.getElementById('checkTerms1');
+    const c2 = document.getElementById('checkTerms2');
+    if(c1) c1.checked = false;
+    if(c2) c2.checked = false;
+
+    // পেজ ওপেন করা
+    showPage('p-activate-account');
+}
+
+// ৩. শর্তাবলির পপআপ (এখন একটিভেশন পেজের উপরেই দেখাবে)
+function showTermsPopup() {
+    Swal.fire({
+        title: 'কোম্পানির শর্তসমূহ',
+        html: `
+            <div style="text-align: left; font-size: 12px; line-height: 1.6; color: #ddd; max-height: 250px; overflow-y: auto;">
+                <p>১. প্রিমিয়াম ফি (৳১০০) সম্পূর্ণ অ-ফেরতযোগ্য (Non-refundable)।</p>
+                <p>২. একটি একাউন্ট কেবল একজন ব্যক্তি ব্যবহার করতে পারবেন।</p>
+                <p>৩. রেফারেল কমিশন সিস্টেমের অপব্যবহার করা শাস্তিযোগ্য অপরাধ।</p>
+                <p>৪. কোম্পানি যেকোনো সময় শর্তাবলী পরিবর্তনের অধিকার রাখে।</p>
+            </div>
+        `,
+        confirmButtonText: 'বুঝতে পেরেছি',
+        confirmButtonColor: '#ff0000',
+        background: '#1f1f1f',
+        color: '#fff',
+        target: '#p-activate-account' // পপআপ সরাসরি এই পেজের ভেতরে ফোকাস করবে
+    });
+}
+
+// ৪. টিকমার্ক ভ্যালিডেশন
+function validateCheckboxes() {
+    const check1 = document.getElementById('checkTerms1').checked;
+    const check2 = document.getElementById('checkTerms2').checked;
+
+    if (!check1 || !check2) {
+        Swal.fire({
+            title: 'শর্তাবলী মেনে নিন!',
+            text: 'সামনে এগোতে অবশ্যই ২ টি টিকমার্কে টিক দিন।',
+            icon: 'warning',
+            confirmButtonColor: '#ff0000',
+            background: '#1f1f1f',
+            color: '#fff',
+            target: '#p-activate-account' // পপআপ একটিভেশন পেজের উপরে দেখাবে
+        });
+        return false;
+    }
+    return true;
+}
+
+// ৫. একাউন্ট ব্যালেন্স দিয়ে একটিভ করা
+async function processActivationByBalance() {
+    if (!validateCheckboxes()) return;
+
+    const activationFee = 100;
+
+    if (parseFloat(curUser.bal) >= activationFee) {
+        curUser.bal = (parseFloat(curUser.bal) - activationFee).toFixed(2);
+        curUser.status = "active";
+
+        let now = new Date();
+        let dateStr = now.toISOString().split('T')[0] + ' | ' + now.toLocaleTimeString();
+
+        try {
+            await fetch(`${SHEETDB_API_URL}/email/${curUser.email}`, {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    data: { 
+                        "balance": curUser.bal,
+                        "status": "active" 
+                    }
+                })
+            });
+        } catch (err) {
+            console.error("Sheet Update Failed:", err);
+        }
+
+        const commissions = [50, 15, 5, 5, 5]; 
+        let currentLeaderCode = curUser.referredBy;
+
+        for (let i = 0; i < commissions.length; i++) {
+            if (!currentLeaderCode || currentLeaderCode === "") break;
+
+            let leader = db.users.find(x => x.referCode === currentLeaderCode);
+            
+            if (leader) {
+                let bonus = commissions[i];
+                leader.bal = (parseFloat(leader.bal || 0) + bonus).toFixed(2);
+                leader.todayEarn = (parseFloat(leader.todayEarn || 0) + bonus).toFixed(2);
+                
+                if (!leader.incomeHistory) leader.incomeHistory = [];
+                leader.incomeHistory.unshift({
+                    amount: bonus,
+                    note: `L${i + 1} রেফার কমিশন (${curUser.name || 'User'})`,
+                    date: dateStr
+                });
+
+                currentLeaderCode = leader.referredBy;
+            } else {
+                break; 
+            }
+        }
+
+        await save(); 
+        renderUser(); 
+
+        Swal.fire({
+            title: `অভিনন্দন, ${curUser.name.split(' ')[0]}!`,
+            text: 'আপনার একাউন্টটি সফলভাবে প্রিমিয়াম করা হয়েছে।',
+            icon: 'success',
+            confirmButtonText: 'হোমে ফিরে যান',
+            confirmButtonColor: '#ff0000',
+            allowOutsideClick: false,
+            background: '#1f1f1f',
+            color: '#fff',
+            target: '#p-activate-account'
+        }).then(() => {
+            showPage('p-home');
+        });
+
+    } else {
+        Swal.fire({
+            title: 'ব্যালেন্স নেই!',
+            text: 'একাউন্ট একটিভ করতে আপনার ব্যালেন্সে ১০০ টাকা থাকতে হবে।',
+            icon: 'error',
+            confirmButtonColor: '#ff0000',
+            background: '#1f1f1f',
+            color: '#fff',
+            target: '#p-activate-account'
+        });
+    }
+}
+
+
 
 
 </script>
