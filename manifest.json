@@ -1,0 +1,61 @@
+{
+
+
+
+  "short_name": "Free Time Earn",
+
+
+
+  "name": "Free Time Earn",
+
+
+
+  "icons": [
+
+
+
+    {
+
+
+      "src": "https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg",
+
+
+
+
+      "type": "image/png",
+
+
+
+      "sizes": "512x512"
+
+
+
+    }
+
+
+
+  ],
+
+
+
+"start_url": "./index.html",
+
+
+
+  "background_color": "#FFFFFF",
+
+
+
+  "display": "standalone",
+
+
+
+  "scope": "./",
+
+
+
+  "theme_color": "#FFFFFF"
+
+
+
+}
