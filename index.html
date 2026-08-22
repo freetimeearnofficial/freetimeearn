@@ -2559,1263 +2559,539 @@ div[onclick="toggleBloodModal()"]:active {
 
 
 
-<!-- লোডার এলিমেন্ট -->
-<div id="loader-overlay"><div class="spinner"></div></div>
-
-<!-- Font Awesome আইকন লাইব্রেরি -->
+<!-- Font Awesome এবং Google Fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<div id="auth-section" style="font-family: 'Poppins', sans-serif; background: #f4f7fe; min-height: 100vh; box-sizing: border-box;">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-<div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 12px 15px; color: white; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.15); position: sticky; top: 0; z-index: 100; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
-    
-    <div style="display: flex; align-items: center; justify-content: space-between; max-width: 500px; margin: 0 auto; width: 100%; position: relative; box-sizing: border-box;">
-        
-        <!-- LEFT : HAMBURGER MENU -->
-        <span style="font-size: 22px; cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; line-height: 1;" onclick="openNav()">&#9776;</span>
-
-        <!-- CENTER : BRAND -->
-        <div class="aypoth-brand" style="display: flex; align-items: center; gap: 8px;">
-            <div class="brand-logo-wrap" style="display: flex; align-items: center;">
-                <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/FB_IMG_1782142091511.jpg" alt="Aypoth" class="brand-logo" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover; border: 2px solid rgba(255, 255, 255, 0.8);">
-            </div>
-            <div class="brand-text" style="display: flex; flex-direction: column; text-align: left;">
-                <span class="brand-name" style="font-size: 16px; font-weight: 700; leading-trim: both; line-height: 1.1;">Free Time Earn</span>
-                <span class="brand-tagline" style="font-size: 9px; opacity: 0.9; font-weight: 400; letter-spacing: 0.3px;">Premium Digital Platform</span>
-            </div>
-        </div>
-
-        <!-- RIGHT : NOTIFICATION BUTTON -->
-        <a href="javascript:void(0)" onclick="toggleNotificationPopup(event)" style="text-decoration: none; color: white; position: relative; display: flex; align-items: center; justify-content: center; width: 35px; height: 35px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; transition: 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.15);" title="Notifications">
-            <i class="fas fa-bell" style="font-size: 15px;"></i>
-            <span id="noti-dot" style="position: absolute; top: -2px; right: -2px; width: 16px; height: 16px; background: #ff3b30; border-radius: 50%; border: 1.5px solid #ffffff; color: white; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; line-height: 1; pointer-events: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">1</span>
-        </a>
-
-        <!-- NOTIFICATION POPUP -->
-        <div id="noti-popup" style="display: none; position: absolute; top: 48px; right: 0; width: 260px; background: white; color: #333; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 15px; z-index: 200; border: 1px solid rgba(0,0,0,0.05); box-sizing: border-box;" onclick="event.stopPropagation()">
-            <div style="position: absolute; top: -6px; right: 12px; width: 12px; height: 12px; background: white; transform: rotate(45deg); border-left: 1px solid rgba(0,0,0,0.05); border-top: 1px solid rgba(0,0,0,0.05);"></div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px;">
-                <span style="font-weight: 700; font-size: 14px; color: #ff5500;">🔔 নোটিফিকেশন</span>
-                <span onclick="toggleNotificationPopup(event)" style="cursor: pointer; font-size: 18px; color: #aaa; font-weight: bold; line-height: 1;">&times;</span>
-            </div>
-            
-            <p style="margin: 0; font-size: 12px; color: #555; line-height: 1.5; text-align: left; white-space: normal;">
-                স্বাগতম! <b>Aypoth</b>-এ আপনাকে স্বাগতম। আমাদের নতুন আপডেট এবং অফারগুলো দেখতে নিয়মিত লক্ষ্য রাখুন।
-            </p>
-        </div>
-
-    </div>
-</div>
-<script>
-function toggleNotificationPopup(event) {
-    // বাটনে ক্লিক করলে যেন পেজ রিফ্রেশ বা অন্য সমস্যা না হয়
-    if(event) {
-        event.stopPropagation();
-    }
-    
-    var popup = document.getElementById("noti-popup");
-    var dot = document.getElementById("noti-dot");
-    
-    if (popup.style.display === "none" || popup.style.display === "") {
-        popup.style.display = "block";
-        // নোটিফিকেশন দেখার পর লাল ডটটি মুছে ফেলার জন্য (ঐচ্ছিক)
-        if(dot) { dot.style.display = "none"; }
-    } else {
-        popup.style.display = "none";
-    }
-}
-
-
-// স্ক্রিনের অন্য কোথাও ক্লিক করলে নোটিফিকেশন পপআপটি নিজে থেকেই বন্ধ হয়ে যাবে
-document.addEventListener("click", function() {
-    var popup = document.getElementById("noti-popup");
-    if (popup && popup.style.display === "block") {
-        popup.style.display = "none";
-    }
-});
-// আপনার স্লাইডারের ডিফল্ট ফাংশন (যদি ফাইলে না থাকে)
-function openNav() {
-    var sidebar = document.getElementById("mySidebar");
-    if(sidebar) { sidebar.style.width = "280px"; }
-}
-function closeNav() {
-    var sidebar = document.getElementById("mySidebar");
-    if(sidebar) { sidebar.style.width = "0"; }
-}
-
-</script>
-
-<!-- ৩. সাইডবার (Slider) মেইন বডি কোড -->
-<!-- উইডথ চিকন রাখার জন্য (width: 0 থেকে ২৫০px হবে জাভাস্ক্রিপ্ট দিয়ে) -->
-<div id="mySidebar" style="height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background: #ffffff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 25px rgba(0,0,0,0.1); box-sizing: border-box; display: flex; flex-direction: column; font-family: 'Poppins', sans-serif;">
-    
-    <!-- ওপরের প্রফেশনাল অরেঞ্জ হেডার সেকশন -->
-    <div style="background: linear-gradient(135deg, #ff3300 0%, #ff9900 100%); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; color: white; flex-shrink: 0;">
-        <span style="font-size: 20px; font-weight: 700; letter-spacing: 0.5px;">মেনু</span>
-        <!-- বন্ধ করার বাটন (X) -->
-        <a href="javascript:void(0)" style="text-decoration: none; font-size: 26px; color: white; transition: 0.3s; line-height: 1; font-weight: 600;" onclick="closeNav()">&times;</a>
-    </div>
-
-    <!-- লোগো এবং নাম সেকশন -->
-    <div style="display: flex; align-items: center; gap: 12px; padding: 18px; border-bottom: 2px solid #f1f5f9; flex-shrink: 0;">
-        <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/FB_IMG_1782142091511.jpg" 
-             alt="Logo" 
-             style="height: 40px; width: 40px; object-fit: contain; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-        <span style="color: #0f172a; font-size: 18px; font-weight: 800; letter-spacing: 0.5px;">Aypoth</span>
-    </div>
-
-    <!-- বাটন সমূহ কন্টেইনার (উইডথ চিকন কিন্তু বাটনগুলো বড় ও স্পষ্ট) -->
-    <div style="padding: 15px 12px; display: flex; flex-direction: column; gap: 10px; flex: 1; overflow-y: auto; box-sizing: border-box;">
-        
-        <!-- এপ ইন্সটল করুন বাটন -->
-        <a href="javascript:void(0)" onclick="showInstallPopup(); closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; transition: 0.2s; background: transparent; box-sizing: border-box;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='transparent'">
-            <span style="background: rgba(0, 198, 255, 0.15); width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                <i class="fas fa-cloud-download-alt" style="font-size: 15px; color: #0072ff;"></i>
-            </span>
-            <span style="flex: 1; text-align: left;">এপ ইন্সটল করুন</span>
-            <i class="fas fa-angle-right" style="font-size: 15px; color: #64748b; font-weight: bold;"></i>
-        </a>
-
-
-            <!-- সাপোর্ট সেন্টার বাটন -->
-<a href="javascript:void(0)" onclick="openDirectSupport(); closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; transition: 0.2s; background: transparent; box-sizing: border-box;" onmouseover="this.style.background='#f1f5f9'" onmouseout="this.style.background='transparent'">
-    <span style="background: rgba(79, 172, 254, 0.15); width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-        <i class="fas fa-headset" style="font-size: 14px; color: #4facfe;"></i>
-    </span>
-    <span style="flex: 1; text-align: left;">সাপোর্ট সেন্টার</span>
-    <i class="fas fa-angle-right" style="font-size: 15px; color: #64748b; font-weight: bold;"></i>
-</a>
-
-<script>
-    function openDirectSupport() {
-        // সরাসরি নতুন ট্যাবে চ্যাট পেজ ওপেন হবে
-        const chatUrl = 'https://tawk.to/chat/6a4b569bda3fb71d533410e7/default';
-        window.open(chatUrl, '_blank');
-    }
-</script>
-
-<!-- Tawk.to Script (গোল বাটন হাইড করা সহ) -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
-// এই ফাংশনটি ওয়েবসাইটের গোল বাটন বা উইজেটটিকে লুকিয়ে রাখবে
-Tawk_API.onLoad = function(){
-    Tawk_API.hideWidget();
-};
-
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a4b569bda3fb71d533410e7/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-    </div>
-
-    <!-- সোশ্যাল মিডিয়া সেকশন -->
-    <div style="padding: 18px; border-top: 2px solid #f1f5f9; background: #ffffff; flex-shrink: 0;">
-        <span style="display: block; color: #475569; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-align: left;"></span>
-        
-        <!-- সোশ্যাল আইকন মেম্বারশিপ রো (আইকনগুলোর সাইজ বড় করা হয়েছে) -->
-        <div style="display: flex; gap: 18px; align-items: center; justify-content: flex-start;">
-            <a href="#" style="color: #1877F2; font-size: 24px; text-decoration: none; transition: 0.2s;"><i class="fab fa-facebook"></i></a>
-            <a href="#" style="color: #FF0000; font-size: 24px; text-decoration: none; transition: 0.2s;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color: #0088cc; font-size: 24px; text-decoration: none; transition: 0.2s;"><i class="fab fa-telegram"></i></a>
-
-<a href="#" style="color: #ffcc00; font-size: 24px; text-decoration: none; transition: 0.2s;"><i class="fas fa-star-half-alt" title="Income Review"></i></a>
-        </div>
-    </div>
-
-</div>
-
-<!-- ৪. জাভাস্ক্রিপ্ট কোড (লোডার হাইড এবং নেভিগেশন কন্ট্রোল) -->
-<script>
-// পেজ পুরোপুরি লোড হওয়ার পর লোডারটি সরিয়ে ফেলার কোড
-window.addEventListener("load", function() {
-    var loader = document.getElementById("loader-overlay");
-    if(loader) {
-        loader.style.opacity = "0";
-        setTimeout(function() {
-            loader.style.display = "none";
-        }, 500); // স্মুথ অ্যানিমেশনের জন্য ৫00ms সময় দেওয়া হয়েছে
-    }
-});
-
-
-// স্লাইডার কন্ট্রোল ফাংশন
-function openNav() {
-    document.getElementById("mySidebar").style.width = "230px";
-}
-
-function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
-}
-
-// ডিফল্ট ব্যাকআপ ফাংশন (যাতে কনসোলে এরর না আসে)
-if (typeof showInstallPopup !== 'function') { function showInstallPopup() { alert('Install Popup Call!'); } }
-if (typeof showForgotPopup !== 'function') { function showForgotPopup() { alert('Forgot Password Call!'); } }
-if (typeof openDirectSupport !== 'function') { function openDirectSupport() { alert('Support Call!'); } }
-if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId + ' Page Call!'); } }
-</script>
-
-
-
-
-    
-    <div style="padding: 20px;">
-        
 <style>
-    /* ইনপুটের ভেতরের সাদা লেখা (Placeholder) স্পষ্ট করার জন্য */
-    #login-box input::placeholder {
-        color: #888 !important;
-        opacity: 1;
-    }
-    #login-box input:-ms-input-placeholder { color: #888 !important; }
-    #login-box input::-ms-input-placeholder { color: #888 !important; }
+  /* গ্লোবাল স্টাইলস */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+    background: #f4f7fe;
+  }
+  
+  /* প্লেসহোল্ডার স্টাইল */
+  .auth-fields input::placeholder {
+    color: #888 !important;
+    opacity: 1;
+  }
+  .auth-fields input:focus {
+    border-color: #FF8C00 !important;
+    background: #ffffff !important;
+    box-shadow: 0 0 8px rgba(255, 140, 0, 0.2);
+  }
+
+  /* সেন্টারিং ও কার্ড অ্যানিমেশন */
+  .auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px 15px 80px 15px;
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px 22px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.05);
+    margin: auto;
+  }
+
+  /* ট্রানজিশন ও হাইড ক্লাস */
+  .d-none {
+    display: none !important;
+  }
 </style>
-<div style="max-width: 400px; margin: 20px auto 0; padding: 0 10px;">
 
+<!-- লোডার এলিমেন্ট -->
+<div id="loader-overlay" class="d-none"><div class="spinner"></div></div>
 
+<div id="auth-section" style="min-height: 100vh; position: relative;">
 
-</div>
+    <!-- ================= প্রিমিয়াম হেডার সেকশন ================= -->
+    <div style="background: linear-gradient(135deg, #CC0000 0%, #FF8C00 50%, #FFD700 100%); padding: 12px 15px; color: white; box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25); position: sticky; top: 0; z-index: 100;">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 650px; margin: 0 auto; width: 100%; position: relative;">
+            
+            <!-- LEFT : HAMBURGER MENU -->
+            <button type="button" style="background: rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); width: 38px; height: 38px; border-radius: 12px; color: #ffffff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);" onclick="openNav()">
+                <i class="fas fa-bars"></i>
+            </button>
 
-<!-- লেন্ডিং পেজ সেকশন -->
-<div id="landing-page" style="width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px 70px 10px; font-family: 'Hind Siliguri', sans-serif; background: #ffffff; border-radius: 0; box-shadow: none; box-sizing: border-box; text-align: center;">
+            <!-- CENTER : BRAND -->
+            <div class="aypoth-brand" style="display: flex; align-items: center; gap: 10px;">
+                <div class="brand-logo-wrap" style="width: 36px; height: 36px; border-radius: 50%; overflow: hidden; border: 2px solid rgba(255, 255, 255, 0.8); box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                    <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg" alt="Aypoth" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="brand-text" style="display: flex; flex-direction: column; text-align: left;">
+                    <span class="brand-name" style="font-size: 15px; font-weight: 700; color: #ffffff; text-shadow: 0 1px 2px rgba(0,0,0,0.4); line-height: 1.1;">Free Time Earn</span>
+                    <span class="brand-tagline" style="font-size: 9px; color: #fff8e1; opacity: 0.95; font-weight: 500; letter-spacing: 0.3px;">Premium Digital Platform</span>
+                </div>
+            </div>
 
-    <!-- লোগো সেকশন -->
-    <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #ff0000, #ffcc00); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; padding: 3px; box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2); box-sizing: border-box;">
-        <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260706_132623_679.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 2px solid #ffffff;">
-    </div>
-        
-    <h2 style="font-weight: 800; color: #111111; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">স্বাগতম!</h2>
-    <p style="font-size: 13px; color: #555555; margin: 0 0 15px 0; font-weight: 500; line-height: 1.4;">আমাদের প্ল্যাটফর্মে প্রবেশ করতে নিচের বাটনে ক্লিক করুন</p>
-    
-    <!-- প্রবেশ করুন বাটন -->
-    <button onclick="openLoginBox()" style="width: 100%; max-width: 300px; height: 46px; border-radius: 8px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); font-size: 15px; letter-spacing: 0.5px; margin-bottom: 15px; font-family: 'Hind Siliguri', sans-serif;">
-        প্রবেশ করুন
-    </button>
+            <!-- RIGHT : NOTIFICATION BUTTON -->
+            <button type="button" style="position: relative; background: rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 255, 255, 0.3); width: 38px; height: 38px; border-radius: 12px; color: #ffffff; font-size: 16px; cursor: pointer; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);" onclick="toggleNotificationPopup(event)">
+                <i class="fas fa-bell"></i>
+                <span id="noti-dot" style="position: absolute; top: -3px; right: -3px; width: 17px; height: 17px; background: #000000; border-radius: 50%; border: 1.5px solid #FF8C00; color: white; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center;">1</span>
+            </button>
 
-    <!-- ইউজার কাউন্টার সেকশন -->
-    <div style="display: flex; justify-content: space-around; background: linear-gradient(135deg, #fff5f5 0%, #fff9e6 100%); padding: 10px 6px; border-radius: 10px; margin-bottom: 15px;">
-        <div style="flex: 1;">
-            <p style="font-size: 11px; color: #666666; margin: 0 0 2px 0; font-weight: 600;">নতুন ইউজার (আজ)</p>
-            <h3 id="new-users" style="font-size: 18px; color: #ff0000; margin: 0; font-weight: 800;">12</h3>
+            <!-- NOTIFICATION POPUP -->
+            <div id="noti-popup" style="display: none; position: absolute; top: 48px; right: 0; width: 260px; background: white; color: #333; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 15px; z-index: 200; border: 1px solid rgba(0,0,0,0.05);" onclick="event.stopPropagation()">
+                <div style="position: absolute; top: -6px; right: 12px; width: 12px; height: 12px; background: white; transform: rotate(45deg); border-left: 1px solid rgba(0,0,0,0.05); border-top: 1px solid rgba(0,0,0,0.05);"></div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid #f0f0f0; padding-bottom: 5px;">
+                    <span style="font-weight: 700; font-size: 14px; color: #CC0000;">🔔 নোটিফিকেশন</span>
+                    <span onclick="toggleNotificationPopup(event)" style="cursor: pointer; font-size: 18px; color: #aaa; font-weight: bold;">&times;</span>
+                </div>
+                <p style="margin: 0; font-size: 12px; color: #555; line-height: 1.5; text-align: left;">
+                    স্বাগতম! <b>Free Time Earn</b>-এ আপনাকে স্বাগতম। আমাদের নতুন আপডেট এবং অফারগুলো দেখতে নিয়মিত লক্ষ্য রাখুন।
+                </p>
+            </div>
         </div>
-        <div style="border-left: 1px solid #ffd699; flex: 1;">
-            <p style="font-size: 11px; color: #666666; margin: 0 0 2px 0; font-weight: 600;">সর্বমোট ইউজার</p>
-            <h3 id="total-users" style="font-size: 18px; color: #e67e00; margin: 0; font-weight: 800;">1,450</h3>
+    </div>
+
+    <!-- ================= সাইডবার (Slider Navigation) ================= -->
+    <div id="mySidebar" style="height: 100%; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background: #ffffff; overflow-x: hidden; transition: 0.4s; box-shadow: 4px 0 25px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
+        <div style="background: linear-gradient(135deg, #CC0000 0%, #FF8C00 100%); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; color: white; flex-shrink: 0;">
+            <span style="font-size: 18px; font-weight: 700;">Menu</span>
+            <a href="javascript:void(0)" style="text-decoration: none; font-size: 24px; color: white; font-weight: 600;" onclick="closeNav()">&times;</a>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; padding: 18px; border-bottom: 2px solid #f1f5f9; flex-shrink: 0;">
+            <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg" alt="Logo" style="height: 40px; width: 40px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <span style="color: #0f172a; font-size: 17px; font-weight: 800;">Free Time Earn</span>
+        </div>
+        <div style="padding: 15px 12px; display: flex; flex-direction: column; gap: 10px; flex: 1; overflow-y: auto;">
+            <a href="javascript:void(0)" onclick="showInstallPopup(); closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 14px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; background: transparent; transition: 0.2s;" onmouseover="this.style.background='#fff8f8'" onmouseout="this.style.background='transparent'">
+                <span style="background: rgba(204, 0, 0, 0.1); width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-cloud-download-alt" style="font-size: 15px; color: #CC0000;"></i>
+                </span>
+                <span style="flex: 1; text-align: left;">এপ ইন্সটল করুন</span>
+                <i class="fas fa-angle-right" style="font-size: 14px; color: #64748b;"></i>
+            </a>
+            <a href="javascript:void(0)" onclick="openDirectSupport(); closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 14px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; background: transparent; transition: 0.2s;" onmouseover="this.style.background='#fffaf0'" onmouseout="this.style.background='transparent'">
+                <span style="background: rgba(255, 140, 0, 0.1); width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-headset" style="font-size: 14px; color: #FF8C00;"></i>
+                </span>
+                <span style="flex: 1; text-align: left;">সাপোর্ট সেন্টার</span>
+                <i class="fas fa-angle-right" style="font-size: 14px; color: #64748b;"></i>
+            </a>
+        </div>
+        <div style="padding: 18px; border-top: 2px solid #f1f5f9; background: #ffffff; flex-shrink: 0;">
+            <div style="display: flex; gap: 18px; align-items: center; justify-content: flex-start;">
+                <a href="#" style="color: #1877F2; font-size: 22px;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #FF0000; font-size: 22px;"><i class="fab fa-youtube"></i></a>
+                <a href="#" style="color: #0088cc; font-size: 22px;"><i class="fab fa-telegram"></i></a>
+                <a href="#" style="color: #FF8C00; font-size: 22px;"><i class="fas fa-star-half-alt"></i></a>
+            </div>
         </div>
     </div>
 
-    
-    <hr style="border: 0; height: 1px; background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,153,0,0.4), rgba(255,0,0,0)); margin-bottom: 15px;">
+    <!-- ================= মূল ল্যান্ডিং পেজ ================= -->
+    <div id="landing-page" style="width: 100%; max-width: 650px; margin: 0 auto; padding: 20px 15px 80px 15px; text-align: center;">
+        <div style="background: linear-gradient(135deg, #CC0000 0%, #FF8C00 50%, #FFD700 100%); padding: 30px 20px; border-radius: 16px; color: #ffffff; box-shadow: 0 8px 25px rgba(204, 0, 0, 0.25); margin-bottom: 25px;">
+            <div style="width: 75px; height: 75px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; padding: 3px; backdrop-filter: blur(10px); border: 2px solid rgba(255, 255, 255, 0.5);">
+                <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            </div>
+            <h1 style="font-weight: 800; margin: 0 0 8px 0; font-size: 24px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">ফ্রি টাইমে ইনকাম করুন সহজে!</h1>
+            <p style="font-size: 13px; margin: 0 0 20px 0; opacity: 0.95; font-weight: 500; line-height: 1.5;">আমাদের প্রিমিয়াম প্ল্যাটফর্মে যোগ দিয়ে প্রতিদিন ঘরে বসেই উপার্জন করুন নিরাপদে ও দ্রুত।</p>
+            <button onclick="openLoginBox()" style="width: 100%; max-width: 280px; height: 46px; border-radius: 25px; border: none; background: #ffffff; color: #CC0000; font-weight: 800; cursor: pointer; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); font-size: 15px; transition: all 0.3s ease;">
+                <i class="fas fa-sign-in-alt" style="margin-right: 6px;"></i> অ্যাকাউন্টে প্রবেশ করুন
+            </button>
+        </div>
 
-    <!-- ফেসবুক স্টাইল পোস্ট ফিড সেকশন -->
-    <div style="text-align: left;">
-        <h3 style="font-size: 16px; color: #222222; margin-bottom: 12px; text-align: center; font-weight: 800; background: linear-gradient(135deg, #ff0000, #ff9900); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-            সদস্যদের পেমেন্ট ও ইনকাম প্রুফ
-        </h3>
-        
-        <!-- পোস্ট কন্টেইনার -->
-        <div id="fb-posts-container"></div>
+        <div style="display: flex; gap: 10px; margin-bottom: 25px;">
+            <div style="flex: 1; background: #ffffff; border: 1px solid #ffe0b2; padding: 15px 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.08);">
+                <i class="fas fa-users" style="font-size: 20px; color: #CC0000; margin-bottom: 5px;"></i>
+                <p style="font-size: 11px; color: #666; margin: 0; font-weight: 600;">মোট একটিভ ইউজার</p>
+                <h3 id="total-users" style="font-size: 20px; color: #CC0000; margin: 4px 0 0 0; font-weight: 800;">1,450</h3>
+            </div>
+            <div style="flex: 1; background: #ffffff; border: 1px solid #ffe0b2; padding: 15px 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(255, 140, 0, 0.08);">
+                <i class="fas fa-wallet" style="font-size: 20px; color: #FF8C00; margin-bottom: 5px;"></i>
+                <p style="font-size: 11px; color: #666; margin: 0; font-weight: 600;">মোট পে-আউট</p>
+                <h3 style="font-size: 20px; color: #FF8C00; margin: 4px 0 0 0; font-weight: 800;">৳ ২৫,০০০+</h3>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 25px; text-align: left;">
+            <h3 style="font-size: 17px; color: #111; margin-bottom: 15px; text-align: center; font-weight: 800;">
+                কেন <span style="color: #CC0000;">Free Time Earn</span> বেছে নেবেন?
+            </h3>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 15px; background: #fff8f8; border-left: 4px solid #CC0000; border-radius: 8px;">
+                    <i class="fas fa-bolt" style="font-size: 18px; color: #CC0000;"></i>
+                    <div>
+                        <h4 style="margin: 0; font-size: 13px; color: #222; font-weight: 700;">ইনস্ট্যান্ট উইথড্রয়াল</h4>
+                        <p style="margin: 2px 0 0 0; font-size: 11px; color: #666;">বিকাশ ও নগদ এর মাধ্যমে দ্রুত পেমেন্ট সুবিধা।</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 15px; background: #fffaf0; border-left: 4px solid #FF8C00; border-radius: 8px;">
+                    <i class="fas fa-shield-alt" style="font-size: 18px; color: #FF8C00;"></i>
+                    <div>
+                        <h4 style="margin: 0; font-size: 13px; color: #222; font-weight: 700;">১০০% নিরাপদ ও ট্রাস্টেড</h4>
+                        <p style="margin: 2px 0 0 0; font-size: 11px; color: #666;">আপনার তথ্য ও কাজের শতভাগ সুরক্ষার নিশ্চয়তা।</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px; padding: 12px 15px; background: #fffdf0; border-left: 4px solid #FFD700; border-radius: 8px;">
+                    <i class="fas fa-headset" style="font-size: 18px; color: #e6b800;"></i>
+                    <div>
+                        <h4 style="margin: 0; font-size: 13px; color: #222; font-weight: 700;">২৪/৭ লাইভ সাপোর্ট</h4>
+                        <p style="margin: 2px 0 0 0; font-size: 11px; color: #666;">যেকোনো প্রয়োজনে হেল্পডেস্ক থেকে সার্বক্ষণিক সহযোগিতা।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- ফিক্সড ফুটার বার -->
-    <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #fee6e6; padding: 8px 0; text-align: center; box-shadow: 0 -3px 12px rgba(0,0,0,0.05); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
-        <p style="font-size: 11px; color: #444444; margin: 0 0 2px 0; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
-        <p style="font-size: 10px; color: #777777; margin: 0; font-weight: 500;">
+    <!-- ================= লগইন ও রেজিস্ট্রেশন কনটেইনার (স্ক্রিনের একদম মাঝখানে থাকবে) ================= -->
+    <div class="auth-container d-none" id="auth-forms-wrapper">
+        
+        <!-- লগইন বক্স -->
+        <div class="auth-card" id="login-box">
+            <div style="text-align: center; margin-bottom: 22px;">
+                <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 22px;">লগইন করুন</h3>
+                <p style="font-size: 12px; color: #777; margin: 0; font-weight: 500;">আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন</p>
+            </div>
+
+            <div class="auth-fields">
+                <div style="position: relative; margin-bottom: 14px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="l-email" placeholder="ইমেইল দিন" style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                </div>
+
+                <div style="position: relative; margin-bottom: 8px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="l-pass" placeholder="পাসওয়ার্ড দিন" style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                    <span onclick="toggleLoginPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
+                        <i class="fas fa-eye" id="loginEyeIcon"></i>
+                    </span>
+                </div>
+
+                <div style="text-align: right; margin-bottom: 20px;">
+                    <a href="javascript:void(0)" onclick="showForgotPopup()" style="color: #CC0000; font-size: 12px; text-decoration: none; font-weight: 700; display: inline-block; padding: 2px 0;">
+                        <i class="fas fa-key" style="margin-right: 4px;"></i> পাসওয়ার্ড ভুলে গেছেন?
+                    </a>
+                </div>
+
+                <button onclick="handleAuth('login')" style="width: 100%; height: 46px; border-radius: 10px; border: none; background: linear-gradient(135deg, #CC0000 0%, #FF8C00 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(204, 0, 0, 0.3); transition: 0.3s; font-size: 15px;">
+                    লগইন করুন
+                </button>
+
+                <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
+                    নতুন সদস্য? <a href="javascript:void(0)" style="color: #CC0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(true)">এখনই রেজিস্ট্রেশন করুন</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- রেজিস্ট্রেশন বক্স -->
+        <div class="auth-card d-none" id="signup-box">
+            <div style="text-align: center; margin-bottom: 22px;">
+                <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 22px;">রেজিস্ট্রেশন করুন</h3>
+                <p style="font-size: 12px; color: #777; margin: 0; font-weight: 500;">নতুন অ্যাকাউন্টের জন্য নিবন্ধন করুন</p>
+            </div>
+
+            <div class="auth-fields">
+                <div style="position: relative; margin-bottom: 14px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-user"></i></span>
+                    <input type="text" id="s-name" placeholder="আপনার পূর্ণ নাম" style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                </div>
+
+                <div style="position: relative; margin-bottom: 14px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
+                    <input type="email" id="s-email" placeholder="ইমেইল দিন" style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                </div>
+
+                <div style="position: relative; margin-bottom: 14px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-handshake"></i></span>
+                    <input type="text" id="reg-refer" placeholder="রেফার কোড" style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                </div>
+
+                <div style="position: relative; margin-bottom: 20px;">
+                    <span style="position: absolute; left: 15px; top: 12px; color: #CC0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
+                    <input type="password" id="s-pass" placeholder="পাসওয়ার্ড দিন" style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500;">
+                    <span onclick="toggleSignupPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
+                        <i class="fas fa-eye" id="toggleSignupIcon"></i>
+                    </span>
+                </div>
+
+                <button onclick="handleAuth('signup')" style="width: 100%; height: 46px; border-radius: 10px; border: none; background: linear-gradient(135deg, #CC0000 0%, #FF8C00 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(204, 0, 0, 0.3); transition: 0.3s; font-size: 15px;">
+                    রেজিস্ট্রেশন করুন
+                </button>
+
+                <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
+                    ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="javascript:void(0)" style="color: #CC0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(false)">লগইন করুন</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ================= ফিক্সড ফুটার বার ================= -->
+    <div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999;">
+        <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Free Time Earn. All Rights Reserved</p>
+        <p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
             Developed by 
-            <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #ff0000; text-decoration: none; font-weight: 700;">Abu Sufian</a>
+            <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
         </p>
     </div>
 
 </div>
 
-<!-- জাভাস্ক্রিপ্ট সেকশন -->
+<!-- ================= জাভাস্ক্রিপ্ট ================= -->
 <script>
-    if (!localStorage.getItem('totalUsers')) {
-        localStorage.setItem('totalUsers', '1450');
-    }
-    if (!localStorage.getItem('newUsers')) {
-        localStorage.setItem('newUsers', '12');
+    /* নেভিগেশন ও নোটিফিকেশন */
+    function toggleNotificationPopup(event) {
+        if(event) { event.stopPropagation(); }
+        var popup = document.getElementById("noti-popup");
+        var dot = document.getElementById("noti-dot");
+        
+        if (popup.style.display === "none" || popup.style.display === "") {
+            popup.style.display = "block";
+            if(dot) { dot.style.display = "none"; }
+        } else {
+            popup.style.display = "none";
+        }
     }
 
+    document.addEventListener("click", function() {
+        var popup = document.getElementById("noti-popup");
+        if (popup && popup.style.display === "block") {
+            popup.style.display = "none";
+        }
+    });
+
+    function openNav() { document.getElementById("mySidebar").style.width = "250px"; }
+    function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
+    function openDirectSupport() { window.open('https://tawk.to/chat/6a4b569bda3fb71d533410e7/default', '_blank'); }
+
+    /* ইউজার কাউন্টার */
+    if (!localStorage.getItem('totalUsers')) { localStorage.setItem('totalUsers', '1450'); }
     const totalUsersElem = document.getElementById('total-users');
-    const newUsersElem = document.getElementById('new-users');
-
-    totalUsersElem.innerText = parseInt(localStorage.getItem('totalUsers')).toLocaleString('en-US');
-    newUsersElem.innerText = localStorage.getItem('newUsers');
+    if (totalUsersElem) { totalUsersElem.innerText = parseInt(localStorage.getItem('totalUsers')).toLocaleString('en-US'); }
 
     setInterval(() => {
         let totalVal = parseInt(localStorage.getItem('totalUsers')) || 1450;
         totalVal += Math.floor(Math.random() * 3) + 1;
         localStorage.setItem('totalUsers', totalVal);
-        totalUsersElem.innerText = totalVal.toLocaleString('en-US');
+        if (totalUsersElem) { totalUsersElem.innerText = totalVal.toLocaleString('en-US'); }
     }, 5000);
 
-    setInterval(() => {
-        let newVal = parseInt(localStorage.getItem('newUsers')) || 12;
-        newVal += Math.floor(Math.random() * 2) + 1;
-        localStorage.setItem('newUsers', newVal);
-        newUsersElem.innerText = newVal;
-    }, 10000);
-
-    const postsData = [
-        { 
-            name: "রিফাত আহমেদ", 
-            time: "১০ মিনিট আগে", 
-            profile: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/FB_IMG_1784992101037.jpg", 
-            caption: "আলহামদুলিল্লাহ! আজ আমার ইনকাম ৩৮৫ টাকা। ধন্যবাদ এত সুন্দর প্ল্যাটফর্ম দেওয়ার জন্য! ❤️", 
-            image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-201100.png" 
-        },
-        { 
-            name: "নাজমুল ইসলাম", 
-            time: "২৫ মিনিট আগে", 
-            profile: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80", 
-            caption: "টাকা উইথড্র দেওয়ার ৫ মিনিটের মধ্যে বিকাশ অ্যাকাউন্টে চলে আসলো। বিশ্বাস না হলে কাজ করে দেখতে পারেন। 🔥", 
-            image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-201233.png" 
-        },
-        { 
-            name: "ফাতেমা আক্তার", 
-            time: "১ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&auto=format&fit=crop&q=80", 
-            caption: "আজকের ৩ টা জিমেইল জমা দিয়ে ৩৫ টাকা ইনকাম। সাইটটি আসলেই অসাধারণ! 💸", 
-            image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-201319.png" 
-        },
-        { 
-            name: "সাকিব খান", 
-            time: "২ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80", 
-            caption: "আমার আজকের ইনকাম ৬০৪ টাকা সেরা একটা সাইট। সবাই এখানে কাজ করতে পারেন, ১০০% ট্রাস্টেড। 🚀", 
-            image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-211221.png" 
-        },
-        { 
-            name: "তানিয়া খাতুন", 
-            time: "৩ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&auto=format&fit=crop&q=80", 
-            caption: "পেমেন্ট প্রুফ দিলাম! এই সাইট থেকে ইনকাম করে ফাইনালি আজ আমি আমার ড্রিম আইফোন কিনে ফেললাম! আলহামদুলিল্লাহ। ✨📱", 
-            image: "https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/Screenshot_20260725-211232.png" 
-        },
-        { 
-            name: "ইমরান হোসেন", 
-            time: "৪ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80", 
-            caption: "অনলাইন থেকে কত সাইটেই তো কাজ করলাম, কিন্তু এটার মতো পেমেন্ট ফাস্ট কোথাও পাইনি। বস সাইট! 💯", 
-            image: "" 
-        },
-        { 
-            name: "পপি আক্তার", 
-            time: "৫ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=150&auto=format&fit=crop&q=80", 
-            caption: "বাসায় বসে ফ্রি টাইমে কাজ করে প্রতিদিন ভালো একটা অ্যামাউন্ট পাচ্ছি। ধন্যবাদ এডমিন ভাইকে! 🙏", 
-            image: "" 
-        },
-        { 
-            name: "রাশেদুল ইসলাম", 
-            time: "৬ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?w=150&auto=format&fit=crop&q=80", 
-            caption: "আলহামদুলিল্লাহ, এই প্ল্যাটফর্মের ইনকাম দিয়ে নিজের পছন্দের আইফোন হাতে পেলাম। কাজ একদম পানির মতো সহজ! 🌟", 
-            image: "" 
-        },
-        { 
-            name: "সুমাইয়া রহমান", 
-            time: "৭ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&auto=format&fit=crop&q=80", 
-            caption: "পেমেন্ট নিয়ে কোনো টেনশন করতে হয় না। উইথড্র দেওয়ার সাথে সাথেই বিকাশ বা নগদ এ টাকা চলে আসে। 💛", 
-            image: "" 
-        },
-        { 
-            name: "আরিফ হোসেন", 
-            time: "৮ ঘণ্টা আগে", 
-            profile: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=150&auto=format&fit=crop&q=80", 
-            caption: "যারা বেকার বসে আছেন বা পকেটের খরচ নিজে চালাতে চান, তারা আজই এখানে কাজ শুরু করে দিন। সেরা একটি মাধ্যম! 🔥", 
-            image: "" 
-        }
-    ];
-
-    const container = document.getElementById('fb-posts-container');
-    
-    postsData.forEach(post => {
-        const postCard = document.createElement('div');
-        postCard.style.cssText = "background: #fdfdfd; border-radius: 8px; padding: 10px; margin-bottom: 10px; text-align: left;";
-        
-        let imageHtml = "";
-        if (post.image && post.image.trim() !== "") {
-            imageHtml = `
-                <div style="width: 100%; max-height: 500px; border-radius: 6px; overflow: hidden; background: #000; margin-top: 6px;">
-                    <img src="${post.image}" alt="Post Image" style="width: 100%; height: auto; max-height: 500px; display: block; object-fit: contain; margin: 0 auto;">
-                </div>
-            `;
-        }
-
-        postCard.innerHTML = `
-            <div style="display: flex; align-items: center; margin-bottom: 6px;">
-                <img src="${post.profile}" alt="Profile" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; margin-right: 8px;">
-                <div>
-                    <h4 style="margin: 0; font-size: 13px; color: #111; font-weight: 700;">${post.name}</h4>
-                    <span style="font-size: 10px; color: #888;">${post.time} • <span style="color: #ff5500;">🌐</span></span>
-                </div>
-            </div>
-            <p style="font-size: 12px; color: #333333; margin: 0 0 4px 0; line-height: 1.4; font-weight: 500;">${post.caption}</p>
-            ${imageHtml}
-        `;
-        container.appendChild(postCard);
-    });
-</script>
-
-<!-- লগইন পেজ সেকশন -->
-<div class="auth-section" id="login-box" 
-     style="display: none; width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
-    
-    <div class="text-center" style="text-align: center; margin-bottom: 20px;">
-        <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">লগইন করুন</h3>
-        <p style="font-size: 13px; color: #777; margin: 0; font-weight: 500;">আপনার অ্যাকাউন্টে প্রবেশ করতে তথ্য দিন</p>
-    </div>
-
-    <div class="auth-fields">
-        <!-- জিমেইল ফিল্ড -->
-        <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
-            
-            <input type="email" id="l-email" placeholder="ইমেইল দিন"
-                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-        </div>
-
-        <!-- পাসওয়ার্ড ফিল্ড -->
-        <div style="position: relative; margin-bottom: 8px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
-            <input type="password" id="l-pass" placeholder="পাসওয়ার্ড দিন" 
-                   style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-            <span onclick="toggleLoginPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
-                <i class="fas fa-eye" id="loginEyeIcon"></i>
-            </span>
-        </div>
-
-        <!-- পাসওয়ার্ড ভুলে গেছেন লিংক -->
-        <div style="text-align: right; margin-bottom: 20px;">
-            <a href="javascript:void(0)" 
-               onclick="showForgotPopup()" 
-               style="color: #ff0000; font-size: 12px; text-decoration: none; font-weight: 700; display: inline-block; transition: 0.3s; padding: 2px 0;">
-               <i class="fas fa-key" style="margin-right: 4px;"></i> পাসওয়ার্ড ভুলে গেছেন?
-            </a>
-        </div>
-
-        <!-- বাটন -->
-        <button onclick="handleAuth('login')" 
-                style="width: 100%; height: 48px; border-radius: 10px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 15px; letter-spacing: 0.5px;">
-            লগইন করুন
-        </button>
-
-        <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
-            নতুন সদস্য? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(true)">এখনই রেজিস্ট্রেশন করুন</a>
-        </p>
-    </div>
-</div>      
-     <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
-    <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
-    <p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
-    Developed by 
-    <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
-</p>
-
-</div>
-
-
-<!-- جاভা স্ক্রিপ্ট ফাংশন -->
-<script>
+    /* সুইচ পেজ কন্ট্রোল */
     function openLoginBox() {
-        // লেন্ডিং পেজ হাইড হবে
-        document.getElementById('landing-page').style.display = 'none';
-        // লগইন বক্স শো হবে
-        document.getElementById('login-box').style.display = 'block';
+        document.getElementById('landing-page').classList.add('d-none');
+        document.getElementById('auth-forms-wrapper').classList.remove('d-none');
+        document.getElementById('login-box').classList.remove('d-none');
+        document.getElementById('signup-box').classList.add('d-none');
     }
-</script>
-<script>
-    /* লগইন পাসওয়ার্ড হাইড/শো করার ফাংশন */
+
+    function switchAuth(toSignup) {
+        if(toSignup) {
+            document.getElementById('login-box').classList.add('d-none');
+            document.getElementById('signup-box').classList.remove('d-none');
+        } else {
+            document.getElementById('signup-box').classList.add('d-none');
+            document.getElementById('login-box').classList.remove('d-none');
+        }
+    }
+
+    /* পাসওয়ার্ড শো/হাইড */
     function toggleLoginPassword() {
         const passInput = document.getElementById('l-pass');
         const eyeIcon = document.getElementById('loginEyeIcon');
-        
         if (passInput.type === 'password') {
             passInput.type = 'text';
-            eyeIcon.classList.remove('fa-eye');
-            eyeIcon.classList.add('fa-eye-slash');
+            eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
         } else {
             passInput.type = 'password';
-            eyeIcon.classList.remove('fa-eye-slash');
-            eyeIcon.classList.add('fa-eye');
+            eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
         }
     }
+
+    function toggleSignupPassword() {
+        const passInput = document.getElementById('s-pass');
+        const toggleIcon = document.getElementById('toggleSignupIcon');
+        if (passInput.type === 'password') {
+            passInput.type = 'text';
+            toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+        } else {
+            passInput.type = 'password';
+            toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+        }
+    }
+
+    /* অন্যান্য ফাংশন প্লেসহোল্ডার */
+    if (typeof showInstallPopup !== 'function') { function showInstallPopup() { alert('Install Popup!'); } }
+    if (typeof showForgotPopup !== 'function') { function showForgotPopup() { alert('Forgot Password!'); } }
+    if (typeof handleAuth !== 'function') { function handleAuth(type) { alert('Processing ' + type); } }
 </script>
-
-
-<style>
-    /* প্লেসহোল্ডার টেক্সট কালার ঠিক করার জন্য CSS */
-    #signup-box input::placeholder {
-        color: #888 !important; /* হালকা ধূসর রঙ যা সাদা ব্যাকগ্রাউন্ডে স্পষ্ট দেখা যাবে */
-        opacity: 1;
-    }
-    #signup-box input:-ms-input-placeholder { color: #888 !important; }
-    #signup-box input::-ms-input-placeholder { color: #888 !important; }
-</style>
-
-<!-- রেজিস্ট্রেশন পেজ সেকশন -->
-<div class="auth-section d-none" id="signup-box" 
-     style="width: 100%; max-width: 650px; margin: 0 auto; padding: 15px 10px; font-family: 'Hind Siliguri', sans-serif; box-sizing: border-box;">
-    
-    <div class="text-center" style="text-align: center; margin-bottom: 20px;">
-        <h3 style="font-weight: 800; color: #1a1a1a; margin: 0 0 4px 0; font-size: 24px; letter-spacing: -0.5px;">রেজিস্ট্রেশন করুন</h3>
-        <p style="font-size: 13px; color: #777; margin: 0; font-weight: 500;">নতুন অ্যাকাউন্টের জন্য নিবন্ধন করুন</p>
-    </div>
-
-    <div class="auth-fields">
-        <!-- নাম ফিল্ড -->
-        <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-user"></i></span>
-            <input type="text" id="s-name" placeholder="আপনার পূর্ণ নাম" 
-                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-        </div>
-
-        <!-- জিমেইল ফিল্ড -->
-        <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-envelope"></i></span>
-            <input type="email" id="s-email" placeholder="ইমেইল দিন "
-                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-        </div>
-
-        <!-- রেফার কোড ফিল্ড -->
-        <div style="position: relative; margin-bottom: 14px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-handshake"></i></span>
-            <input type="text" id="reg-refer" placeholder="রেফার কোড " 
-                   style="width: 100%; padding: 12px 15px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-        </div>
-
-        <!-- পাসওয়ার্ড ফিল্ড -->
-        <div style="position: relative; margin-bottom: 20px;">
-            <span style="position: absolute; left: 15px; top: 12px; color: #ff0000; font-size: 15px;"><i class="fas fa-lock"></i></span>
-            <input type="password" id="s-pass" placeholder="পাসওয়ার্ড দিন" 
-                   style="width: 100%; padding: 12px 45px 12px 45px; border-radius: 10px; border: 1.5px solid #eee; background: #fdfdfd; color: #333; outline: none; font-size: 14px; transition: 0.3s; font-weight: 500; box-sizing: border-box;">
-            <span onclick="toggleSignupPassword()" style="position: absolute; right: 15px; top: 12px; color: #ccc; cursor: pointer; font-size: 16px; z-index: 10;">
-                <i class="fas fa-eye" id="toggleSignupIcon"></i>
-            </span>
-        </div>
-
-        <!-- বাটন -->
-        <button onclick="handleAuth('signup')" 
-                style="width: 100%; height: 48px; border-radius: 10px; border: none; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); color: #ffffff; font-weight: 700; cursor: pointer; box-shadow: 0 4px 14px rgba(255, 0, 0, 0.3); transition: 0.3s; font-size: 15px; letter-spacing: 0.5px;">
-            রেজিস্ট্রেশন করুন
-        </button>
-
-        <p style="font-size: 13px; color: #666; margin-top: 20px; text-align: center;">
-            ইতিমধ্যে অ্যাকাউন্ট আছে? <a href="#" style="color: #ff0000; font-weight: 700; text-decoration: none;" onclick="switchAuth(false)">লগইন করুন</a>
-        </p>
-    </div>
-</div>      
-      
-      <!-- স্ক্রিনের নিচে ফিক্সড নেভিগেশনের মতো ফুটার বার -->
-<div style="position: fixed; bottom: 0; left: 0; width: 100%; background: #ffffff; border-top: 1px solid #ddd; padding: 8px 0; text-align: center; box-shadow: 0 -2px 10px rgba(0,0,0,0.08); z-index: 9999; font-family: 'Hind Siliguri', sans-serif;">
-    <p style="font-size: 12px; color: #555; margin: 0 0 2px; font-weight: 600;">&copy; 2026 Aypoth. All Rights Reserved</p>
-        <p style="font-size: 11px; color: #777; margin: 0; font-weight: 500;">
-    Developed by 
-    <a href="https://t.me/DEVELOPER_SUFIAN" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600;">Abu Sufian</a>
-</p>
-    
-</div>
-
-<script>
-function toggleSignupPassword() {
-    const passInput = document.getElementById('s-pass');
-    const toggleIcon = document.getElementById('toggleSignupIcon');
-    if (passInput.type === 'password') {
-        passInput.type = 'text';
-        toggleIcon.classList.remove('fa-eye');
-        toggleIcon.classList.add('fa-eye-slash');
-    } else {
-        passInput.type = 'password';
-        toggleIcon.classList.remove('fa-eye-slash');
-        toggleIcon.classList.add('fa-eye');
-    }
-}
-</script>
-
-
-
-
-</div>
-</div>
-
-<style>
-    /* ইনপুট ফোকাস করলে বর্ডার হাইলাইট হবে */
-    #signup-box input:focus {
-        background: rgba(255,255,255,0.2) !important;
-        border-color: #fff !important;
-    }
-    /* প্লেসহোল্ডার কালার সাদা করা */
-    #signup-box input::placeholder {
-        color: rgba(255,255,255,0.6);
-    }
-</style>
+  
 
 <div id="user-app" class="d-none">
     <div id="p-home-main">
 
+
+<!-- Font Awesome & Google Fonts -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<style>
+  .aypoth-premium-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: linear-gradient(135deg, #CC0000 0%, #FF8C00 50%, #FFD700 100%);
+    box-shadow: 0 4px 15px rgba(204, 0, 0, 0.25);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: 'Poppins', sans-serif;
+  }
 
-<!-- ================= PREMIUM AYPOTH HEADER ================= -->
+  .aypoth-header-side {
+    display: flex;
+    align-items: center;
+  }
+
+  .aypoth-header-btn {
+    position: relative;
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(5px);
+  }
+
+  .aypoth-header-btn:active {
+    transform: scale(0.92);
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -3px;
+    right: -3px;
+    width: 17px;
+    height: 17px;
+    background: #000000;
+    border-radius: 50%;
+    border: 1.5px solid #FF8C00;
+    color: #ffffff;
+    font-size: 9px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .aypoth-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-logo-wrap {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  }
+
+  .brand-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .brand-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+    line-height: 1.1;
+  }
+
+  .brand-tagline {
+    font-size: 9px;
+    color: #fff8e1;
+    opacity: 0.95;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+</style>
 
 <nav class="aypoth-premium-header">
 
     <!-- LEFT : NOTIFICATION -->
     <div class="aypoth-header-side">
-
         <button
             type="button"
             class="aypoth-header-btn notification-btn"
             onclick="openCustomNotification(event)"
             title="Notifications"
         >
-
             <i class="fas fa-bell"></i>
-
             <span id="custom-noti-dot" class="notification-badge">
                 1
             </span>
-
         </button>
-
     </div>
-
 
     <!-- CENTER : BRAND -->
     <div class="aypoth-brand">
-
         <div class="brand-logo-wrap">
-
             <img
                 src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg"
                 alt="Aypoth"
                 class="brand-logo"
             >
-
         </div>
-
         <div class="brand-text">
-
             <span class="brand-name">
                 Free Time Earn
             </span>
-
             <span class="brand-tagline">
                 Premium Digital Platform
             </span>
-
         </div>
-
     </div>
-
 
     <!-- RIGHT : MENU -->
     <div class="aypoth-header-side">
-
         <button
             type="button"
             class="aypoth-header-btn menu-btn"
             onclick="toggleSidebar()"
             title="Menu"
         >
-
             <i class="fas fa-bars"></i>
-
         </button>
-
     </div>
 
 </nav>
 
 
-<style>
-
-/* =====================================================
-   AYPOTH PREMIUM HEADER
-===================================================== */
-
-.aypoth-premium-header{
-
-    position:sticky;
-
-    top:0;
-
-    z-index:1000;
-
-    width:100%;
-
-    height:66px;
-
-    padding:
-        8px 12px;
-
-    box-sizing:border-box;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    font-family:
-        'Poppins',
-        'Hind Siliguri',
-        sans-serif;
-
-    background:
-
-        radial-gradient(
-            circle at 50% -80px,
-            rgba(255,220,80,.35),
-            transparent 42%
-        ),
-
-        linear-gradient(
-            135deg,
-            #a80000 0%,
-            #e00000 38%,
-            #f45100 72%,
-            #ff9d00 100%
-        );
-
-    border-bottom:
-        1px solid
-        rgba(255,255,255,.25);
-
-    box-shadow:
-
-        0 8px 28px
-        rgba(130,0,0,.20);
-
-    backdrop-filter:
-        blur(14px);
-
-    -webkit-backdrop-filter:
-        blur(14px);
-
-}
-
-
-/* =====================================================
-   HEADER SIDE
-===================================================== */
-
-.aypoth-header-side{
-
-    width:43px;
-
-    height:43px;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-}
-
-
-/* =====================================================
-   HEADER BUTTON
-===================================================== */
-
-.aypoth-header-btn{
-
-    position:relative;
-
-    width:42px;
-
-    height:42px;
-
-    padding:0;
-
-    border:none;
-
-    outline:none;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    cursor:pointer;
-
-    color:#fff;
-
-    border-radius:14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.23),
-            rgba(255,255,255,.09)
-        );
-
-    border:
-        1px solid
-        rgba(255,255,255,.28);
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.20),
-
-        0 5px 15px
-        rgba(90,0,0,.13);
-
-    transition:
-        transform .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
-
-}
-
-
-.aypoth-header-btn i{
-
-    color:#fff;
-
-    font-size:16px;
-
-    filter:
-        drop-shadow(
-            0 2px 4px
-            rgba(0,0,0,.20)
-        );
-
-    transition:
-        transform .2s ease;
-
-}
-
-
-/* Hover */
-
-.aypoth-header-btn:hover{
-
-    background:
-        rgba(255,255,255,.28);
-
-    transform:
-        translateY(-1px);
-
-    box-shadow:
-
-        inset 0 1px 0
-        rgba(255,255,255,.25),
-
-        0 8px 20px
-        rgba(90,0,0,.18);
-
-}
-
-
-.aypoth-header-btn:hover i{
-
-    transform:
-        scale(1.08);
-
-}
-
-
-/* Press */
-
-.aypoth-header-btn:active{
-
-    transform:
-        scale(.91);
-
-}
-
-
-/* =====================================================
-   NOTIFICATION
-===================================================== */
-
-.notification-btn i{
-
-    animation:
-        bellFloat 3s
-        infinite ease-in-out;
-
-}
-
-
-/* Notification Badge */
-
-.notification-badge{
-
-    position:absolute;
-
-    top:-4px;
-
-    right:-4px;
-
-    min-width:17px;
-
-    height:17px;
-
-    padding:
-        0 4px;
-
-    box-sizing:border-box;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:50px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ff1744,
-            #ff4d00
-        );
-
-    color:#fff;
-
-    border:
-        2px solid
-        rgba(255,255,255,.95);
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:8px;
-
-    font-weight:900;
-
-    line-height:1;
-
-    box-shadow:
-
-        0 3px 8px
-        rgba(120,0,0,.28);
-
-    animation:
-        notificationPulse 2s
-        infinite;
-
-}
-
-
-/* =====================================================
-   BRAND
-===================================================== */
-
-.aypoth-brand{
-
-    position:absolute;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    max-width:
-        calc(100% - 115px);
-
-    white-space:nowrap;
-
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.brand-logo-wrap{
-
-    width:39px;
-
-    height:39px;
-
-    padding:2px;
-
-    box-sizing:border-box;
-
-    flex-shrink:0;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #fff,
-            #ffe55c
-        );
-
-    box-shadow:
-
-        0 5px 14px
-        rgba(80,0,0,.20),
-
-        0 0 0 1px
-        rgba(255,255,255,.30);
-
-}
-
-
-.brand-logo{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:10px;
-
-    display:block;
-
-}
-
-
-/* =====================================================
-   BRAND TEXT
-===================================================== */
-
-.brand-text{
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    line-height:1;
-
-}
-
-
-.brand-name{
-
-    color:#fff;
-
-    font-family:'Poppins',sans-serif;
-
-    font-size:18px;
-
-    font-weight:900;
-
-    letter-spacing:
-        .8px;
-
-    text-shadow:
-
-        0 2px 7px
-        rgba(0,0,0,.25);
-
-}
-
-
-.brand-tagline{
-
-    margin-top:4px;
-
-    color:
-        rgba(255,255,255,.72);
-
-    font-size:6px;
-
-    font-weight:700;
-
-    letter-spacing:
-        .65px;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-/* =====================================================
-   MENU BUTTON
-===================================================== */
-
-.menu-btn i{
-
-    font-size:17px;
-
-}
-
-
-/* =====================================================
-   ANIMATIONS
-===================================================== */
-
-@keyframes bellFloat{
-
-    0%,
-    90%,
-    100%{
-        transform:
-            rotate(0deg);
-    }
-
-    93%{
-        transform:
-            rotate(8deg);
-    }
-
-    96%{
-        transform:
-            rotate(-8deg);
-    }
-
-}
-
-
-@keyframes notificationPulse{
-
-    0%,
-    100%{
-
-        transform:
-            scale(1);
-
-        box-shadow:
-            0 3px 8px
-            rgba(120,0,0,.28);
-
-    }
-
-    50%{
-
-        transform:
-            scale(1.12);
-
-        box-shadow:
-
-            0 0 0 4px
-            rgba(255,255,255,.10),
-
-            0 3px 10px
-            rgba(120,0,0,.30);
-
-    }
-
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media(max-width:360px){
-
-    .aypoth-premium-header{
-
-        height:62px;
-
-        padding:
-            7px 9px;
-
-    }
-
-    .aypoth-header-side{
-
-        width:40px;
-
-    }
-
-    .aypoth-header-btn{
-
-        width:39px;
-
-        height:39px;
-
-        border-radius:12px;
-
-    }
-
-    .brand-logo-wrap{
-
-        width:36px;
-
-        height:36px;
-
-        border-radius:11px;
-
-    }
-
-    .brand-logo{
-
-        border-radius:9px;
-
-    }
-
-    .brand-name{
-
-        font-size:16px;
-
-    }
-
-    .brand-tagline{
-
-        font-size:5.5px;
-
-    }
-
-    .aypoth-brand{
-
-        gap:6px;
-
-    }
-
-}
-
-
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    .notification-btn i,
-    .notification-badge{
-
-        animation:none !important;
-
-    }
-
-}
-
-</style>
 <div id="custom-noti-popup-overlay" onclick="closeCustomNotification(event)" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 99998; align-items: center; justify-content: center; padding: 15px; box-sizing: border-box;">
     
     <div id="custom-noti-popup" class="aypoth-popup-box" onclick="event.stopPropagation()" style="position: relative; width: 100%; max-width: 450px; background: white; color: #333; border-radius: 20px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); padding: 25px; z-index: 99999; border: 1px solid rgba(0,0,0,0.05); box-sizing: border-box; animation: popupScale 0.3s ease; font-family: 'Poppins', sans-serif;">
@@ -3977,14 +3253,9 @@ function toggleSidebar() {
                 <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/79a5d902-afe9-4176-b6f7-8f8e16243a82.png" alt="Banner 1">
             </div>
         </div>
-        
-        <!-- দ্বিতীয় স্লাইড -->
-        <div class="swiper-slide">
-            <div class="premium-cover-box">
-                <img src="https://raw.githubusercontent.com/aypoth/aypoth/refs/heads/main/IMG_20260623_003030_971.jpg" alt="Banner 2">
-            </div>
-        </div>
+            
     </div>
+    
     
     <!-- পেজিনেশন ডট (নিচের ছোট বিন্দুগুলো) -->
     <div class="swiper-pagination"></div>
@@ -6491,525 +5762,245 @@ function togglePassword() {
 
 <div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
 
-<!-- ================= PREMIUM RIGHT SIDEBAR ================= -->
 <div id="right-sidebar" class="side-drawer">
+    <div class="drawer-content" style="background: #ffffff; height: 100vh; width: 280px; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; overflow: hidden;">
+        
+        <!-- প্রিমিয়াম লাল-হলুদ মিক্সচার ব্যাকগ্রাউন্ড (শার্প চারকোনা লুক) -->
+        <div class="drawer-header" style="background: linear-gradient(135deg, #e60000 0%, #ff4500 45%, #ff9900 100%); padding: 35px 20px 25px; position: relative; z-index: 10; flex-shrink: 0; box-shadow: 0 10px 30px rgba(230, 0, 0, 0.25); overflow: hidden; border-radius: 0px;">
+            
+            <!-- ব্যাকগ্রাউন্ড লাইٹنگ ইফেক্ট -->
+            <div style="position: absolute; top: -50px; right: -50px; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.12); filter: blur(20px); border-radius: 50%; pointer-events: none;"></div>
+            <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.08); filter: blur(15px); border-radius: 50%; pointer-events: none;"></div>
 
-    <div class="drawer-content">
+            <div style="text-align: center; position: relative; z-index: 2;">
+                
+                <!-- প্রোফাইল পিকচার (শার্প চারকোনা) -->
+                <div style="position: relative; display: inline-block; margin-bottom: 5px;">
+                    <img src="YOUR_PROFILE_IMAGE_URL" id="user-dp" 
+                         style="width: 85px; height: 85px; border-radius: 4px; border: 2.5px solid rgba(255, 255, 255, 0.7); object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.25); transition: 0.3s;">
+                    <!-- একটিভ ডট -->
+                    <div style="position: absolute; bottom: -4px; right: -4px; background: #2ecc71; width: 14px; height: 14px; border-radius: 2px; border: 2.5px solid #ff4500; box-shadow: 0 2px 6px rgba(0,0,0,0.3);"></div>
+                </div>
 
+                <!-- ইউজার নেম -->
+                <h5 id="user-name" style="font-weight: 800; color: #ffffff; margin: 12px 0 10px; font-size: 19px; letter-spacing: 0.8px; text-transform: uppercase; text-shadow: 0 2px 4px rgba(0,0,0,0.15);">Abu Sufian</h5>
+                
+                <!-- গ্লাস মরফিজম র‍্যাঙ্ক কার্ড (শার্প চারকোনা) -->
+                <div style="display: flex; justify-content: center;">
+                    <div style="background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 6px 14px; border-radius: 4px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(255, 255, 255, 0.25); box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);">
+                        <i class="fas fa-crown" style="font-size: 10px; color: #ffffff;"></i> 
+                        <span id="user-rank" style="font-size: 10px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.8px;">General Member</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- গ্লাস মরফিজম রেফার কার্ড (শার্প চারকোনা) -->
+            <div id="refer-section" class="ref-card-modern" 
+                 style="display: flex; margin-top: 18px; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 8px 14px; border-radius: 4px; align-items: center; justify-content: space-between; max-width: 250px; margin-left: auto; margin-right: auto; transition: 0.3s; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); box-sizing: border-box;">
+                
+                <div style="display: flex; align-items: center; gap: 6px;">
+                    <i class="fas fa-gift" style="color: #ffffff; font-size: 11px;"></i>
+                    <span style="font-size: 10px; color: rgba(255, 255, 255, 0.85); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Refer:</span>
+                    <b id="user-ref" style="color: #ffffff; font-size: 13px; letter-spacing: 1px; font-weight: 900;">XYZ123</b>
+                </div>
+                
+                <i class="far fa-copy" onclick="copyRef()" 
+                   style="color: rgba(255, 255, 255, 0.85); cursor: pointer; font-size: 13px; transition: all 0.2s ease; padding: 4px;" 
+                   onmouseover="this.style.color='#ffffff'; this.style.transform='scale(1.15)';" 
+                   onmouseout="this.style.color='rgba(255, 255, 255, 0.85)'; this.style.transform='scale(1)';"></i>
+            </div>
+        </div>
+        
+        <!-- সিএসএস স্টাইল (আলাদা আলাদা বাটন কার্ডের প্রিমিয়াম ইফেক্ট) -->
         <style>
-        /* =========================================
-            PREMIUM SIDEBAR (RED & GOLD THEME)
-        ========================================= */
-
-        .drawer-content {
-            width: 300px;
-            max-width: 300px;
-            height: 100dvh;
-            margin: 0 !important;
-            padding: 0 !important;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            box-sizing: border-box;
-            background:
-                radial-gradient(circle at 100% 0%, rgba(255, 193, 7, .14), transparent 30%),
-                #fffafa;
-            color: #3b0808;
-            font-family: 'Poppins', sans-serif;
-            box-shadow: -16px 0 40px rgba(120, 0, 0, .14);
-        }
-
-        /* HEADER */
-        .drawer-header {
-            position: relative;
-            flex-shrink: 0;
-            margin: 0 !important;
-            padding: 24px 16px 18px !important;
-            border-radius: 0 0 24px 24px;
-            background:
-                radial-gradient(circle at 90% 5%, rgba(255, 224, 92, .28), transparent 25%),
-                radial-gradient(circle at 5% 100%, rgba(255, 193, 7, .22), transparent 32%),
-                linear-gradient(145deg, #8b0000 0%, #c1121f 48%, #ff7a00 100%);
-            box-shadow: 0 10px 28px rgba(139, 0, 0, .22);
-        }
-
-        .profile-wrap {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-        }
-
-        .profile-photo {
-            position: relative;
-            display: inline-block;
-        }
-
-        .profile-photo img {
-            width: 76px;
-            height: 76px;
-            object-fit: cover;
-            border-radius: 22px;
-            border: 3px solid #fff;
-            box-shadow: 0 8px 22px rgba(0, 0, 0, .22);
-        }
-
-        .active-dot {
-            position: absolute;
-            right: -3px;
-            bottom: 2px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #10b981;
-            border: 3px solid #8b0000;
-        }
-
-        #user-name {
-            margin: 10px 0 6px !important;
-            color: #fff;
-            font-size: 17px;
-            font-weight: 800;
-        }
-
-        .rank-card {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 5px 12px;
-            border-radius: 30px;
-            background: rgba(255, 255, 255, .16);
-            border: 1px solid rgba(255, 225, 100, .38);
-        }
-
-        .rank-card i, .ref-left i {
-            color: #ffe45c;
-            font-size: 11px;
-        }
-
-        .rank-card span {
-            color: #fff;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: .5px;
-        }
-
-        /* REFERRAL CARD */
-        .ref-card-modern {
-            position: relative;
-            z-index: 2;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 14px auto 0 !important;
-            width: 100%;
-            max-width: 268px;
-            box-sizing: border-box;
-            padding: 10px 12px;
-            border-radius: 13px;
-            background: rgba(255, 255, 255, .15);
-            border: 1px solid rgba(255, 226, 100, .35);
-        }
-
-        .ref-left {
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-
-        .ref-left span {
-            color: rgba(255, 255, 255, .85);
-            font-size: 9px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        #user-ref {
-            color: #fff;
-            font-size: 11px;
-            font-weight: 900;
-            letter-spacing: 1px;
-        }
-
-        .copy-ref {
-            color: #fff;
-            font-size: 13px;
-            cursor: pointer;
-            padding: 4px;
-        }
-
-        /* SCROLLABLE MENU */
-        .scrollable-menu {
-            flex: 1;
-            overflow-y: auto;
-            padding: 16px 14px !important;
-            margin: 0 !important;
-            box-sizing: border-box;
-            scrollbar-width: thin;
-            scrollbar-color: #f5dddd transparent;
-        }
-
-        .menu-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px !important; /* বাটনগুলোর মধ্যে ব্যবধান */
-            margin: 0 !important;
-        }
-
-        /* CUSTOM MENU BUTTON (English & Lightly Larger) */
-        .custom-menu-btn {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            min-height: 58px; /* বাটন একটু বড় করা হয়েছে */
-            margin: 0 !important;
-            padding: 10px 12px !important;
-            box-sizing: border-box;
-            border: 1px solid #f5dddd !important;
-            border-radius: 16px !important;
-            background: #ffffff !important;
-            box-shadow: 0 4px 12px rgba(120, 0, 0, .04) !important;
-            cursor: pointer;
-            outline: none;
-            transition: all 0.2s ease;
-        }
-
-        .custom-menu-btn:hover,
-        .custom-menu-btn:focus {
-            border-color: #ff9d00 !important;
-            background: #fffdf9 !important;
-            box-shadow: 0 6px 16px rgba(193, 18, 31, .08) !important;
-        }
-
-        .custom-menu-btn:active {
-            transform: scale(0.98);
-        }
-
-        /* ICON BOX */
-        .icon-box {
-            position: relative;
-            width: 38px !important; /* আইকন বক্স কিছুটা বাড়ানো হয়েছে */
-            height: 38px !important;
-            min-width: 38px !important;
-            margin-right: 12px !important;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 12px !important;
-            background: linear-gradient(135deg, #c1121f, #ff9d00) !important;
-            color: #fff !important;
-            box-shadow: 0 5px 12px rgba(193, 18, 31, .2) !important;
-        }
-
-        .icon-box i {
-            font-size: 13px !important;
-        }
-
-        /* MENU TEXT */
-        .menu-text {
-            flex: 1;
-            text-align: left;
-            color: #3d0808 !important;
-            font-size: 13.5px; /* ফন্ট সাইজ সামান্য বৃদ্ধি */
-            font-weight: 700;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis; /* লেখা অতিরিক্ত বড় হলে কাটবে না */
-        }
-
-        /* ARROW */
-        .menu-arrow {
-            width: 26px;
-            height: 26px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            background: #fff4df;
-            color: #c1121f;
-            font-size: 9px;
-        }
-
-        /* FOOTER / LOGOUT */
-        .drawer-footer {
-            flex-shrink: 0;
-            margin: 0 !important;
-            padding: 12px 14px 14px !important;
-            background: #fff !important;
-            border-top: 1px solid #f5dddd;
-            box-shadow: 0 -5px 14px rgba(120, 0, 0, .04);
-            box-sizing: border-box;
-        }
-
-        .logout-btn {
-            position: relative;
-            display: flex;
-            align-items: center;
-            width: 100%;
-            min-height: 52px; /* লগআউট বাটন হালকা বড় */
-            margin: 0 !important;
-            padding: 8px 12px !important;
-            box-sizing: border-box;
-            border-radius: 15px !important;
-            border: 1px solid #f3d7d7 !important;
-            background: linear-gradient(135deg, #fff1e8, #ffe4b5) !important;
-            cursor: pointer;
-            outline: none;
-            transition: transform 0.2s ease;
-        }
-
-        .logout-btn:active {
-            transform: scale(0.98);
-        }
-
-        .logout-icon {
-            width: 34px;
-            height: 34px;
-            min-width: 34px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 12px;
-            border-radius: 11px;
-            background: linear-gradient(135deg, #c1121f, #ff9d00);
-            color: #fff;
-            font-size: 12px;
-        }
-
-        .logout-text {
-            color: #9b0b13 !important;
-            font-size: 13.5px;
-            font-weight: 800;
-        }
-
-        /* MOBILE RESPONSIVE */
-        @media(max-width:360px){
-            .drawer-content {
-                width: 280px;
-                max-width: 280px;
-            }
-            .drawer-header {
-                padding: 20px 12px 14px !important;
-            }
-            .scrollable-menu {
-                padding: 12px 10px !important;
-            }
             .custom-menu-btn {
-                min-height: 54px;
+                background: #f8fafc !important; /* হালকা কার্ড ব্যাকগ্রাউন্ড */
+                border: 1px solid #f1f5f9 !important; /* চারদিকের ফাইন বর্ডার */
+                border-bottom: 2px solid #e2e8f0 !important; /* নিচে একটু চওড়া বর্ডার কার্ড ফিল দেওয়ার জন্য */
+                border-radius: 4px !important; /* প্রফেশনাল চারকোনা শেপ */
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
+                margin-bottom: 2px;
+                transition: all 0.2s ease-in-out !important;
             }
-            .menu-text {
-                font-size: 12.5px;
+            /* বাটনে ক্লিক বা স্পর্শ করলে যে ইফেক্ট হবে */
+            .custom-menu-btn:active {
+                background: #f1f5f9 !important;
+                border-bottom: 1px solid #cbd5e1 !important;
+                transform: translateY(1px);
+                box-shadow: none !important;
             }
-        }
         </style>
 
-        <!-- ================= HEADER ================= -->
-        <div class="drawer-header">
-            <div class="profile-wrap">
-                <div class="profile-photo">
-                    <img
-                        src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg"
-                        id="user-dp"
-                        alt="User Profile"
-                    >
-                    <div class="active-dot"></div>
-                </div>
+        <!-- স্ক্রোলযোগ্য মেনু সেকশন (আলাদা আলাদা বাটন কার্ড ভিউ) -->
+        <div class="scrollable-menu" style="flex: 1; overflow-y: auto; padding: 18px 14px; background: #ffffff;">
+            <div class="menu-group" style="display: flex; flex-direction: column; gap: 8px;"> <!-- গ্যাপ বাড়িয়ে আলাদা করা হয়েছে -->
 
-                <h5 id="user-name">
-                    Abu Sufian
-                </h5>
-
-                <div class="rank-card">
-                    <i class="fas fa-crown"></i>
-                    <span id="user-rank">
-                        General Member
-                    </span>
-                </div>
-            </div>
-
-            <!-- REFERRAL -->
-            <div id="refer-section" class="ref-card-modern">
-                <div class="ref-left">
-                    <i class="fas fa-gift"></i>
-                    <span>Refer Code :</span>
-                    <b id="user-ref">XYZ123</b>
-                </div>
-                <i class="far fa-copy copy-ref" onclick="copyRef()"></i>
-            </div>
-        </div>
-
-        <!-- ================= MENU ================= -->
-        <div class="scrollable-menu">
-            <div class="menu-group">
-
-                <!-- HOME -->
-                <button class="custom-menu-btn" onclick="openPage('home'); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-th-large"></i>
-                    </span>
-                    <span class="menu-text">Home</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!-- ১. Home (Royal Blue Gradient) -->
+                <button class="custom-menu-btn" onclick="openPage('home'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(30,60,114,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-th-large" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Home</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- WITHDRAW -->
-                <button class="custom-menu-btn" onclick="openPage('p-withdraw'); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-arrow-alt-circle-down"></i>
-                    </span>
-                    <span class="menu-text">Withdraw Balance</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+
+                <!-- ৩. Withdraw (Sunset Orange Gradient) -->
+                <button class="custom-menu-btn" onclick="openPage('p-withdraw'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(255,78,80,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-arrow-alt-circle-down" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Withdraw</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- TRANSACTION -->
-                <button class="custom-menu-btn" onclick="openTransactionPage(); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-wallet"></i>
-                    </span>
-                    <span class="menu-text">Transaction History</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!-- ৪. Transactions (Deep Purple Gradient) -->
+                <button class="custom-menu-btn" onclick="openTransactionPage(); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #654ea3 0%, #eaafc8 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(101,78,163,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-wallet" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Transactions</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- SETTINGS -->
-                <button class="custom-menu-btn" onclick="openSettings(); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-sliders-h"></i>
-                    </span>
-                    <span class="menu-text">Account Settings</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!-- ৫. Settings (Steel Tech Grey Gradient) -->
+                <button class="custom-menu-btn" onclick="openSettings(); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #617ca5 0%, #2b384e 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(43,56,78,0.15); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-sliders-h" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Settings</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- ADMIN -->
-                <button class="custom-menu-btn" onclick="openPage('p-admin-profile'); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-user-check"></i>
-                    </span>
-                    <span class="menu-text">Admin Profile</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!--Adapter ৬. Admin Profile (Luxury Coral Gradient) -->
+                <button class="custom-menu-btn" onclick="openPage('p-admin-profile'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(248,87,166,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-user-check" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Admin Profile</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- PRIVACY -->
-                <button class="custom-menu-btn" onclick="openPage('privacy'); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-user-lock"></i>
-                    </span>
-                    <span class="menu-text">Privacy Policy</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!-- ৭. Privacy Policy (Cyan Ocean Gradient) -->
+                <button class="custom-menu-btn" onclick="openPage('privacy'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(0,114,255,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-user-lock" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">Privacy Policy</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
-                <!-- TERMS -->
-                <button class="custom-menu-btn" onclick="openPage('p-about'); toggleSidebar()">
-                    <span class="icon-box">
-                        <i class="fas fa-id-card"></i>
-                    </span>
-                    <span class="menu-text">Terms & Conditions</span>
-                    <span class="menu-arrow">
-                        <i class="fas fa-angle-right"></i>
-                    </span>
+                <!-- ৮. About Us (Plum Maroon Gradient) -->
+                <button class="custom-menu-btn" onclick="openPage('p-about'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #444;">
+                    <span class="icon-box" style="background: linear-gradient(135deg, #f43f5e 0%, #85144b 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 8px rgba(244,63,94,0.18); margin-right: 12px; flex-shrink: 0;">
+                        <i class="fas fa-id-card" style="font-size: 11px;"></i>
+                    </span> 
+                    <span style="flex: 1; text-align: left; font-size: 13px; letter-spacing: 0.2px;">About Us</span>
+                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
                 </button>
 
             </div>
         </div>
 
-        <!-- ================= LOGOUT ================= -->
-        <div class="drawer-footer">
-            <button class="logout-btn" onclick="logout()">
-                <span class="logout-icon">
+        <!-- ফুটার লগআউট বাটন (কার্ড লুকের সাথে মিল রেখে সুন্দর ফিনিশিং) -->
+        <div style="padding: 12px 14px; background: #ffffff; border-top: 1px solid #f1f5f9; flex-shrink: 0;">
+            <button class="custom-menu-btn logout-btn" onclick="logout()" style="background: #fff1f2 !important; border: 1px solid #ffe4e6 !important; border-bottom: 2px solid #fecdd3 !important; display: flex; align-items: center; padding: 10px 10px; border-radius: 4px !important; width: 100%; cursor: pointer; margin-bottom: 0;">
+                <span class="icon-box" style="background: #ffe4e6; color: #e11d48; width: 26px; height: 26px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 11px; flex-shrink: 0;">
                     <i class="fas fa-sign-out-alt"></i>
-                </span>
-                <span class="logout-text">Logout</span>
-                <span style="margin-left:auto; color:#c1121f; font-size:10px;">
-                    <i class="fas fa-chevron-right"></i>
-                </span>
+                </span> 
+                <span style="color: #e11d48; font-weight: 700; font-size: 12px; letter-spacing: 0.3px;">Log Out</span>
             </button>
         </div>
 
     </div>
-
 </div>
 
-<!-- ২. অ্যাকাউন্ট অ্যাক্টিভেশন পেজ (Fixed Structure) -->
-<div id="p-activate-account" class="page-container" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #121212; z-index: 9999; overflow-y: auto; color: #fff; font-family: 'Poppins', sans-serif;">
+      <!-- ২. অ্যাকাউন্ট অ্যাক্টিভেশন পেজ - প্রফেশনাল লাল হলুদ -->
+<div id="p-activate-account" class="page-container" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(180deg, #fffdf7 0%, #fff8e6 100%); z-index: 9999; overflow-y: auto; color: #1a1a1a; font-family: 'Hind Siliguri', 'Poppins', sans-serif;">
     
-    <!-- হেডার বার -->
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; background: #1f1f1f; border-bottom: 1px solid rgba(255,255,255,0.1); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.5);">
+    <!-- হেডার বার - লাল হলুদ -->
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 20px; background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ff9900 100%); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(255,0,0,0.2);">
         <div style="display: flex; align-items: center; gap: 12px;">
-            <i class="fas fa-arrow-left" onclick="showPage('p-home')" style="font-size: 18px; cursor: pointer; color: #fff;"></i>
-            <h3 style="margin: 0; font-size: 16px; font-weight: 600; color: #fff;">Premium Access </h3>
+            <div onclick="showPage('p-home')" style="width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+                <i class="fas fa-arrow-left" style="font-size: 16px; color: #fff;"></i>
+            </div>
+            <h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #fff;">প্রিমিয়াম অ্যাক্টিভেশন</h3>
         </div>
-        <a href="https://t.me/Dev_Sufian" target="_blank" style="color: #FFD700; font-size: 18px; text-decoration: none;">
+        <a href="https://t.me/Dev_Sufian" target="_blank" style="width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none;">
             <i class="fas fa-headset"></i>
         </a>
     </div>
 
     <!-- পেজ কন্টেন্ট -->
-    <div style="padding: 15px 15px 50px 15px; max-width: 480px; margin: 0 auto;">
+    <div style="padding: 20px 15px 80px 15px; max-width: 500px; margin: 0 auto;">
         
         <!-- প্রিমিয়াম ব্যানার সেকশন -->
-        <div style="background: linear-gradient(135deg, #ff416c, #ff4b2b, #f39c12); border-radius: 12px; padding: 15px; text-align: center; margin-bottom: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
-            <div style="width: 55px; height: 55px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 8px; border: 2px solid #FFD700; overflow: hidden;">
+        <div style="background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ffcc00 100%); border-radius: 16px; padding: 25px 20px; text-align: center; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(255, 153, 0, 0.25); position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
+            <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+            
+            <div style="width: 70px; height: 70px; background: rgba(255,255,255,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; border: 3px solid #fff; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
                 <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260822_011247_206.jpg" alt="Logo" style="width: 100%; height: 100%; object-fit: cover;">
             </div>
-            <span style="background: rgba(0,0,0,0.3); color: #FFD700; padding: 4px 12px; border-radius: 4px; font-size: 10px; font-weight: 900; border: 1px solid rgba(255, 215, 0, 0.5); letter-spacing: 1px;">PREMIUM MEMBERSHIP</span>
-            <h2 style="margin: 8px 0 2px; font-size: 20px; font-weight: 800; color: #fff;">৳100.00</h2>
-            <span style="font-size: 11px; color: rgba(255,255,255,0.8);">লাইফটাইম অ্যাক্টিভেশন ফি</span>
+            
+            <span style="background: rgba(255,255,255,0.2); color: #fff; padding: 5px 14px; border-radius: 20px; font-size: 11px; font-weight: 800; border: 1px solid rgba(255, 255, 255, 0.4); letter-spacing: 1px; backdrop-filter: blur(5px);">PREMIUM MEMBERSHIP</span>
+            
+            <h2 style="margin: 12px 0 4px; font-size: 32px; font-weight: 800; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,0.2);">৳100.00</h2>
+            <span style="font-size: 13px; color: rgba(255,255,255,0.95); font-weight: 600;">লাইফটাইম অ্যাক্টিভেশন ফি</span>
         </div>
 
-        <!-- কোম্পানির শর্তসমূহ (চিকন কার্ড) -->
-        <div onclick="showTermsPopup()" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.15); border-left: 3px solid #f39c12; border-radius: 6px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; margin-bottom: 15px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-file-contract" style="color: #f39c12; font-size: 14px;"></i>
-                <span style="font-size: 12px; font-weight: 500; color: #ddd;">কোম্পানির শর্তসমূহ পড়তে এখানে চাপ দিন</span>
+        <!-- কোম্পানির শর্তসমূহ -->
+        <div onclick="showTermsPopup()" style="background: #ffffff; border: 2px solid #ffe6cc; border-left: 4px solid #ff9900; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; margin-bottom: 20px; transition: all 0.2s;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-file-contract" style="color: #ff9900; font-size: 16px;"></i>
+                <span style="font-size: 13px; font-weight: 700; color: #333;">কোম্পানির শর্তসমূহ পড়তে এখানে চাপ দিন</span>
             </div>
-            <i class="fas fa-chevron-right" style="font-size: 11px; color: #888;"></i>
+            <i class="fas fa-chevron-right" style="font-size: 12px; color: #ff5500;"></i>
         </div>
 
-        <!-- সুবিধাসমূহ (সংক্ষিপ্ত তালিকা) -->
-        <div style="background: #1f1f1f; border-radius: 10px; padding: 12px; margin-bottom: 15px; border: 1px solid rgba(255,255,255,0.05);">
-            <p style="font-size: 12px; font-weight: 700; color: #FFD700; margin: 0 0 10px 0;">একটিভ করলে যেসকল সুবিধা পাবেন:</p>
-            <ul style="list-style: none; padding: 0; margin: 0; font-size: 11px; color: #ccc; line-height: 1.8;">
-                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> আনলিমিটেড মাইক্রো জবস ও ইনকাম করার সুযোগ।</li>
-                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> ৫-জেনারেশন রেফার কমিশন (L1 এ সরাসরি ৳50)।</li>
-                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> ১ ঘণ্টার মধ্যে ফাস্ট উইথড্রয়াল পেমেন্ট প্রসেসিং।</li>
-                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> লাইফটাইম এক্সেস (কোনো মাসিক ফি নেই)।</li>
-                <li><i class="fas fa-check-circle" style="color: #2ecc71; margin-right: 6px;"></i> টেলিগ্রাম ও কলে VIP ২৪/৭ সাপোর্ট সুবিধা।</li>
+        <!-- সুবিধাসমূহ -->
+        <div style="background: #ffffff; border-radius: 12px; padding: 18px; margin-bottom: 20px; border: 1px solid #ffe6cc; box-shadow: 0 4px 15px rgba(255,153,0,0.06);">
+            <p style="font-size: 14px; font-weight: 800; color: #ff0000; margin: 0 0 14px 0;">একটিভ করলে যেসকল সুবিধা পাবেন:</p>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 13px; color: #444; line-height: 2;">
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: #ff9900; font-size: 14px;"></i> আনলিমিটেড মাইক্রো জবস ও ইনকাম করার সুযোগ</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: #ff9900; font-size: 14px;"></i> ৫-জেনারেশন রেফার কমিশন (L1 এ সরাসরি ৳50)</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: #ff9900; font-size: 14px;"></i> ১ ঘণ্টার মধ্যে ফাস্ট উইথড্রয়াল পেমেন্ট</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: #ff9900; font-size: 14px;"></i> লাইফটাইম এক্সেস - কোনো মাসিক ফি নেই</li>
+                <li style="display: flex; align-items: center; gap: 8px;"><i class="fas fa-check-circle" style="color: #ff9900; font-size: 14px;"></i> VIP ২৪/৭ সাপোর্ট সুবিধা</li>
             </ul>
         </div>
 
-        <!-- বাধ্যতামূলক টিকমার্ক সেকশন -->
-        <div style="background: rgba(0, 0, 0, 0.2); border-radius: 8px; padding: 12px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.08);">
-            <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; font-size: 11px; color: #bbb; cursor: pointer;">
-                <input type="checkbox" id="checkTerms1" style="margin-top: 2px; accent-color: #ff416c;">
+        <!-- বাধ্যতামূলক টিকমার্ক -->
+        <div style="background: #fff8f0; border-radius: 10px; padding: 15px; margin-bottom: 20px; border: 1px solid #ffe6cc;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 12px; color: #333; cursor: pointer; font-weight: 600;">
+                <input type="checkbox" id="checkTerms1" style="margin-top: 2px; accent-color: #ff0000; width: 16px; height: 16px;">
                 <span>আমি কোম্পানির সকল নিয়মাবলী ও শর্তাবলীতে সম্মত আছি।</span>
             </label>
-            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 11px; color: #bbb; cursor: pointer;">
-                <input type="checkbox" id="checkTerms2" style="margin-top: 2px; accent-color: #ff416c;">
+            <label style="display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: #333; cursor: pointer; font-weight: 600;">
+                <input type="checkbox" id="checkTerms2" style="margin-top: 2px; accent-color: #ff0000; width: 16px; height: 16px;">
                 <span>আমি নিশ্চিত করছি যে এটি একটি নন-রিফান্ডেবল একটিভেশন প্রসেস।</span>
             </label>
         </div>
 
-        <!-- অ্যাক্টিভেশন অপশন বাটন -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <button onclick="processActivationByBalance()" style="width: 100%; padding: 12px; background: linear-gradient(135deg, #2ecc71, #27ae60); border: none; border-radius: 8px; color: #fff; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 10px rgba(46, 204, 113, 0.2);">
-                <i class="fas fa-wallet"></i> একাউন্ট ব্যালেন্স দিয়ে একটিভ করুন
-            </button>
-
-        </div>
+        <!-- অ্যাক্টিভেশন বাটন -->
+        <button onclick="processActivationByBalance()" style="width: 100%; padding: 16px; background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ff9900 100%); border: none; border-radius: 12px; color: #fff; font-weight: 800; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3); transition: all 0.2s;">
+            <i class="fas fa-wallet"></i> একাউন্ট ব্যালেন্স দিয়ে একটিভ করুন
+        </button>
+        <p style="text-align: center; font-size: 11px; color: #888; margin-top: 10px;">একটিভেশন ফি ফেরতযোগ্য নয়</p>
 
     </div>
 </div>
 
+<style>
+/* বাটন হোভার */
+#p-activate-account button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4) !important;
+}
+#p-activate-account button:active {
+    transform: translateY(1px);
+}
+</style>
       
       
 <div id="p-admin-profile" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
@@ -7107,45 +6098,41 @@ function togglePassword() {
 
 </div>
 
-      <div id="p-withdraw" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; font-family: 'Poppins', sans-serif;">
-    
-    <!-- প্রিমিয়াম হেডার -->
-    <div style="background: linear-gradient(135deg, #d31027 0%, #ea384d 50%, #ff512f 100%); padding: 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(211, 16, 39, 0.25);">
+      <div id="p-withdraw" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fffdf7; z-index: 1500; overflow-y: auto; font-family: 'Hind Siliguri', 'Poppins', sans-serif;">
+
+    <!-- প্রিমিয়াম হেডার - লাল হলুদ -->
+    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ff9900 100%); padding: 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.25);">
         <div style="display: flex; align-items: center; gap: 12px;">
-            <div onclick="closePage('p-withdraw')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); transition: all 0.2s ease;">
+            <div onclick="closePage('p-withdraw')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.3); transition: all 0.2s ease;">
                 <i class="fas fa-chevron-left" style="font-size: 14px; color: white;"></i>
             </div>
-            <h4 style="margin: 0; font-weight: 700; color: white; font-size: 17px; letter-spacing: 0.3px;">Withdraw Balance</h4>
+            <h4 style="margin: 0; font-weight: 800; color: white; font-size: 18px; letter-spacing: 0.3px;">উত্তোলন করুন</h4>
         </div>
-
         <div style="display: flex; align-items: center; gap: 8px;">
-            <!-- Info (i) Icon for Instructions Popup -->
-            <div onclick="toggleWithdrawRules(true)" style="width: 38px; height: 38px; background: rgba(255,255,255,0.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(10px); transition: all 0.2s ease;">
+            <!-- Info Icon -->
+            <div onclick="toggleWithdrawRules(true)" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); transition: all 0.2s ease;">
                 <i class="fas fa-info" style="font-size: 15px; color: white;"></i>
             </div>
-
             <!-- History Icon -->
-            <div onclick="openPage('p-withdraw-history')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(10px); transition: all 0.2s ease;">
+            <div onclick="openPage('p-withdraw-history')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); transition: all 0.2s ease;">
                 <i class="fas fa-history" style="font-size: 15px; color: white;"></i>
             </div>
         </div>
     </div>
 
     <div class="container px-3 mt-3">
-
-        <!-- ব্যালেন্স ডিসপ্লে কার্ড -->
-        <div style="background: linear-gradient(135deg, #e11d48 0%, #f43f5e 50%, #fb923c 100%); padding: 22px 20px; border-radius: 12px; color: white; margin-bottom: 20px; box-shadow: 0 10px 25px rgba(225, 29, 72, 0.2); position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.2);">
+        <!-- ব্যালেন্স ডিসপ্লে কার্ড - লাল হলুদ -->
+        <div style="background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ffcc00 100%); padding: 24px 20px; border-radius: 14px; color: white; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(255, 153, 0, 0.25); position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.25);">
             <div style="position: absolute; top: -20px; right: -20px; width: 120px; height: 120px; background: rgba(255,255,255,0.12); border-radius: 50%; pointer-events: none;"></div>
             <div style="position: absolute; bottom: -40px; left: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.08); border-radius: 50%; pointer-events: none;"></div>
-
-            <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255, 255, 255, 0.9); display: block;">Available for Payout</span>
-            <div style="display: flex; align-items: center; gap: 8px; margin-top: 4px;">
-                <h2 style="margin: 0; font-weight: 800; font-size: 36px; letter-spacing: -0.5px; text-shadow: 0 2px 8px rgba(0,0,0,0.15);">৳ <span id="withdraw-bal">0.00</span></h2>
+            <span style="font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255, 255, 255, 0.95); display: block;">উত্তোলনযোগ্য ব্যালেন্স</span>
+            <div style="display: flex; align-items: center; gap: 8px; margin-top: 6px;">
+                <h2 style="margin: 0; font-weight: 800; font-size: 38px; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.2);">৳ <span id="withdraw-bal">0.00</span></h2>
             </div>
         </div>
 
         <!-- পেমেন্ট মেথড টাইটেল -->
-        <p style="font-size: 12px; font-weight: 700; color: #64748b; margin-bottom: 10px; padding-left: 2px; text-transform: uppercase; letter-spacing: 0.8px;">Choose Payout Method</p>
+        <p style="font-size: 12px; font-weight: 700; color: #ff5500; margin-bottom: 10px; padding-left: 2px; text-transform: uppercase; letter-spacing: 0.8px;">পেমেন্ট মেথড সিলেক্ট করুন</p>
 
         <!-- মেথড সিলেক্টর কার্ডস -->
         <div style="display: flex; gap: 10px; margin-bottom: 22px;">
@@ -7155,237 +6142,96 @@ function togglePassword() {
                     <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(1).png" alt="bKash">
                 </div>
             </div>
-
             <!-- Nagad -->
             <div style="flex: 1;" onclick="selectWithdrawMethod('Nagad')">
                 <div class="w-method-card" id="w-Nagad">
                     <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(2).png" alt="Nagad">
                 </div>
             </div>
-
-            <!-- Binance -->
-            <div style="flex: 1;" onclick="selectWithdrawMethod('Binance')">
-                <div class="w-method-card" id="w-Binance">
-                    <img src="https://raw.githubusercontent.com/a01868293471-collab/alifsmmpanel/refs/heads/main/images%20(4).png" alt="Binance">
-                </div>
-            </div>
+            
         </div>
 
         <!-- ফর্ম বক্স -->
-        <div style="background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid #e2e8f0; margin-bottom: 30px;">
-            
+        <div style="background: #ffffff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 20px rgba(255,153,0,0.08); border: 1px solid #ffe6cc; margin-bottom: 30px;">
             <div style="margin-bottom: 18px;">
-                <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Account Number</label>
+                <label style="display: block; font-size: 12px; font-weight: 700; color: #ff5500; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">একাউন্ট নাম্বার</label>
                 <input type="number" id="w-num" class="form-input-field" placeholder="01XXXXXXXXX">
             </div>
-
             <div style="margin-bottom: 22px;">
-                <label style="display: block; font-size: 11px; font-weight: 700; color: #64748b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Withdraw Amount</label>
-                <input type="number" id="w-amt" class="form-input-field" placeholder="Enter amount">
+                <label style="display: block; font-size: 12px; font-weight: 700; color: #ff5500; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">উত্তোলন অ্যামাউন্ট</label>
+                <input type="number" id="w-amt" class="form-input-field" placeholder="মিনিমাম ১০ টাকা">
             </div>
-
-            <button onclick="withdrawReq()" class="submit-btn">
-                Submit Withdrawal
-            </button>
+            <button onclick="withdrawReq()" class="submit-btn">উত্তোলন রিকুয়েস্ট দিন</button>
         </div>
-
     </div>
-</div>
 
-<!-- নির্দেশনার পপআপ (Instructions Modal) -->
-<div id="withdraw-rules-modal" class="rules-modal-overlay">
-    <div class="rules-modal-content">
-        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 14px;">
-            <div style="display: flex; align-items: center; gap: 8px;">
-                <div style="width: 28px; height: 28px; background: #fef3c7; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-info-circle" style="color: #d97706; font-size: 14px;"></i>
+    <!-- নির্দেশনার পপআপ -->
+    <div id="withdraw-rules-modal" class="rules-modal-overlay">
+        <div class="rules-modal-content">
+            <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ffe6cc; padding-bottom: 12px; margin-bottom: 14px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 28px; height: 28px; background: #fff3e0; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-info-circle" style="color: #ff9900; font-size: 14px;"></i>
+                    </div>
+                    <h5 style="margin: 0; font-size: 15px; font-weight: 800; color: #ff0000;">উইথড্রয়াল নির্দেশনা</h5>
                 </div>
-                <h5 style="margin: 0; font-size: 15px; font-weight: 700; color: #1e293b;">উইথড্রয়াল নির্দেশনা</h5>
+                <i class="fas fa-times" onclick="toggleWithdrawRules(false)" style="cursor: pointer; color: #ff5500; font-size: 16px; padding: 4px;"></i>
             </div>
-            <i class="fas fa-times" onclick="toggleWithdrawRules(false)" style="cursor: pointer; color: #94a3b8; font-size: 16px; padding: 4px;"></i>
-        </div>
-
-        <div style="font-size: 13px; color: #334155; line-height: 1.7; font-weight: 500;">
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 6px; border-left: 3px solid #e11d48;">
-                    📌 সর্বনিম্ন উত্তোলন <b>১০০ টাকা</b> এবং সর্বোচ্চ <b>২৫,০০০ টাকা</b>।
-                </div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 6px; border-left: 3px solid #10b981;">
-                    ✅ লিমিট: ২৪ ঘণ্টার মধ্যে <b>১ বার</b> উত্তোলন করা যাবে।
-                </div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 6px; border-left: 3px solid #f59e0b;">
-                    ✅ চার্জ: ১০০ থেকে ৩০০ টাকায় ফ্ল্যাট <b>৫ টাকা</b>।
-                </div>
-                <div style="background: #f8fafc; padding: 8px 10px; border-radius: 6px; border-left: 3px solid #6366f1;">
-                    ✅ ৩০০ টাকার বেশি উত্তোলনে প্রতি বার <b>২%</b> চার্জ প্রযোজ্য।
+            <div style="font-size: 13px; color: #333; line-height: 1.7; font-weight: 500;">
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <div style="background: #fff8f0; padding: 10px; border-radius: 6px; border-left: 3px solid #ff0000;">📌 সর্বনিম্ন <b>১০ টাকা</b> এবং সর্বোচ্চ <b>২৫,০০ টাকা</b>।</div>
+                    <div style="background: #fff8f0; padding: 10px; border-radius: 6px; border-left: 3px solid #ff9900;">✅ ২৪ ঘণ্টার মধ্যে <b>১ বার</b> উত্তোলন।</div>
+                    <div style="background: #fff8f0; padding: 10px; border-radius: 6px; border-left: 3px solid #ff5500;">✅ ১০০-৩০০ টাকায় ফ্ল্যাট <b>৫ টাকা</b> চার্জ।</div>
+                    <div style="background: #fff8f0; padding: 10px; border-radius: 6px; border-left: 3px solid #ff0000;">✅ ৩০+ টাকায় <b>২%</b> চার্জ।</div>
                 </div>
             </div>
+            <button onclick="toggleWithdrawRules(false)" style="width: 100%; margin-top: 16px; background: linear-gradient(135deg, #ff0000, #ff9900); color: #fff; border: none; padding: 11px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer;">বুঝেছি</button>
         </div>
-
-        <button onclick="toggleWithdrawRules(false)" style="width: 100%; margin-top: 16px; background: #f1f5f9; color: #475569; border: none; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; transition: background 0.2s;">
-            ঠিক আছে
-        </button>
     </div>
-</div>
 
-<style>
-    /* পপআপ মডাল স্টাইল */
-    .rules-modal-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 23, 42, 0.5);
-        backdrop-filter: blur(4px);
-        z-index: 2000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.25s ease;
-    }
+    <style>
+    /* পপআপ মডাল */
+    .rules-modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(4px); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; visibility: hidden; transition: all 0.25s ease; }
+    .rules-modal-overlay.active { opacity: 1; visibility: visible; }
+    .rules-modal-content { background: #ffffff; width: 100%; max-width: 340px; border-radius: 14px; padding: 18px; box-shadow: 0 20px 25px -5px rgba(255, 153, 0, 0.15); transform: scale(0.9); transition: transform 0.25s ease; border: 1px solid #ffe6cc; }
+    .rules-modal-overlay.active .rules-modal-content { transform: scale(1); }
 
-    .rules-modal-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
+    /* মেথড কার্ড */
+    .w-method-card { background: #ffffff; position: relative; height: 70px; border-radius: 10px; border: 2px solid #ffe6cc; cursor: pointer; transition: all 0.25s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.03); overflow: hidden; display: flex; align-items: center; justify-content: center; padding: 8px; }
+    .w-method-card img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; transition: transform 0.2s ease; }
+    .w-method-card:hover { transform: translateY(-2px); border-color: #ffcc80; }
+    
+    /* সিলেক্টেড মেথড - লাল হলুদ */
+    .w-method-card.active-method { border-color: #ff0000 !important; background: linear-gradient(135deg, #fff5f5 0%, #fff8e6 100%) !important; transform: translateY(-3px); box-shadow: 0 6px 18px rgba(255, 0, 0, 0.18) !important; }
+    .w-method-card.active-method img { transform: scale(1.05); }
 
-    .rules-modal-content {
-        background: #ffffff;
-        width: 100%;
-        max-width: 340px;
-        border-radius: 12px;
-        padding: 18px;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-        transform: scale(0.9);
-        transition: transform 0.25s ease;
-    }
+    /* ইনপুট ফিল্ড */
+    .form-input-field { width: 100%; padding: 13px 15px; border-radius: 8px; border: 2px solid #ffe6cc; background: #fffdf7; font-weight: 600; font-size: 14px; color: #333; outline: none; transition: all 0.2s ease; box-sizing: border-box; font-family: 'Hind Siliguri', sans-serif; }
+    .form-input-field:focus { border-color: #ff9900 !important; background: #ffffff !important; box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.15) !important; }
 
-    .rules-modal-overlay.active .rules-modal-content {
-        transform: scale(1);
-    }
+    /* সাবমিট বাটন - লাল হলুদ */
+    .submit-btn { width: 100%; background: linear-gradient(135deg, #ff0000 0%, #ff5500 50%, #ff9900 100%); color: white; border: none; padding: 15px; border-radius: 10px; font-weight: 800; font-size: 15px; letter-spacing: 0.5px; box-shadow: 0 6px 20px rgba(255, 0, 0, 0.3); cursor: pointer; transition: all 0.2s ease; font-family: 'Hind Siliguri', sans-serif; }
+    .submit-btn:hover { box-shadow: 0 8px 25px rgba(255, 153, 0, 0.4); transform: translateY(-2px); }
+    .submit-btn:active { transform: translateY(1px); }
+    </style>
 
-    /* মেথড কার্ড ডিজাইন */
-    .w-method-card {
-        background: #ffffff;
-        position: relative;
-        height: 70px;
-        border-radius: 8px;
-        border: 1px solid #e2e8f0;
-        border-bottom: 3px solid #cbd5e1;
-        cursor: pointer;
-        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 8px;
-    }
-
-    .w-method-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        pointer-events: none;
-        transition: transform 0.2s ease;
-    }
-
-    .w-method-card:hover {
-        transform: translateY(-2px);
-        border-color: #cbd5e1;
-    }
-
-    /* সিলেক্টেড মেথড স্টাইল */
-    .w-method-card.active-method {
-        border-color: #e11d48 !important;
-        border-bottom: 3px solid #be123c !important;
-        background: #fff1f2 !important;
-        transform: translateY(-3px);
-        box-shadow: 0 6px 15px rgba(225, 29, 72, 0.15) !important;
-    }
-
-    .w-method-card.active-method img {
-        transform: scale(1.05);
-    }
-
-    /* ইনপুট ফিল্ড স্টাইল */
-    .form-input-field {
-        width: 100%;
-        padding: 13px 15px;
-        border-radius: 6px;
-        border: 1px solid #cbd5e1;
-        background: #f8fafc;
-        font-weight: 600;
-        font-size: 14px;
-        color: #0f172a;
-        outline: none;
-        transition: all 0.2s ease;
-        box-sizing: border-box;
-    }
-
-    .form-input-field:focus {
-        border-color: #e11d48 !important;
-        background: #ffffff !important;
-        box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.1) !important;
-    }
-
-    /* সাবমিট বাটন স্টাইল */
-    .submit-btn {
-        width: 100%;
-        background: linear-gradient(135deg, #d31027 0%, #ea384d 50%, #ff512f 100%);
-        color: white;
-        border: none;
-        padding: 15px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 14px;
-        text-transform: uppercase;
-        letter-spacing: 0.8px;
-        box-shadow: 0 6px 18px rgba(211, 16, 39, 0.25);
-        cursor: pointer;
-        transition: all 0.2s ease;
-    }
-
-    .submit-btn:hover {
-        box-shadow: 0 8px 22px rgba(211, 16, 39, 0.35);
-        transform: translateY(-1px);
-    }
-
-    .submit-btn:active {
-        transform: translateY(1px);
-        box-shadow: 0 3px 10px rgba(211, 16, 39, 0.2);
-    }
-</style>
-
-<script>
-    // পপআপ খোলা/বন্ধ করার ফাংশন
+    <script>
     function toggleWithdrawRules(show) {
         const modal = document.getElementById('withdraw-rules-modal');
-        if (show) {
-            modal.classList.add('active');
-        } else {
-            modal.classList.remove('active');
-        }
+        if (show) { modal.classList.add('active'); } 
+        else { modal.classList.remove('active'); }
     }
 
-    // পেমেন্ট মেথড সিলেক্ট করার ফাংশন
     function selectWithdrawMethod(method) {
         document.querySelectorAll('.w-method-card').forEach(card => {
             card.classList.remove('active-method');
         });
-
         const selectedCard = document.getElementById('w-' + method);
-        if (selectedCard) {
-            selectedCard.classList.add('active-method');
-        }
-
+        if (selectedCard) { selectedCard.classList.add('active-method'); }
         console.log("Selected Method: " + method);
     }
-</script>
+    </script>
+</div>
 
 <div id="p-withdraw-history" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1600; overflow-y: auto; font-family: 'Poppins', sans-serif;">
     
@@ -13142,17 +11988,17 @@ initMicroJobs();
 </div>
 
 
-  <div id="bottom-nav" style="position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(135deg, #8B0000 0%, #B22222 50%, #CC4400 100%); display: flex; justify-content: space-around; align-items: center; padding: 0 10px; z-index: 999; box-shadow: 0 -8px 32px rgba(139, 0, 0, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); height: 68px; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
+  <div id="bottom-nav" style="position: fixed; bottom: 0; left: 0; width: 100%; background: linear-gradient(135deg, #CC0000 0%, #FF8C00 50%, #FFD700 100%); display: flex; justify-content: space-around; align-items: center; padding: 0 10px; z-index: 999; box-shadow: 0 -8px 32px rgba(204, 0, 0, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.25); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); height: 68px; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
 
     <!-- Home Item -->
     <div onclick="openPage('p-home')" 
          style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
          onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
          ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
-        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
-            <i class="fas fa-home" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
+        <div style="width: 40px; height: 32px; background: rgba(0, 0, 0, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);">
+            <i class="fas fa-home" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"></i>
         </div>
-        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">হোম</span>
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #ffffff; margin-top: 4px; letter-spacing: 0.4px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">হোম</span>
     </div>
 
     <!-- My Team Item -->
@@ -13160,21 +12006,21 @@ initMicroJobs();
          style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
          onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
          ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
-        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
-            <i class="fas fa-users" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
+        <div style="width: 40px; height: 32px; background: rgba(0, 0, 0, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);">
+            <i class="fas fa-users" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"></i>
         </div>
-        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">মাই টিম</span>
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #ffffff; margin-top: 4px; letter-spacing: 0.4px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">মাই টিম</span>
     </div>
 
-    <!-- Deposit Item (Replaced Wallet) -->
+    <!-- Deposit Item -->
     <div onclick="openDepositPage()" 
          style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
          onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
          ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
-        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
-            <i class="fas fa-plus-circle" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
+        <div style="width: 40px; height: 32px; background: rgba(0, 0, 0, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);">
+            <i class="fas fa-plus-circle" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"></i>
         </div>
-        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">ডিপোজিট</span>
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #ffffff; margin-top: 4px; letter-spacing: 0.4px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">ডিপোজিট</span>
     </div>
 
     <!-- Support Center Item -->
@@ -13182,10 +12028,10 @@ initMicroJobs();
          style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); -webkit-tap-highlight-color: transparent;"
          onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'"
          ontouchstart="this.style.transform='scale(0.92)'" ontouchend="this.style.transform='scale(1)'">
-        <div style="width: 40px; height: 32px; background: rgba(255, 255, 255, 0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.18); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.2);">
-            <i class="fas fa-headset" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));"></i>
+        <div style="width: 40px; height: 32px; background: rgba(0, 0, 0, 0.15); border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(255, 255, 255, 0.3); box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.3);">
+            <i class="fas fa-headset" style="font-size: 15px; color: #ffffff; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));"></i>
         </div>
-        <span style="display: block; font-size: 10px; font-weight: 600; color: #f3f3f3; margin-top: 4px; letter-spacing: 0.4px;">সাপোর্ট</span>
+        <span style="display: block; font-size: 10px; font-weight: 600; color: #ffffff; margin-top: 4px; letter-spacing: 0.4px; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">সাপোর্ট</span>
     </div>
 
 </div>
