@@ -1,0 +1,4024 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Free Time Earn - Admin Panel</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+.badge-blocked{
+    background:#fee2e2;
+    color:#991b1b;
+    border:1px solid #fecaca;
+}
+  .admin-avatar {
+    width: 50px; /* আপনার প্রয়োজন অনুযায়ী সাইজ পরিবর্তন করতে পারেন */
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.admin-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+    --green:#16a34a;
+    --green2:#22c55e;
+    --dark:#15803d;
+    --deep:#0f5f2c;
+    --light:#dcfce7;
+    --lighter:#f0fdf4;
+    --bg:#f4faf6;
+    --white:#fff;
+    --text:#17231b;
+    --muted:#75827a;
+    --border:#e2ece5;
+    --danger:#ef4444;
+    --warning:#f59e0b;
+    --shadow:0 12px 40px rgba(22,163,74,.08);
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins','Hind Siliguri',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+
+#loginPage{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(34,197,94,.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(22,163,74,.15),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            #effdf3,
+            #ffffff,
+            #edfcf2
+        );
+}
+
+#loginPage:before{
+    content:"";
+    position:absolute;
+    width:330px;
+    height:330px;
+    border-radius:50%;
+    background:rgba(34,197,94,.08);
+    top:-150px;
+    left:-120px;
+    filter:blur(5px);
+}
+
+#loginPage:after{
+    content:"";
+    position:absolute;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(21,128,61,.07);
+    right:-150px;
+    bottom:-160px;
+}
+
+.login-card{
+    width:100%;
+    max-width:420px;
+    padding:32px 29px 27px;
+    position:relative;
+    z-index:2;
+
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(22,163,74,.14);
+    border-radius:25px;
+
+    box-shadow:
+        0 30px 80px rgba(13,70,35,.14),
+        0 5px 20px rgba(0,0,0,.04);
+
+    backdrop-filter:blur(18px);
+
+    animation:loginIn .55s cubic-bezier(.2,.8,.2,1);
+}
+
+.login-logo{
+    width:92px;
+    height:92px;
+    padding:5px;
+    margin:0 auto 18px;
+
+    background:#fff;
+    border:3px solid #d9f7df;
+    border-radius:23px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 15px 35px rgba(22,163,74,.16);
+}
+
+.login-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:17px;
+}
+
+.login-card h1{
+    text-align:center;
+    font-size:23px;
+    font-weight:800;
+    color:#102018;
+    margin-bottom:5px;
+}
+
+.login-card .subtitle{
+    text-align:center;
+    color:var(--muted);
+    font-size:11px;
+    margin-bottom:25px;
+}
+
+.input-group{
+    margin-bottom:17px;
+}
+
+.input-group label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:#35443a;
+    margin-bottom:8px;
+}
+
+.input-box{
+    position:relative;
+}
+
+.input-box input{
+    width:100%;
+    height:51px;
+
+    border:1px solid #dce8df;
+    border-radius:13px;
+
+    padding:0 44px 0 15px;
+
+    outline:none;
+    background:#fbfefc;
+
+    font-family:inherit;
+    font-size:13px;
+    color:var(--text);
+
+    transition:.25s;
+}
+
+.input-box input::placeholder{
+    color:#a0aaa4;
+}
+
+.input-box input:hover{
+    border-color:#b8d7c0;
+}
+
+.input-box input:focus{
+    background:#fff;
+    border-color:var(--green);
+    box-shadow:0 0 0 4px rgba(22,163,74,.09);
+}
+
+.password-toggle{
+    position:absolute;
+    right:9px;
+    top:50%;
+    transform:translateY(-50%);
+
+    width:34px;
+    height:34px;
+
+    border:0;
+    border-radius:9px;
+
+    background:transparent;
+    color:#7b8880;
+
+    cursor:pointer;
+    font-size:15px;
+}
+
+.password-toggle:hover{
+    background:var(--light);
+    color:var(--dark);
+}
+
+.login-btn{
+    width:100%;
+    height:52px;
+
+    border:0;
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #15803d,
+            #16a34a,
+            #22c55e
+        );
+
+    color:#fff;
+
+    font-family:inherit;
+    font-size:14px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 11px 28px rgba(22,163,74,.23);
+
+    transition:.25s;
+
+    position:relative;
+    overflow:hidden;
+}
+
+.login-btn:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:70%;
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transition:.55s;
+}
+
+.login-btn:hover:before{
+    left:130%;
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:
+        0 16px 35px rgba(22,163,74,.28);
+}
+
+.login-btn:active{
+    transform:translateY(0);
+}
+
+.login-error{
+    display:none;
+    align-items:center;
+    gap:8px;
+
+    padding:11px 13px;
+
+    background:#fff1f2;
+    color:#be123c;
+
+    border:1px solid #fecdd3;
+    border-radius:12px;
+
+    font-size:11px;
+    font-weight:600;
+
+    margin-bottom:16px;
+
+    animation:shake .35s ease;
+}
+
+.login-footer{
+    text-align:center;
+    color:#9aa69f;
+    font-size:9px;
+    margin-top:17px;
+}
+
+/* =========================================
+   ADMIN PAGE
+========================================= */
+
+#adminPage{
+    display:none;
+    min-height:100vh;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+
+    width:255px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #f9fdf9
+        );
+
+    border-right:1px solid var(--border);
+
+    padding:20px 14px;
+
+    z-index:100;
+
+    transition:.3s;
+
+    box-shadow:
+        5px 0 25px rgba(22,163,74,.04);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    padding:3px 8px 23px;
+}
+
+.brand-logo{
+    width:46px;
+    height:46px;
+
+    padding:3px;
+
+    background:#fff;
+    border:2px solid #dcfce7;
+
+    border-radius:13px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+        0 7px 18px rgba(22,163,74,.13);
+
+    overflow:hidden;
+}
+
+.brand-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:9px;
+}
+
+.brand strong{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+    color:#142219;
+}
+
+.brand small{
+    display:block;
+    margin-top:1px;
+    color:#849088;
+    font-size:9px;
+}
+
+.menu-title{
+    color:#9aa69f;
+    font-size:9px;
+    text-transform:uppercase;
+    font-weight:800;
+
+    margin:11px 10px 8px;
+    letter-spacing:.6px;
+}
+
+.menu-item{
+    height:45px;
+
+    padding:0 13px;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#66736b;
+    font-size:12px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+    margin-bottom:5px;
+}
+
+.menu-item:hover{
+    background:#f0fdf4;
+    color:var(--dark);
+    transform:translateX(2px);
+}
+
+.menu-item.active{
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #ecfdf5
+        );
+
+    color:var(--dark);
+
+    box-shadow:
+        inset 3px 0 0 var(--green);
+}
+
+.menu-icon{
+    width:25px;
+    height:25px;
+
+    border-radius:8px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f2f8f4;
+
+    font-size:13px;
+}
+
+.menu-item.active .menu-icon{
+    background:#fff;
+    color:var(--green);
+}
+
+.request-menu{
+    font-size:11px;
+}
+
+.request-menu .menu-icon{
+    background:#ecfdf5;
+}
+
+.request-menu:hover{
+    background:#ecfdf5;
+    color:#15803d;
+}
+
+.logout-menu{
+    color:#dc2626;
+    margin-top:18px;
+}
+
+.logout-menu:hover{
+    background:#fff1f2;
+    color:#dc2626;
+}
+
+/* =========================================
+   MAIN
+========================================= */
+
+.main{
+    margin-left:255px;
+    min-height:100vh;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.topbar{
+    height:72px;
+
+    background:rgba(255,255,255,.94);
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 27px;
+
+    position:sticky;
+    top:0;
+
+    z-index:50;
+
+    backdrop-filter:blur(14px);
+}
+
+.top-left{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.page-title{
+    font-size:17px;
+    font-weight:800;
+    color:#17231b;
+}
+
+.page-subtitle{
+    color:#849088;
+    font-size:9px;
+    margin-top:2px;
+}
+
+.admin-profile{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    padding:5px 8px 5px 11px;
+
+    border:1px solid #e4ece6;
+    border-radius:12px;
+
+    background:#fbfefc;
+}
+
+.admin-profile strong{
+    font-size:11px;
+}
+
+.admin-profile small{
+    display:block;
+    color:#849088;
+    font-size:8px;
+    margin-top:1px;
+}
+
+.admin-avatar{
+    width:35px;
+    height:35px;
+
+    border-radius:10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #bbf7d0
+        );
+
+    color:var(--dark);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-weight:800;
+    font-size:13px;
+}
+
+.mobile-menu{
+    display:none;
+
+    width:39px;
+    height:39px;
+
+    border:0;
+    border-radius:10px;
+
+    background:var(--light);
+    color:var(--dark);
+
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.content{
+    padding:23px;
+    max-width:1550px;
+    margin:auto;
+}
+
+/* =========================================
+   STATS
+========================================= */
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.stat-card{
+    position:relative;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+    border-radius:17px;
+
+    padding:17px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.stat-card:after{
+    content:"";
+    position:absolute;
+
+    width:85px;
+    height:85px;
+
+    border-radius:50%;
+
+    background:#f0fdf4;
+
+    right:-35px;
+    bottom:-35px;
+}
+
+.stat-card:hover{
+    transform:translateY(-3px);
+    box-shadow:
+        0 18px 45px rgba(22,163,74,.11);
+}
+
+.stat-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    position:relative;
+    z-index:2;
+}
+
+.stat-label{
+    color:#819087;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:.5px;
+}
+
+.stat-value{
+    font-size:23px;
+    font-weight:800;
+    margin-top:3px;
+    color:#18251c;
+}
+
+.stat-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:12px;
+
+    background:var(--light);
+    color:var(--dark);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:17px;
+
+    position:relative;
+    z-index:2;
+}
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel{
+    background:#fff;
+
+    border:1px solid var(--border);
+    border-radius:18px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow);
+}
+
+.panel-header{
+    padding:17px 19px;
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.panel-title{
+    font-size:15px;
+    font-weight:800;
+}
+
+.panel-title small{
+    display:block;
+
+    font-size:9px;
+    color:#8a968e;
+
+    font-weight:400;
+
+    margin-top:2px;
+}
+
+.actions{
+    display:flex;
+    align-items:center;
+    gap:7px;
+}
+
+.search{
+    height:39px;
+    width:245px;
+
+    border:1px solid var(--border);
+    border-radius:10px;
+
+    outline:none;
+
+    padding:0 12px;
+
+    font-family:inherit;
+    font-size:11px;
+
+    transition:.2s;
+}
+
+.search:focus{
+    border-color:var(--green);
+    box-shadow:0 0 0 3px rgba(22,163,74,.07);
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn{
+    height:39px;
+
+    border:0;
+    border-radius:10px;
+
+    padding:0 14px;
+
+    font-family:inherit;
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.btn-green{
+    background:
+        linear-gradient(
+            135deg,
+            #16a34a,
+            #15803d
+        );
+
+    color:#fff;
+
+    box-shadow:
+        0 7px 18px rgba(22,163,74,.15);
+}
+
+.btn-green:hover{
+    transform:translateY(-1px);
+    box-shadow:
+        0 10px 23px rgba(22,163,74,.21);
+}
+
+.btn-light{
+    background:#f0fdf4;
+    color:var(--dark);
+}
+
+.btn-light:hover{
+    background:#dcfce7;
+}
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrap{
+    width:100%;
+    overflow-x:auto;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    min-width:850px;
+}
+
+thead{
+    background:#f8fbf9;
+}
+
+th{
+    text-align:left;
+
+    padding:12px 14px;
+
+    color:#7c8981;
+
+    font-size:9px;
+    font-weight:800;
+
+    white-space:nowrap;
+}
+
+td{
+    padding:12px 14px;
+
+    border-top:1px solid #edf2ee;
+
+    font-size:10px;
+
+    white-space:nowrap;
+}
+
+tbody tr{
+    transition:.2s;
+}
+
+tbody tr:hover{
+    background:#f9fdf9;
+}
+
+.user-id{
+    font-weight:800;
+    color:var(--dark);
+}
+
+.email{
+    font-weight:500;
+}
+
+.balance{
+    font-weight:800;
+    color:var(--dark);
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+
+    padding:5px 9px;
+
+    border-radius:20px;
+
+    font-size:8px;
+    font-weight:800;
+
+    text-transform:capitalize;
+}
+
+.badge-active{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.badge-inactive{
+    background:#fee2e2;
+    color:#b91c1c;
+}
+
+.badge-pending{
+    background:#fef3c7;
+    color:#b45309;
+}
+
+.row-actions{
+    display:flex;
+    gap:5px;
+}
+
+.action-btn{
+    border:0;
+
+    width:31px;
+    height:31px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:12px;
+
+    transition:.2s;
+}
+
+.edit-btn{
+    background:#dcfce7;
+    color:#15803d;
+}
+
+.delete-btn{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+.action-btn:hover{
+    transform:scale(1.08);
+}
+
+/* =========================================
+   PAGINATION
+========================================= */
+
+.pagination{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:14px 19px;
+
+    border-top:1px solid var(--border);
+}
+
+.page-info{
+    font-size:10px;
+    color:#7c8981;
+}
+
+.page-buttons{
+    display:flex;
+    gap:5px;
+}
+
+.page-btn{
+    width:31px;
+    height:31px;
+
+    border:1px solid var(--border);
+    background:#fff;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:10px;
+}
+
+.page-btn:hover{
+    border-color:#b9d7c1;
+}
+
+.page-btn.active{
+    background:var(--green);
+    border-color:var(--green);
+    color:#fff;
+}
+
+/* =========================================
+   MODAL
+========================================= */
+
+.modal-overlay{
+    display:none;
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(8,25,14,.58);
+
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+
+    z-index:500;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:16px;
+}
+
+.modal{
+    width:100%;
+    max-width:520px;
+
+    background:#fff;
+
+    border:1px solid rgba(22,163,74,.13);
+
+    border-radius:22px;
+
+    box-shadow:
+        0 30px 90px rgba(0,0,0,.25),
+        0 10px 35px rgba(22,163,74,.08);
+
+    overflow:hidden;
+
+    animation:modalIn .3s cubic-bezier(.2,.8,.2,1);
+}
+
+.modal-header{
+    padding:18px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #effdf3,
+            #ffffff
+        );
+
+    border-bottom:1px solid var(--border);
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.modal-header h2{
+    font-size:16px;
+    font-weight:800;
+}
+
+.close-btn{
+    width:35px;
+    height:35px;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:#647067;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.2s;
+}
+
+.close-btn:hover{
+    background:#fee2e2;
+    color:#dc2626;
+    border-color:#fecaca;
+    transform:rotate(90deg);
+}
+
+.modal-body{
+    padding:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.form-group label{
+    display:block;
+
+    font-size:10px;
+    font-weight:800;
+
+    margin-bottom:6px;
+
+    color:#344239;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    height:43px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    padding:0 11px;
+
+    outline:none;
+
+    font-family:inherit;
+    font-size:11px;
+
+    background:#fbfefc;
+
+    transition:.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:var(--green);
+
+    background:#fff;
+
+    box-shadow:
+        0 0 0 4px rgba(22,163,74,.08);
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.modal-footer{
+    padding:15px 20px;
+
+    background:#f9fcfa;
+
+    border-top:1px solid var(--border);
+
+    display:flex;
+    justify-content:flex-end;
+
+    gap:8px;
+}
+
+/* =========================================
+   SETTINGS
+========================================= */
+
+.settings-preview{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    margin-bottom:16px;
+    background:#f0fdf4;
+    border:1px solid #dcfce7;
+    border-radius:13px;
+}
+
+.settings-preview-logo{
+    width:48px;
+    height:48px;
+    padding:3px;
+    background:#fff;
+    border:1px solid #d9f7df;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.settings-preview-logo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+.settings-preview strong{
+    display:block;
+    font-size:12px;
+}
+
+.settings-preview small{
+    display:block;
+    margin-top:2px;
+    color:#7c8981;
+    font-size:9px;
+}
+
+.settings-help{
+    display:block;
+    margin-top:5px;
+    color:#7c8981;
+    font-size:8px;
+    line-height:1.5;
+}
+
+.form-group input[type="file"]{
+    padding:8px 10px;
+    height:auto;
+}
+
+/* =========================================
+   TOAST
+========================================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:23px;
+
+    transform:translate(-50%,120px);
+
+    width:calc(100% - 30px);
+    max-width:400px;
+
+    padding:13px 15px;
+
+    border:1px solid #dff0e4;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.97);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.16),
+        0 5px 20px rgba(22,163,74,.08);
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    z-index:1000;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        transform .35s cubic-bezier(.2,.8,.2,1),
+        opacity .3s,
+        visibility .3s;
+
+    font-size:11px;
+}
+
+.toast.show{
+    transform:translate(-50%,0);
+    opacity:1;
+    visibility:visible;
+}
+
+.toast-icon{
+    flex:0 0 37px;
+
+    width:37px;
+    height:37px;
+
+    border-radius:11px;
+
+    background:#dcfce7;
+    color:#15803d;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:16px;
+    font-weight:800;
+}
+
+.toast.error{
+    border-color:#fecaca;
+}
+
+.toast.error .toast-icon{
+    background:#fee2e2;
+    color:#dc2626;
+}
+
+#toastMessage{
+    flex:1;
+    line-height:1.5;
+    font-weight:600;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.loading{
+    padding:45px 20px;
+
+    text-align:center;
+
+    color:#7b8880;
+
+    font-size:11px;
+}
+
+.spinner{
+    width:32px;
+    height:32px;
+
+    border:3px solid #dcfce7;
+    border-top-color:var(--green);
+
+    border-radius:50%;
+
+    margin:0 auto 12px;
+
+    animation:spin .7s linear infinite;
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes loginIn{
+    from{
+        opacity:0;
+        transform:translateY(25px) scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes modalIn{
+    from{
+        opacity:0;
+        transform:translateY(18px) scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+@keyframes shake{
+    0%,100%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-5px);
+    }
+
+    75%{
+        transform:translateX(5px);
+    }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:1000px){
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:750px){
+
+    .sidebar{
+        transform:translateX(-100%);
+        box-shadow:15px 0 40px rgba(0,0,0,.12);
+    }
+
+    .sidebar.open{
+        transform:translateX(0);
+    }
+
+    .main{
+        margin-left:0;
+    }
+
+    .mobile-menu{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .topbar{
+        padding:0 14px;
+    }
+
+    .content{
+        padding:14px;
+    }
+
+    .panel-header{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .actions{
+        width:100%;
+    }
+
+    .search{
+        flex:1;
+        width:auto;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .login-card{
+        padding:28px 20px 24px;
+        border-radius:21px;
+    }
+
+    .login-logo{
+        width:82px;
+        height:82px;
+    }
+
+    .login-card h1{
+        font-size:21px;
+    }
+
+    .stats{
+        grid-template-columns:1fr 1fr;
+        gap:9px;
+    }
+
+    .stat-card{
+        padding:13px;
+        border-radius:14px;
+    }
+
+    .stat-value{
+        font-size:19px;
+    }
+
+    .stat-icon{
+        width:34px;
+        height:34px;
+        font-size:14px;
+    }
+
+    .admin-profile div:not(.admin-avatar){
+        display:none;
+    }
+
+    .admin-profile{
+        padding:4px;
+        border:0;
+        background:transparent;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .modal{
+        border-radius:18px;
+    }
+
+    .modal-body{
+        padding:16px;
+    }
+
+    .modal-footer{
+        padding:13px 16px;
+    }
+
+}
+
+/* =========================================
+   VERY SMALL SCREEN
+========================================= */
+
+@media(max-width:370px){
+
+    .content{
+        padding:10px;
+    }
+
+    .stats{
+        gap:7px;
+    }
+
+    .stat-card{
+        padding:10px;
+    }
+
+    .stat-value{
+        font-size:17px;
+    }
+
+    .stat-label{
+        font-size:8px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================================================
+     LOGIN
+========================================================= -->
+
+<div id="loginPage">
+
+    <div class="login-card">
+
+        <div class="login-logo">
+
+            <img
+                src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg" data-site-logo="true"
+                alt="Free Time Earn"
+            >
+
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <div class="subtitle">
+            Free Time Earn • Secure Admin Dashboard
+        </div>
+
+
+        <div class="login-error" id="loginError">
+
+            <span>⚠</span>
+
+            <span>
+                ভুল Admin Email অথবা Password!
+            </span>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Admin Email / ID
+            </label>
+
+            <div class="input-box">
+
+                <input
+                    type="text"
+                    id="adminUsername"
+                    placeholder="Admin email / ID লিখুন"
+                    autocomplete="username"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label>
+                Password
+            </label>
+
+            <div class="input-box">
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Admin password লিখুন"
+                    autocomplete="current-password"
+                >
+
+                <button
+                    type="button"
+                    class="password-toggle"
+                    onclick="togglePassword()"
+                >
+                    👁
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="login-btn"
+            id="loginButton"
+            onclick="adminLogin()"
+        >
+            Login to Dashboard
+        </button>
+
+
+        <div class="login-footer">
+            🔐 Secure Administrator Access
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     ADMIN PAGE
+========================================================= -->
+
+<div id="adminPage">
+
+
+    <!-- SIDEBAR -->
+
+    <aside
+        class="sidebar"
+        id="sidebar"
+    >
+
+        <div class="brand">
+
+            <div class="brand-logo">
+
+                <img
+                    src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg" data-site-logo="true"
+                    alt="Free Time Earn"
+                >
+
+            </div>
+
+            <div>
+
+                <strong>
+                    Free Time Earn
+                </strong>
+
+                <small>
+                    Admin Dashboard
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="menu-title">
+            Management
+        </div>
+
+
+        <div
+            class="menu-item active"
+            onclick="setActiveMenu(this)"
+        >
+
+            <span class="menu-icon">
+                ⌂
+            </span>
+
+            Dashboard
+
+        </div>
+
+
+        <div
+            class="menu-item"
+            onclick="focusUsers();setActiveMenu(this)"
+        >
+
+            <span class="menu-icon">
+                ♙
+            </span>
+
+            Users
+
+        </div>
+
+
+        <div
+            class="menu-item"
+            onclick="loadUsers();setActiveMenu(this)"
+        >
+
+            <span class="menu-icon">
+                ↻
+            </span>
+
+            Refresh Data
+
+        </div>
+
+
+        <div class="menu-title">
+            Requests
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('deposit')">
+            <span class="menu-icon">💳</span>
+            Deposit Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('withdraw')">
+            <span class="menu-icon">💸</span>
+            Withdraw Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('facebook')">
+            <span class="menu-icon">📘</span>
+            Facebook Sell Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('gmail')">
+            <span class="menu-icon">✉️</span>
+            Gmail Sell Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('whatsapp')">
+            <span class="menu-icon">💬</span>
+            WhatsApp Sell Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('telegram')">
+            <span class="menu-icon">✈️</span>
+            Telegram Sell Request
+        </div>
+
+        <div class="menu-item request-menu" onclick="openTelegramRequest('instagram')">
+            <span class="menu-icon">📷</span>
+            Instagram Sell Request
+        </div>
+
+        <div class="menu-title">
+            System
+        </div>
+
+
+        <div
+            class="menu-item"
+            onclick="openSettings()"
+        >
+
+            <span class="menu-icon">
+                ⚙
+            </span>
+
+            Settings
+
+        </div>
+
+
+        <div
+            class="menu-item"
+            onclick="showAbout()"
+        >
+
+            <span class="menu-icon">
+                ⓘ
+            </span>
+
+            About
+
+        </div>
+
+
+        <div
+            class="menu-item logout-menu"
+            onclick="adminLogout()"
+        >
+
+            <span class="menu-icon">
+                ⇥
+            </span>
+
+            Logout
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- MAIN -->
+
+    <main class="main">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <div class="top-left">
+
+                <button
+                    class="mobile-menu"
+                    onclick="toggleSidebar()"
+                >
+                    ☰
+                </button>
+
+
+                <div>
+
+                    <div class="page-title">
+                        Admin Dashboard
+                    </div>
+
+                    <div class="page-subtitle">
+                        User Management 
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="admin-profile">
+
+                <div>
+
+                    <strong>
+                        Administrator
+                    </strong>
+
+                    <small>
+                        ● Online
+                    </small>
+
+                </div>
+<div class="admin-avatar">
+    <img src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg" data-site-logo="true" alt="Admin Avatar">
+</div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- CONTENT -->
+
+        <section class="content">
+
+
+            <!-- STATS -->
+
+            <div class="stats">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <div class="stat-label">
+                                TOTAL USERS
+                            </div>
+
+                            <div
+                                class="stat-value"
+                                id="totalUsers"
+                            >
+                                0
+                            </div>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            ♙
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <div class="stat-label">
+                                ACTIVE USERS
+                            </div>
+
+                            <div
+                                class="stat-value"
+                                id="activeUsers"
+                            >
+                                0
+                            </div>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            ✓
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <div class="stat-label">
+                                INACTIVE USERS
+                            </div>
+
+                            <div
+                                class="stat-value"
+                                id="inactiveUsers"
+                            >
+                                0
+                            </div>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            !
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stat-card">
+
+                    <div class="stat-top">
+
+                        <div>
+
+                            <div class="stat-label">
+                                TOTAL BALANCE
+                            </div>
+
+                            <div
+                                class="stat-value"
+                                id="totalBalance"
+                            >
+                                ৳0
+                            </div>
+
+                        </div>
+
+                        <div class="stat-icon">
+                            ৳
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- USER PANEL -->
+
+            <div
+                class="panel"
+                id="usersPanel"
+            >
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <div class="panel-title">
+                            All Users
+                        </div>
+
+                        <small class="panel-title">
+                            
+                        </small>
+
+                    </div>
+
+
+                    <div class="actions">
+
+                        <input
+                            class="search"
+                            id="searchInput"
+                            type="text"
+                            placeholder="ID / Email / Ref Code দিয়ে খুঁজুন..."
+                            oninput="searchUsers()"
+                        >
+
+
+                        <button
+                            class="btn btn-green"
+                            onclick="loadUsers()"
+                        >
+                            ↻ Refresh
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="table-wrap">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    EMAIL
+                                </th>
+
+                                <th>
+                                    PASSWORD
+                                </th>
+
+                                <th>
+                                    REF CODE
+                                </th>
+
+                                <th>
+                                    BALANCE
+                                </th>
+
+                                <th>
+                                    STATUS
+                                </th>
+
+                                <th>
+                                    ACTION
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="userTableBody">
+
+                            <tr>
+
+                                <td colspan="7">
+
+                                    <div class="loading">
+
+                                        <div class="spinner"></div>
+
+                                        Google Sheet থেকে Data Load হচ্ছে...
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+
+                <div class="pagination">
+
+                    <div
+                        class="page-info"
+                        id="pageInfo"
+                    >
+                        0 users
+                    </div>
+
+
+                    <div
+                        class="page-buttons"
+                        id="pageButtons"
+                    ></div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- =========================================================
+     EDIT USER MODAL
+========================================================= -->
+
+<div
+    class="modal-overlay"
+    id="editModal"
+>
+
+    <div class="modal">
+
+
+        <div class="modal-header">
+
+            <h2>
+                ✎ Edit User
+            </h2>
+
+            <button
+                class="close-btn"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <div class="modal-body">
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editId"
+                        readonly
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="editEmail"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Password
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editPassword"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Ref Code
+                    </label>
+
+                    <input
+                        type="text"
+                        id="editRefCode"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Balance
+                    </label>
+
+                    <input
+                        type="number"
+                        id="editBalance"
+                        step="0.01"
+                    >
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+                        Status
+                    </label>
+
+<select id="editStatus">
+    <option value="active">Active</option>
+    <option value="inactive">Inactive</option>
+    <option value="blocked">Blocked</option>
+</select>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="modal-footer">
+
+            <button
+                class="btn btn-light"
+                onclick="closeModal()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="btn btn-green"
+                id="saveButton"
+                onclick="saveUser()"
+            >
+                Save Changes
+            </button>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================================
+     SETTINGS MODAL
+========================================================= -->
+
+<div class="modal-overlay" id="settingsModal">
+    <div class="modal">
+        <div class="modal-header">
+            <h2>Website Settings</h2>
+            <button class="close-btn" onclick="closeSettings()">×</button>
+        </div>
+
+        <div class="modal-body">
+            <div class="settings-preview">
+                <div class="settings-preview-logo">
+                    <img id="settingsLogoPreview" src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg" alt="Logo">
+                </div>
+                <div>
+                    <strong id="settingsNamePreview">Free Time Earn</strong>
+                    <small>Homepage / Admin Logo Preview</small>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group full">
+                    <label>Website Name</label>
+                    <input type="text" id="settingSiteName" placeholder="Free Time Earn">
+                </div>
+
+                <div class="form-group full">
+                    <label>Website Logo — Choose File</label>
+                    <input type="file" id="settingLogoFile" accept="image/*" onchange="previewSelectedLogo(event)">
+                    <small class="settings-help">Choose File চাপ দিয়ে ফোন/কম্পিউটার থেকে Logo নির্বাচন করুন। Logo এই browser-এর localStorage-এ সংরক্ষণ হবে।</small>
+                </div>
+
+                <div class="form-group full">
+                    <label>Telegram Bot URL</label>
+                    <input type="url" id="settingTelegramBot" placeholder="https://t.me/YourBotUsername">
+                    <small class="settings-help">Deposit / Withdraw / Sell Request বাটনে চাপ দিলে এই Telegram Bot খুলবে।</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-light" onclick="resetSiteSettings()">Reset Default</button>
+            <button class="btn btn-light" onclick="closeSettings()">Cancel</button>
+            <button class="btn btn-green" onclick="saveSiteSettings()">Save Settings</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     TOAST
+========================================================= -->
+
+<div
+    class="toast"
+    id="toast"
+>
+
+    <div
+        class="toast-icon"
+        id="toastIcon"
+    >
+        ✓
+    </div>
+
+    <div id="toastMessage">
+        Done
+    </div>
+
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   SETTINGS
+========================================================= */
+
+const API_URL =
+"https://sheetdb.io/api/v1/g2zcgnurz2wo6";
+
+
+/* =========================================================
+   ADMIN LOGIN
+========================================================= */
+
+const ADMIN_USERNAME =
+"admin";
+
+const ADMIN_PASSWORD =
+"abusufian01734";
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+const LOGO_URL =
+"https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg";
+
+const SITE_DEFAULTS = {
+    name: "Free Time Earn",
+    logo: LOGO_URL,
+    telegramBot: "https://t.me/YourBotUsername"
+};
+
+const REQUEST_NAMES = {
+    deposit: "Deposit Request",
+    withdraw: "Withdraw Request",
+    facebook: "Facebook Sell Request",
+    gmail: "Gmail Sell Request",
+    whatsapp: "WhatsApp Sell Request",
+    telegram: "Telegram Sell Request",
+    instagram: "Instagram Sell Request"
+};
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+let allUsers = [];
+
+let filteredUsers = [];
+
+let currentPage = 1;
+
+const usersPerPage = 10;
+
+let editingUser = null;
+
+let toastTimer;
+
+
+/* =========================================================
+   PAGE START
+========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        applySiteSettings();
+
+        if(
+            localStorage.getItem(
+                "fte_admin_logged"
+            ) === "true"
+        ){
+
+            showAdmin();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SITE SETTINGS
+========================================================= */
+
+function getSiteSettings(){
+    return {
+        name: localStorage.getItem("fte_site_name") || SITE_DEFAULTS.name,
+        logo: localStorage.getItem("fte_site_logo") || SITE_DEFAULTS.logo,
+        telegramBot: localStorage.getItem("fte_telegram_bot") || SITE_DEFAULTS.telegramBot
+    };
+}
+
+function applySiteSettings(){
+    const settings = getSiteSettings();
+
+    document.title = settings.name + " - Admin Panel";
+
+    document.querySelectorAll("[data-site-logo]").forEach(function(img){
+        img.src = settings.logo;
+    });
+
+    const nameTargets = document.querySelectorAll(".brand strong");
+    nameTargets.forEach(function(el){ el.textContent = settings.name; });
+
+    const preview = document.getElementById("settingsLogoPreview");
+    if(preview) preview.src = settings.logo;
+
+    const previewName = document.getElementById("settingsNamePreview");
+    if(previewName) previewName.textContent = settings.name;
+}
+
+function openSettings(){
+    const settings = getSiteSettings();
+    document.getElementById("settingSiteName").value = settings.name;
+    document.getElementById("settingTelegramBot").value = settings.telegramBot;
+    document.getElementById("settingLogoFile").value = "";
+    document.getElementById("settingsNamePreview").textContent = settings.name;
+    document.getElementById("settingsLogoPreview").src = settings.logo;
+    document.getElementById("settingsModal").style.display = "flex";
+    document.getElementById("sidebar").classList.remove("open");
+}
+
+function closeSettings(){
+    document.getElementById("settingsModal").style.display = "none";
+}
+
+function previewSelectedLogo(event){
+    const file = event.target.files[0];
+    if(!file) return;
+
+    if(!file.type.startsWith("image/")){
+        showToast("শুধু Image File নির্বাচন করুন।", true);
+        event.target.value = "";
+        return;
+    }
+
+    if(file.size > 2 * 1024 * 1024){
+        showToast("Logo Image 2MB-এর মধ্যে রাখুন।", true);
+        event.target.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = function(e){
+        document.getElementById("settingsLogoPreview").src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+}
+
+function saveSiteSettings(){
+    const name = document.getElementById("settingSiteName").value.trim() || SITE_DEFAULTS.name;
+    const bot = document.getElementById("settingTelegramBot").value.trim() || SITE_DEFAULTS.telegramBot;
+    const file = document.getElementById("settingLogoFile").files[0];
+    const oldLogo = localStorage.getItem("fte_site_logo") || SITE_DEFAULTS.logo;
+
+    localStorage.setItem("fte_site_name", name);
+    localStorage.setItem("fte_telegram_bot", bot);
+
+    if(file){
+        if(!file.type.startsWith("image/")){
+            showToast("সঠিক Image File নির্বাচন করুন।", true);
+            return;
+        }
+        if(file.size > 2 * 1024 * 1024){
+            showToast("Logo Image 2MB-এর মধ্যে রাখুন।", true);
+            return;
+        }
+
+        const reader = new FileReader();
+        reader.onload = function(e){
+            try{
+                localStorage.setItem("fte_site_logo", e.target.result);
+                applySiteSettings();
+                closeSettings();
+                showToast("Website Name, Logo ও Telegram Bot Save হয়েছে।");
+            }catch(error){
+                console.error(error);
+                showToast("Logo Save করা যায়নি। Image ছোট আকারের ব্যবহার করুন।", true);
+            }
+        };
+        reader.readAsDataURL(file);
+    }else{
+        localStorage.setItem("fte_site_logo", oldLogo);
+        applySiteSettings();
+        closeSettings();
+        showToast("Website Settings সফলভাবে Save হয়েছে।");
+    }
+}
+
+function resetSiteSettings(){
+    localStorage.removeItem("fte_site_name");
+    localStorage.removeItem("fte_site_logo");
+    localStorage.removeItem("fte_telegram_bot");
+    const fileInput = document.getElementById("settingLogoFile");
+    if(fileInput) fileInput.value = "";
+    applySiteSettings();
+    openSettings();
+    showToast("Default Settings ফিরিয়ে আনা হয়েছে।");
+}
+
+/* =========================================================
+   TELEGRAM REQUEST BUTTONS
+========================================================= */
+
+function openTelegramRequest(type){
+    const settings = getSiteSettings();
+    const url = settings.telegramBot;
+
+    if(!url || url === SITE_DEFAULTS.telegramBot){
+        showToast("Settings থেকে Telegram Bot URL সেট করুন।", true);
+        openSettings();
+        return;
+    }
+
+    const requestName = REQUEST_NAMES[type] || "Request";
+
+    // Telegram bot-এ category পাঠানোর জন্য start parameter ব্যবহার করা হচ্ছে।
+    let target = url;
+    if(url.includes("t.me/")){
+        const separator = url.includes("?") ? "&" : "?";
+        target = url + separator + "start=" + encodeURIComponent(type);
+    }
+
+    showToast(requestName + " এর জন্য Telegram Bot খোলা হচ্ছে...");
+    window.open(target, "_blank", "noopener,noreferrer");
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function adminLogin(){
+
+    const username =
+        document
+        .getElementById("adminUsername")
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById("adminPassword")
+        .value;
+
+    const error =
+        document.getElementById(
+            "loginError"
+        );
+
+    const button =
+        document.getElementById(
+            "loginButton"
+        );
+
+
+    if(
+        username === ADMIN_USERNAME &&
+        password === ADMIN_PASSWORD
+    ){
+
+        button.textContent =
+            "Logging in...";
+
+        button.disabled = true;
+
+
+        localStorage.setItem(
+            "fte_admin_logged",
+            "true"
+        );
+
+
+        error.style.display =
+            "none";
+
+
+        setTimeout(
+            function(){
+
+                showAdmin();
+
+                button.textContent =
+                    "Login to Dashboard";
+
+                button.disabled =
+                    false;
+
+            },
+            350
+        );
+
+
+    }else{
+
+        error.style.display =
+            "flex";
+
+        document
+            .getElementById(
+                "adminPassword"
+            )
+            .value = "";
+
+    }
+
+}
+
+
+/* =========================================================
+   PASSWORD SHOW / HIDE
+========================================================= */
+
+function togglePassword(){
+
+    const password =
+        document.getElementById(
+            "adminPassword"
+        );
+
+    const button =
+        document.querySelector(
+            ".password-toggle"
+        );
+
+
+    if(
+        password.type === "password"
+    ){
+
+        password.type =
+            "text";
+
+        button.textContent =
+            "🙈";
+
+    }else{
+
+        password.type =
+            "password";
+
+        button.textContent =
+            "👁";
+
+    }
+
+}
+
+
+/* =========================================================
+   SHOW ADMIN
+========================================================= */
+
+function showAdmin(){
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "adminPage"
+    ).style.display = "block";
+
+
+    loadUsers();
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+function adminLogout(){
+
+    localStorage.removeItem(
+        "fte_admin_logged"
+    );
+
+
+    document.getElementById(
+        "adminPage"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "loginPage"
+    ).style.display = "flex";
+
+
+    document.getElementById(
+        "adminUsername"
+    ).value = "";
+
+
+    document.getElementById(
+        "adminPassword"
+    ).value = "";
+
+
+    showToast(
+        "Admin Logout সফল হয়েছে।"
+    );
+
+}
+
+
+/* =========================================================
+   LOAD USERS
+========================================================= */
+
+async function loadUsers(){
+
+    const tbody =
+        document.getElementById(
+            "userTableBody"
+        );
+
+
+    tbody.innerHTML = `
+
+        <tr>
+
+            <td colspan="7">
+
+                <div class="loading">
+
+                    <div class="spinner"></div>
+
+                    Google Sheet থেকে Data Load হচ্ছে...
+
+                </div>
+
+            </td>
+
+        </tr>
+
+    `;
+
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL
+            );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "API Response Error"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if(!Array.isArray(data)){
+
+            throw new Error(
+                "Invalid Sheet Data"
+            );
+
+        }
+
+
+        allUsers =
+            data.map(
+                function(user){
+
+                    return {
+
+                        id:
+                            user.id ?? "",
+
+                        email:
+                            user.email ?? "",
+
+                        Password:
+                            user.Password ??
+                            user.password ??
+                            "",
+
+                        ref_code:
+                            user.ref_code ??
+                            "",
+
+                        balance:
+                            user.balance ??
+                            "0",
+
+                        status:
+                            user.status ??
+                            "active"
+
+                    };
+
+                }
+            );
+
+
+        filteredUsers =
+            [...allUsers];
+
+
+        currentPage = 1;
+
+
+        updateStats();
+
+        renderUsers();
+
+
+        showToast(
+            "Google Sheet থেকে Data সফলভাবে Load হয়েছে।"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td colspan="7">
+
+                    <div class="loading">
+
+                        ❌ Data Load করা যায়নি।
+
+                        <br><br>
+
+                        API URL এবং Google Sheet Column নাম পরীক্ষা করুন।
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `;
+
+
+        showToast(
+            "Data Load করতে সমস্যা হয়েছে।",
+            true
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   UPDATE STATS
+========================================================= */
+
+function updateStats(){
+
+    const total =
+        allUsers.length;
+
+
+    const active =
+        allUsers.filter(
+            function(user){
+
+                return String(
+                    user.status
+                ).toLowerCase()
+                === "active";
+
+            }
+        ).length;
+
+
+    const inactive =
+        allUsers.filter(
+            function(user){
+
+                return String(
+                    user.status
+                ).toLowerCase()
+                === "inactive";
+
+            }
+        ).length;
+
+
+    const totalBalance =
+        allUsers.reduce(
+            function(sum,user){
+
+                return (
+                    sum +
+                    (
+                        parseFloat(
+                            user.balance
+                        ) || 0
+                    )
+                );
+
+            },
+            0
+        );
+
+
+    document.getElementById(
+        "totalUsers"
+    ).textContent =
+        total;
+
+
+    document.getElementById(
+        "activeUsers"
+    ).textContent =
+        active;
+
+
+    document.getElementById(
+        "inactiveUsers"
+    ).textContent =
+        inactive;
+
+
+    document.getElementById(
+        "totalBalance"
+    ).textContent =
+        "৳" +
+        totalBalance.toFixed(2);
+
+}
+
+
+/* =========================================================
+   RENDER USERS
+========================================================= */
+
+function renderUsers(){
+
+    const tbody =
+        document.getElementById(
+            "userTableBody"
+        );
+
+
+    if(
+        filteredUsers.length === 0
+    ){
+
+        tbody.innerHTML = `
+
+            <tr>
+
+                <td colspan="7">
+
+                    <div class="loading">
+
+                        কোনো User পাওয়া যায়নি।
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `;
+
+
+        document.getElementById(
+            "pageInfo"
+        ).textContent =
+            "0 users";
+
+
+        document.getElementById(
+            "pageButtons"
+        ).innerHTML =
+            "";
+
+        return;
+
+    }
+
+
+    const totalPages =
+        Math.ceil(
+            filteredUsers.length /
+            usersPerPage
+        );
+
+
+    if(
+        currentPage > totalPages
+    ){
+
+        currentPage =
+            totalPages;
+
+    }
+
+
+    const start =
+        (currentPage - 1) *
+        usersPerPage;
+
+
+    const end =
+        start + usersPerPage;
+
+
+    const pageUsers =
+        filteredUsers.slice(
+            start,
+            end
+        );
+
+
+    tbody.innerHTML =
+        pageUsers.map(
+            function(user,index){
+
+const status =
+    String(user.status || "active").toLowerCase();
+
+let badgeClass = "badge-active";
+
+if(status === "inactive"){
+    badgeClass = "badge-inactive";
+}
+
+if(status === "blocked"){
+    badgeClass = "badge-blocked";
+}
+
+                return `
+
+                    <tr>
+
+                        <td>
+
+                            <span class="user-id">
+
+                                ${escapeHTML(
+                                    user.id
+                                )}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="email">
+
+                                ${escapeHTML(
+                                    user.email
+                                )}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            ${escapeHTML(
+                                user.Password
+                            )}
+
+                        </td>
+
+
+                        <td>
+
+                            ${escapeHTML(
+                                user.ref_code
+                            )}
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="balance">
+
+                                ৳${escapeHTML(
+                                    user.balance
+                                )}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span
+                                class="badge ${badgeClass}"
+                            >
+
+                                ${escapeHTML(
+                                    status
+                                )}
+
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="row-actions">
+
+                                <button
+                                    class="action-btn edit-btn"
+                                    onclick="openEdit(${start + index})"
+                                    title="Edit User"
+                                >
+                                    ✎
+                                </button>
+
+                            </div>
+
+                        </td>
+
+                    </tr>
+
+                `;
+
+            }
+        ).join("");
+
+
+    document.getElementById(
+        "pageInfo"
+    ).textContent =
+        `${start + 1}-${Math.min(
+            end,
+            filteredUsers.length
+        )} of ${filteredUsers.length} users`;
+
+
+    renderPagination(
+        totalPages
+    );
+
+}
+
+
+/* =========================================================
+   PAGINATION
+========================================================= */
+
+function renderPagination(
+    totalPages
+){
+
+    const box =
+        document.getElementById(
+            "pageButtons"
+        );
+
+
+    box.innerHTML = "";
+
+
+    if(totalPages <= 1){
+
+        return;
+
+    }
+
+
+    for(
+        let i = 1;
+        i <= totalPages;
+        i++
+    ){
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "page-btn" +
+            (
+                i === currentPage
+                ? " active"
+                : ""
+            );
+
+
+        button.textContent =
+            i;
+
+
+        button.onclick =
+            function(){
+
+                currentPage =
+                    i;
+
+                renderUsers();
+
+            };
+
+
+        box.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+function searchUsers(){
+
+    const search =
+        document.getElementById(
+            "searchInput"
+        )
+        .value
+        .trim()
+        .toLowerCase();
+
+
+    if(!search){
+
+        filteredUsers =
+            [...allUsers];
+
+    }else{
+
+        filteredUsers =
+            allUsers.filter(
+                function(user){
+
+                    return (
+
+                        String(user.id)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(user.email)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(user.ref_code)
+                            .toLowerCase()
+                            .includes(search)
+
+                        ||
+
+                        String(user.status)
+                            .toLowerCase()
+                            .includes(search)
+
+                    );
+
+                }
+            );
+
+    }
+
+
+    currentPage = 1;
+
+    renderUsers();
+
+}
+
+
+/* =========================================================
+   OPEN EDIT
+========================================================= */
+
+function openEdit(index){
+
+    editingUser =
+        filteredUsers[index];
+
+
+    if(!editingUser){
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "editId"
+    ).value =
+        editingUser.id;
+
+
+    document.getElementById(
+        "editEmail"
+    ).value =
+        editingUser.email;
+
+
+    document.getElementById(
+        "editPassword"
+    ).value =
+        editingUser.Password;
+
+
+    document.getElementById(
+        "editRefCode"
+    ).value =
+        editingUser.ref_code;
+
+
+    document.getElementById(
+        "editBalance"
+    ).value =
+        editingUser.balance;
+
+
+    document.getElementById(
+        "editStatus"
+    ).value =
+        String(
+            editingUser.status ||
+            "active"
+        ).toLowerCase();
+
+
+    document.getElementById(
+        "editModal"
+    ).style.display =
+        "flex";
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
+
+function closeModal(){
+
+    document.getElementById(
+        "editModal"
+    ).style.display =
+        "none";
+
+
+    editingUser = null;
+
+}
+
+
+/* =========================================================
+   SAVE USER
+========================================================= */
+
+async function saveUser(){
+
+    if(!editingUser){
+
+        return;
+
+    }
+
+
+    const saveButton =
+        document.getElementById(
+            "saveButton"
+        );
+
+
+    const id =
+        document.getElementById(
+            "editId"
+        )
+        .value
+        .trim();
+
+
+    const email =
+        document.getElementById(
+            "editEmail"
+        )
+        .value
+        .trim();
+
+
+    const password =
+        document.getElementById(
+            "editPassword"
+        ).value;
+
+
+    const refCode =
+        document.getElementById(
+            "editRefCode"
+        )
+        .value
+        .trim();
+
+
+    const balance =
+        document.getElementById(
+            "editBalance"
+        ).value;
+
+
+    const status =
+        document.getElementById(
+            "editStatus"
+        ).value;
+
+
+    if(!id){
+
+        showToast(
+            "User ID পাওয়া যায়নি।",
+            true
+        );
+
+        return;
+
+    }
+
+
+    saveButton.disabled =
+        true;
+
+    saveButton.textContent =
+        "Saving...";
+
+
+    try{
+
+        const response =
+            await fetch(
+                API_URL +
+                "/id/" +
+                encodeURIComponent(id),
+                {
+
+                    method:"PATCH",
+
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify({
+
+                            data:{
+
+                                id:id,
+
+                                email:email,
+
+                                Password:password,
+
+                                ref_code:refCode,
+
+                                balance:balance,
+
+                                status:status
+
+                            }
+
+                        })
+
+                }
+            );
+
+
+        const result =
+            await response.json();
+
+
+        console.log(
+            "SheetDB Update:",
+            result
+        );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Update failed"
+            );
+
+        }
+
+
+        const oldId =
+            editingUser.id;
+
+
+        const originalIndex =
+            allUsers.findIndex(
+                function(user){
+
+                    return String(
+                        user.id
+                    ) === String(
+                        oldId
+                    );
+
+                }
+            );
+
+
+        if(
+            originalIndex !== -1
+        ){
+
+            allUsers[
+                originalIndex
+            ] = {
+
+                id:id,
+
+                email:email,
+
+                Password:password,
+
+                ref_code:refCode,
+
+                balance:balance,
+
+                status:status
+
+            };
+
+        }
+
+
+        filteredUsers =
+            [...allUsers];
+
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+
+        if(
+            searchInput.value.trim()
+        ){
+
+            searchUsers();
+
+        }else{
+
+            renderUsers();
+
+        }
+
+
+        updateStats();
+
+        closeModal();
+
+
+        showToast(
+            "User সফলভাবে Google Sheet-এ Update হয়েছে।"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+
+        showToast(
+            "Google Sheet Update করা যায়নি।",
+            true
+        );
+
+    }finally{
+
+        saveButton.disabled =
+            false;
+
+        saveButton.textContent =
+            "Save Changes";
+
+    }
+
+}
+
+
+/* =========================================================
+   ESCAPE HTML
+========================================================= */
+
+function escapeHTML(value){
+
+    if(
+        value === null ||
+        value === undefined
+    ){
+
+        return "";
+
+    }
+
+
+    return String(value)
+
+        .replaceAll(
+            "&",
+            "&amp;"
+        )
+
+        .replaceAll(
+            "<",
+            "&lt;"
+        )
+
+        .replaceAll(
+            ">",
+            "&gt;"
+        )
+
+        .replaceAll(
+            '"',
+            "&quot;"
+        )
+
+        .replaceAll(
+            "'",
+            "&#039;"
+        );
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function showToast(
+    message,
+    error=false
+){
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    const icon =
+        document.getElementById(
+            "toastIcon"
+        );
+
+
+    const text =
+        document.getElementById(
+            "toastMessage"
+        );
+
+
+    text.textContent =
+        message;
+
+
+    if(error){
+
+        toast.classList.add(
+            "error"
+        );
+
+        icon.textContent =
+            "×";
+
+    }else{
+
+        toast.classList.remove(
+            "error"
+        );
+
+        icon.textContent =
+            "✓";
+
+    }
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    clearTimeout(
+        toastTimer
+    );
+
+
+    toastTimer =
+        setTimeout(
+            function(){
+
+                toast.classList.remove(
+                    "show"
+                );
+
+            },
+            3500
+        );
+
+}
+
+
+/* =========================================================
+   MOBILE SIDEBAR
+========================================================= */
+
+function toggleSidebar(){
+
+    document.getElementById(
+        "sidebar"
+    )
+    .classList.toggle(
+        "open"
+    );
+
+}
+
+
+/* =========================================================
+   FOCUS USERS
+========================================================= */
+
+function focusUsers(){
+
+    document.getElementById(
+        "usersPanel"
+    )
+    .scrollIntoView({
+
+        behavior:"smooth"
+
+    });
+
+
+    document.getElementById(
+        "sidebar"
+    )
+    .classList.remove(
+        "open"
+    );
+
+}
+
+
+/* =========================================================
+   ACTIVE MENU
+========================================================= */
+
+function setActiveMenu(
+    element
+){
+
+    document
+        .querySelectorAll(
+            ".menu-item"
+        )
+        .forEach(
+            function(item){
+
+                item.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    element.classList.add(
+        "active"
+    );
+
+
+    document.getElementById(
+        "sidebar"
+    ).classList.remove(
+        "open"
+    );
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+function showAbout(){
+
+    showToast(
+        "Free Time Earn Admin Panel • Google Sheet + SheetDB"
+    );
+
+}
+
+
+/* =========================================================
+   CLOSE MODAL OUTSIDE
+========================================================= */
+
+document.getElementById(
+    "editModal"
+).addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === this
+        ){
+
+            closeModal();
+
+        }
+
+    }
+);
+
+
+document.getElementById("settingsModal").addEventListener("click", function(event){
+    if(event.target === this){
+        closeSettings();
+    }
+});
+
+
+/* =========================================================
+   ENTER LOGIN
+========================================================= */
+
+document.getElementById(
+    "adminUsername"
+).addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            adminLogin();
+
+        }
+
+    }
+);
+
+
+document.getElementById(
+    "adminPassword"
+).addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            adminLogin();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
