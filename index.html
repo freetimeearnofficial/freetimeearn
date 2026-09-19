@@ -2723,7 +2723,7 @@ function closeNav() {
     <i class="fas fa-angle-right" style="font-size: 15px; color: #64748b; font-weight: bold;"></i>
   </a>
   <!-- সাপোর্ট সেন্টার বাটন -->
-  <a href="https://t.me/Mohammed1199440" target="_blank" onclick="closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; transition: 0.2s; background: transparent; box-sizing: border-box;" onmouseover="this.style.background='#f0fdf4'" onmouseout="this.style.background='transparent'">
+  <a href="https://t.me/Dev_Sufian" target="_blank" onclick="closeNav();" style="padding: 12px 14px; text-decoration: none; font-size: 15px; color: #1e293b; display: flex; align-items: center; gap: 12px; font-weight: 700; border-radius: 10px; transition: 0.2s; background: transparent; box-sizing: border-box;" onmouseover="this.style.background='#f0fdf4'" onmouseout="this.style.background='transparent'">
     <span style="background: rgba(34, 197, 94, 0.15); width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
       <i class="fas fa-headset" style="font-size: 14px; color: #16a34a;"></i>
     </span>
@@ -4946,15 +4946,15 @@ function togglePassword() {
       </div>
       <span>সোশাল সার্ভিস</span>
     </div>
+<!-- ১২. ক্যাপচা টাইপিং -->
+<div class="premium-card" onclick="handleCaptchaClick()">
+  <div class="icon-box" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
+    <i class="fas fa-keyboard" style="font-size: 22px; color: white;"></i>
+  </div>
+  <span>ক্যাপচা টাইপিং</span>
+</div>
 
-    <!-- ১২. ডেইলি বোনাস -->
-    <div class="premium-card" onclick="handleDailyBonusClick()">
-      <div class="icon-box">
-        <svg viewBox="0 0 24 24"><path d="M20 12v-2h-2V8h-2V6h-2V4h-4v2H6v2H4v2H2v4h2v2h2v2h2v2h4v-2h2v-2h2v-2h2v-2h2zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/></svg>
-      </div>
-      <span>ডেইলি বোনাস</span>
-    </div>
-
+    
     <!-- ১৩. টারগেট বোনাস -->
     <div class="premium-card" onclick="handleTargetBonusClick()">
       <div class="icon-box">
@@ -8304,7 +8304,7 @@ function closeTelegramSuccessPopup() {
                     <i class="fas fa-info-circle" style="color: #ff0000;"></i> Introduction
                 </h6>
                 <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin-top: 10px; text-align: justify;">
-                    EarnFlow prioritizes the privacy and security of our users. This Privacy Policy explains how we manage, protect, and use the information you provide or that is generated through your use of our application.
+                  Free Time Earn prioritizes the privacy and security of our users. This Privacy Policy explains how we manage, protect, and use the information you provide or that is generated through your use of our application.
                 </p>
             </section>
 
@@ -9091,63 +9091,60 @@ function updateLiveCalculation() {
 }
 </script>
 
-
 <!-- Captcha Typing Page -->
-<div id="p-captcha" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f0f4f8; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
-    
-    <!-- Header -->
-    <div style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 102; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 15px rgba(37, 117, 252, 0.2);">
-        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer;" onclick="openPage('home')"></i>
-        <h5 style="margin: 0; font-weight: 700;">Captcha Typing</h5>
+<div id="p-captcha" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
+  <!-- Header -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 102; display: flex; align-items: center; gap: 15px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer;" onclick="openPage('home')"></i>
+    <h5 style="margin: 0; font-weight: 700;">Captcha Typing</h5>
+  </div>
+
+  <div style="padding: 20px;">
+    <!-- Stats Card -->
+    <div style="background: white; border-radius: 15px; padding: 15px; display: flex; justify-content: space-between; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #dcfce7;">
+      <div style="text-align: center; flex: 1;">
+        <small style="color: #64748b; display: block; font-weight: 600;">Today Done</small>
+        <b id="cap-count" style="color: #16a34a; font-size: 18px;">0</b>
+      </div>
+      <div style="width: 1px; background: #dcfce7;"></div>
+      <div style="text-align: center; flex: 1;">
+        <small style="color: #64748b; display: block; font-weight: 600;">Earned</small>
+        <b id="cap-earn" style="color: #15803d; font-size: 18px;">৳0.00</b>
+      </div>
     </div>
 
-    <div style="padding: 20px;">
-        <!-- Stats Card -->
-        <div style="background: white; border-radius: 15px; padding: 15px; display: flex; justify-content: space-between; margin-bottom: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <div style="text-align: center; flex: 1;">
-                <small style="color: #64748b; display: block;">Today Done</small>
-                <b id="cap-count" style="color: #2575fc; font-size: 18px;">0</b>
-            </div>
-            <div style="width: 1px; background: #eee;"></div>
-            <div style="text-align: center; flex: 1;">
-                <small style="color: #64748b; display: block;">Earned</small>
-                <b id="cap-earn" style="color: #2ecc71; font-size: 18px;">৳0.00</b>
-            </div>
-        </div>
+    <!-- Captcha Display Box -->
+    <div style="background: white; border-radius: 20px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #dcfce7;">
+      <p style="font-size: 12px; color: #64748b; font-weight: 700; text-transform: uppercase; margin-bottom: 15px;">Type the code below</p>
 
-        <!-- Captcha Display Box -->
-        <div style="background: white; border-radius: 20px; padding: 30px 20px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
-            <p style="font-size: 12px; color: #64748b; font-weight: 600; text-transform: uppercase; margin-bottom: 15px;">Type the code below</p>
-            
-            <div id="captcha-display" style="background: #f8fafc; padding: 15px; border-radius: 12px; font-size: 32px; font-weight: 800; letter-spacing: 10px; color: #1e293b; border: 2px dashed #cbd5e1; user-select: none; margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; position: relative; overflow: hidden;">
-                <!-- Captcha Code will appear here -->
-                <span id="target-code">X7K9P2</span>
-                <div style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0.1; background-image: radial-gradient(#000 10%, transparent 10%); background-size: 5px 5px;"></div>
-            </div>
+      <div id="captcha-display" style="background: #f0fdf4; padding: 15px; border-radius: 12px; font-size: 32px; font-weight: 800; letter-spacing: 10px; color: #14532d; border: 2px dashed #86efac; user-select: none; margin-bottom: 20px; font-family: 'Courier New', Courier, monospace; position: relative; overflow: hidden;">
+        <span id="target-code">X7K9P2</span>
+        <div style="position: absolute; top:0; left:0; width:100%; height:100%; opacity: 0.08; background-image: radial-gradient(#16a34a 10%, transparent 10%); background-size: 5px 5px;"></div>
+      </div>
 
-            <button onclick="generateCaptcha()" style="background: none; border: none; color: #2575fc; font-size: 13px; font-weight: 700; cursor: pointer; margin-bottom: 20px;">
-                <i class="fas fa-sync-alt"></i> Refresh Captcha
-            </button>
+      <button onclick="generateCaptcha()" style="background: none; border: none; color: #16a34a; font-size: 13px; font-weight: 700; cursor: pointer; margin-bottom: 20px;">
+        <i class="fas fa-sync-alt"></i> Refresh Captcha
+      </button>
 
-            <!-- Input Field -->
-            <input type="text" id="captcha-input" placeholder="Enter code here" style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #e2e8f0; text-align: center; font-size: 20px; font-weight: 700; outline: none; transition: 0.3s; margin-bottom: 20px;" onfocus="this.style.borderColor='#2575fc'">
+      <!-- Input Field -->
+      <input type="text" id="captcha-input" placeholder="Enter code here" style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #bbf7d0; text-align: center; font-size: 20px; font-weight: 700; outline: none; transition: 0.3s; margin-bottom: 20px; background: #f8fafc;" onfocus="this.style.borderColor='#16a34a'" onblur="this.style.borderColor='#bbf7d0'">
 
-            <!-- Submit Button -->
-            <button onclick="checkCaptcha()" style="width: 100%; background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; border: none; padding: 16px; border-radius: 15px; font-weight: 700; font-size: 16px; box-shadow: 0 8px 20px rgba(37, 117, 252, 0.3);">
-                Claim Reward
-            </button>
-        </div>
-
-        <!-- Instructions -->
-        <div style="margin-top: 25px; background: #fffbeb; border-radius: 12px; padding: 15px; border: 1px solid #fef3c7;">
-            <h6 style="color: #92400e; font-size: 14px; margin-bottom: 5px;"><i class="fas fa-info-circle"></i> নিয়মাবলী:</h6>
-            <ul style="font-size: 12px; color: #b45309; padding-left: 18px; line-height: 1.6;">
-                <li>সঠিকভাবে কোডটি টাইপ করলে প্রতিবার পুরস্কার পাবেন।</li>
-                <li>ভুল টাইপ করলে কোনো টাকা যোগ হবে না।</li>
-                <li>অটোমেটিক কোনো টুল ব্যবহার করলে অ্যাকাউন্ট ব্যান হতে পারে।</li>
-            </ul>
-        </div>
+      <!-- Submit Button -->
+      <button onclick="checkCaptcha()" style="width: 100%; background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); color: white; border: none; padding: 16px; border-radius: 15px; font-weight: 700; font-size: 16px; box-shadow: 0 8px 20px rgba(22, 163, 74, 0.3);">
+        Claim Reward
+      </button>
     </div>
+
+    <!-- Instructions -->
+    <div style="margin-top: 25px; background: #f0fdf4; border-radius: 12px; padding: 15px; border: 1px solid #bbf7d0;">
+      <h6 style="color: #14532d; font-size: 14px; margin-bottom: 5px;"><i class="fas fa-info-circle" style="color: #16a34a;"></i> নিয়মাবলী:</h6>
+      <ul style="font-size: 12px; color: #166534; padding-left: 18px; line-height: 1.6; margin-bottom: 0;">
+        <li>সঠিকভাবে কোডটি টাইপ করলে প্রতিবার পুরস্কার পাবেন।</li>
+        <li>ভুল টাইপ করলে কোনো টাকা যোগ হবে না।</li>
+        <li>অটোমেটিক কোনো টুল ব্যবহার করলে অ্যাকাউন্ট ব্যান হতে পারে।</li>
+      </ul>
+    </div>
+  </div>
 </div>
 
 
@@ -9309,10 +9306,10 @@ const TELEGRAM_BOT_TOKEN = '8213160023:AAFtEXfzkaJY4XLedxQuExevMPxsW6gL_ao';
 const TELEGRAM_CHAT_ID = '7203470877'; 
 
 const jobsData = [
-    { id: 1, name: "Facebook Follow", price: 100, link: "https://www.facebook.com/share/1Ebi1GdQE4/" },
-    { id: 2, name: "Facebook Page Like", price: 100, link: "https://facebook.com/link2" },
+    { id: 1, name: "Facebook Follow", price: 1.00, link: "https://www.facebook.com/share/1Ebi1GdQE4/" },
+    { id: 2, name: "Facebook Page Like", price: 1.00, link: "https://facebook.com/link2" },
     { id: 3, name: "Telegram Channel Join", price: 0.05, link: "https://t.me/link3" },
-    { id: 4, name: "YouTube Video Watch", price: 1002, link: "https://youtube.com/link4" },
+    { id: 4, name: "YouTube Video Watch", price: 1.50, link: "https://youtube.com/link4" },
     { id: 5, name: "Website Visit 1 Min", price: 0.07, link: "https://google.com" },
     { id: 6, name: "TikTok Follow", price: 0.01, link: "https://tiktok.com" },
     { id: 7, name: "Instagram Follow", price: 0.04, link: "https://instagram.com" },
@@ -9542,7 +9539,7 @@ initMicroJobs();
         <i class="fas fa-arrow-left" style="font-size: 16px; color: white;"></i>
     </div>
     <h5 style="margin: 0; margin-left: 15px; font-weight: 700; color: white; letter-spacing: 0.5px; text-transform: uppercase; font-size: 16px;">
-        Support Center
+        সাপোর্ট সেন্টার 
     </h5>
 </div>
 
@@ -9657,85 +9654,70 @@ function openDirectSupport() {
   </div>
 </div>
 
- <div id="p-target" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f9f9ff; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
-    
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
-        
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
-                
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">Target Bonus</h5>
-            </div>
+<div id="p-target" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center;">
+      <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
+      <h5 style="margin: 0; margin-left: 15px; font-weight: 700;">Target Bonus</h5>
+    </div>
+  </div>
 
-</div>
-
+  <div class="container mt-3">
+    <div style="background: white; border-radius: 20px; padding: 15px; margin-bottom: 20px; border-left: 5px solid #16a34a; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+      <h6 style="font-weight: 800; color: #1e293b; margin-bottom: 5px;">টার্গেট পূরণ করুন, বোনাস জিতুন! 🎁</h6>
+      <p style="font-size: 12px; color: #64748b; margin: 0;">যত বেশি রেফার করবেন, তত বেশি বোনাস সরাসরি মেইন ব্যালেন্সে পাবেন।</p>
     </div>
 
-    <div class="container mt-3">
-        <div style="background: white; border-radius: 20px; padding: 15px; margin-bottom: 20px; border-left: 5px solid #6610f2; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <h6 style="font-weight: 800; color: #333; margin-bottom: 5px;">টার্গেট পূরণ করুন, বোনাস জিতুন! 🎁</h6>
-            <p style="font-size: 12px; color: #666; margin: 0;">নিচের টার্গেটগুলো সফলভাবে পূরণ করলেই বোনাস সরাসরি আপনার মেইন ব্যালেন্স যোগ হবে।</p>
-        </div>
-
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; position: relative; overflow: hidden; border: 1px solid #eee;">
-            <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                <div style="width: 45px; height: 45px; background: #f3eaff; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #6610f2; font-size: 20px;">
-                    <i class="fas fa-users"></i>
-                </div>
-                <div style="margin-left: 12px;">
-                    <h6 style="font-weight: 800; margin: 0; font-size: 15px;">Daily Referral Target</h6>
-                    <small style="color: #888;">আজকের বিশেষ অফার</small>
-                </div>
-            </div>
-            <p style="font-size: 13px; color: #444; font-weight: 600;">আজকে ১০ জন মেম্বার রেফার করলে পাবেন <span style="color: #6610f2; font-weight: 800;">৫০০ টাকা</span> ইনস্ট্যান্ট বোনাস!</p>
-            <div style="width: 100%; height: 8px; background: #eee; border-radius: 10px; margin-top: 10px;">
-                <div style="width: 0%; height: 100%; background: #6610f2; border-radius: 10px;"></div>
-            </div>
-            <div style="display: flex; justify-content: space-between; margin-top: 8px;">
-                <small style="font-weight: 700; color: #6610f2;">Target: 10 Refers</small>
-                <button onclick="claimBonus('ref10')" style="background: #6610f2; color: white; border: none; border-radius: 8px; padding: 5px 15px; font-size: 11px; font-weight: 700;">Claim Now</button>
-            </div>
-        </div>
-
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid #eee;">
-            <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                <div style="width: 45px; height: 45px; background: #fff4e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #ff9800; font-size: 20px;">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <div style="margin-left: 12px;">
-                    <h6 style="font-weight: 800; margin: 0; font-size: 15px;">Weekly Top Leader</h6>
-                    <small style="color: #888;">সাপ্তাহিক বোনাস</small>
-                </div>
-            </div>
-            <p style="font-size: 13px; color: #444; font-weight: 600;">সপ্তাহে সর্বোচ্চ ৫০ জন রেফার করলে পাবেন <span style="color: #ff9800; font-weight: 800;">২০০০ টাকা</span> ক্যাশব্যাক!</p>
-            <div style="display: flex; justify-content: space-between; margin-top: 15px; background: #fcfcfc; padding: 10px; border-radius: 12px;">
-                <small style="color: #777;">অফার শেষ হবে: ৭ দিন পর</small>
-                <i class="fas fa-info-circle" style="color: #ccc;"></i>
-            </div>
-        </div>
-
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid #eee;">
-            <div style="display: flex; align-items: center; margin-bottom: 12px;">
-                <div style="width: 45px; height: 45px; background: #e3fcef; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #20c997; font-size: 20px;">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div style="margin-left: 12px;">
-                    <h6 style="font-weight: 800; margin: 0; font-size: 15px;">Micro-Job Target</h6>
-                    <small style="color: #888;">ডেইলি কাজের বোনাস</small>
-                </div>
-            </div>
-            <p style="font-size: 13px; color: #444; font-weight: 600;">আজকে ১০০টি ভিডিও টাস্ক কমপ্লিট করলে পাবেন অতিরিক্ত <span style="color: #20c997; font-weight: 800;">১০০ টাকা</span> বোনাস!</p>
-            <button onclick="openPage('p-tasks')" style="width: 100%; margin-top: 10px; background: #20c997; color: white; border: none; padding: 10px; border-radius: 12px; font-weight: 700;">Start Tasks Now</button>
-        </div>
-
-        <div style="text-align: center; margin-top: 20px; padding: 20px;">
-            <p style="font-size: 11px; color: #aaa;">টার্গেট পূরণ হওয়ার পর অটোমেটিক বোনাস যোগ না হলে অ্যাডমিনের সাথে যোগাযোগ করুন।</p>
-        </div>
-
+    <!-- Target 1 -->
+    <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid #dcfce7; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: 0; right: 0; background: #f0fdf4; color: #16a34a; padding: 5px 12px; border-radius: 0 20px 0 15px; font-size: 10px; font-weight: 800;">EASY</div>
+      <div style="display: flex; align-items: center; margin-bottom: 12px;">
+        <div style="width: 45px; height: 45px; background: #f0fdf4; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #16a34a; font-size: 20px;"><i class="fas fa-user-plus"></i></div>
+        <div style="margin-left: 12px;"><h6 style="font-weight: 800; margin: 0; font-size: 15px;">Starter Target</h6><small style="color: #888;">ডেইলি রেফার</small></div>
+      </div>
+      <p style="font-size: 13px; color: #334155; font-weight: 600;">আজকে ৫ জন একটিভ মেম্বার রেফার করলে পাবেন <span style="color: #16a34a; font-weight: 800;">১৫০ টাকা</span> বোনাস!</p>
+      <div style="width: 100%; height: 8px; background: #f1f5f9; border-radius: 10px; margin-top: 12px;"><div id="bar-5" style="width: 0%; height: 100%; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 10px;"></div></div>
+      <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;"><small style="font-weight: 700; color: #16a34a;">Target: 5 Refers</small><button onclick="claimBonus('ref5')" style="background: #16a34a; color: white; border: none; border-radius: 10px; padding: 7px 18px; font-size: 11px; font-weight: 800;">Claim Now</button></div>
     </div>
+
+    <!-- Target 2 -->
+    <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid #bbf7d0; box-shadow: 0 8px 20px rgba(22,163,74,0.08);">
+      <div style="position: absolute; top: 0; right: 0; background: #16a34a; color: white; padding: 5px 12px; border-radius: 0 20px 0 15px; font-size: 10px; font-weight: 800;">POPULAR</div>
+      <div style="display: flex; align-items: center; margin-bottom: 12px;">
+        <div style="width: 45px; height: 45px; background: #dcfce7; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #15803d; font-size: 20px;"><i class="fas fa-users"></i></div>
+        <div style="margin-left: 12px;"><h6 style="font-weight: 800; margin: 0; font-size: 15px;">Daily Super Target</h6><small style="color: #888;">আজকের অফার</small></div>
+      </div>
+      <p style="font-size: 13px; color: #334155; font-weight: 600;">আজকে ১০ জন মেম্বার রেফার করলে পাবেন <span style="color: #16a34a; font-weight: 800;">৫০০ টাকা</span> ইনস্ট্যান্ট বোনাস!</p>
+      <div style="width: 100%; height: 8px; background: #f1f5f9; border-radius: 10px; margin-top: 12px;"><div id="bar-10" style="width: 0%; height: 100%; background: linear-gradient(90deg, #16a34a, #22c55e); border-radius: 10px;"></div></div>
+      <div style="display: flex; justify-content: space-between; margin-top: 10px; align-items: center;"><small style="font-weight: 700; color: #16a34a;">Target: 10 Refers</small><button onclick="claimBonus('ref10')" style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border: none; border-radius: 10px; padding: 7px 18px; font-size: 11px; font-weight: 800; box-shadow: 0 4px 10px rgba(22,163,74,0.3);">Claim Now</button></div>
+    </div>
+
+    <!-- Target 3 -->
+    <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 15px; border: 1px solid #eee;">
+      <div style="display: flex; align-items: center; margin-bottom: 12px;">
+        <div style="width: 45px; height: 45px; background: #fef9c3; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #ca8a04; font-size: 20px;"><i class="fas fa-crown"></i></div>
+        <div style="margin-left: 12px;"><h6 style="font-weight: 800; margin: 0; font-size: 15px;">Pro Referrer</h6><small style="color: #888;">ডেইলি বড় বোনাস</small></div>
+      </div>
+      <p style="font-size: 13px; color: #334155; font-weight: 600;">একদিনে ২৫ জন রেফার করলে পাবেন <span style="color: #15803d; font-weight: 800;">১৫০০ টাকা</span> মেগা বোনাস!</p>
+      <div style="display: flex; justify-content: space-between; margin-top: 12px; background: #f8fafc; padding: 10px 12px; border-radius: 12px;"><small style="color: #64748b; font-weight: 600;">Reward: ৳1500</small><small style="color: #16a34a; font-weight: 800;">Target: 25</small></div>
+      <button onclick="claimBonus('ref25')" style="width: 100%; margin-top: 12px; background: #1e293b; color: white; border: none; padding: 12px; border-radius: 12px; font-weight: 700; font-size: 13px;">Claim Mega Bonus</button>
+    </div>
+
+    <!-- Target 4 -->
+    <div style="background: linear-gradient(135deg, #16a34a, #15803d); border-radius: 20px; padding: 20px; margin-bottom: 15px; color: white; position: relative; overflow: hidden;">
+      <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
+      <div style="display: flex; align-items: center; margin-bottom: 12px;">
+        <div style="width: 45px; height: 45px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px;"><i class="fas fa-trophy"></i></div>
+        <div style="margin-left: 12px;"><h6 style="font-weight: 800; margin: 0; font-size: 15px; color: white;">Weekly Champion</h6><small style="color: rgba(255,255,255,0.8);">সাপ্তাহিক লিডার</small></div>
+      </div>
+      <p style="font-size: 13px; font-weight: 600; color: white;">৭ দিনে ৫০ জন রেফার করলে পাবেন <b style="color: #fef08a;">৩০০০ টাকা</b> + VIP Badge!</p>
+      <button onclick="claimBonus('ref50')" style="width: 100%; margin-top: 12px; background: white; color: #16a34a; border: none; padding: 11px; border-radius: 12px; font-weight: 800; font-size: 13px;">Claim Weekly Prize</button>
+    </div>
+
+  </div>
 </div>
 
+  
 <div id="view-modal" class="d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 2000; overflow-y: auto;">
     <div style="background: #f8f9fa; padding: 15px 20px; display: flex; align-items: center; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 10;">
         <i class="fas fa-arrow-left" style="font-size: 20px; color: #333; cursor: pointer; padding: 5px;" onclick="closeProduct()"></i>
@@ -16360,173 +16342,6 @@ function renderInvestHistory() {
         `;
     });
 }
-let currentCaptcha = "";
-const captchaReward = 0.50; // প্রতি ক্যাপচায় ৫০ পয়সা
-
-// ১. পেজ খোলার সময় নতুন ক্যাপচা তৈরি এবং ডাটাবেস চেক
-function openCaptchaPage() {
-    if (!curUser) {
-        return Swal.fire('দুঃখিত', 'দয়া করে আগে লগইন করুন!', 'error');
-    }
-    
-    // ইউজার ডাটাবেজ ইনডেক্স খুঁজে বের করা
-    let userIndex = db.users.findIndex(u => u.email === curUser.email);
-    if (userIndex === -1) return alert("ইউজার ডাটাবেজে খুঁজে পাওয়া যায়নি!");
-
-    // আজকের তারিখ বের করা (তারিখ পরিবর্তনের সাথে সাথে দৈনিক ইনকাম ০ হবে স্বয়ংক্রিয়ভাবে)
-    let todayStr = new Date().toLocaleDateString('en-US');
-    let lastActiveDate = db.users[userIndex].captchaDate || "";
-
-    if (lastActiveDate !== todayStr) {
-        db.users[userIndex].captchaCount = 0;
-        db.users[userIndex].todayEarn = 0; // নতুন দিনে আজকের ইনকাম ০ হবে
-        db.users[userIndex].captchaDate = todayStr;
-        
-        // কারেন্ট ইউজার সেশন সিঙ্ক
-        curUser.captchaCount = 0;
-        curUser.todayEarn = 0;
-        saveCaptchaData(); // লোকাল স্টোরেজে সেভ
-    }
-
-    // UI-তে বর্তমান কাউন্ট দেখানো
-    let currentCount = db.users[userIndex].captchaCount || 0;
-    
-    if(document.getElementById('cap-count')) {
-        document.getElementById('cap-count').innerText = currentCount;
-    }
-    if(document.getElementById('cap-earn')) {
-        document.getElementById('cap-earn').innerText = "৳" + (db.users[userIndex].todayEarn || 0).toFixed(2);
-    }
-
-    // কোনো লিমিট নেই, তাই ইনপুট সবসময় এনাবল থাকবে
-    if(document.getElementById('captcha-input')) document.getElementById('captcha-input').disabled = false;
-
-    generateCaptcha();
-    if (typeof openPage === "function") openPage('p-captcha');
-}
-
-// ২. র‍্যান্ডম ক্যাপচা তৈরি করা
-function generateCaptcha() {
-    // লিমিট সংক্রান্ত সব চেক এখান থেকে ফেলে দেওয়া হয়েছে
-    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; 
-    let result = "";
-    for (let i = 0; i < 6; i++) {
-        result += chars.charAt(Math.floor(Math.random() * chars.length));
-    }
-    currentCaptcha = result;
-    
-    if(document.getElementById('target-code')) document.getElementById('target-code').innerText = result;
-    if(document.getElementById('captcha-input')) document.getElementById('captcha-input').value = "";
-}
-
-// ৩. ক্যাপচা যাচাই করা
-function checkCaptcha() {
-    if (!curUser) return;
-
-    let userIndex = db.users.findIndex(u => u.email === curUser.email);
-    if (userIndex === -1) return alert("ইউজার ডাটাবেজে খুঁজে পাওয়া যায়নি!");
-
-    // ইউজার ইনপুট ও সিস্টেম ক্যাপচা দুটিরই স্পেস ও কেস ফিক্সড করে ভেরিয়েবলে নেওয়া হলো (যাতে কোনো মিসম্যাচ না হয়)
-    const userInput = document.getElementById('captcha-input').value.trim().toUpperCase();
-    const systemCaptcha = String(currentCaptcha).trim().toUpperCase();
-    
-    if (!userInput) {
-        if (typeof toast === "function") toast("অনুগ্রহ করে কোডটি লিখুন!");
-        else alert("অনুগ্রহ করে কোডটি লিখুন!");
-        return;
-    }
-
-    let currentCount = db.users[userIndex].captchaCount || 0;
-
-    // ইনপুট ঠিকঠাক থাকলেই কেবল ট্রাই করার কাউন্ট ১ বাড়বে
-    db.users[userIndex].captchaCount = currentCount + 1;
-    let updatedCount = db.users[userIndex].captchaCount;
-
-    if (userInput === systemCaptcha) {
-        // সঠিক হলে ব্যালেন্স ও আর্নিং যোগ হবে
-        let currentBal = Number(db.users[userIndex].bal || 0);
-        let todayEarn = Number(db.users[userIndex].todayEarn || 0);
-
-        db.users[userIndex].bal = currentBal + captchaReward;
-        db.users[userIndex].todayEarn = todayEarn + captchaReward;
-
-        // --- ইনকাম হিস্ট্রি যোগ করার লজিক ---
-        let now = new Date();
-        let yyyy = now.getFullYear();
-        let mm = String(now.getMonth() + 1).padStart(2, '0');
-        let dd = String(now.getDate()).padStart(2, '0');
-        let timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
-        let customDateStr = `${yyyy}-${mm}-${dd} | ${timeStr}`;
-
-        // হিস্ট্রি অবজেক্ট তৈরি
-        let historyItem = {
-            amount: captchaReward,
-            note: "Captha Commission",
-            date: customDateStr
-        };
-
-        // ডাটাবেজ এবং সেশনে হিস্ট্রি পুশ করা
-        if (!db.users[userIndex].incomeHistory) db.users[userIndex].incomeHistory = [];
-        db.users[userIndex].incomeHistory.push(historyItem);
-        
-        // সেশন বা কারেন্ট ইউজার অবজেক্ট আপডেট
-        curUser.bal = db.users[userIndex].bal;
-        curUser.todayEarn = db.users[userIndex].todayEarn;
-        curUser.incomeHistory = db.users[userIndex].incomeHistory;
-
-        Swal.fire({
-            title: 'সফল হয়েছে!',
-            text: `আপনি ৳${captchaReward.toFixed(2)} পেয়েছেন।`,
-            icon: 'success',
-            timer: 1500,
-            showConfirmButton: false
-        });
-
-    } else {
-        // কোড ভুল হলেই কেবল এই মেসেজটি আসবে
-        Swal.fire('ভুল কোড!', `কোডটি ভুল হয়েছে! আবার চেষ্টা করুন।`, 'error');
-    }
-
-    // UI আপডেট
-    if(document.getElementById('cap-count')) document.getElementById('cap-count').innerText = updatedCount;
-    if(document.getElementById('cap-earn')) document.getElementById('cap-earn').innerText = "৳" + (db.users[userIndex].todayEarn || 0).toFixed(2);
-    
-    saveCaptchaData(); // ডাটা সেভ করা
-
-    // রেন্ডার ফাংশন কল করা
-    if (typeof renderUser === "function") renderUser(); 
-    if (typeof updateUIBalance === "function") updateUIBalance();
-
-    // নতুন ক্যাপচা তৈরি (এটি সবার শেষে রান হবে এবং এর ভেতরেই ইনপুট বক্স খালি করার লজিক আছে)
-    generateCaptcha();
-}
-
-// ৪. লোকাল স্টোরেজে স্থায়ীভাবে ডাটা সেভ করার ফাংশন
-function saveCaptchaData() {
-    // কারেন্ট ইউজার সেশন ব্যাকআপ (যাতে রিফ্রেশ দিলে কারেন্ট ব্যালেন্স সরাসরি পায়)
-    localStorage.setItem('curUser', JSON.stringify(window.curUser));
-    
-    if (typeof save === "function") {
-        save(); 
-    } else {
-        localStorage.setItem('v7_u', JSON.stringify(db.users)); 
-    }
-}
-
-// ১. কনফিগুরেশন
-const amounts = [0.50, 1, 2, 5, 10, 20, 25, 50, 100, 500];
-
-// ২. পেজ লোড হওয়ার সময় যা যা করবে
-window.onload = () => {
-    const today = new Date().toDateString();
-    const lastSpin = localStorage.getItem('lastSpinDate');
-
-    // রাত ১২টা পার হলে আজকের বোনাস রিসেট করা
-    if (lastSpin !== today) {
-        localStorage.removeItem('todayWon');
-    }
-    updateUI();
-};
 
 // ৩. স্পিন করার মেইন লজিক
 function spinWheel() {
@@ -16927,6 +16742,21 @@ function contactForWeb(serviceName) {
 
 
 // ==========================================================================
+// ৩. অন্যান্য সহায়ক ফাংশন
+// ==========================================================================
+
+function copyNumber() {
+    navigator.clipboard.writeText(selectedNumber);
+    Swal.fire({
+        icon: 'success',
+        text: 'নম্বর কপি হয়েছে!',
+        toast: true,
+        position: 'top',
+        showConfirmButton: false,
+        timer: 1500
+    });
+}
+// ==========================================================================
 // ১. হেলপার ফাংশন (ভেরিফিকেশন চেক ও পপআপ)
 // ==========================================================================
 
@@ -16952,7 +16782,7 @@ function showVerificationAlert(serviceName) {
     });
 }
 
-// অ্যাক্টিভ চেক করে পেজে নিয়ে যাওয়ার জন্য (বাকি সব বাটনের জন্য)
+// অ্যাক্টিভ চেক করে পেজে নিয়ে যাওয়ার জন্য (সব বাটনের জন্য)
 function checkAndOpenPage(pageName, serviceName) {
     if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
         showVerificationAlert(serviceName);
@@ -16969,22 +16799,6 @@ function checkAndOpenPage(pageName, serviceName) {
     }
 }
 
-// অ্যাকাউন্ট অ্যাক্টিভ থাকলে "আপডেট চলছে" দেখানোর জন্য (শুধুমাত্র ডেইলি বোনাসের জন্য)
-function checkAccountAndShowUpdate(serviceName) {
-    if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
-        showVerificationAlert(serviceName);
-    } else {
-        Swal.fire({
-            title: 'আপডেট চলছে!',
-            text: `${serviceName} এর কাজ চলছে। অতি শীঘ্রই লঞ্চ করা হবে, ধন্যবাদ।`,
-            icon: 'info',
-            confirmButtonText: 'ঠিক আছে',
-            confirmButtonColor: '#1877f2',
-            background: '#fff',
-            borderRadius: '20px'
-        });
-    }
-}
 
 // ==========================================================================
 // ২. আপনার নির্দিষ্ট বাটনগুলোর ক্লিক হ্যান্ডলারসমূহ
@@ -17035,9 +16849,9 @@ function handleSocialServiceClick() {
     checkAndOpenPage('p-social', 'সোশাল সার্ভিস');
 }
 
-// ডেইলি বোনাস (অ্যাক্টিভ থাকলে 'আপডেট চলছে' দেখাবে, ইনঅ্যাক্টিভ থাকলে লক দেখাবে)
-function handleDailyBonusClick() {
-    checkAccountAndShowUpdate('ডেইলি বোনাস');
+// ১২. ক্যাপচা টাইপিং (সরাসরি পেজ ওপেন হবে অ্যাক্টিভ থাকলে)
+function handleCaptchaClick() {
+    checkAndOpenPage('p-captcha', 'ক্যাপচা টাইপিং');
 }
 
 function handleTargetBonusClick() {
@@ -17051,23 +16865,217 @@ function handleLeadershipClick() {
 function handleSeeMoreClick() {
     checkAndOpenPage('p-more', 'আরো দেখুন');
 }
-// ==========================================================================
-// ৩. অন্যান্য সহায়ক ফাংশন
-// ==========================================================================
 
-function copyNumber() {
-    navigator.clipboard.writeText(selectedNumber);
-    Swal.fire({
-        icon: 'success',
-        text: 'নম্বর কপি হয়েছে!',
-        toast: true,
-        position: 'top',
-        showConfirmButton: false,
-        timer: 1500
-    });
+
+let currentCaptcha = "";
+const captchaReward = 0.50; // প্রতি ক্যাপচায় ৫০ পয়সা
+const MAX_CAPTCHA_LIMIT = 10; // দৈনিক ১০টি লিমিট
+
+// ১. পেজ খোলার সময় নতুন ক্যাপচা তৈরি এবং ডাটাবেস চেক
+function openCaptchaPage() {
+    if (!curUser) {
+        return Swal.fire('দুঃখিত', 'দয়া করে আগে লগইন করুন!', 'error');
+    }
+    
+    // ইউজার ডাটাবেজ ইনডেক্স খুঁজে বের করা
+    let userIndex = db.users.findIndex(u => u.email === curUser.email);
+    if (userIndex === -1) return alert("ইউজার ডাটাবেজে খুঁজে পাওয়া যায়নি!");
+
+    // আজকের তারিখ বের করা (তারিখ পরিবর্তনের সাথে সাথে দৈনিক ইনকাম ও কাউন্ট ০ হবে)
+    let todayStr = new Date().toLocaleDateString('en-US');
+    let lastActiveDate = db.users[userIndex].captchaDate || "";
+
+    if (lastActiveDate !== todayStr) {
+        db.users[userIndex].captchaCount = 0;
+        db.users[userIndex].todayEarn = 0; // নতুন দিনে আজকের ইনকাম ০ হবে
+        db.users[userIndex].captchaDate = todayStr;
+        
+        // কারেন্ট ইউজার সেশন সিঙ্ক
+        curUser.captchaCount = 0;
+        curUser.todayEarn = 0;
+        saveCaptchaData(); // লোকাল স্টোরেজে সেভ
+    }
+
+    // UI-তে বর্তমান কাউন্ট দেখানো
+    let currentCount = db.users[userIndex].captchaCount || 0;
+    
+    if(document.getElementById('cap-count')) {
+        document.getElementById('cap-count').innerText = `${currentCount}/${MAX_CAPTCHA_LIMIT}`;
+    }
+    if(document.getElementById('cap-earn')) {
+        document.getElementById('cap-earn').innerText = "৳" + (db.users[userIndex].todayEarn || 0).toFixed(2);
+    }
+
+    // লিমিট চেক করা (১০টা পূর্ণ হয়ে গেলে ব্লক রাখা হবে)
+    if (currentCount >= MAX_CAPTCHA_LIMIT) {
+        disableCaptchaInput("আজকের জন্য আপনার ১০টি ক্যাপচা লিমিট শেষ হয়ে গেছে!");
+    } else {
+        enableCaptchaInput();
+        generateCaptcha();
+    }
+
+    if (typeof openPage === "function") openPage('p-captcha');
 }
 
+// ২. কঠিন/ঘিঞ্জি র‍্যান্ডম ক্যাপচা তৈরি করা
+function generateCaptcha() {
+    // অক্ষর, সংখ্যা এবং স্পেশাল ক্যারেক্টার মিলিয়ে কঠিন করা হয়েছে
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789@#$%*"; 
+    let result = "";
+    for (let i = 0; i < 6; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    currentCaptcha = result;
     
+    let targetEl = document.getElementById('target-code');
+    if (targetEl) {
+        // ভিজ্যুয়ালি ঘিঞ্জি/কঠিন করার জন্য স্পেস এবং লেটার স্পেসিং যোগ
+        targetEl.innerText = result.split('').join(' ');
+        targetEl.style.letterSpacing = "3px";
+        targetEl.style.fontFamily = "monospace";
+        targetEl.style.fontWeight = "bold";
+        targetEl.style.fontStyle = "italic";
+        targetEl.style.textDecoration = "line-through"; // ঘিঞ্জি দেখানোর জন্য স্ট্রাইক থ্রু
+    }
+    
+    if(document.getElementById('captcha-input')) document.getElementById('captcha-input').value = "";
+}
+
+// ৩. ক্যাপচা যাচাই করা
+function checkCaptcha() {
+    if (!curUser) return;
+
+    let userIndex = db.users.findIndex(u => u.email === curUser.email);
+    if (userIndex === -1) return alert("ইউজার ডাটাবেজে খুঁজে পাওয়া যায়নি!");
+
+    let currentCount = db.users[userIndex].captchaCount || 0;
+
+    // লিমিট আগেই চেক করা
+    if (currentCount >= MAX_CAPTCHA_LIMIT) {
+        disableCaptchaInput("আপনার আজকের লিমিট শেষ!");
+        return Swal.fire('লিমিট শেষ!', 'আজকের জন্য আপনার ১০টি ক্যাপচা সম্পূর্ণ হয়ে গেছে। রাত ১২টার পর আবার চেষ্টা করুন।', 'warning');
+    }
+
+    const userInput = document.getElementById('captcha-input').value.trim().toUpperCase();
+    const systemCaptcha = String(currentCaptcha).trim().toUpperCase();
+    
+    if (!userInput) {
+        if (typeof toast === "function") toast("অনুগ্রহ করে কোডটি লিখুন!");
+        else alert("অনুগ্রহ করে কোডটি লিখুন!");
+        return;
+    }
+
+    // ভুল বা সঠিক—যেকোনো চেষ্টার জন্যই ট্রাই কাউন্ট ১ বাড়বে
+    db.users[userIndex].captchaCount = currentCount + 1;
+    let updatedCount = db.users[userIndex].captchaCount;
+
+    if (userInput === systemCaptcha) {
+        // সঠিক হলে ব্যালেন্স ও আর্নিং যোগ হবে
+        let currentBal = Number(db.users[userIndex].bal || 0);
+        let todayEarn = Number(db.users[userIndex].todayEarn || 0);
+
+        db.users[userIndex].bal = currentBal + captchaReward;
+        db.users[userIndex].todayEarn = todayEarn + captchaReward;
+
+        // --- ইনকাম হিস্ট্রি যোগ করার লজিক ---
+        let now = new Date();
+        let yyyy = now.getFullYear();
+        let mm = String(now.getMonth() + 1).padStart(2, '0');
+        let dd = String(now.getDate()).padStart(2, '0');
+        let timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true });
+        let customDateStr = `${yyyy}-${mm}-${dd} | ${timeStr}`;
+
+        let historyItem = {
+            amount: captchaReward,
+            note: "Captcha Commission",
+            date: customDateStr
+        };
+
+        if (!db.users[userIndex].incomeHistory) db.users[userIndex].incomeHistory = [];
+        db.users[userIndex].incomeHistory.push(historyItem);
+        
+        // সেশন আপডেট
+        curUser.bal = db.users[userIndex].bal;
+        curUser.todayEarn = db.users[userIndex].todayEarn;
+        curUser.incomeHistory = db.users[userIndex].incomeHistory;
+
+        Swal.fire({
+            title: 'সফল হয়েছে!',
+            text: `আপনি ৳${captchaReward.toFixed(2)} পেয়েছেন।`,
+            icon: 'success',
+            timer: 1500,
+            showConfirmButton: false
+        });
+
+    } else {
+        // কোড ভুল হলেও চেষ্টা গণনা হয়ে যাবে
+        Swal.fire('ভুল কোড!', `কোডটি ভুল হয়েছে! আবার চেষ্টা করুন।`, 'error');
+    }
+
+    // UI আপডেট
+    if(document.getElementById('cap-count')) document.getElementById('cap-count').innerText = `${updatedCount}/${MAX_CAPTCHA_LIMIT}`;
+    if(document.getElementById('cap-earn')) document.getElementById('cap-earn').innerText = "৳" + (db.users[userIndex].todayEarn || 0).toFixed(2);
+    
+    saveCaptchaData(); // ডাটা সেভ করা
+
+    if (typeof renderUser === "function") renderUser(); 
+    if (typeof updateUIBalance === "function") updateUIBalance();
+
+    // চেষ্টা ১০টি হয়ে গেলে ইনপুট লক করে দেবে, অন্যথায় নতুন ক্যাপচা জেনারেট করবে
+    if (updatedCount >= MAX_CAPTCHA_LIMIT) {
+        disableCaptchaInput("আজকের জন্য আপনার ১০টি ক্যাপচা লিমিট শেষ হয়ে গেছে!");
+    } else {
+        generateCaptcha();
+    }
+}
+
+// ইনপুট এবং বাটন ডিজেবল করার হেলপার ফাংশন
+function disableCaptchaInput(msg) {
+    let inputEl = document.getElementById('captcha-input');
+    let btnEl = document.querySelector('#p-captcha button'); // ক্যাপচা সাবমিট বাটন
+    if (inputEl) {
+        inputEl.disabled = true;
+        inputEl.placeholder = msg || "লিমিট শেষ";
+        inputEl.value = "";
+    }
+    if (btnEl) btnEl.disabled = true;
+}
+
+// ইনপুট এবং বাটন এনাবল করার হেলপার ফাংশন
+function enableCaptchaInput() {
+    let inputEl = document.getElementById('captcha-input');
+    let btnEl = document.querySelector('#p-captcha button');
+    if (inputEl) {
+        inputEl.disabled = false;
+        inputEl.placeholder = "ক্যাপচা কোড লিখুন";
+    }
+    if (btnEl) btnEl.disabled = false;
+}
+
+// ৪. লোকাল স্টোরেজে স্থায়ীভাবে ডাটা সেভ করার ফাংশন
+function saveCaptchaData() {
+    localStorage.setItem('curUser', JSON.stringify(window.curUser));
+    
+    if (typeof save === "function") {
+        save(); 
+    } else {
+        localStorage.setItem('v7_u', JSON.stringify(db.users)); 
+    }
+}
+
+// কনফিগুরেশন ও পেজ লোড
+const amounts = [0.50, 1, 2, 5, 10, 20, 25, 50, 100, 500];
+
+window.onload = () => {
+    const today = new Date().toDateString();
+    const lastSpin = localStorage.getItem('lastSpinDate');
+
+    if (lastSpin !== today) {
+        localStorage.removeItem('todayWon');
+    }
+    if (typeof updateUI === "function") updateUI();
+};
+  
 </script>
 
 </body>
