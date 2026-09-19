@@ -5560,412 +5560,64 @@ function togglePassword() {
     </div>
 </div>
 
-  
-<!-- সাপোর্ট সেন্টার পেজ -->
-<div id="p-support-center" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f4f6f9; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; opacity: 0; transition: opacity 0.3s ease;">
-    
-    <!-- হেডার -->
-    <div style="background: linear-gradient(135deg, #0f172a 100%, #1e293b 0%); padding: 16px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 1502; box-shadow: 0 4px 25px rgba(0, 0, 0, 0.2);">
-        <div onclick="closeSupportPage()" style="cursor: pointer; display: flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.1); transition: all 0.2s ease;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-            <i class="fas fa-arrow-left" style="font-size: 18px; color: #ffffff;"></i>
-        </div>
-        <div style="margin-left: 14px;">
-            <h5 style="margin: 0; font-weight: 800; color: #ffffff; font-size: 17px; letter-spacing: 0.5px;">সাপোর্ট সেন্টার</h5>
-            <span style="font-size: 10px; color: #94a3b8; font-weight: 600;">২৪/৭ অনলাইন সহায়তা</span>
-        </div>
+<!-- ওনার / এডমিন প্রোফাইল পেজ -->
+<div id="p-admin-profile" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
+  <!-- হেডার সেকশন -->
+  <div style="background: rgba(30, 41, 59, 0.8); backdrop-filter: blur(12px); padding: 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; border-bottom: 1px solid rgba(255, 255, 255, 0.1);">
+    <div onclick="openPage('p-home')" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.05); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.1);">
+      <i class="fas fa-arrow-left" style="font-size: 16px; color: #22c55e;"></i>
     </div>
+    <h5 style="margin: 0; margin-left: 15px; font-weight: 700; font-size: 17px; color: #f8fafc;">Admin Identity</h5>
+  </div>
 
-    <div class="container mt-3 px-3" style="max-width: 650px; margin: 0 auto; animation: slideUp 0.4s ease forwards;">
-        
-        <!-- নোটিশ বক্স -->
-        <div style="background: #ffffff; border-left: 5px solid #3b82f6; padding: 16px; border-radius: 14px; margin-bottom: 22px; box-shadow: 0 6px 20px rgba(0,0,0,0.04);">
-            <h6 style="margin: 0 0 8px 0; font-weight: 800; color: #1e293b; font-size: 14px; display: flex; align-items: center; gap: 8px;">
-                <i class="fas fa-bullhorn" style="color: #ef4444;"></i> জরুরি নোটিশ
-            </h6>
-            <p style="margin: 0; font-size: 12px; color: #64748b; line-height: 1.7; text-align: justify;">
-                যেকোনো প্রয়োজনে নিচের ভেরিফাইড অ্যাডমিনদের সাথে সরাসরি যোগাযোগ করুন অথবা আমাদের অফিসিয়াল গ্রুপগুলোতে জয়েন করুন। প্রতারণা এড়াতে শুধুমাত্র ভেরিফাইড লিস্টের সাথে লেনদেন করুন।
-            </p>
+  <!-- মূল প্রোফাইল কার্ড -->
+  <div style="max-width: 420px; margin: 30px auto; padding: 0 20px;">
+    <div style="background: linear-gradient(145deg, #1e293b, #0f172a); border-radius: 28px; padding: 35px 24px; text-align: center; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4); border: 1px solid rgba(255, 255, 255, 0.08); position: relative; overflow: hidden;">
+      <!-- ব্যাকগ্রাউন্ড গ্লো ইফেক্ট -->
+      <div style="position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 180px; height: 180px; background: rgba(34, 197, 94, 0.18); filter: blur(50px); border-radius: 50%; pointer-events: none;"></div>
+
+      <!-- প্রফাইল ইমেজ ও ব্যাজ -->
+      <div style="position: relative; width: 110px; height: 110px; margin: 0 auto 20px;">
+        <div style="width: 100%; height: 100%; border-radius: 50%; padding: 3px; background: linear-gradient(135deg, #16a34a, #22c55e); box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);">
+          <img src="https://ui-avatars.com/api/?name=Abu+Sufian&background=16a34a&color=fff&size=128" alt="Abu Sufian" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 3px solid #1e293b;">
         </div>
-
-        <!-- সরাসরি অ্যাডমিনের সাথে কথা বলুন (মেইন বাটন) -->
-        <div style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-radius: 18px; padding: 22px; text-align: center; margin-bottom: 22px; box-shadow: 0 10px 30px rgba(15, 23, 42, 0.2);">
-            <div style="width: 60px; height: 60px; background: rgba(59, 130, 246, 0.15); color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px auto;">
-                <i class="fas fa-headset" style="font-size: 26px;"></i>
-            </div>
-            <h6 style="margin: 0 0 6px 0; font-weight: 800; color: #ffffff; font-size: 16px;">সরাসরি অ্যাডমিনের সাথে কথা বলুন</h6>
-            <p style="margin: 0 0 16px 0; font-size: 11px; color: #94a3b8; line-height: 1.5;">আপনার যেকোনো সমস্যা বা লেনদেন সংক্রান্ত সহায়তার জন্য নির্দিষ্ট অ্যাডমিনকে বেছে নিন।</p>
-            <button onclick="openAdminModal()" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border: none; padding: 12px 24px; border-radius: 12px; font-weight: 800; font-size: 13px; cursor: pointer; box-shadow: 0 4px 15px rgba(59,130,246,0.4); transition: all 0.2s ease; display: inline-flex; align-items: center; gap: 8px;">
-                <i class="fas fa-comments"></i> অ্যাডমিন লিস্ট দেখুন
-            </button>
+        <div style="position: absolute; bottom: 2px; right: 2px; background: #22c55e; color: #0f172a; width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 13px; border: 2px solid #1e293b; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+          <i class="fas fa-check"></i>
         </div>
+      </div>
 
-        <!-- সোশ্যাল গ্রুপ সেকশন -->
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-            
+      <h3 style="margin: 0 0 6px 0; font-size: 1.5rem; font-weight: 800; color: #f8fafc;">Abu Sufian</h3>
+      <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(34, 197, 94, 0.12); color: #22c55e; padding: 6px 16px; border-radius: 30px; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; border: 1px solid rgba(34, 197, 94, 0.25); margin-bottom: 25px;">
+        <i class="fas fa-code"></i> LEAD DEVELOPER & ADMIN
+      </div>
 
-    <!-- ১. টেলিগ্রাম গ্রুপ দুটি -->
-    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; border-radius: 18px; padding: 18px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-            <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #0088cc, #00aaff); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,136,204,0.3);">
-                <i class="fab fa-telegram-plane" style="font-size: 18px;"></i>
-            </div>
-            <div>
-                <span style="font-size: 14px; font-weight: 800; color: #1e293b; display: block;">টেলিগ্রাম চ্যানেল ও গ্রুপ</span>
-                <span style="font-size: 11px; color: #64748b;">যুক্ত হন আমাদের টেলিগ্রাম প্ল্যাটফর্মে</span>
-            </div>
+      <!-- ইনফরমেশন গ্রিড -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 25px;">
+        <div style="background: rgba(255, 255, 255, 0.03); padding: 16px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left;">
+          <div style="width: 32px; height: 32px; background: rgba(34, 197, 94, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <i class="fas fa-user-shield" style="color: #22c55e; font-size: 14px;"></i>
+          </div>
+          <p style="margin: 0; font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase;">System Role</p>
+          <p style="margin: 3px 0 0 0; font-size: 13px; color: #f1f5f9; font-weight: 700;">Main Administrator</p>
         </div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #0088cc, #00aaff); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,136,204,0.25); transition: opacity 0.2s;">
-                গ্রুপ ১ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-            <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #00aaff, #0088cc); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,136,204,0.25); transition: opacity 0.2s;">
-                গ্রুপ ২ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
+        <div style="background: rgba(255, 255, 255, 0.03); padding: 16px; border-radius: 18px; border: 1px solid rgba(255, 255, 255, 0.05); text-align: left;">
+          <div style="width: 32px; height: 32px; background: rgba(34, 197, 94, 0.15); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+            <i class="fas fa-signal" style="color: #22c55e; font-size: 14px;"></i>
+          </div>
+          <p style="margin: 0; font-size: 10px; color: #94a3b8; font-weight: 600; text-transform: uppercase;">Status</p>
+          <p style="margin: 3px 0 0 0; font-size: 13px; color: #22c55e; font-weight: 700;">Active & Online</p>
         </div>
-    </div>
+      </div>
 
-    <!-- ২. মেসেঞ্জার গ্রুপ দুটি -->
-    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; border-radius: 18px; padding: 18px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-            <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #006AFF, #00C6FF); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,106,255,0.3);">
-                <i class="fab fa-facebook-messenger" style="font-size: 18px;"></i>
-            </div>
-            <div>
-                <span style="font-size: 14px; font-weight: 800; color: #1e293b; display: block;">মেসেঞ্জার গ্রুপ চ্যাট</span>
-                <span style="font-size: 11px; color: #64748b;">সরাসরি আড্ডা ও আলোচনা</span>
-            </div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="window.open('https://m.me/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #006AFF, #00C6FF); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,106,255,0.25); transition: opacity 0.2s;">
-                গ্রুপ ১ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-            <button onclick="window.open('https://m.me/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #00C6FF, #006AFF); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(0,106,255,0.25); transition: opacity 0.2s;">
-                গ্রুপ ২ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- ৩. হোয়াটসঅ্যাপ গ্রুপ দুটি -->
-    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; border-radius: 18px; padding: 18px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-            <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #25d366, #128c7e); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(37,211,102,0.3);">
-                <i class="fab fa-whatsapp" style="font-size: 18px;"></i>
-            </div>
-            <div>
-                <span style="font-size: 14px; font-weight: 800; color: #1e293b; display: block;">হোয়াটসঅ্যাপ কমিউনিটি</span>
-                <span style="font-size: 11px; color: #64748b;">জরুরি আপডেট পেতে যুক্ত হোন</span>
-            </div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="window.open('https://whatsapp.com/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #25d366, #128c7e); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(37,211,102,0.25); transition: opacity 0.2s;">
-                গ্রুপ ১ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-            <button onclick="window.open('https://whatsapp.com/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #128c7e, #25d366); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(37,211,102,0.25); transition: opacity 0.2s;">
-                গ্রুপ ২ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-        </div>
-    </div>
-
-    <!-- ৪. ফেসবুক গ্রুপ দুটি -->
-    <div style="background: linear-gradient(145deg, #ffffff, #f8fafc); border: 1px solid #e2e8f0; border-radius: 18px; padding: 18px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.05); transition: all 0.3s ease;">
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-            <div style="width: 38px; height: 38px; background: linear-gradient(135deg, #1877f2, #0d56b3); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(24,119,242,0.3);">
-                <i class="fab fa-facebook-f" style="font-size: 18px;"></i>
-            </div>
-            <div>
-                <span style="font-size: 14px; font-weight: 800; color: #1e293b; display: block;">ফেসবুক অফিশিয়াল গ্রুপ</span>
-                <span style="font-size: 11px; color: #64748b;">আমাদের ফেসবুক কমিউনিটি গ্রুপ</span>
-            </div>
-        </div>
-        <div style="display: flex; gap: 10px;">
-            <button onclick="window.open('https://facebook.com/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #1877f2, #0d56b3); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(24,119,242,0.25); transition: opacity 0.2s;">
-                গ্রুপ ১ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-            <button onclick="window.open('https://facebook.com/', '_blank')" class="social-btn" style="flex: 1; background: linear-gradient(135deg, #0d56b3, #1877f2); color: white; border: none; padding: 11px; border-radius: 12px; font-weight: 700; font-size: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 12px rgba(24,119,242,0.25); transition: opacity 0.2s;">
-                গ্রুপ ২ <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
-            </button>
-        </div>
-    </div>
-
-</div>
-    </div>
-
-</div>
-
-<!-- Hover Effect এর জন্য ছোট CSS (আপনার হেডার বা স্টাইল ট্যাগে রাখতে পারেন) -->
-<style>
-    .social-btn:hover {
-        opacity: 0.9;
-        transform: translateY(-1px);
-    }
-</style>
-
-
-<!-- প্রফেশনাল অ্যাডমিন পপআপ (Modal) -->
-<div id="admin-modal" class="d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; padding: 15px;">
-    
-    <div style="background: #ffffff; width: 100%; max-width: 500px; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2); max-height: 90vh; display: flex; flex-direction: column; animation: scaleUp 0.3s ease forwards;">
-        
-        <!-- পপআপ হেডার -->
-        <div style="background: linear-gradient(135deg, #0f172a, #1e293b); padding: 16px 20px; display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <div style="width: 35px; height: 35px; background: rgba(59, 130, 246, 0.2); color: #3b82f6; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-user-shield" style="font-size: 16px;"></i>
-                </div>
-                <div>
-                    <h5 style="margin: 0; color: #ffffff; font-size: 15px; font-weight: 800;">ভেরিফাইড অ্যাডমিন লিস্ট</h5>
-                    <span style="font-size: 10px; color: #94a3b8;">আপনার সমস্যার জন্য সঠিক অ্যাডমিন বেছে নিন</span>
-                </div>
-            </div>
-            <div onclick="closeAdminModal()" style="cursor: pointer; width: 32px; height: 32px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #ffffff; transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                <i class="fas fa-times" style="font-size: 14px;"></i>
-            </div>
-        </div>
-
-        <!-- পপআপ বডি (৫টি অ্যাডমিন কার্ড with Problem Description) -->
-        <div style="padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px;">
-            
-            <!-- Admin 1 -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(59,130,246,0.3);">
-                        <i class="fas fa-wallet" style="font-size: 18px;"></i>
-                    </div>
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            <span style="font-size: 13px; font-weight: 800; color: #1e293b;">Admin 1</span>
-                            <span style="font-size: 8px; color: #3b82f6; font-weight: 700; background: #eff6ff; padding: 1px 5px; border-radius: 4px;">Verified</span>
-                        </div>
-                        <p style="margin: 3px 0 0 0; font-size: 11px; color: #64748b; font-weight: 600;">পেমেন্ট জমা, ডিপোজিট ও উইথড্র সংক্রান্ত সমস্যা</p>
-                    </div>
-                </div>
-                <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" style="background: #3b82f6; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#3b82f6'">
-                    মেসেজ করুন
-                </button>
-            </div>
-
-            <!-- Admin 2 -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #10b981, #047857); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(16,185,129,0.3);">
-                        <i class="fas fa-user-cog" style="font-size: 18px;"></i>
-                    </div>
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            <span style="font-size: 13px; font-weight: 800; color: #1e293b;">Admin 2</span>
-                            <span style="font-size: 8px; color: #10b981; font-weight: 700; background: #ecfdf5; padding: 1px 5px; border-radius: 4px;">Verified</span>
-                        </div>
-                        <p style="margin: 3px 0 0 0; font-size: 11px; color: #64748b; font-weight: 600;">অ্যাকাউন্ট ভেরিফিকেশন ও পাসওয়ার্ড সমস্যা</p>
-                    </div>
-                </div>
-                <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" style="background: #10b981; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s;" onmouseover="this.style.background='#047857'" onmouseout="this.style.background='#10b981'">
-                    মেসেজ করুন
-                </button>
-            </div>
-
-            <!-- Admin 3 -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(245,158,11,0.3);">
-                        <i class="fas fa-gift" style="font-size: 18px;"></i>
-                    </div>
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            <span style="font-size: 13px; font-weight: 800; color: #1e293b;">Admin 3</span>
-                            <span style="font-size: 8px; color: #f59e0b; font-weight: 700; background: #fffbeb; padding: 1px 5px; border-radius: 4px;">Verified</span>
-                        </div>
-                        <p style="margin: 3px 0 0 0; font-size: 11px; color: #64748b; font-weight: 600;">বোনাস, অফার ও প্রমোশন সংক্রান্ত সমস্যা</p>
-                    </div>
-                </div>
-                <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" style="background: #f59e0b; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s;" onmouseover="this.style.background='#d97706'" onmouseout="this.style.background='#f59e0b'">
-                    মেসেজ করুন
-                </button>
-            </div>
-
-            <!-- Admin 4 -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #8b5cf6, #6d28d9); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(139,92,246,0.3);">
-                        <i class="fas fa-gamepad" style="font-size: 18px;"></i>
-                    </div>
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 12px;">
-                            <span style="font-size: 13px; font-weight: 800; color: #1e293b;">Admin 4</span>
-                            <span style="font-size: 8px; color: #8b5cf6; font-weight: 700; background: #f3e8ff; padding: 1px 5px; border-radius: 4px;">Verified</span>
-                        </div>
-                        <p style="margin: 3px 0 0 0; font-size: 11px; color: #64748b; font-weight: 600;">গেম বা বেটিং ব্যালেন্স আপডেট সমস্যা</p>
-                    </div>
-                </div>
-                <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" style="background: #8b5cf6; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s;" onmouseover="this.style.background='#6d28d9'" onmouseout="this.style.background='#8b5cf6'">
-                    মেসেজ করুন
-                </button>
-            </div>
-
-            <!-- Admin 5 -->
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: all 0.2s;">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #ec4899, #be185d); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px rgba(236,72,153,0.3);">
-                        <i class="fas fa-headset" style="font-size: 18px;"></i>
-                    </div>
-                    <div>
-                        <div style="display: flex; align-items: center; gap: 6px;">
-                            <span style="font-size: 13px; font-weight: 800; color: #1e293b;">Admin 5</span>
-                            <span style="font-size: 8px; color: #ec4899; font-weight: 700; background: #fce7f3; padding: 1px 5px; border-radius: 4px;">Verified</span>
-                        </div>
-                        <p style="margin: 3px 0 0 0; font-size: 11px; color: #64748b; font-weight: 600;">সাধারণ সহায়তা ও অন্যান্য অভিযোগ</p>
-                    </div>
-                </div>
-                <button onclick="window.open('https://t.me/Mohammed1199440', '_blank')" style="background: #ec4899; color: white; border: none; padding: 8px 14px; border-radius: 8px; font-size: 11px; font-weight: 700; cursor: pointer; flex-shrink: 0; transition: background 0.2s;" onmouseover="this.style.background='#be185d'" onmouseout="this.style.background='#ec4899'">
-                    মেসেজ করুন
-                </button>
-            </div>
-
-        </div>
-                </div>
-    </div>
-</div>
-
-<style>
-.social-btn {
-    transition: all 0.2s ease;
-}
-.social-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-2px);
-}
-.social-btn:active {
-    transform: scale(0.96);
-}
-@keyframes slideUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-@keyframes scaleUp {
-    from { opacity: 0; transform: scale(0.95); }
-    to { opacity: 1; transform: scale(1); }
-}
-</style>
-
-<script>
-function handleSupportCenterClick() {
-    let page = document.getElementById('p-support-center');
-    if (page) {
-        page.style.display = 'block';
-        page.classList.remove('d-none');
-        setTimeout(() => {
-            page.style.opacity = '1';
-        }, 10);
-    }
-}
-
-function closeSupportPage() {
-    let page = document.getElementById('p-support-center');
-    if (page) {
-        page.style.opacity = '0';
-        setTimeout(() => {
-            page.style.display = 'none';
-            page.classList.add('d-none');
-        }, 300);
-    }
-}
-
-// অ্যাডমিন পপআপ খোলার ফাংশন
-function openAdminModal() {
-    let modal = document.getElementById('admin-modal');
-    if (modal) {
-        modal.style.display = 'flex';
-        modal.classList.remove('d-none');
-        setTimeout(() => {
-            modal.style.opacity = '1';
-        }, 10);
-    }
-}
-
-// অ্যাডমিন পপআপ বন্ধ করার ফাংশন
-function closeAdminModal() {
-    let modal = document.getElementById('admin-modal');
-    if (modal) {
-        modal.style.opacity = '0';
-        setTimeout(() => {
-            modal.style.display = 'none';
-            modal.classList.add('d-none');
-        }, 300);
-    }
-}
-</script>
-
-      
-
-<div id="p-admin-profile" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
-
-    <!-- হেডার: প্রিমিয়াম রেড-ইয়েলো গ্রেডিয়েন্ট -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 25px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 25px rgba(255, 0, 0, 0.15); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.3);">
-            <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
-        </div>
-        <h5 style="margin: 0; margin-left: 15px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; font-size: 18px; color: white;">Owner Profile</h5>
-    </div>
-<div style="max-width: 450px; margin: 30px auto; background: #ffffff; border-radius: 30px; padding: 40px 20px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #f1f5f9; position: relative; overflow: hidden; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    
-    <!-- ব্যাকগ্রাউন্ড ডেকোরেশন সার্কেল -->
-    <div style="position: absolute; top: -50px; right: -50px; width: 120px; height: 120px; background: rgba(255, 0, 0, 0.03); border-radius: 50%;"></div>
-    
-    <!-- প্রফাইল ইমেজ সেকশন -->
-    <div style="width: 110px; height: 110px; background: linear-gradient(135deg, #ff0000, #ffcc00); border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; padding: 4px; box-shadow: 0 10px 20px rgba(255, 0, 0, 0.15);">
-        <div style="width: 100%; height: 100%; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-            <img src="https://raw.githubusercontent.com/a01868293471-collab/Zizz-tfd/refs/heads/main/1785080656387.jpg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-        </div>
-    </div>
-
-    <!-- নাম এবং টাইটেল -->
-    <h3 style="margin: 0 0 8px 0; font-size: 1.6rem; font-weight: 900; color: #1e293b; letter-spacing: -0.5px;">MD Abu Bokkor</h3>
-    
-    <div style="display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, rgba(255,0,0,0.1), rgba(255,153,0,0.1)); color: #e60000; padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; text-transform: uppercase; border: 1px solid rgba(255,0,0,0.1);">
-        <i class="fas fa-shield-check"></i> FOUNDER & CEO
-    </div>
-
-    <!-- ইনফরমেশন গ্রিড -->
-    <div style="margin: 25px 0 0 0;">
-        <div style="background: white; border-radius: 25px; padding: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); border: 1px solid #f1f5f9;">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: #f8fafc; border-radius: 20px; overflow: hidden;">
-                
-                <!-- Role -->
-                <div style="background: white; padding: 18px 15px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; border-radius: 16px;">
-                    <div style="width: 38px; height: 38px; background: #fff7ed; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-code" style="color: #f59e0b; font-size: 16px;"></i>
-                    </div>
-                    <div>
-                        <p style="margin: 0; font-size: 10px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Role</p>
-                        <p style="margin: 2px 0 0 0; font-size: 13px; color: #334155; font-weight: 700;">Admin</p>
-                    </div>
-                </div>
-
-                <!-- City -->
-                <div style="background: white; padding: 18px 15px; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; border-radius: 16px;">
-                    <div style="width: 38px; height: 38px; background: #f0fdf4; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                        <i class="fas fa-map-marker-alt" style="color: #22c55e; font-size: 16px;"></i>
-                    </div>
-                    <div>
-                        <p style="margin: 0; font-size: 10px; color: #94a3b8; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">City</p>
-                        <p style="margin: 2px 0 0 0; font-size: 13px; color: #334155; font-weight: 700;">নোয়াখালী</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- সোশ্যাল বাটন -->
-    <div style="margin-top: 25px;">
-        <a href="https://www.facebook.com/share/1E9wQAYn9v/" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; background: #1877f2; color: white; padding: 16px; border-radius: 18px; font-weight: 800; font-size: 14px; box-shadow: 0 10px 20px rgba(24, 119, 242, 0.25); transition: 0.3s;">
-            <i class="fab fa-facebook" style="font-size: 18px;"></i> 
-            Follow on Facebook
+      <!-- সোশ্যাল অ্যাকশন বাটন -->
+      <div>
+        <a href="https://t.me/Dev_Sufian" target="_blank" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: 14px; border-radius: 16px; font-weight: 700; font-size: 14px; box-shadow: 0 10px 20px rgba(22, 163, 74, 0.35);">
+          <i class="fab fa-telegram-plane" style="font-size: 18px;"></i> Contact via Telegram
         </a>
+      </div>
     </div>
-
+  </div>
 </div>
-    </div>
-
 
 
 
@@ -6022,63 +5674,20 @@ function closeAdminModal() {
     }
 </style>
 <div id="p-withdraw-history" class="p-page d-none shadow" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1600; overflow-y: auto; font-family: 'Poppins', sans-serif;">
-    
-    <!-- হেডার সেকশন: প্রিমিয়াম রেড-ইয়েলো গ্রেডিয়েন্ট -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 25px 20px; display: flex; align-items: center; gap: 15px; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.15); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        
-        <!-- ব্যাক বাটন -->
-        <div onclick="closePage('p-withdraw-history')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);">
-            <i class="fas fa-chevron-left" style="font-size: 18px; color: white;"></i>
-        </div>
-        
-        <!-- টাইটেল -->
-        <h4 style="margin: 0; font-weight: 800; color: white; font-size: 19px; letter-spacing: 0.5px;">Withdraw History</h4>
+  <!-- হেডার সেকশন: প্রিমিয়াম গ্রিন গ্রেডিয়েন্ট -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 25px 20px; display: flex; align-items: center; gap: 15px; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(22, 163, 74, 0.25); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+    <div onclick="closePage('p-withdraw-history')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3);">
+      <i class="fas fa-chevron-left" style="font-size: 18px; color: white;"></i>
     </div>
+    <h4 style="margin: 0; font-weight: 800; color: white; font-size: 19px; letter-spacing: 0.5px;">Withdraw History</h4>
+  </div>
 
-    <!-- হিস্ট্রি লিস্ট কন্টেইনার -->
-    <div class="container px-3 mt-4">
-        <div id="full-withdraw-list" style="padding-bottom: 30px; display: flex; flex-direction: column; gap: 15px;">
-            <!-- ডাটা ডাইনামিকালি এখানে আসবে -->
-        </div>
+  <!-- হিস্ট্রি লিস্ট কন্টেইনার -->
+  <div class="container px-3 mt-4">
+    <div id="full-withdraw-list" style="padding-bottom: 30px; display: flex; flex-direction: column; gap: 15px;">
+      <!-- ডাটা ডাইনামিকালি এখানে আসবে -->
     </div>
-</div>
-<!-- নোটিফিকেশন পেজ -->
-<div id="notification-page" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #f8fafc; z-index: 1000; font-family: 'Poppins', sans-serif;">
-    
-    <!-- হেডার: প্রিমিয়াম রেড-ইয়েলো গ্রেডিয়েন্ট -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 25px 20px; display: flex; align-items: center; gap: 15px; color: white; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; position: sticky; top: 0; z-index: 101;">
-        <div onclick="closeNotifications()" style="width: 38px; height: 38px; background: rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(5px); transition: 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.4)'" onmouseout="this.style.background='rgba(255,255,255,0.25)'">
-            <i class="fas fa-arrow-left" style="font-size: 18px;"></i>
-        </div>
-        <h3 style="margin: 0; font-size: 19px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;">Notifications</h3>
-    </div>
-
-    <!-- লিস্ট কন্টেইনার -->
-    <div id="notif-list-container" style="padding: 20px 15px; overflow-y: auto; height: calc(100vh - 90px);">
-        <!-- নোটিফিকেশন আইটেমগুলো এখানে আসবে -->
-    </div>
-</div>
-
-<!-- নোটিফিকেশন ডিটেইলস মোডাল -->
-<div id="notif-modal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 1100; align-items: center; justify-content: center; padding: 20px;">
-    <div style="background: white; width: 100%; max-width: 340px; border-radius: 28px; padding: 30px 25px; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.2); text-align: center;">
-        
-        <!-- আইকন বা ডেকোরেশন -->
-        <div style="width: 60px; height: 60px; background: #fff1f1; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: #ff0000; font-size: 24px;">
-            <i class="fas fa-bell"></i>
-        </div>
-
-        <h3 id="modal-title" style="margin: 0 0 12px; color: #1e293b; font-size: 19px; font-weight: 800; line-height: 1.3;">Title</h3>
-        
-        <p id="modal-body" style="color: #64748b; font-size: 14px; line-height: 1.6; margin-bottom: 25px;"></p>
-        
-        <!-- ছোট এবং সুন্দর বাটন -->
-        <button onclick="closeNotifModal()" style="background: linear-gradient(135deg, #ff0000, #ff6600); color: white; border: none; padding: 10px 30px; border-radius: 12px; font-weight: 700; font-size: 14px; cursor: pointer; box-shadow: 0 8px 15px rgba(255, 0, 0, 0.2); transition: 0.3s; display: inline-block; width: auto;" 
-                onmouseover="this.style.transform='scale(1.05)'" 
-                onmouseout="this.style.transform='scale(1)'">
-            বুঝতে পেরেছি
-        </button>
-    </div>
+  </div>
 </div>
 
     
@@ -7064,6 +6673,225 @@ function showAllHistory() {
 </div>
 
 
+
+<div id="p-leader" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fffcf9; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
+
+    <!-- CSS Animation & Dynamic Effects -->
+    <style>
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(234, 179, 8, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(234, 179, 8, 0); }
+        }
+        @keyframes floatAnimation {
+            0% { transform: translateY(-4px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(-4px); }
+        }
+        .top1-podium {
+            animation: floatAnimation 3s ease-in-out infinite;
+        }
+        .top1-avatar {
+            animation: pulseGlow 2s infinite;
+        }
+        .rank-card {
+            transition: all 0.2s ease;
+        }
+        .rank-card:hover {
+            transform: translateX(4px);
+            background: #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+
+    <!-- হেডার -->
+    <div style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); padding: 18px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);">
+        <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center;">
+                <i class="fas fa-arrow-left" style="font-size: 18px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
+                <h5 style="margin: 0; margin-left: 12px; font-weight: 800; letter-spacing: 0.3px; font-size: 18px; color: #ffffff;">Leadership Program</h5>
+            </div>
+            <div style="width: 36px; height: 36px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);">
+                <i class="fas fa-crown" style="font-size: 16px; color: #fef08a;"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-3 px-3" style="max-width: 600px; margin: 0 auto;">
+
+        <!-- ==================== লিডারবোর্ড সেকশন ==================== -->
+        <div style="background: #ffffff; border-radius: 20px; padding: 20px 15px; margin-bottom: 25px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05); border: 1px solid #e2e8f0;">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <h6 style="font-weight: 800; color: #0f172a; margin: 0; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <i class="fas fa-trophy" style="color: #eab308;"></i> Today's Daily Leaderboard
+                </h6>
+                <p style="font-size: 11px; color: #64748b; margin: 4px 0 0 0;">আজকের সেরা আর্নিং লিডারগণ</p>
+            </div>
+
+            <!-- Top 3 Podium (২য়, ১ম, ৩য়) -->
+            <div id="top3Container" style="display: flex; align-items: flex-end; justify-content: center; gap: 8px; margin-bottom: 22px; padding: 0 5px;">
+                <!-- JS দ্বারা রেন্ডার হবে -->
+            </div>
+
+            <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin: 15px 0;">
+
+            <!-- ১৭ জন ইউজার লিস্ট (৪র্থ - ২০তম) -->
+            <div id="rankListContainer" style="display: flex; flex-direction: column; gap: 8px;">
+                <!-- JS দ্বারা ১৭ জনের লিস্ট রেন্ডার হবে -->
+            </div>
+        </div>
+        <!-- ========================================================= -->
+    </div>
+</div>
+
+<!-- JAVASCRIPT LOGIC -->
+<script>
+    // ইংরেজি নামের তালিকা (বাংলাদেশি ইউজার)
+    const bangladeshiEnglishNames = [
+        "Tanvir Ahmed", "Sadia Sultana", "Arif Hossain", "Nusrat Jahan", "Fahim Hassan",
+        "Tanjina Akter", "Rabbi Hossain", "Mehedi Hasan", "Riya Saha", "Sabbir Rahman",
+        "Farzana Yasmin", "Shariful Islam", "Imran Khan", "Ayesha Siddika", "Kamrul Hasan",
+        "Jannatul Ferdous", "Ashikur Rahman", "Mousumi Khatun", "Mahmudul Hasan", "Sharmin Akter",
+        "Sakibul Islam", "Zubayer Ahmed", "Nasrin Akter", "Rakibul Hasan", "Tareq Rahman"
+    ];
+
+    // অ্যাভাটার ব্যাকগ্রাউন্ড গ্র্যাডিয়েন্ট
+    const badgeGradients = [
+        'linear-gradient(135deg, #10b981, #059669)',
+        'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+        'linear-gradient(135deg, #8b5cf6, #6d28d9)',
+        'linear-gradient(135deg, #ec4899, #be185d)',
+        'linear-gradient(135deg, #f59e0b, #b45309)',
+        'linear-gradient(135deg, #06b6d4, #0891b2)'
+    ];
+
+    // রাত ১২টায় অটো রোটেশনের জন্য সিড জেনারেটর
+    function getDailyRandomSeed() {
+        const d = new Date();
+        return d.getFullYear() * 10000 + (d.getMonth() + 1) * 100 + d.getDate();
+    }
+
+    function seededRandom(seed) {
+        let x = Math.sin(seed++) * 10000;
+        return x - Math.floor(x);
+    }
+
+    // আজকের লিডারবোর্ড ডেটা জেনারেট করা
+    function generateTodayLeaderboard() {
+        let seed = getDailyRandomSeed();
+        let shuffledNames = [...bangladeshiEnglishNames].sort(() => seededRandom(seed++) - 0.5);
+
+        let leaderboard = [];
+
+        // ১ম জনের প্রফিট সর্বোচ্চ ২০০০ টাকার মধ্যে রাখা হয়েছে
+        let maxProfit = 1850 + Math.floor(seededRandom(seed++) * 150);
+
+        for (let i = 0; i < 20; i++) {
+            let profit;
+            if (i === 0) {
+                profit = maxProfit;
+            } else if (i < 3) {
+                profit = Math.floor(maxProfit - (i * 280) - (seededRandom(seed++) * 100));
+            } else {
+                profit = Math.floor(1250 - ((i - 3) * 55) - (seededRandom(seed++) * 30));
+            }
+
+            if (profit < 200) profit = 200; // সর্বনিম্ন সীমা
+
+            let name = shuffledNames[i % shuffledNames.length];
+
+            leaderboard.push({
+                rank: i + 1,
+                name: name,
+                profit: profit,
+                initial: name.charAt(0).toUpperCase(),
+                bg: badgeGradients[i % badgeGradients.length]
+            });
+        }
+        return leaderboard;
+    }
+
+    // UI রেন্ডার করা
+    function renderLeaderboard() {
+        const data = generateTodayLeaderboard();
+
+        const top1 = data[0];
+        const top2 = data[1];
+        const top3 = data[2];
+
+        // Top 3 Podium HTML (২য়, ১ম, ৩য় ক্রমানুসারে সাজানো)
+        const top3HTML = `
+            <!-- ২য় স্থান (বাম পাশে) -->
+            <div style="flex: 1; text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                <div style="position: relative; width: 44px; height: 44px; margin: 0 auto 6px auto;">
+                    <div style="width: 100%; height: 100%; background: ${top2.bg}; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; border: 2px solid #94a3b8;">
+                        ${top2.initial}
+                    </div>
+                    <span style="position: absolute; bottom: -6px; right: -2px; background: #94a3b8; color: white; font-size: 9px; font-weight: 800; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border: 1px solid white;">2</span>
+                </div>
+                <div style="font-size: 11px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${top2.name}</div>
+                <div style="font-size: 10px; font-weight: 800; color: #059669; margin-top: 2px;">৳${top2.profit}</div>
+            </div>
+
+            <!-- ১ম স্থান (মাঝখানে - অ্যানিমেটেড গ্লো সহ) -->
+            <div class="top1-podium" style="flex: 1.2; text-align: center; background: linear-gradient(180deg, #fefce8 0%, #ffffff 100%); border: 2px solid #fde047; border-radius: 16px; padding: 16px 6px; box-shadow: 0 8px 20px rgba(234, 179, 8, 0.15);">
+                <i class="fas fa-crown" style="color: #eab308; font-size: 18px; display: block; margin-bottom: 4px;"></i>
+                <div style="position: relative; width: 54px; height: 54px; margin: 0 auto 6px auto;">
+                    <div class="top1-avatar" style="width: 100%; height: 100%; background: ${top1.bg}; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 20px; border: 3px solid #fde047;">
+                        ${top1.initial}
+                    </div>
+                    <span style="position: absolute; bottom: -6px; right: -2px; background: #eab308; color: white; font-size: 10px; font-weight: 800; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; border: 2px solid white;">1</span>
+                </div>
+                <div style="font-size: 12px; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${top1.name}</div>
+                <div style="font-size: 11px; font-weight: 900; color: #059669; margin-top: 2px;">৳${top1.profit}</div>
+            </div>
+
+            <!-- ৩য় স্থান (ডান পাশে) -->
+            <div style="flex: 1; text-align: center; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 12px 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.03);">
+                <div style="position: relative; width: 44px; height: 44px; margin: 0 auto 6px auto;">
+                    <div style="width: 100%; height: 100%; background: ${top3.bg}; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; border: 2px solid #cbd5e1;">
+                        ${top3.initial}
+                    </div>
+                    <span style="position: absolute; bottom: -6px; right: -2px; background: #cbd5e1; color: #334155; font-size: 9px; font-weight: 800; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; border: 1px solid white;">3</span>
+                </div>
+                <div style="font-size: 11px; font-weight: 700; color: #1e293b; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${top3.name}</div>
+                <div style="font-size: 10px; font-weight: 800; color: #059669; margin-top: 2px;">৳${top3.profit}</div>
+            </div>
+        `;
+        document.getElementById('top3Container').innerHTML = top3HTML;
+
+        // ১৭ জন ইউজার লিস্ট (৪র্থ - ২০তম)
+        const restUsers = data.slice(3);
+        const rankListHTML = restUsers.map(user => `
+            <div class="rank-card" style="display: flex; align-items: center; justify-content: space-between; background: #f8fafc; border: 1px solid #f1f5f9; padding: 8px 12px; border-radius: 12px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 11px; font-weight: 800; color: #94a3b8; width: 16px; text-align: center;">${user.rank}</span>
+                    <div style="width: 32px; height: 32px; background: ${user.bg}; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.08);">
+                        ${user.initial}
+                    </div>
+                    <span style="font-size: 12px; font-weight: 700; color: #334155;">${user.name}</span>
+                </div>
+                <div style="text-align: right;">
+                    <span style="font-size: 11px; font-weight: 800; color: #059669; display: block;">৳${user.profit}</span>
+                    <span style="font-size: 8.5px; color: #94a3b8;">Today's Income</span>
+                </div>
+            </div>
+        `).join('');
+
+        document.getElementById('rankListContainer').innerHTML = rankListHTML;
+    }
+
+    // অটো রেন্ডার কল
+    renderLeaderboard();
+</script>
+
+
+
+
+
+
+  
+
 <!-- ইনস্টাগ্রাম সেল পেজ -->
 <div id="p-ig-create" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 1500; overflow-y: auto; padding-bottom: 40px; font-family: sans-serif;">
     
@@ -7324,35 +7152,35 @@ function closeIgSuccessPopup() {
 
 <!-- ================= 1. Step 1: Amount & History Page ================= -->
 <div id="p-fund-step1" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; font-family: 'Poppins', sans-serif;">
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff6600 100%); padding: 22px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        <div style="display: flex; align-items: center; gap: 15px;">
-            <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
-                <i class="fas fa-chevron-left" style="font-size: 16px; color: white;"></i>
-            </div>
-            <h4 style="margin: 0; font-weight: 700; color: white; font-size: 19px;">Add Deposit</h4>
-        </div>
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 22px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(22, 163, 74, 0.25); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+    <div style="display: flex; align-items: center; gap: 15px;">
+      <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
+        <i class="fas fa-chevron-left" style="font-size: 16px; color: white;"></i>
+      </div>
+      <h4 style="margin: 0; font-weight: 700; color: white; font-size: 19px;">Add Deposit</h4>
+    </div>
+  </div>
+
+  <div class="container px-3 mt-4" style="max-width: 500px; margin: 0 auto;">
+    <div style="background: white; padding: 25px; border-radius: 22px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); border: 1px solid #dcfce7;">
+      <label style="display: block; font-size: 12px; color: #64748b; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Deposit Amount</label>
+      <div style="display: flex; align-items: center; background: #f0fdf4; padding: 15px; border-radius: 16px; border: 2px solid #bbf7d0; margin-bottom: 20px;">
+        <span style="font-size: 20px; font-weight: 800; color: #16a34a; margin-right: 10px;">৳</span>
+        <input type="number" id="f-amt" placeholder="100.00" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 800; font-size: 24px; color: #16a34a;">
+      </div>
+      <button onclick="goToStep2()" style="width: 100%; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border: none; padding: 16px; border-radius: 16px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(22,163,74,0.25); cursor: pointer;">
+        Next Process
+      </button>
     </div>
 
-    <div class="container px-3 mt-4" style="max-width: 500px; margin: 0 auto;">
-        <div style="background: white; padding: 25px; border-radius: 22px; box-shadow: 0 8px 30px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;">
-            <label style="display: block; font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 800; text-transform: uppercase;">Deposit Amount</label>
-            <div style="display: flex; align-items: center; background: #f8fafc; padding: 15px; border-radius: 16px; border: 2px solid #f1f5f9; margin-bottom: 20px;">
-                <span style="font-size: 20px; font-weight: 800; color: #1e293b; margin-right: 10px;">৳</span>
-                <input type="number" id="f-amt" placeholder="100.00" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 800; font-size: 24px; color: #ff0000;">
-            </div>
-            <button onclick="goToStep2()" style="width: 100%; background: linear-gradient(135deg, #ff0000, #ff6600); color: white; border: none; padding: 16px; border-radius: 16px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(255,0,0,0.25); cursor: pointer;">
-                Next Process
-            </button>
-        </div>
-
-        <!-- Deposit History Section -->
-        <div style="margin-top: 30px; margin-bottom: 40px;">
-            <h5 style="font-weight: 700; color: #1e293b; font-size: 16px; margin-bottom: 15px;">Deposit History</h5>
-            <div id="deposit-history-list" style="display: flex; flex-direction: column; gap: 10px;">
-                <!-- History Items will load dynamically -->
-            </div>
-        </div>
+    <!-- Deposit History Section -->
+    <div style="margin-top: 30px; margin-bottom: 40px;">
+      <h5 style="font-weight: 700; color: #1e293b; font-size: 16px; margin-bottom: 15px;">Deposit History</h5>
+      <div id="deposit-history-list" style="display: flex; flex-direction: column; gap: 10px;">
+        <!-- History Items will load dynamically -->
+      </div>
     </div>
+  </div>
 </div>
 
 <!-- ================= 2. Step 2: Gateway Method Selection ================= -->
@@ -7840,10 +7668,10 @@ function abortCancelTimer() {
             </div>
             <div style="position: relative; z-index: 1;">
                 <h4 style="font-weight: 800; color: #ff0000; margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-                    <i class="fas fa-rocket"></i> EarnFlow কী?
+                    <i class="fas fa-rocket"></i> Free Time Earn কী?
                 </h4>
                 <p style="color: #475569; font-size: 14px; line-height: 1.7; text-align: justify; margin: 0;">
-                    Earn Flow একটি <strong>All-in-One</strong> ডিজিটাল প্ল্যাটফর্ম যেখানে আপনি স্কিল ডেভেলপমেন্ট কোর্স করে শিখতে পারবেন, ইনকাম করতে পারবেন বিভিন্ন বোনাস এবং টিম কমিশনের মাধ্যমে এবং নিজের ক্যারিয়ার এবং কমিউনিটির উন্নতি করতে পারবেন। এখানে আছে Digital Services, Network Marketing, Freelancing ও E-commerce সুবিধা।
+                    Free Time Earn একটি <strong>All-in-One</strong> ডিজিটাল প্ল্যাটফর্ম যেখানে আপনি স্কিল ডেভেলপমেন্ট কোর্স করে শিখতে পারবেন, ইনকাম করতে পারবেন বিভিন্ন বোনাস এবং টিম কমিশনের মাধ্যমে এবং নিজের ক্যারিয়ার এবং কমিউনিটির উন্নতি করতে পারবেন। এখানে আছে Digital Services, Network Marketing, Freelancing ও E-commerce সুবিধা।
                 </p>
             </div>
         </div>
@@ -8856,61 +8684,52 @@ function closeTelegramSuccessPopup() {
         background: #f8fafc;
     }
 </style>
-
 <div id="p-post" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
-    
-    <div style="background: linear-gradient(135deg, #ff3838 0%, #ff9f43 100%); padding: 16px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(255, 56, 56, 0.25);">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px; font-size: 16px;">Post a New Job</h5>
-            </div>
-            
-
-        </div>
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 16px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
+        <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px; font-size: 16px;">Post a New Job</h5>
+      </div>
     </div>
+  </div>
 
-    <div class="container mt-4">
-        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;">
-            
-            <div style="margin-bottom: 15px;">
-                <label style="font-size: 12px; font-weight: 700; color: #475569;">জব নাম (Job Title)</label>
-                <input type="text" id="job-title" placeholder="যেমন: YouTube Subscribe" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label style="font-size: 12px; font-weight: 700; color: #475569;">জব ডিটেইলস (Description)</label>
-                <textarea id="job-desc" placeholder="কাজের নিয়মাবলী লিখুন..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none; height: 80px;"></textarea>
-            </div>
-
-            <div style="margin-bottom: 15px;">
-                <label style="font-size: 12px; font-weight: 700; color: #475569;">জব লিংক (Proof Link)</label>
-                <input type="url" id="job-link" placeholder="https://..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
-            </div>
-
-            <div class="row">
-                <div class="col-6" style="margin-bottom: 15px;">
-                    <label style="font-size: 12px; font-weight: 700; color: #475569;">পার জব এমাউন্ট</label>
-                    <input type="number" step="0.01" id="per-job-cost" oninput="liveCalculateTotalCost()" placeholder="৳ ২.০০" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
-                </div>
-                <div class="col-6" style="margin-bottom: 15px;">
-                    <label style="font-size: 12px; font-weight: 700; color: #475569;">টোটাল লিমিট</label>
-                    <input type="number" id="job-limit" oninput="liveCalculateTotalCost()" placeholder="১০০ জন" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
-                </div>
-            </div>
-
-            <div style="background: #fff5f5; padding: 15px; border-radius: 12px; border: 1px dashed #ff3838; margin: 10px 0 20px; text-align: center;">
-                <span style="font-size: 13px; font-weight: 600; color: #ff3838;">মোট খরচ হবে: </span>
-                <span id="total-job-cost" style="font-size: 18px; font-weight: 800; color: #1e293b;">৳ ০.০০</span>
-            </div>
-
-            <button onclick="handleCustomJobSubmission()" id="post-btn-text" style="width: 100%; background: linear-gradient(135deg, #ff3838 0%, #ff9f43 100%); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 800; font-size: 15px; cursor: pointer; box-shadow: 0 4px 12px rgba(255, 56, 56, 0.2);">
-                SUBMIT JOB POST
-            </button>
-
+  <div class="container mt-4">
+    <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); border: 1px solid #dcfce7;">
+      <div style="margin-bottom: 15px;">
+        <label style="font-size: 12px; font-weight: 700; color: #475569;">জব নাম (Job Title)</label>
+        <input type="text" id="job-title" placeholder="যেমন: YouTube Subscribe" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
+      </div>
+      <div style="margin-bottom: 15px;">
+        <label style="font-size: 12px; font-weight: 700; color: #475569;">জব ডিটেইলস (Description)</label>
+        <textarea id="job-desc" placeholder="কাজের নিয়মাবলী লিখুন..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none; height: 80px;"></textarea>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <label style="font-size: 12px; font-weight: 700; color: #475569;">জব লিংক (Proof Link)</label>
+        <input type="url" id="job-link" placeholder="https://..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
+      </div>
+      <div class="row">
+        <div class="col-6" style="margin-bottom: 15px;">
+          <label style="font-size: 12px; font-weight: 700; color: #475569;">পার জব এমাউন্ট</label>
+          <input type="number" step="0.01" id="per-job-cost" oninput="liveCalculateTotalCost()" placeholder="৳ ২.০০" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
         </div>
-        <p style="text-align: center; font-size: 11px; color: #64748b; margin-top: 15px;">আপনার পোস্টটি সাবমিট করার পর এডমিন রিভিউ করে পাবলিশ করবে।</p>
+        <div class="col-6" style="margin-bottom: 15px;">
+          <label style="font-size: 12px; font-weight: 700; color: #475569;">টোটাল লিমিট</label>
+          <input type="number" id="job-limit" oninput="liveCalculateTotalCost()" placeholder="১০০ জন" style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid #cbd5e1; font-size: 14px; margin-top: 5px; outline: none;">
+        </div>
+      </div>
+
+      <div style="background: #f0fdf4; padding: 15px; border-radius: 12px; border: 1px dashed #16a34a; margin: 10px 0 20px; text-align: center;">
+        <span style="font-size: 13px; font-weight: 600; color: #16a34a;">মোট খরচ হবে: </span>
+        <span id="total-job-cost" style="font-size: 18px; font-weight: 800; color: #15803d;">৳ ০.০০</span>
+      </div>
+
+      <button onclick="handleCustomJobSubmission()" id="post-btn-text" style="width: 100%; background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); color: white; border: none; padding: 15px; border-radius: 12px; font-weight: 800; font-size: 15px; cursor: pointer; box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);">
+        SUBMIT JOB POST
+      </button>
     </div>
+    <p style="text-align: center; font-size: 11px; color: #64748b; margin-top: 15px;">আপনার পোস্টটি সাবমিট করার পর এডমিন রিভিউ করে পাবলিশ করবে।</p>
+  </div>
 </div>
 
 <script>
@@ -9069,224 +8888,162 @@ async function handleCustomJobSubmission() {
 }
 </script>
 
-<div id="p-training" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdff; z-index: 2000; overflow-y: auto; padding-bottom: 50px;">
+<div id="p-training" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 2000; overflow-y: auto; padding-bottom: 50px;">
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
+        <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">Training Section</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container px-3 mt-3">
+    <div class="divider-text">
+      <span style="color: #16a34a; font-weight: 700;">Training Section</span>
+    </div>
     
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
-        
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
-                
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">Training Section</h5>
-            </div>
-
-    </div>
-    </div>
-
-
-    <div class="container px-3 mt-3">
-        
-
-        
-
-        <div class="divider-text">
-            <span>Training Section</span>
+    <div class="row g-3">
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('01')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০১</h3><p>কোম্পানির পরিচিতি ও লক্ষ্য</p></div>
         </div>
-
-        <div class="row g-3">
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('01')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০১</h3>
-                        <p>কোম্পানির পরিচিতি ও লক্ষ্য</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('02')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০২</h3>
-                        <p>অ্যাকাউন্ট ও অর্থ ব্যবস্থাপনা</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('03')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০৩</h3>
-                        <p>ক্যারিয়ার ও স্কিল ডেভেলপমেন্ট</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('04')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০৪</h3>
-                        <p>রিচার্জ, ড্রাইভ ও বিল পেমেন্ট</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('05')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০৫</h3>
-                        <p>SMM Work সম্পর্কিত</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6">
-                <div class="video-section-card shadow-sm" onclick="playVideo('06')">
-                    <div class="video-thumb"></div>
-                    <div class="video-info">
-                        <small>Section</small>
-                        <h3>০৬</h3>
-                        <p>ডেইলি বোনাস ও অ্যাডস ইনকাম</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('02')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০২</h3><p>অ্যাকাউন্ট ও অর্থ ব্যবস্থাপনা</p></div>
         </div>
-
+      </div>
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('03')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০৩</h3><p>ক্যারিয়ার ও স্কিল ডেভেলপমেন্ট</p></div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('04')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০৪</h3><p>রিচার্জ, ড্রাইভ ও বিল পেমেন্ট</p></div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('05')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০৫</h3><p>SMM Work সম্পর্কিত</p></div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="video-section-card shadow-sm" onclick="playVideo('06')" style="border-left: 4px solid #16a34a;">
+          <div class="video-thumb" style="background: #f0fdf4; color: #16a34a;"></div>
+          <div class="video-info"><small>Section</small><h3 style="color:#16a34a;">০৬</h3><p>ডেইলি বোনাস ও অ্যাডস ইনকাম</p></div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
-<div id="p-invest" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fffdf9; z-index: 1500; overflow-y: auto; padding-bottom: 40px;">
-    
-    <!-- টপ হেডার (লাল ও হলুদ মিক্সড গ্রেডিয়েন্ট) -->
-    <div style="background: linear-gradient(135deg, #d32f2f 0%, #f1c40f 100%); padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);">
-        <div style="display: flex; align-items: center;">
-            <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white;" onclick="closePage('invest')"></i>
-            <h5 style="margin: 0; margin-left: 15px; font-weight: 800; color: white; font-size: 16px; letter-spacing: 0.3px;">Invest & Grow</h5>
-        </div>
+<style>
+.video-section-card{
+  background: white;
+  border-radius: 16px;
+  padding: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid #f1f5f9;
+}
+.video-section-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(22,163,74,0.12) !important;
+}
+.divider-text{ text-align:center; margin:15px 0; }
+.divider-text span{ background:#f0fdf4; padding:5px 15px; border-radius:20px; font-size:12px; border:1px solid #bbf7d0; }
+</style>
 
-        <div onclick="openInvestHistory()" style="width: 35px; height: 35px; background: #fffde6; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-            <i class="fas fa-history" style="color: #d32f2f; font-size: 16px;"></i>
-        </div>
+
+<div id="p-invest" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1500; overflow-y: auto; padding-bottom: 40px;">
+  <!-- টপ হেডার -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 18px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center;">
+      <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white;" onclick="closePage('invest')"></i>
+      <h5 style="margin: 0; margin-left: 15px; font-weight: 800; color: white; font-size: 16px;">Invest & Grow</h5>
     </div>
-
-    <!-- ইনফরমেশন কার্ড -->
-    <div class="container mt-3 px-3">
-        <div style="background: white; border-radius: 20px; padding: 20px; border: 1px solid #ffeaa7; box-shadow: 0 5px 15px rgba(211, 47, 47, 0.02);">
-            <h6 style="font-weight: 800; color: #2d3436; margin-bottom: 12px; display: flex; align-items: center;">
-                <i class="fas fa-lightbulb" style="color: #f1c40f; margin-right: 10px;"></i> কেন বিনিয়োগ করবেন?
-            </h6>
-            
-            <p style="font-size: 11px; color: #636e72; line-height: 1.6; margin-bottom: 15px;">
-                আপনার অলস টাকাকে কাজে লাগিয়ে নিরাপদভাবে লাভ করার সেরা মাধ্যম হলো <b>Invest & Grow</b>। আমরা আপনার বিনিয়োগ করা অর্থ দিয়ে প্রফেশনাল  এবং ডিজিটাল প্রজেক্ট পরিচালনা করি, যেখান থেকে অর্জিত লাভের একটি নির্দিষ্ট অংশ আপনাকে প্রদান করা হয়।
-            </p>
-
-            <div class="row g-2">
-                <div class="col-6">
-                    <div style="background: #fff5f5; padding: 12px; border-radius: 12px; border: 1px solid #ffe3e3;">
-                        <i class="fas fa-shield-alt" style="color: #d32f2f; font-size: 14px; margin-bottom: 5px;"></i>
-                        <b style="display: block; font-size: 11px; color: #2d3436;">১০০% নিরাপদ</b>
-                        <small style="font-size: 9px; color: #7f8c8d;">আপনার মূলধন আমাদের কাছে সুরক্ষিত।</small>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div style="background: #fffde6; padding: 12px; border-radius: 12px; border: 1px solid #fff9db;">
-                        <i class="fas fa-percentage" style="color: #f1c40f; font-size: 14px; margin-bottom: 5px;"></i>
-                        <b style="display: block; font-size: 11px; color: #2d3436;">স্মার্ট প্রফিট</b>
-                        <small style="font-size: 9px; color: #7f8c8d;">২৪ ঘণ্টার বেশি মেয়াদে নিশ্চিত ৫% লাভ।</small>
-                    </div>
-                </div>
-            </div>
-
-            <div style="margin-top: 15px; background: #fffde6; padding: 10px; border-radius: 10px; border-left: 4px solid #f1c40f;">
-                <p style="font-size: 10px; color: #475569; margin: 0; line-height: 1.4;">
-                    <i class="fas fa-info-circle me-1" style="color: #d32f2f;"></i> <b>কিভাবে কাজ করে:</b> আপনার বিনিয়োগের কাস্টম মেয়াদ পূর্ণ হওয়া মাত্রই সিস্টেম স্বয়ংক্রিয়ভাবে লাভসহ মূল টাকা আপনার প্রধান ব্যালেন্সে রিফান্ড করে দিবে।
-                </p>
-            </div>
-        </div>
+    <div onclick="openInvestHistory()" style="width: 35px; height: 35px; background: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+      <i class="fas fa-history" style="color: #16a34a; font-size: 16px;"></i>
     </div>
+  </div>
 
-    <!-- কাস্টম ইনপুট ও ক্যালকুলেটর কার্ড -->
-    <div class="container mt-4 px-3">
-        <div class="invest-calc-card shadow-sm" style="background: white; border-radius: 25px; overflow: hidden; border: 1px solid #ffeaa7;">
-            <div class="calc-header" style="background: linear-gradient(90deg, #d32f2f, #f1c40f); padding: 15px; color: white; font-weight: 800; text-align: center; font-size: 14px;">
-                <i class="fas fa-calculator me-2"></i>
-                <span>Custom Profit Calculator</span>
-            </div>
-            
-            <div class="p-4">
-                <!-- ইনভেস্ট অ্যামাউন্ট -->
-                <div class="mb-3">
-                    <label class="form-label small fw-bold text-muted">বিনিয়োগের পরিমাণ (টাকা)</label>
-                    <div class="input-group">
-                        <span class="input-group-text bg-white border-end-0" style="border-radius: 12px 0 0 12px; color: #d32f2f; font-weight: bold;">৳</span>
-                        <input type="number" id="investAmount" class="form-control border-start-0 ps-0 fw-bold" style="border-radius: 0 12px 12px 0; box-shadow: none; border-color: #dee2e6;" placeholder="যেমন: ৫০০" oninput="updateLiveCalculation()">
-                    </div>
-                </div>
-
-                <!-- কাস্টম মেয়াদ সিলেকশন ইম্প্রুভমেন্ট -->
-                <div class="row g-2 mb-4">
-                    <div class="col-7">
-                        <label class="form-label small fw-bold text-muted">মেয়াদের পরিমাণ</label>
-                        <input type="number" id="investDuration" class="form-control fw-bold" style="border-radius: 12px; box-shadow: none; border-color: #dee2e6;" placeholder="যেমন: ৫" oninput="updateLiveCalculation()">
-                    </div>
-                    <div class="col-5">
-                        <label class="form-label small fw-bold text-muted">ইউনিট</label>
-                        <select id="investUnit" class="form-select fw-bold" style="border-radius: 12px; box-shadow: none; border-color: #dee2e6; height: 38px;" onchange="updateLiveCalculation()">
-                            <option value="minutes">মিনিট</option>
-                            <option value="days">দিন</option>
-                        </select>
-                    </div>
-                </div>
-
-                <!-- লাইভ ক্যালকুলেশন বক্স -->
-                <div class="row g-2">
-                    <div class="col-6">
-                        <div class="result-box" style="padding: 15px; border-radius: 15px; text-align: center; background: #fff5f5; border: 1px solid #ffe3e3;">
-                            <small style="display: block; font-size: 10px; font-weight: 700; color: #7f8c8d; margin-bottom: 5px;">মোট লাভ</small>
-                            <h5 id="liveProfit" class="m-0 fw-bold" style="font-size: 18px; color: #d32f2f;">৳০</h5>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="result-box" style="padding: 15px; border-radius: 15px; text-align: center; background: #fffde6; border: 1px solid #fff9db;">
-                            <small style="display: block; font-size: 10px; font-weight: 700; color: #7f8c8d; margin-bottom: 5px;">সর্বমোট রিটার্ন</small>
-                            <h5 id="liveTotal" class="m-0 fw-bold" style="font-size: 18px; color: #f1c40f; text-shadow: 0.5px 0.5px 0px #0000000a;">৳০</h5>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- সাবমিট বাটন (লাল ও হলুদ মিক্সড লাক্সারি স্টাইল) -->
-                <button class="btn-invest-now mt-4" onclick="confirmInvest()" style="width: 100%; background: linear-gradient(135deg, #d32f2f 0%, #f1c40f 100%); color: white; border: none; padding: 15px; border-radius: 15px; font-weight: 800; font-size: 15px; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3); transition: 0.3s;">
-                    বিনিয়োগ শুরু করুন <i class="fas fa-arrow-right ms-2"></i>
-                </button>
-                 
-                <p id="warnCondition" class="text-center mt-3 text-danger fw-bold" style="font-size: 9px; margin-bottom: 0;">
-                    * ২৪ ঘণ্টার কম মেয়াদে বিনিয়োগ করলে কোনো প্রফিট পাওয়া যাবে না।
-                </p>
-            </div>
+  <!-- ইনফরমেশন কার্ড -->
+  <div class="container mt-3 px-3">
+    <div style="background: white; border-radius: 20px; padding: 20px; border: 1px solid #dcfce7; box-shadow: 0 5px 15px rgba(0,0,0,0.04);">
+      <h6 style="font-weight: 800; color: #1e293b; margin-bottom: 12px; display: flex; align-items: center;">
+        <i class="fas fa-lightbulb" style="color: #16a34a; margin-right: 10px;"></i> কেন বিনিয়োগ করবেন?
+      </h6>
+      <p style="font-size: 11px; color: #64748b; line-height: 1.6; margin-bottom: 15px;">আপনার অলস টাকাকে কাজে লাগিয়ে নিরাপদভাবে লাভ করার সেরা মাধ্যম হলো <b>Invest & Grow</b>। আমরা আপনার বিনিয়োগ করা অর্থ দিয়ে প্রফেশনাল এবং ডিজিটাল প্রজেক্ট পরিচালনা করি, যেখান থেকে অর্জিত লাভের একটি নির্দিষ্ট অংশ আপনাকে প্রদান করা হয়।</p>
+      <div class="row g-2">
+        <div class="col-6">
+          <div style="background: #f0fdf4; padding: 12px; border-radius: 12px; border: 1px solid #bbf7d0;">
+            <i class="fas fa-shield-alt" style="color: #16a34a; font-size: 14px; margin-bottom: 5px;"></i>
+            <b style="display: block; font-size: 11px; color: #1e293b;">১০০% নিরাপদ</b><small style="font-size: 9px; color: #64748b;">আপনার মূলধন আমাদের কাছে সুরক্ষিত।</small>
+          </div>
         </div>
+        <div class="col-6">
+          <div style="background: #f0fdf4; padding: 12px; border-radius: 12px; border: 1px solid #bbf7d0;">
+            <i class="fas fa-percentage" style="color: #16a34a; font-size: 14px; margin-bottom: 5px;"></i>
+            <b style="display: block; font-size: 11px; color: #1e293b;">স্মার্ট প্রফিট</b><small style="font-size: 9px; color: #64748b;">২৪ ঘণ্টার বেশি মেয়াদে নিশ্চিত ৫% লাভ।</small>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 15px; background: #f0fdf4; padding: 10px; border-radius: 10px; border-left: 4px solid #16a34a;">
+        <p style="font-size: 10px; color: #14532d; margin: 0; line-height: 1.4;">
+          <i class="fas fa-info-circle me-1" style="color: #16a34a;"></i><b>কিভাবে কাজ করে:</b> আপনার বিনিয়োগের কাস্টম মেয়াদ পূর্ণ হওয়া মাত্রই সিস্টেম স্বয়ংক্রিয়ভাবে লাভসহ মূল টাকা আপনার প্রধান ব্যালেন্সে রিফান্ড করে দিবে।
+        </p>
+      </div>
     </div>
+  </div>
+
+  <!-- কাস্টম ইনপুট ও ক্যালকুলেটর কার্ড -->
+  <div class="container mt-4 px-3">
+    <div class="invest-calc-card shadow-sm" style="background: white; border-radius: 25px; overflow: hidden; border: 1px solid #dcfce7;">
+      <div class="calc-header" style="background: linear-gradient(90deg, #16a34a, #22c55e); padding: 15px; color: white; font-weight: 800; text-align: center; font-size: 14px;">
+        <i class="fas fa-calculator me-2"></i><span>Custom Profit Calculator</span>
+      </div>
+      <div class="p-4">
+        <div class="mb-3">
+          <label class="form-label small fw-bold text-muted">বিনিয়োগের পরিমাণ (টাকা)</label>
+          <div class="input-group">
+            <span class="input-group-text bg-white border-end-0" style="border-radius: 12px 0 0 12px; color: #16a34a; font-weight: bold;">৳</span>
+            <input type="number" id="investAmount" class="form-control border-start-0 ps-0 fw-bold" style="border-radius: 0 12px 12px 0; box-shadow: none;" placeholder="যেমন: ৫০০" oninput="updateLiveCalculation()">
+          </div>
+        </div>
+        <div class="row g-2 mb-4">
+          <div class="col-7"><label class="form-label small fw-bold text-muted">মেয়াদের পরিমাণ</label><input type="number" id="investDuration" class="form-control fw-bold" style="border-radius: 12px;" placeholder="যেমন: ৫" oninput="updateLiveCalculation()"></div>
+          <div class="col-5"><label class="form-label small fw-bold text-muted">ইউনিট</label><select id="investUnit" class="form-select fw-bold" style="border-radius: 12px; height: 38px;" onchange="updateLiveCalculation()"><option value="minutes">মিনিট</option><option value="days">দিন</option></select></div>
+        </div>
+        <div class="row g-2">
+          <div class="col-6"><div class="result-box" style="padding: 15px; border-radius: 15px; text-align: center; background: #f0fdf4; border: 1px solid #bbf7d0;"><small style="display: block; font-size: 10px; font-weight: 700; color: #64748b; margin-bottom: 5px;">মোট লাভ</small><h5 id="liveProfit" class="m-0 fw-bold" style="font-size: 18px; color: #16a34a;">৳০</h5></div></div>
+          <div class="col-6"><div class="result-box" style="padding: 15px; border-radius: 15px; text-align: center; background: #dcfce7; border: 1px solid #bbf7d0;"><small style="display: block; font-size: 10px; font-weight: 700; color: #64748b; margin-bottom: 5px;">সর্বমোট রিটার্ন</small><h5 id="liveTotal" class="m-0 fw-bold" style="font-size: 18px; color: #15803d;">৳০</h5></div></div>
+        </div>
+        <button class="btn-invest-now mt-4" onclick="confirmInvest()" style="width: 100%; background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); color: white; border: none; padding: 15px; border-radius: 15px; font-weight: 800; font-size: 15px; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.3);">বিনিয়োগ শুরু করুন <i class="fas fa-arrow-right ms-2"></i></button>
+        <p id="warnCondition" class="text-center mt-3 fw-bold" style="font-size: 9px; margin-bottom: 0; color: #16a34a;">* ২৪ ঘণ্টার কম মেয়াদে বিনিয়োগ করলে কোনো প্রফিট পাওয়া যাবে না।</p>
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- ইনভেস্টমেন্ট হিস্টোরি পেজ (লাল ও হলুদ মিক্সড হেডার) -->
-<div id="p-invest-history" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fffdf9; z-index: 1600; overflow-y: auto;">
-    <div style="background: linear-gradient(135deg, #d32f2f 0%, #f1c40f 100%); padding: 18px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(211, 47, 47, 0.2);">
-        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white;" onclick="closePage('invest-history')"></i>
-        <h5 style="margin: 0; margin-left: 15px; font-weight: 800; color: white; font-size: 16px; letter-spacing: 0.3px;">Investment History</h5>
-    </div>
-
-    <div class="container px-3 mt-3" id="invest-list-container">
-        <!-- জাভাস্ক্রিপ্ট কার্ড রেন্ডার হবে এখানে -->
-    </div>
+<div id="p-invest-history" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1600; overflow-y: auto;">
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 18px 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white;" onclick="closePage('invest-history')"></i>
+    <h5 style="margin: 0; margin-left: 15px; font-weight: 800; color: white; font-size: 16px;">Investment History</h5>
+  </div>
+  <div class="container px-3 mt-3" id="invest-list-container"></div>
 </div>
+
+
+
+
+  
 
 <!-- লাইভ প্রফিট ক্যালকুলেটর স্ক্রিপ্ট -->
 <script>
@@ -9396,214 +9153,155 @@ function updateLiveCalculation() {
 
 
 
-
-
 <div id="p-my-team" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdfd; z-index: 1000; overflow-y: auto; padding-bottom: 80px; font-family: 'Poppins', sans-serif;">
-    
-<!-- Header with Gradient -->
-<div style="background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); padding: 25px 15px; color: white; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.15); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-    
+  <!-- Header with Gradient -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 25px 15px; color: white; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 20px rgba(22, 163, 74, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
     <div style="display: flex; align-items: center;">
-        <div onclick="openPage('p-home')" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); transition: 0.3s; border: 1.5px solid rgba(255, 255, 255, 0.3);">
-            <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
-        </div>
-        <h5 style="margin: 0; margin-left: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-size: 19px; text-shadow: 0 2px 4px rgba(0,0,0,0.1);">My Team</h5>
+      <div onclick="openPage('p-home')" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); transition: 0.3s; border: 1.5px solid rgba(255, 255, 255, 0.3);">
+        <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
+      </div>
+      <h5 style="margin: 0; margin-left: 15px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-size: 19px;">My Team</h5>
     </div>
-
-    <!-- Info Icon (Right Side) -->
     <div onclick="toggleTeamInfo()" style="width: 40px; height: 40px; background: rgba(255, 255, 255, 0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1.5px solid rgba(255, 255, 255, 0.3);">
-        <i class="fas fa-question" style="font-size: 16px; color: white;"></i>
+      <i class="fas fa-question" style="font-size: 16px; color: white;"></i>
     </div>
-</div>
-<!-- Team Income Plan Popup (Hidden by default) -->
-<div id="teamInfoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; backdrop-filter: blur(5px); justify-content: center; align-items: center; padding: 20px;">
-    
+  </div>
+
+  <!-- Team Income Plan Popup -->
+  <div id="teamInfoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; backdrop-filter: blur(5px); justify-content: center; align-items: center; padding: 20px;">
     <div style="background: white; width: 100%; max-width: 350px; border-radius: 25px; overflow-y: auto; max-height: 90vh; animation: zoomIn 0.3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.2);">
-        
-        <!-- Modal Header -->
-        <div style="background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); padding: 25px 20px; text-align: center; color: white;">
-            <i class="fas fa-chart-line" style="font-size: 35px; margin-bottom: 10px;"></i>
-            <h3 style="margin: 0; font-size: 20px; font-weight: 900; letter-spacing: 0.5px;">রেফার ইনকাম প্ল্যান</h3>
-        </div>
-
-        <div style="padding: 20px;">
-            <!-- ইনকাম চার্ট শিরোনাম -->
-            <p style="font-size: 13px; color: #1e293b; text-align: center; margin-bottom: 20px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-                <i class="fas fa-gift" style="color: #ff0000; margin-right: 5px;"></i> রেফারাল বোনাস
-            </p>
-
-            <!-- ইনকাম লেভেল লিস্ট -->
-            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-                <!-- Direct Referral Only -->
-                <div style="display: flex; justify-content: space-between; align-items: center; background: #fff5f5; padding: 12px 15px; border-radius: 15px; border-left: 5px solid #ff0000; box-shadow: 0 4px 10px rgba(255,0,0,0.05);">
-                    <div>
-                        <span style="font-weight: 800; color: #1e293b; display: block; font-size: 14px;">রেফারাল বোনাস</span>
-                        <span style="font-size: 11px; color: #ef4444; font-weight: 600;">প্রতি সফল রেফারে</span>
-                    </div>
-                    <span style="font-weight: 900; color: #ff0000; font-size: 18px;">৳৫০.০০</span>
-                </div>
-            </div>
-
-            <!-- বিস্তারিত ব্যাখ্যা সেকশন -->
-            <div style="background: #f8fafc; padding: 15px; border-radius: 20px; border: 1px solid #f1f5f9;">
-                <h5 style="margin: 0 0 12px; color: #1e293b; font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 8px;">
-                    <i class="fas fa-question-circle" style="color: #ff0000;"></i> এটি কিভাবে কাজ করে?
-                </h5>
-                
-                <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div style="display: flex; gap: 10px; align-items: flex-start;">
-                        <div style="min-width: 20px; height: 20px; background: #ff0000; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; margin-top: 2px;">১</div>
-                        <p style="margin: 0; font-size: 11.5px; color: #475569; line-height: 1.4;">আপনার রেফারেল কোড/লিংক ব্যবহার করে কেউ যুক্ত হলে আপনি পাবেন <b>৳৫০</b>।</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Action Buttons -->
-            <div style="margin-top: 15px;">
-                <button onclick="toggleTeamInfo()" style="width: 100%; background: linear-gradient(135deg, #1e293b, #334155); color: white; border: none; padding: 14px; border-radius: 15px; font-weight: 700; cursor: pointer; font-size: 14px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
-                    ঠিক আছে 
-                </button>
-            </div>
-        </div> <!-- End of Padding Div -->
-    </div> <!-- End of White Modal Div -->
-</div> <!-- End of Modal Background Div -->
-
-<script>
-    function toggleTeamInfo() {
-        const modal = document.getElementById('teamInfoModal');
-        if (modal.style.display === 'none' || modal.style.display === '') {
-            modal.style.display = 'flex';
-        } else {
-            modal.style.display = 'none';
-        }
-    }
-</script>
-
-<style>
-    @keyframes zoomIn {
-        from { opacity: 0; transform: scale(0.9); }
-        to { opacity: 1; transform: scale(1); }
-    }
-</style>
-
-    <!-- Referral Code Card -->
-    <div style="margin: 20px; background: white; border-radius: 25px; padding: 25px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; position: relative; overflow: hidden;">
-        <div style="position: absolute; top: -10px; right: -10px; opacity: 0.05; font-size: 80px; color: #ff0000;">🎁</div>
-        
-        <p style="margin: 0; color: #7f8c8d; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">Your Referral Code</p>
-        
-        <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 15px;">
-            <div id="referCode" style="background: #fff9f9; padding: 12px 25px; border-radius: 15px; font-size: 1.5rem; font-weight: 900; color: #ff0000; border: 2px dashed #ffcc00; letter-spacing: 3px; box-shadow: inset 0 2px 5px rgba(0,0,0,0.02);">
-                ------
-            </div>
-            <button onclick="copyReferCode()" style="border: none; background: linear-gradient(135deg, #ff0000, #ffcc00); color: white; width: 50px; height: 50px; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2); transition: 0.3s;">
-                <i class="fas fa-copy" style="font-size: 18px;"></i>
-            </button>
-        </div>
-        <p style="margin: 15px 0 0; font-size: 12px; color: #27ae60; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 5px;">
-            <i class="fas fa-check-circle"></i> Share & Earn Lifetime Commission!
+      <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 25px 20px; text-align: center; color: white;">
+        <i class="fas fa-chart-line" style="font-size: 35px; margin-bottom: 10px;"></i>
+        <h3 style="margin: 0; font-size: 20px; font-weight: 900;">রেফার ইনকাম প্ল্যান</h3>
+      </div>
+      <div style="padding: 20px;">
+        <p style="font-size: 13px; color: #1e293b; text-align: center; margin-bottom: 20px; font-weight: 800; text-transform: uppercase;">
+          <i class="fas fa-gift" style="color: #16a34a; margin-right: 5px;"></i> রেফারাল বোনাস
         </p>
-    </div>
-
-    <!-- Team List Section -->
-    <div style="margin: 0 20px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: #fff; padding: 12px 18px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
-            <h6 style="font-weight: 900; color: #2c3e50; margin: 0; display: flex; align-items: center; gap: 10px; font-size: 15px; text-transform: uppercase;">
-                <i class="fas fa-users" style="color: #ff0000;"></i> Team Members
-            </h6>
-
-        </div>
-
-        <!-- Dynamic List Container -->
-        <div id="teamList" style="display: flex; flex-direction: column; gap: 12px; min-height: 200px;">
-            <div style="text-align: center; padding: 40px 0;">
-                <div class="spinner-border text-danger" role="status" style="width: 25px; height: 25px; border-width: 3px;"></div>
-                <p style="color: #95a5a6; font-size: 13px; margin-top: 15px; font-weight: 600;">Loading your awesome team...</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; background: #f0fdf4; padding: 12px 15px; border-radius: 15px; border-left: 5px solid #16a34a; box-shadow: 0 4px 10px rgba(22,163,74,0.08);">
+            <div>
+              <span style="font-weight: 800; color: #1e293b; display: block; font-size: 14px;">রেফারাল বোনাস</span>
+              <span style="font-size: 11px; color: #16a34a; font-weight: 600;">প্রতি সফল রেফারে</span>
             </div>
+            <span style="font-weight: 900; color: #16a34a; font-size: 18px;">৳৫০.০০</span>
+          </div>
         </div>
+        <div style="background: #f8fafc; padding: 15px; border-radius: 20px; border: 1px solid #f1f5f9;">
+          <h5 style="margin: 0 0 12px; color: #1e293b; font-weight: 800; font-size: 14px; display: flex; align-items: center; gap: 8px;">
+            <i class="fas fa-question-circle" style="color: #16a34a;"></i> এটি কিভাবে কাজ করে?
+          </h5>
+          <div style="display: flex; gap: 10px; align-items: flex-start;">
+            <div style="min-width: 20px; height: 20px; background: #16a34a; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 800; margin-top: 2px;">১</div>
+            <p style="margin: 0; font-size: 11.5px; color: #475569; line-height: 1.4;">আপনার রেফারেল কোড/লিংক ব্যবহার করে কেউ যুক্ত হলে আপনি পাবেন <b>৳৫০</b>।</p>
+          </div>
+        </div>
+        <div style="margin-top: 15px;">
+          <button onclick="toggleTeamInfo()" style="width: 100%; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border: none; padding: 14px; border-radius: 15px; font-weight: 700; cursor: pointer; font-size: 14px; box-shadow: 0 5px 15px rgba(22,163,74,0.2);">ঠিক আছে</button>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <script>
+    function toggleTeamInfo() {
+      const modal = document.getElementById('teamInfoModal');
+      if (modal.style.display === 'none' || modal.style.display === '') { modal.style.display = 'flex'; } else { modal.style.display = 'none'; }
+    }
+  </script>
+
+  <!-- Referral Code Card -->
+  <div style="margin: 20px; background: white; border-radius: 25px; padding: 25px; text-align: center; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border: 1px solid #f0f0f0; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: -10px; right: -10px; opacity: 0.05; font-size: 80px; color: #16a34a;">🎁</div>
+    <p style="margin: 0; color: #94a3b8; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px;">Your Referral Code</p>
+    <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 15px;">
+      <div id="referCode" style="background: #f0fdf4; padding: 12px 25px; border-radius: 15px; font-size: 1.5rem; font-weight: 900; color: #16a34a; border: 2px dashed #22c55e; letter-spacing: 3px;">------</div>
+      <button onclick="copyReferCode()" style="border: none; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; width: 50px; height: 50px; border-radius: 15px; cursor: pointer; box-shadow: 0 5px 15px rgba(22, 163, 74, 0.25);"><i class="fas fa-copy" style="font-size: 18px;"></i></button>
+    </div>
+    <p style="margin: 15px 0 0; font-size: 12px; color: #16a34a; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 5px;">
+      <i class="fas fa-check-circle"></i> Share & Earn Lifetime Commission!
+    </p>
+  </div>
+
+  <!-- Team List Section -->
+  <div style="margin: 0 20px;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; background: #fff; padding: 12px 18px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.03);">
+      <h6 style="font-weight: 900; color: #1e293b; margin: 0; display: flex; align-items: center; gap: 10px; font-size: 15px; text-transform: uppercase;">
+        <i class="fas fa-users" style="color: #16a34a;"></i> Team Members
+      </h6>
+    </div>
+    <div id="teamList" style="display: flex; flex-direction: column; gap: 12px; min-height: 200px;">
+      <div style="text-align: center; padding: 40px 0;">
+        <div class="spinner-border text-success" role="status" style="width: 25px; height: 25px; border-width: 3px;"></div>
+        <p style="color: #94a3b8; font-size: 13px; margin-top: 15px; font-weight: 600;">Loading your awesome team...</p>
+      </div>
+    </div>
+  </div>
 </div>
-
-<style>
-    @keyframes spin-custom {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    .loading-icon-spin {
-        animation: spin-custom 0.8s linear infinite;
-    }
-</style>
-
 
 
 
 
 
 <div id="p-micro" class="p-page" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 1000; overflow-y: auto; padding-bottom: 80px; display: none;">
-    
-    <div style="background: linear-gradient(135deg, #ff3838 0%, #ff9f43 100%); padding: 16px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(255, 56, 56, 0.25);">
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="closeMicroJobsPage()"></i>
-                <h5 style="margin: 0; margin-left: 12px; font-weight: 700; letter-spacing: 0.5px; font-size: 16px; color: #ffffff;">Micro Jobs</h5>
-            </div>
-            
-            <div style="display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.3);">
-                <div style="text-align: right;">
-                    <span style="font-size: 10px; opacity: 0.9; display: block; font-weight: 600; line-height: 1;"></span>
-                    <span id="micro-header-balance" style="font-size: 14px; font-weight: 800; color: #ffffff;">৳ ০.০০</span>
-                </div>
-                <button onclick="requestMicroTransfer()" style="background: #ffffff; color: #ff3838; border: none; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.2s;">Transfer</button>
-            </div>
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 16px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="closeMicroJobsPage()"></i>
+        <h5 style="margin: 0; margin-left: 12px; font-weight: 700; letter-spacing: 0.5px; font-size: 16px; color: #ffffff;">Micro Jobs</h5>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.2); padding: 5px 12px; border-radius: 30px; border: 1px solid rgba(255, 255, 255, 0.3);">
+        <div style="text-align: right;">
+          <span id="micro-header-balance" style="font-size: 14px; font-weight: 800; color: #ffffff;">৳ ০.০০</span>
         </div>
+        <button onclick="requestMicroTransfer()" style="background: #ffffff; color: #16a34a; border: none; padding: 5px 12px; border-radius: 20px; font-size: 11px; font-weight: 800; cursor: pointer; box-shadow: 0 2px 5px rgba(0,0,0,0.1); transition: 0.2s;">Transfer</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-3">
+    <div style="background: #f0fdf4; border-radius: 15px; padding: 12px; border-left: 5px solid #16a34a; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(22,163,74,0.08);">
+      <p style="margin: 0; font-size: 12px; color: #14532d; font-weight: 600;">
+        <i class="fas fa-bullhorn me-2" style="color:#16a34a;"></i> নোটিশ: প্রতিটি কাজ সঠিকভাবে সম্পন্ন করুন। মিনিমাম ১০০ টাকা হলে মেইন ব্যালেন্সে ট্রান্সফার করতে পারবেন। এবং কাজ গুলোর পেমেন্ট নিশ্চিত করতে অবশ্যই লগইন পেজ থেকে App ইন্সটল করে কাজ করবেন,,তাছাড়া বেলেন্স তুলতে পারবেন না। বেআইনি ভাবে কাজ করলে একাউন্ট সাসপেন্ড হবে ✅
+      </p>
     </div>
 
-    <div class="container mt-3">
-        <div style="background: #fff5f5; border-radius: 15px; padding: 12px; border-left: 5px solid #ff3838; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(255,56,56,0.05);">
-            <p style="margin: 0; font-size: 12px; color: #c0392b; font-weight: 600;">
-                <i class="fas fa-bullhorn me-2"></i> নোটিশ: প্রতিটি কাজ সঠিকভাবে সম্পন্ন করুন। মিনিমাম ১০০ টাকা হলে মেইন ব্যালেন্সে ট্রান্সফার করতে পারবেন। এবং কাজ গুলোর পেমেন্ট নিশ্চিত করতে অবশ্যই লগইন পেজ থেকে App ইন্সটল করে কাজ করবেন,,তাছাড়া বেলেন্স তুলতে পারবেন না। বেআইনি ভাবে কাজ করলে একাউนต์ সাসপেন্ড হবে ✅
-            </p>
+    <div style="background: white; border-radius: 20px; padding: 18px 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-bottom: 20px; border: 1px solid #f1f5f9;">
+      <h6 style="font-weight: 800; color: #333; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; font-size: 14px;">আজকের কাজের হিসাব</h6>
+      <div style="display: flex; justify-content: space-between; text-align: center;">
+        <div>
+          <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">আজকের জমা</small>
+          <p id="stat-today-submit" style="margin:0; font-weight:800; color:#16a34a; font-size: 15px;">০/১০</p>
         </div>
-
-        <div style="background: white; border-radius: 20px; padding: 18px 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-bottom: 20px; border: 1px solid #f1f5f9;">
-            <h6 style="font-weight: 800; color: #333; margin-bottom: 15px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px; font-size: 14px;">আজকের কাজের হিসাব</h6>
-            <div style="display: flex; justify-content: space-between; text-align: center;">
-                <div>
-                    <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">আজকের জমা</small>
-                    <p id="stat-today-submit" style="margin:0; font-weight:800; color:#ff3838; font-size: 15px;">০/১০</p>
-                </div>
-                <div>
-                    <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">১০ কাজের ইনকাম</small>
-                    <p id="stat-potential-earn" style="margin:0; font-weight:800; color:#ff9f43; font-size: 15px;">৳ ০.০০</p>
-                </div>
-                <div>
-                    <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">সর্বমোট ইনকাম</small>
-                    <p id="stat-total-earn" style="margin:0; font-weight:800; color:#ff3838; font-size: 15px;">৳ ০.০০</p>
-                </div>
-            </div>
+        <div>
+          <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">১০ কাজের ইনকাম</small>
+          <p id="stat-potential-earn" style="margin:0; font-weight:800; color:#15803d; font-size: 15px;">৳ ০.০০</p>
         </div>
-
-        <div id="jobs-container"></div>
+        <div>
+          <small style="color: #64748b; font-size: 11px; font-weight: 600; display: block; margin-bottom: 4px;">সর্বমোট ইনকাম</small>
+          <p id="stat-total-earn" style="margin:0; font-weight:800; color:#16a34a; font-size: 15px;">৳ ০.০০</p>
+        </div>
+      </div>
     </div>
+
+    <div id="jobs-container"></div>
+  </div>
 </div>
 
 <div id="jobModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(3px);">
-    <div style="background: white; width: 100%; max-width: 380px; border-radius: 24px; padding: 22px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); position: relative; border: 1px solid #f1f5f9;">
-        <span onclick="closeJobModal()" style="position: absolute; top: 12px; right: 18px; font-size: 24px; cursor: pointer; color: #94a3b8;">&times;</span>
-        
-        <h6 style="font-weight: 800; margin-bottom: 18px; color: #1e293b; font-size: 15px;" id="modal-job-name">টাস্ক সম্পন্ন করুন</h6>
-        
-        <a id="modal-work-link" href="#" target="_blank" onclick="trackLinkClick()" style="display: block; text-align: center; background: #fff5f5; color: #ff3838; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 700; margin-bottom: 18px; border: 1px solid rgba(255,56,56,0.2); font-size: 14px; transition: 0.2s;">
-            <i class="fas fa-external-link-alt me-2"></i> কাজের লিংকে যান
-        </a>
-        
-        <button onclick="instantSubmitJob()" id="submit-btn-text" style="width: 100%; background: linear-gradient(135deg, #ff3838 0%, #ff9f43 100%); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: 0 4px 12px rgba(255,56,56,0.2);">SUBMIT JOB</button>
-    </div>
+  <div style="background: white; width: 100%; max-width: 380px; border-radius: 24px; padding: 22px; box-shadow: 0 15px 35px rgba(0,0,0,0.2); position: relative; border: 1px solid #f1f5f9;">
+    <span onclick="closeJobModal()" style="position: absolute; top: 12px; right: 18px; font-size: 24px; cursor: pointer; color: #94a3b8;">&times;</span>
+    <h6 style="font-weight: 800; margin-bottom: 18px; color: #1e293b; font-size: 15px;" id="modal-job-name">টাস্ক সম্পন্ন করুন</h6>
+    <a id="modal-work-link" href="#" target="_blank" onclick="trackLinkClick()" style="display: block; text-align: center; background: #f0fdf4; color: #16a34a; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 700; margin-bottom: 18px; border: 1px solid #bbf7d0; font-size: 14px; transition: 0.2s;">
+      <i class="fas fa-external-link-alt me-2"></i> কাজের লিংকে যান
+    </a>
+    <button onclick="instantSubmitJob()" id="submit-btn-text" style="width: 100%; background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); color: white; border: none; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 14px; cursor: pointer; box-shadow: 0 4px 12px rgba(22,163,74,0.25);">SUBMIT JOB</button>
+  </div>
 </div>
 
-<div id="custom-toast-container" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-100px); z-index: 9999; background: #10b981; color: white; padding: 14px 24px; border-radius: 16px; box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3); display: flex; align-items: center; gap: 10px; font-family: sans-serif; font-size: 15px; font-weight: 600; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; pointer-events: none;">
-    <i id="custom-toast-icon" class="fas fa-check-circle" style="font-size: 18px;"></i>
-    <span id="custom-toast-text">টাস্ক সফলভাবে সম্পন্ন হয়েছে!</span>
+<div id="custom-toast-container" style="position: fixed; top: 20px; left: 50%; transform: translateX(-50%) translateY(-100px); z-index: 9999; background: #16a34a; color: white; padding: 14px 24px; border-radius: 16px; box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3); display: flex; align-items: center; gap: 10px; font-family: sans-serif; font-size: 15px; font-weight: 600; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); opacity: 0; pointer-events: none;">
+  <i id="custom-toast-icon" class="fas fa-check-circle" style="font-size: 18px;"></i>
+  <span id="custom-toast-text">টাস্ক সফলভাবে সম্পন্ন হয়েছে!</span>
 </div>
 
 <script>
@@ -9834,143 +9532,129 @@ function requestMicroTransfer() {
 
 initMicroJobs();
 </script>
-
-
-
-
-
-
-
-<div id="p-leader" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fffcf9; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
+<div id="p-support" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #f4f6f9; z-index: 9999; overflow-y: auto; font-family: 'Poppins', sans-serif; box-sizing: border-box;">
     
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
-        
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
-                
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">Leadership Program</h5>
-            </div>
-
-            <div style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <i class="fas fa-crown" style="font-size: 16px; color: white;"></i>
-            </div>
-        </div>
+<div style="background: #2e7d32; padding: 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 25px rgba(46, 125, 50, 0.15); box-sizing: border-box;">
+    <div onclick="if(typeof openPage === 'function') { openPage('p-home'); } document.getElementById('p-support').style.display = 'none';" 
+         style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.25); box-sizing: border-box; transition: all 0.2s ease;"
+         onmousedown="this.style.transform='scale(0.92)'" 
+         onmouseup="this.style.transform='scale(1)'">
+        <i class="fas fa-arrow-left" style="font-size: 16px; color: white;"></i>
+    </div>
+    <h5 style="margin: 0; margin-left: 15px; font-weight: 700; color: white; letter-spacing: 0.5px; text-transform: uppercase; font-size: 16px;">
+        Support Center
+    </h5>
 </div>
 
-    <div class="container mt-4">
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid #ffeaa7; text-align: center;">
-            <h6 style="font-weight: 800; color: #333; margin-bottom: 10px;">আপনার বর্তমান রেফারাল স্ট্যাটাস</h6>
-            <div style="font-size: 28px; font-weight: 900; color: #fd7e14;" id="total-refers-count">০</div>
-            <p style="font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 1px;">সফল রেফারাল সংখ্যা</p>
-        </div>
-
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 20px; border: 1px solid #eee;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                <div style="display: flex; align-items: center;">
-                    <div style="width: 45px; height: 45px; background: #fff4e5; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fd7e14; font-size: 20px;">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <div style="margin-left: 12px;">
-                        <h6 style="font-weight: 800; margin: 0;">Associate Leader</h6>
-                        <small style="color: #2ecc71; font-weight: 700;">Salary: ৳২,০০০</small>
-                    </div>
-                </div>
-            </div>
+    <div style="max-width: 480px; margin: 40px auto; padding: 0 16px; box-sizing: border-box; width: 100%;">
+        <div style="width: 100%; background: #ffffff; border-radius: 24px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); display: flex; flex-direction: column; align-items: center; padding: 35px 20px; text-align: center; box-sizing: border-box; border: 1px solid #eef2f6;">
             
-            <div style="font-size: 11px; color: #555; display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span>টার্গেট: ১০ জন</span>
-                <span id="p-assoc-text">0/10</span>
-            </div>
-            <div style="width: 100%; height: 8px; background: #f0f0f0; border-radius: 10px; margin-bottom: 15px;">
-                <div id="p-assoc-bar" style="width: 0%; height: 100%; background: #fd7e14; border-radius: 10px; transition: 0.5s;"></div>
+            <div style="width: 80px; height: 80px; background: #fff5f5; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; border: 2px solid #ffe5e5;">
+                <i class="fas fa-headset" style="font-size: 36px; background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
             </div>
 
-            <button onclick="applyLeadership('Associate Leader', 10)" id="btn-assoc" style="width: 100%; border: none; padding: 10px; border-radius: 12px; font-weight: 700; background: #eee; color: #aaa; cursor: not-allowed;">Apply Now</button>
-        </div>
+            <h4 style="margin: 0; font-size: 20px; font-weight: 800; color: #0f172a; letter-spacing: 0.3px;">Free Time Earn</h4>
+            <p style="font-size: 14px; color: #64748b; line-height: 1.6; margin: 12px 0 25px 0; padding: 0 10px;">
+                আমাদের অফিসিয়াল কাস্টমার কেয়ার প্রতিনিধির সাথে সরাসরি কথা বলতে নিচের বাটনে ক্লিক করুন। আমরা আপনাকে দ্রুত সমাধান দিতে প্রস্তুত।
+            </p>
+<!-- সাপোর্ট বাটন -->
+<button id="jivo-trigger-btn" onclick="openDirectSupport()" style="width: 100%; max-width: 280px; padding: 14px 20px; background: #2e7d32; border: none; border-radius: 8px; color: white; font-size: 15px; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3); display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.2s ease; outline: none;" onmousedown="this.style.transform='scale(0.95)'" onmouseup="this.style.transform='scale(1)'">
+  <i id="btn-chat-icon" class="fas fa-comments" style="font-size: 18px;"></i>
+  <span id="btn-chat-text">সরাসরি চ্যাট করুন</span>
+</button>
 
-        <div style="background: white; border-radius: 20px; padding: 20px; margin-bottom: 20px; border: 1.5px solid #fd7e14;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                <div style="display: flex; align-items: center;">
-                    <div style="width: 45px; height: 45px; background: #fd7e14; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <div style="margin-left: 12px;">
-                        <h6 style="font-weight: 800; margin: 0;">Ambassador Leader</h6>
-                        <small style="color: #2ecc71; font-weight: 700;">Salary: ৳৫,০০০</small>
-                    </div>
-                </div>
-            </div>
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {};
+var Tawk_LoadStart = new Date();
 
-            <div style="font-size: 11px; color: #555; display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span>টার্গেট: ২০ জন</span>
-                <span id="p-amb-text">0/20</span>
-            </div>
-            <div style="width: 100%; height: 8px; background: #f0f0f0; border-radius: 10px; margin-bottom: 15px;">
-                <div id="p-amb-bar" style="width: 0%; height: 100%; background: #fd7e14; border-radius: 10px; transition: 0.5s;"></div>
-            </div>
+// গোলাকার বাটন হাইড রাখবে
+Tawk_API.onLoad = function(){
+    Tawk_API.hideWidget();
+};
 
-            <button onclick="applyLeadership('Ambassador Leader', 20)" id="btn-amb" style="width: 100%; border: none; padding: 10px; border-radius: 12px; font-weight: 700; background: #eee; color: #aaa; cursor: not-allowed;">Apply Now</button>
-        </div>
+Tawk_API.onChatMinimized = function(){
+    Tawk_API.hideWidget();
+};
 
-        <div style="background: #1a1a2e; border-radius: 20px; padding: 20px; margin-bottom: 20px; color: white;">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 15px;">
-                <div style="display: flex; align-items: center;">
-                    <div style="width: 45px; height: 45px; background: linear-gradient(135deg, #f1c40f, #f39c12); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px;">
-                        <i class="fas fa-gem"></i>
-                    </div>
-                    <div style="margin-left: 12px;">
-                        <h6 style="font-weight: 800; margin: 0;">Grand Ambassador</h6>
-                        <small style="color: #2ecc71; font-weight: 700;">Salary: ৳১০,০০০</small>
-                    </div>
-                </div>
-            </div>
+(function(){
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6aae34cc0b6d8e343d257c18/default';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+})();
 
-            <div style="font-size: 11px; color: #ccc; display: flex; justify-content: space-between; margin-bottom: 5px;">
-                <span>টার্গেট: ৫০ জন</span>
-                <span id="p-grand-text">0/50</span>
-            </div>
-            <div style="width: 100%; height: 8px; background: rgba(255,255,255,0.1); border-radius: 10px; margin-bottom: 15px;">
-                <div id="p-grand-bar" style="width: 0%; height: 100%; background: #f1c40f; border-radius: 10px; transition: 0.5s;"></div>
-            </div>
+function openDirectSupport() {
+    const btn = document.getElementById('jivo-trigger-btn');
+    const icon = document.getElementById('btn-chat-icon');
+    const text = document.getElementById('btn-chat-text');
 
-            <button onclick="applyLeadership('Grand Ambassador', 50)" id="btn-grand" style="width: 100%; border: none; padding: 10px; border-radius: 12px; font-weight: 700; background: rgba(255,255,255,0.1); color: #555; cursor: not-allowed;">Apply Now</button>
+    if(btn){
+        btn.disabled = true;
+        icon.className = "fas fa-spinner fa-spin";
+        text.innerText = "লোডিং...";
+    }
+
+    var checkTawk = setInterval(function() {
+        if (typeof Tawk_API!== 'undefined' && Tawk_API.maximize) {
+            clearInterval(checkTawk);
+            Tawk_API.showWidget();
+            Tawk_API.maximize();
+
+            // বাটন আগের অবস্থায়
+            if(btn){
+                btn.disabled = false;
+                btn.style.opacity = "1";
+                icon.className = "fas fa-comments";
+                text.innerText = "সরাসরি চ্যাট করুন";
+                btn.style.transform = "scale(1)";
+            }
+        }
+    }, 200);
+}
+</script>
+
         </div>
     </div>
 </div>
-<div id="p-video-view" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8f9fc; z-index: 3000; overflow-y: auto;">
-    
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 3001; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
-        
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-training')"></i>
-                
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;" id="v-header-title">Video Lesson</h5>
-            </div>
 
-            <div style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.1);">
-                <i class="fas fa-play-circle" style="font-size: 18px; color: white;"></i>
-            </div>
-        </div>
-        </div>
-
-    <div class="container px-3 mt-4">
-        <div style="width: 100%; height: 200px; background: #2196f3; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(33, 150, 243, 0.2);">
-            <i class="fas fa-play-circle"></i>
-        </div>
-
-        <div class="bg-white p-4 rounded-4 shadow-sm">
-            <h4 id="v-title" style="font-weight: 800; color: #2d3436; margin-bottom: 10px;">ভিডিওর টাইটেল এখানে আসবে</h4>
-            <p id="v-desc" style="font-size: 14px; color: #636e72; line-height: 1.6;">এই ভিডিওতে আপনি শিখতে পারবেন কীভাবে আমাদের প্ল্যাটফর্মে কাজ শুরু করতে হয় এবং নিয়মাবলী।</p>
-            
-            <hr style="opacity: 0.1; margin: 20px 0;">
-
-            <a id="v-link" href="#" target="_blank" class="btn-play-video">
-                <i class="fab fa-youtube"></i> ভিডিওটি দেখুন
-            </a>
-        </div>
+<style>
+    @keyframes spin-custom {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+    .loading-icon-spin {
+        animation: spin-custom 0.8s linear infinite;
+    }
+</style>
+<div id="p-video-view" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 3000; overflow-y: auto;">
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 3001; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-training')"></i>
+        <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;" id="v-header-title">Video Lesson</h5>
+      </div>
+      <div style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); border: 1px solid rgba(255, 255, 255, 0.2);">
+        <i class="fas fa-play-circle" style="font-size: 18px; color: white;"></i>
+      </div>
     </div>
+  </div>
+
+  <div class="container px-3 mt-4">
+    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); border-radius: 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px; margin-bottom: 20px; box-shadow: 0 10px 20px rgba(22, 163, 74, 0.25);">
+      <i class="fas fa-play-circle"></i>
+    </div>
+
+    <div class="bg-white p-4 rounded-4 shadow-sm" style="border: 1px solid #f0fdf4;">
+      <h4 id="v-title" style="font-weight: 800; color: #1e293b; margin-bottom: 10px;">ভিডিওর টাইটেল এখানে আসবে</h4>
+      <p id="v-desc" style="font-size: 14px; color: #64748b; line-height: 1.6;">এই ভিডিওতে আপনি শিখতে পারবেন কীভাবে আমাদের প্ল্যাটফর্মে কাজ শুরু করতে হয় এবং নিয়মাবলী।</p>
+      <hr style="opacity: 0.1; margin: 20px 0;">
+      <a id="v-link" href="#" target="_blank" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; padding: 14px; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; text-decoration: none; border-radius: 14px; font-weight: 700; font-size: 15px; box-shadow: 0 6px 15px rgba(22, 163, 74, 0.3);">
+        <i class="fab fa-youtube"></i> ভিডিওটি দেখুন
+      </a>
+    </div>
+  </div>
 </div>
 
  <div id="p-target" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f9f9ff; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
@@ -10116,276 +9800,143 @@ initMicroJobs();
 </style>
 
 
-<div id="p-spin" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8fafc; z-index: 2000; overflow-y: auto; padding-bottom: 80px; font-family: 'Poppins', sans-serif;">
-    
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ff9900 100%); padding: 20px; display: flex; align-items: center; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);">
-        <div onclick="openPage('p-home')" style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer;">
-            <i class="fas fa-arrow-left" style="color: white; font-size: 18px;"></i>
-        </div>
-        <h5 style="margin: 0; margin-left: 15px; color: white; font-weight: 700; text-transform: uppercase;">Daily Spin</h5>
-    </div>
-
-    <div style="padding: 20px;">
-        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
-            <div style="flex: 1; background: #fff; padding: 15px; border-radius: 15px; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.05);">
-                <small style="font-size: 10px; color: #888;">TODAY</small>
-                <div id="today-bonus" style="font-size: 18px; font-weight: 800; color: #ff4500;">৳ 0.00</div>
-            </div>
-            <div style="flex: 1; background: #fff; padding: 15px; border-radius: 15px; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.05);">
-                <small style="font-size: 10px; color: #888;">TOTAL</small>
-                <div id="total-bonus" style="font-size: 18px; font-weight: 800; color: #2ecc71;">৳ 0.00</div>
-            </div>
-        </div>
-<button onclick="transferBalance()" style="padding: 10px 20px; background: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
-    ব্যালেন্স ট্রান্সফার করুন
-</button>
-        <div style="text-align: center; padding: 30px 0; background: white; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); margin-bottom: 20px;">
-            <div id="wheel" style="width: 200px; height: 200px; border: 8px solid #ff9900; border-radius: 50%; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: conic-gradient(#ff0000 0deg 36deg, #ff9900 36deg 72deg, #ff4500 72deg 108deg, #ff8c00 108deg 144deg, #ff6347 144deg 180deg, #ff4500 180deg 216deg, #ff9900 216deg 252deg, #ff0000 252deg 288deg, #ff6347 288deg 324deg, #ff8c00 324deg 360deg); transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99); color: white; font-weight: bold; font-size: 14px;">
-                চাকা ঘুরছে...
-            </div>
-            <button onclick="spinWheel()" id="spin-btn" style="margin-top: 25px; background: linear-gradient(90deg, #ff0000, #ff9900); color: white; border: none; padding: 12px 40px; border-radius: 50px; font-weight: 700; cursor: pointer;">Spin Now</button>
-        </div>
-
-        <h6 style="color: #333; margin-bottom: 10px;">Recent History</h6>
-        <div id="history-list" style="background: white; border-radius: 15px; padding: 10px; box-shadow: 0 5px 10px rgba(0,0,0,0.05);"></div>
-    </div>
-</div>
-
 <div id="p-social" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fdfdfd; z-index: 1000; overflow-y: auto; padding-bottom: 80px; font-family: 'Poppins', sans-serif;">
+  <!-- হেডার -->
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 22px 15px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(22, 163, 74, 0.25); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
+        <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
+      </div>
+      <h4 style="margin: 0; font-weight: 700; color: white; font-size: 18px; letter-spacing: 0.5px;">Social Services</h4>
+    </div>
+    <div onclick="openPage('p-orders')" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.3);">
+      <i class="fas fa-history" style="color: white; font-size: 18px;"></i>
+    </div>
+  </div>
+
+  <div class="container px-3 mt-3">
+    <p style="font-size: 12px; font-weight: 800; color: #16a34a; margin: 10px 5px; text-transform: uppercase; letter-spacing: 1px;">সার্ভিস প্ল্যাটফর্ম বেছে নিন</p>
     
-    <!-- হেডার -->
-    <div style="background: linear-gradient(135deg, #ff0000 0%, #ffcc00 100%); padding: 22px 15px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 102; box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-            <div onclick="openPage('p-home')" style="width: 38px; height: 38px; background: rgba(255,255,255,0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.3);">
-                <i class="fas fa-arrow-left" style="font-size: 18px; color: white;"></i>
-            </div>
-            <h4 style="margin: 0; font-weight: 700; color: white; font-size: 18px; letter-spacing: 0.5px;">Social Services</h4>
-        </div>
-        <div onclick="openPage('p-orders')" style="width: 38px; height: 38px; background: rgba(255, 255, 255, 0.25); border-radius: 12px; display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px solid rgba(255,255,255,0.3);">
-            <i class="fas fa-history" style="color: white; font-size: 18px;"></i>
-        </div>
+    <!-- প্ল্যাটফর্ম সিলেকশন এরিয়া -->
+    <div id="platform-list" style="display: flex; gap: 12px; overflow-x: auto; padding: 10px 5px; scrollbar-width: none; -ms-overflow-style: none;">
+      <div class="platform-btn" onclick="openSubMenu('Facebook', ['Followers', 'Likes', 'Comments'], this)"><i class="fab fa-facebook" style="color: #1877F2; font-size: 24px;"></i></div>
+      <div class="platform-btn" onclick="openSubMenu('YouTube', ['Subscribers', 'Views', 'Watch Time'], this)"><i class="fab fa-youtube" style="color: #FF0000; font-size: 24px;"></i></div>
+      <div class="platform-btn" onclick="openSubMenu('TikTok', ['Followers', 'Likes', 'Views'], this)"><i class="fab fa-tiktok" style="color: #000000; font-size: 24px;"></i></div>
+      <div class="platform-btn" onclick="openSubMenu('Instagram', ['Followers', 'Likes'], this)"><i class="fab fa-instagram" style="color: #E4405F; font-size: 24px;"></i></div>
+      <div class="platform-btn" onclick="openSubMenu('Telegram', ['Members', 'Post Views'], this)"><i class="fab fa-telegram" style="color: #0088cc; font-size: 24px;"></i></div>
     </div>
 
-    <div class="container px-3 mt-3">
-        
-        <p style="font-size: 12px; font-weight: 800; color: #ff0000; margin: 10px 5px; text-transform: uppercase; letter-spacing: 1px;">সার্ভিস প্ল্যাটফর্ম বেছে নিন</p>
-        
-        <!-- প্ল্যাটফর্ম সিলেকশন এরিয়া -->
-        <div id="platform-list" style="display: flex; gap: 12px; overflow-x: auto; padding: 10px 5px; scrollbar-width: none; -ms-overflow-style: none;">
-            
-            <div class="platform-btn" onclick="openSubMenu('Facebook', ['Followers', 'Likes', 'Comments'], this)">
-                <i class="fab fa-facebook" style="color: #1877F2; font-size: 24px;"></i>
-            </div>
+    <!-- মেইন অর্ডার কার্ড -->
+    <div id="order-section" style="background: white; border-radius: 30px; padding: 25px; margin-top: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;">
+      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+        <div style="width: 5px; height: 20px; background: #16a34a; border-radius: 10px;"></div>
+        <h6 id="cur-srv-txt" style="font-weight: 800; color: #1e293b; margin: 0; font-size: 16px;">সার্ভিস ক্যাটাগরি</h6>
+      </div>
 
-            <div class="platform-btn" onclick="openSubMenu('YouTube', ['Subscribers', 'Views', 'Watch Time'], this)">
-                <i class="fab fa-youtube" style="color: #FF0000; font-size: 24px;"></i>
-            </div>
+      <div id="sub-options" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;"></div>
+      <div id="srv-desc" style="display: none; background: #f0fdf4; padding: 15px; border-radius: 15px; font-size: 12px; color: #14532d; margin-bottom: 20px; border-left: 4px solid #16a34a; line-height: 1.6; font-weight: 500;"></div>
 
-            <div class="platform-btn" onclick="openSubMenu('TikTok', ['Followers', 'Likes', 'Views'], this)">
-                <i class="fab fa-tiktok" style="color: #000000; font-size: 24px;"></i>
-            </div>
-
-            <div class="platform-btn" onclick="openSubMenu('Instagram', ['Followers', 'Likes'], this)">
-                <i class="fab fa-instagram" style="color: #E4405F; font-size: 24px;"></i>
-            </div>
-
-            <div class="platform-btn" onclick="openSubMenu('Telegram', ['Members', 'Post Views'], this)">
-                <i class="fab fa-telegram" style="color: #0088cc; font-size: 24px;"></i>
-            </div>
+      <div style="margin-bottom: 20px;">
+        <label style="font-size: 11px; font-weight: 800; color: #94a3b8; margin-bottom: 8px; display: block; text-transform: uppercase;">অর্ডার লিঙ্ক</label>
+        <div style="display: flex; align-items: center; background: #f8fafc; padding: 12px 15px; border-radius: 15px; border: 2px solid #f1f5f9;">
+          <i class="fas fa-link" style="color: #16a34a; margin-right: 12px; font-size: 14px;"></i>
+          <input type="text" id="link" placeholder="এখানে লিঙ্ক পেস্ট করুন" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 600; color: #1e293b; font-size: 14px;">
         </div>
+      </div>
 
-        <!-- মেইন অর্ডার কার্ড -->
-        <div id="order-section" style="background: white; border-radius: 30px; padding: 25px; margin-top: 20px; box-shadow: 0 15px 40px rgba(0,0,0,0.04); border: 1px solid #f1f5f9;">
-            
-            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
-                <div style="width: 5px; height: 20px; background: #ff0000; border-radius: 10px;"></div>
-                <h6 id="cur-srv-txt" style="font-weight: 800; color: #1e293b; margin: 0; font-size: 16px;">সার্ভিস ক্যাটাগরি</h6>
-            </div>
-            
-            <!-- সাব-অপশন বাটন এরিয়া -->
-            <div id="sub-options" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;"></div>
-
-            <!-- বর্ণনা বক্স -->
-            <div id="srv-desc" style="display: none; background: #fff5f5; padding: 15px; border-radius: 15px; font-size: 12px; color: #b91c1c; margin-bottom: 20px; border-left: 4px solid #ffcc00; line-height: 1.6; font-weight: 500;"></div>
-
-            <!-- ইনপুট ফিল্ডস -->
-            <div style="margin-bottom: 20px;">
-                <label style="font-size: 11px; font-weight: 800; color: #94a3b8; margin-bottom: 8px; display: block; text-transform: uppercase;">অর্ডার লিঙ্ক</label>
-                <div style="display: flex; align-items: center; background: #f8fafc; padding: 12px 15px; border-radius: 15px; border: 2px solid #f1f5f9;">
-                    <i class="fas fa-link" style="color: #ff0000; margin-right: 12px; font-size: 14px;"></i>
-                    <input type="text" id="link" placeholder="এখানে লিঙ্ক পেস্ট করুন" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 600; color: #1e293b; font-size: 14px;">
-                </div>
-            </div>
-            
-            <div style="margin-bottom: 25px;">
-                <label style="font-size: 11px; font-weight: 800; color: #94a3b8; margin-bottom: 8px; display: block; text-transform: uppercase;">অর্ডার পরিমাণ</label>
-                <div style="display: flex; align-items: center; background: #f8fafc; padding: 12px 15px; border-radius: 15px; border: 2px solid #f1f5f9;">
-                    <i class="fas fa-layer-group" style="color: #ff0000; margin-right: 12px; font-size: 14px;"></i>
-                    <select id="qty" onchange="updatePrice()" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 700; color: #1e293b; font-size: 14px; cursor: pointer;">
-                        <option value="0">পরিমাণ নির্বাচন করুন</option>
-                        <option value="1000">1,000 (1k)</option>
-                        <option value="5000">5,000 (5k)</option>
-                        <option value="10000">10,000 (10k)</option>
-                    </select>
-                </div>
-            </div>
-
-            <!-- প্রাইস সেকশন -->
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: linear-gradient(135deg, #fff9f9 0%, #fff1f1 100%); border-radius: 20px; margin-bottom: 25px; border: 1px solid #fee2e2;">
-                <div>
-                    <span style="font-size: 11px; color: #94a3b8; font-weight: 800; text-transform: uppercase; display: block;">Total Cost</span>
-                    <span style="font-size: 24px; color: #ff0000; font-weight: 900;">৳ <span id="total-price">0.00</span></span>
-                </div>
-                <div style="background: white; padding: 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <i class="fas fa-wallet" style="color: #ffcc00; font-size: 20px;"></i>
-                </div>
-            </div>
-
-            <button onclick="confirmOrder()" style="width: 100%; padding: 18px; background: linear-gradient(135deg, #ff0000, #ffcc00); color: white; border: none; border-radius: 20px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(255, 0, 0, 0.3); transition: 0.3s; cursor: pointer;">
-                কনফার্ম অর্ডার
-            </button>
+      <div style="margin-bottom: 25px;">
+        <label style="font-size: 11px; font-weight: 800; color: #94a3b8; margin-bottom: 8px; display: block; text-transform: uppercase;">অর্ডার পরিমাণ</label>
+        <div style="display: flex; align-items: center; background: #f8fafc; padding: 12px 15px; border-radius: 15px; border: 2px solid #f1f5f9;">
+          <i class="fas fa-layer-group" style="color: #16a34a; margin-right: 12px; font-size: 14px;"></i>
+          <select id="qty" onchange="updatePrice()" style="border: none; background: transparent; width: 100%; outline: none; font-weight: 700; color: #1e293b; font-size: 14px; cursor: pointer;">
+            <option value="0">পরিমাণ নির্বাচন করুন</option>
+            <option value="1000">1,000 (1k)</option>
+            <option value="5000">5,000 (5k)</option>
+            <option value="10000">10,000 (10k)</option>
+          </select>
         </div>
+      </div>
+
+      <!-- প্রাইস সেকশন -->
+      <div style="display: flex; justify-content: space-between; align-items: center; padding: 20px; background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); border-radius: 20px; margin-bottom: 25px; border: 1px solid #bbf7d0;">
+        <div>
+          <span style="font-size: 11px; color: #94a3b8; font-weight: 800; text-transform: uppercase; display: block;">Total Cost</span>
+          <span style="font-size: 24px; color: #16a34a; font-weight: 900;">৳ <span id="total-price">0.00</span></span>
+        </div>
+        <div style="background: white; padding: 10px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
+          <i class="fas fa-wallet" style="color: #16a34a; font-size: 20px;"></i>
+        </div>
+      </div>
+
+      <button onclick="confirmOrder()" style="width: 100%; padding: 18px; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; border: none; border-radius: 20px; font-weight: 800; font-size: 16px; box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3); transition: 0.3s; cursor: pointer;">
+        কনফার্ম অর্ডার
+      </button>
     </div>
+  </div>
 </div>
 
 <style>
-    /* প্ল্যাটফর্ম বাটনের সাধারণ ও একটিভ লুক */
-    .platform-btn {
-        min-width: 60px; 
-        height: 60px; 
-        background: white; 
-        border-radius: 15px; 
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: 0.3s;
-    }
-
-    .platform-btn.active {
-        border-color: #ff0000;
-        background: #fff5f5;
-        transform: scale(1.05);
-    }
-
-    /* সাব-অপশন (Followers, Likes) বাটন ডিজাইন */
-    .sub-btn {
-        padding: 10px 18px;
-        background: #f1f5f9;
-        border-radius: 12px;
-        font-size: 13px;
-        font-weight: 700;
-        color: #64748b;
-        cursor: pointer;
-        border: 2px solid transparent;
-        transition: 0.3s;
-    }
-
-    .sub-btn.selected {
-        background: #ff0000 !important;
-        color: white !important;
-        box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
-    }
+.platform-btn { min-width: 60px; height: 60px; background: white; border-radius: 15px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+.platform-btn.active { border-color: #16a34a; background: #f0fdf4; transform: scale(1.05); }
+.sub-btn { padding: 10px 18px; background: #f1f5f9; border-radius: 12px; font-size: 13px; font-weight: 700; color: #64748b; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+.sub-btn.selected { background: #16a34a !important; color: white !important; box-shadow: 0 5px 15px rgba(22, 163, 74, 0.25); }
 </style>
-<div id="view-modal" class="d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px;">
-    <div style="background: white; border-radius: 20px; width: 100%; max-width: 400px; padding: 20px; position: relative;">
-        <i class="fas fa-times-circle" style="position: absolute; top: 15px; right: 15px; font-size: 24px; color: #aaa; cursor: pointer;" onclick="closeProduct()"></i>
-        <img id="view-img" src="" style="width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 15px;">
-        <h4 id="view-title" style="font-weight: 800; font-size: 18px; color: #222; margin-bottom: 5px;"></h4>
-        <h5 id="view-price" style="color: #dc3545; font-weight: 800; margin-bottom: 15px;"></h5>
-        <p id="view-desc" style="font-size: 13px; color: #666; line-height: 1.5; max-height: 100px; overflow-y: auto;"></p>
-        
-        <button onclick="placeCustomerOrder()" style="width: 100%; padding: 12px; background: #dc3545; color: white; border: none; border-radius: 10px; font-weight: bold; font-size: 14px; margin-top: 15px; cursor: pointer;">অর্ডার করুন</button>
-    </div>
-</div>
-
-<div id="customer-history-modal" class="d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.6); z-index: 2500; display: flex; align-items: flex-end;">
-    <div style="background: #f8fafc; width: 100%; max-height: 75%; border-radius: 24px 24px 0 0; display: flex; flex-direction: column; overflow: hidden;">
-        <div style="padding: 18px 20px; background: white; border-bottom: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center;">
-            <div style="display: flex; align-items: center; gap: 10px;">
-                <i class="fas fa-shopping-bag" style="color: #3b82f6; font-size: 18px;"></i>
-                <span style="font-weight: 800; font-size: 15px; color: #1e293b;">আমার অর্ডার সমূহ</span>
-            </div>
-            <i class="fas fa-times-circle" style="font-size: 22px; color: #94a3b8; cursor: pointer;" onclick="closeShopHistory()"></i>
-        </div>
-        <div id="customer-history-container" style="padding: 15px; overflow-y: auto; flex-grow: 1;">
-            </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-  
-
-
-
 
 
 
   
 <div id="p-more" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #fff; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
+  <div style="background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(22, 163, 74, 0.25);">
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <div style="display: flex; align-items: center;">
+        <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
+        <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">More Options</h5>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-4 text-center">
+    <div style="width: 100px; height: 100px; background: #f0fdf4; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: #16a34a; font-size: 40px; border: 2px dashed #16a34a;">
+      <i class="fas fa-rocket animate__animated animate__bounce infinite"></i>
+    </div>
     
-    <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
-        
-        <div style="display: flex; align-items: center; justify-content: space-between;">
-            <div style="display: flex; align-items: center;">
-                <i class="fas fa-arrow-left" style="font-size: 20px; cursor: pointer; color: white; padding: 5px;" onclick="openPage('p-home')"></i>
-                
-                <h5 style="margin: 0; margin-left: 15px; font-weight: 700; letter-spacing: 0.3px;">More Options</h5>
-            </div>
+    <h4 style="font-weight: 800; color: #333;">আমাদের ভবিষ্যৎ পরিকল্পনা</h4>
+    <p style="font-size: 14px; color: #666; line-height: 1.6; padding: 0 10px;">
+      আমাদের প্ল্যাটফর্মে আরও অনেক নতুন এবং চমৎকার সব ফিচার আসতে চলছে। আমরা প্রতিনিয়ত নতুন নতুন প্রজেক্ট নিয়ে কাজ করছি যা আপনাদের ডিজিটাল অভিজ্ঞতাকে আরও সহজ করবে।
+    </p>
 
-
+    <div style="background: #f8fafc; border-radius: 20px; padding: 20px; margin-top: 20px; border: 1px solid #e2e8f0;">
+      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px; color: #16a34a;">
+        <i class="fas fa-lightbulb me-2"></i>
+        <h6 style="margin: 0; font-weight: 700;">আইডিয়া দিতে চান?</h6>
+      </div>
+      <p style="font-size: 13px; color: #777; margin-bottom: 15px;">
+        আপনার কাছে যদি ইউনিক কোনো প্রজেক্টের আইডিয়া থাকে বা আপনি নতুন কিছু দেখতে চান, তবে আমাদের সরাসরি জানান।
+      </p>
+      <a href="https://t.me/Mohammed1199440" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #16a34a; color: white; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 10px rgba(22, 163, 74, 0.3);">
+        <i class="fab fa-telegram-plane me-2" style="font-size: 20px;"></i> এডমিনের টেলিগ্রামে যোগাযোগ করুন
+      </a>
     </div>
+
+    <div style="margin-top: 30px; text-align: left;">
+      <h6 style="font-weight: 800; color: #333; margin-left: 5px;">Upcoming Projects</h6>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
+        <div style="background: white; padding: 12px; border-radius: 12px; border-left: 4px solid #16a34a; box-shadow: 0 2px 5px rgba(0,0,0,0.03); display: flex; align-items: center;">
+          <i class="fas fa-gamepad me-3" style="color: #16a34a;"></i>
+          <span style="font-size: 13px; font-weight: 600;">E-Sports Gaming Tournament</span>
+        </div>
+        <div style="background: white; padding: 12px; border-radius: 12px; border-left: 4px solid #16a34a; box-shadow: 0 2px 5px rgba(0,0,0,0.03); display: flex; align-items: center;">
+          <i class="fas fa-shopping-cart me-3" style="color: #16a34a;"></i>
+          <span style="font-size: 13px; font-weight: 600;">Digital Product Marketplace</span>
+        </div>
+      </div>
     </div>
-
-    <div class="container mt-4 text-center">
-        <div style="width: 100px; height: 100px; background: #fff0f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: #e83e8c; font-size: 40px; border: 2px dashed #e83e8c;">
-            <i class="fas fa-rocket animate__animated animate__bounce infinite"></i>
-        </div>
-
-        <h4 style="font-weight: 800; color: #333;">আমাদের ভবিষ্যৎ পরিকল্পনা</h4>
-        <p style="font-size: 14px; color: #666; line-height: 1.6; padding: 0 10px;">
-            আমাদের প্ল্যাটফর্মে আরও অনেক নতুন এবং চমৎকার সব ফিচার আসতে চলছে। আমরা প্রতিনিয়ত নতুন নতুন প্রজেক্ট নিয়ে কাজ করছি যা আপনাদের ডিজিটাল অভিজ্ঞতাকে আরও সহজ করবে।
-        </p>
-
-        <div style="background: #f8f9fa; border-radius: 20px; padding: 20px; margin-top: 20px; border: 1px solid #eee;">
-            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px; color: #e83e8c;">
-                <i class="fas fa-lightbulb me-2"></i>
-                <h6 style="margin: 0; font-weight: 700;">আইডিয়া দিতে চান?</h6>
-            </div>
-            <p style="font-size: 13px; color: #777; margin-bottom: 15px;">
-                আপনার কাছে যদি ইউনিক কোনো প্রজেক্টের আইডিয়া থাকে বা আপনি নতুন কিছু দেখতে চান, তবে আমাদের সরাসরি জানান।
-            </p>
-            
-            <a href="https://t.me/Mohammed1199440" target="_blank" style="display: flex; align-items: center; justify-content: center; background: #0088cc; color: white; text-decoration: none; padding: 12px; border-radius: 12px; font-weight: 700; transition: 0.3s; box-shadow: 0 4px 10px rgba(0, 136, 204, 0.3);">
-                <i class="fab fa-telegram-plane me-2" style="font-size: 20px;"></i>
-                এডমিনের টেলিগ্রামে যোগাযোগ করুন
-            </a>
-        </div>
-
-        <div style="margin-top: 30px; text-align: left;">
-            <h6 style="font-weight: 800; color: #333; margin-left: 5px;">Upcoming Projects</h6>
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px;">
-                <div style="background: white; padding: 12px; border-radius: 12px; border-left: 4px solid #e83e8c; box-shadow: 0 2px 5px rgba(0,0,0,0.03); display: flex; align-items: center;">
-                    <i class="fas fa-gamepad me-3" style="color: #e83e8c;"></i>
-                    <span style="font-size: 13px; font-weight: 600;">E-Sports Gaming Tournament</span>
-                </div>
-                <div style="background: white; padding: 12px; border-radius: 12px; border-left: 4px solid #e83e8c; box-shadow: 0 2px 5px rgba(0,0,0,0.03); display: flex; align-items: center;">
-                    <i class="fas fa-shopping-cart me-3" style="color: #e83e8c;"></i>
-                    <span style="font-size: 13px; font-weight: 600;">Digital Product Marketplace</span>
-                </div>
-            </div>
-        </div>
-
-    </div>
+  </div>
 </div>
+
+
+
+
 <div id="p-orders" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #f8f9fd; z-index: 1000; overflow-y: auto; padding-bottom: 80px;">
     
     <div style="background: linear-gradient(135deg, #3b82f6 0%, #2ecc71 100%); padding: 20px 15px; color: white; position: sticky; top: 0; z-index: 101; box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);">
@@ -10425,16 +9976,17 @@ initMicroJobs();
     </div>
     <span style="display: block; font-size: 9px; font-weight: 700; color: #374151; margin-top: 4px; text-transform: uppercase;">মাই টিম</span>
   </div>
-<!-- ডিপোজিট -->
-<div onclick="openDepositPage()" style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: transform 0.2s ease;" onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'">
-  <div style="width: 36px; height: 36px; background: #f0fdf4; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #dcfce7;">
-    <i class="fas fa-piggy-bank" style="font-size: 16px; color: #16a34a;"></i>
-  </div>
-  <span style="display: block; font-size: 9px; font-weight: 700; color: #374151; margin-top: 4px; text-transform: uppercase;">ডিপোজিট</span>
-</div>
 
-  <!-- সাপোর্ট -->
-  <div onclick="handleSupportCenterClick()" style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: transform 0.2s ease;" onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'">
+  <!-- ডিপোজিট - আইকন পরিবর্তন করা হয়েছে -->
+  <div onclick="openDepositPage()" style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: transform 0.2s ease;" onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'">
+    <div style="width: 36px; height: 36px; background: #f0fdf4; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #dcfce7;">
+      <i class="fas fa-wallet" style="font-size: 16px; color: #16a34a;"></i>
+    </div>
+    <span style="display: block; font-size: 9px; font-weight: 700; color: #374151; margin-top: 4px; text-transform: uppercase;">ডিপোজিট</span>
+  </div>
+
+  <!-- সাপোর্ট - ডিজাইন ঠিক করা হয়েছে -->
+  <div onclick="if(typeof openPage === 'function') { openPage('p-support'); }" style="text-align: center; cursor: pointer; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; transition: transform 0.2s ease;" onmousedown="this.style.transform='scale(0.92)'" onmouseup="this.style.transform='scale(1)'">
     <div style="width: 36px; height: 36px; background: #f0fdf4; border-radius: 8px; display: flex; align-items: center; justify-content: center; border: 1px solid #dcfce7;">
       <i class="fas fa-headset" style="font-size: 16px; color: #16a34a;"></i>
     </div>
