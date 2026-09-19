@@ -4733,12 +4733,11 @@ function togglePassword() {
     }
 </style>
 
-
 <div class="container mt-2" style="padding: 0 16px; font-family: 'Poppins', sans-serif;">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&family=Poppins:wght@600;700&display=swap');
 
-/* মূল বাইরের বড় কার্ড (ফুল উইডথ ও সাইড প্যাডিং ছাড়া) */
+/* মূল বাইরের বড় কার্ড (ফুল উইডথ ও সাইড প্যাডিং ছাড়া) */
 .main-wrapper-card {
   width: 100%;
   box-sizing: border-box;
@@ -4799,7 +4798,7 @@ function togglePassword() {
   box-shadow: 0 2px 6px rgba(10, 122, 66, 0.1);
 }
 
-/* ডায়মন্ড আইকন বক্স */
+/* ডায়মন্ড আইকন বক্স */
 .icon-box {
   width: 38px;
   height: 38px;
@@ -4856,7 +4855,7 @@ function togglePassword() {
 }
 </style>
 
-<!-- বড় মূল কার্ড -->
+<!-- মূল কার্ড কন্টেইনার -->
 <div class="main-wrapper-card">
   <div class="premium-grid-3col">
     
@@ -4909,7 +4908,7 @@ function togglePassword() {
     </div>
 
     <!-- ৭. হোয়াটসঅ্যাপ সেল -->
-    <div class="premium-card" onclick="handleWhatsappSellClick()">
+    <div class="premium-card" onclick="handleWhatsAppSellClick()">
       <div class="icon-box">
         <svg viewBox="0 0 24 24"><path d="M19.05 4.94A9.82 9.82 0 0 0 12 2C6.48 2 2 6.48 2 12a9.92 9.92 0 0 0 1.32 4.98L2 22l5.16-1.32A9.82 9.82 0 0 0 12 22c5.52 0 10-4.48 10-10 0-2.67-1.04-5.18-2.95-7.06zM12 20a8 8 0 0 1-4.08-1.11l-.29-.17-3.06.79.8-2.98-.19-.31A7.93 7.93 0 0 1 4 12C4 7.58 7.58 4 12 4s8 3.58 8 8-3.58 8-8 8zm4.54-6.01c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12s-.64.81-.79.97-.29.18-.54.06a6.5 6.5 0 0 1-1.92-1.19 7.2 7.2 0 0 1-1.33-1.66c-.14-.25 0-.38.11-.5.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.47-.4-.41-.56-.42h-.48c-.16 0-.43.06-.65.31s-.86.84-.86 2.05.88 2.38 1 2.54c.12.16 1.73 2.64 4.19 3.71.59.25 1.05.4 1.41.51.59.19 1.13.16 1.55.1.47-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
       </div>
@@ -4971,17 +4970,18 @@ function togglePassword() {
       </div>
       <span>লিডারশীপ</span>
     </div>
-<!-- ১৫. আরো দেখুন -->
-<div class="premium-card" onclick="handleSeeMoreClick()">
-  <div class="icon-box">
-    <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm-6 6a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0z"/></svg>
-  </div>
-  <span>আরো দেখুন</span>
-</div>
+
+    <!-- ১৫. আরো দেখুন -->
+    <div class="premium-card" onclick="handleSeeMoreClick()">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm-6 6a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0z"/></svg>
+      </div>
+      <span>আরো দেখুন</span>
+    </div>
 
   </div>
 </div>
-<!-- =========================================================
+  <!-- =========================================================
      CSS
 ========================================================= -->
 
@@ -15540,230 +15540,6 @@ async function activateAccountNow() {
     });
 }
 
-
-  
-function handleMicroJobClick() {
-    // চেক করা হচ্ছে ইউজারের একাউন্ট একটিভ কি না
-    if (curUser.status !== 'active') {
-        
-        // একাউন্ট একটিভ না থাকলে এই প্রফেশনাল পপআপটি আসবে
-        Swal.fire({
-            title: 'অ্যাকাউন্ট অ্যাক্টিভ করুন!',
-            text: 'মাইক্রো জবগুলো সম্পন্ন করে আয় করতে হলে আপনার অ্যাকাউন্টটি আগে অ্যাক্টিভ করা প্রয়োজন।',
-            icon: 'info',
-            showCancelButton: true,
-            confirmButtonText: 'এখনই করুন',
-            cancelButtonText: 'পরে করবো',
-            confirmButtonColor: '#1e3a8a',
-            cancelButtonColor: '#6c757d',
-            background: '#fff',
-            borderRadius: '20px'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // সরাসরি সাপোর্ট পেজে নিয়ে যাবে
-                openPage('p-fund'); 
-            }
-        });
-        
-    } else {
-        // একাউন্ট একটিভ থাকলে সরাসরি মাইক্রো জব পেজে নিয়ে যাবে
-        openPage('p-micro');
-    }
-}
-function handleAdsIncomeClick() {
-    // ইউজার যদি একটিভ না থাকে
-    if (curUser.status !== 'active') {
-        
-        Swal.fire({
-            title: 'অ্যাকাউন্ট ভেরিফিকেশন!',
-            text: 'বিজ্ঞাপন দেখে আয় করতে হলে আপনার অ্যাকাউন্টটি একটিভ থাকা বাধ্যতামূলক।',
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'এখনই করুন',
-            cancelButtonText: 'পরে করবো',
-            confirmButtonColor: '#2ecc71', // সবুজাভ কালার যা আয়ের সাথে মানানসই
-            cancelButtonColor: '#d33',
-            background: '#fff',
-            borderRadius: '20px'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                // সরাসরি সাপোর্ট পেজে নিয়ে যাবে
-                openPage('p-fund'); 
-            }
-        });
-        
-    } else {
-        // যদি একাউন্ট একটিভ থাকে তবে অ্যাডস পেজে নিয়ে যাবে
-        openPage('p-ads');
-    }
-}
-
-
-// ==========================================================================
-// ১. কমন ফাংশন: অ্যাকাউন্ট স্ট্যাটাস চেক করে পেজ ওপেন বা ভেরিফিকেশন পপআপ দেখানোর জন্য
-// ==========================================================================
-function checkAndOpenPage(pageName, serviceName) {
-    if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
-        Swal.fire({
-            title: 'অ্যাকাউন্ট ভেরিফিকেশন প্রয়োজন!',
-            text: `${serviceName} কাজ করতে হলে আপনার অ্যাকাউন্টটি একটিভ থাকা বাধ্যতামূলক।`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'এখনই একটিভ করুন',
-            cancelButtonText: 'পরে করব',
-            confirmButtonColor: '#2ecc71',
-            cancelButtonColor: '#d33',
-            background: '#fff',
-            borderRadius: '20px'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                if (typeof openPage === 'function') {
-                    openPage('p-fund'); 
-                }
-            }
-        });
-    } else {
-        if (typeof openPage === 'function') {
-            openPage(pageName);
-        } else {
-            let page = document.getElementById(pageName);
-            if (page) {
-                page.style.display = 'block';
-                page.classList.remove('d-none');
-            }
-        }
-    }
-}
-
-// ==========================================================================
-// ২. কমন ফাংশন: অ্যাকাউন্ট অ্যাক্টিভ থাকলে "আপডেট চলছে" পপআপ দেখানোর জন্য
-// ==========================================================================
-function checkAccountAndShowUpdate(serviceName) {
-    if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
-        Swal.fire({
-            title: 'অ্যাকাউন্ট ভেরিফিকেশন প্রয়োজন!',
-            text: `${serviceName} ব্যবহার করতে হলে আপনার অ্যাকাউন্টটি একটিভ থাকা বাধ্যতামূলক।`,
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonText: 'এখনই একটিভ করুন',
-            cancelButtonText: 'পরে করব',
-            confirmButtonColor: '#2ecc71',
-            cancelButtonColor: '#d33',
-            background: '#fff',
-            borderRadius: '20px'
-        }).then((result) => {
-            if (result.isConfirmed) {
-                if (typeof openPage === 'function') {
-                    openPage('p-fund'); 
-                }
-            }
-        });
-    } else {
-        Swal.fire({
-            title: 'আপডেট চলছে!',
-            text: `${serviceName} এর কাজ চলছে। অতি শীঘ্রই লঞ্চ করা হবে, ধন্যবাদ।`,
-            icon: 'info',
-            confirmButtonText: 'ঠিক আছে',
-            confirmButtonColor: '#1877f2',
-            background: '#fff',
-            borderRadius: '20px'
-        });
-    }
-}
-
-// ==========================================================================
-// ৩. ড্যাশবোর্ডের নির্দিষ্ট সার্ভিস এবং বাটনগুলোর ক্লিক হ্যান্ডলারসমূহ
-// ==========================================================================
-
-// --- বিশেষ আয় সেকশন ---
-function handleGmailCreateClick() {
-    checkAndOpenPage('p-gmail-sell', 'জিমেইল সেল');
-}
-
-function handleFbCreateClick() {
-    checkAndOpenPage('p-fb-create', 'ফেসবুক সেল');
-}
-
-function handleIgCreateClick() {
-    checkAndOpenPage('p-ig-create', 'ইনস্টাগ্রাম সেল');
-}
-
-function handleTelegramSellClick() {
-    checkAndOpenPage('p-telegram-sell', 'টেলিগ্রাম সেল');
-}
-
-function handleWhatsAppSellClick() {
-    checkAndOpenPage('p-whatsapp-sell', 'হোয়াটসঅ্যাপ সেল');
-}
-
-// যেগুলোতে আপডেট চলছে
-function handleAiMarketingClick() {
-    checkAccountAndShowUpdate('এআই মার্কেটিং');
-}
-
-function handleResellingClick() {
-    checkAccountAndShowUpdate('রিসেলিং');
-}
-
-function handleVendorshipClick() {
-    checkAccountAndShowUpdate('ভেন্ডরশীপ');
-}
-
-
-// --- সার্ভিস সমুহ সেকশন ---
-function handlePageFollowerClick() {
-    checkAccountAndShowUpdate('পেজ ফলোয়ার সার্ভিস');
-}
-
-function handleGraphicsDesignClick() {
-    checkAccountAndShowUpdate('গ্রাফিক্স ডিজাইন');
-}
-
-function handleDataEntryClick() {
-    checkAccountAndShowUpdate('ডাটা এন্ট্রি জব');
-}
-
-function handleGameTopUpClick() {
-    checkAccountAndShowUpdate('গেম টপ-আপ');
-}
-
-
-// --- টার্গেট বোনাস সেকশন ---
-function handleIncomeClick(type) {
-    if (type === 'rank') {
-        checkAndOpenPage('p-leader', 'র‍্যাংক');
-    } else if (type === 'welcome') {
-        checkAndOpenPage('p-welcome', 'ওয়েলকাম অফার');
-    } else {
-        checkAndOpenPage('p-target', 'টার্গেট বোনাস');
-    }
-}
-
-function handleBonusClick(period) {
-    checkAndOpenPage('p-target', `${period} বোনাস`);
-}
-
-function handleLeaderboardClick() {
-    checkAccountAndShowUpdate('লিডারবোর্ড');
-}
-
-
-// --- অন্যান্য সার্ভিস সেকশন ---
-function handleMobileRechargeClick() {
-    checkAccountAndShowUpdate('মোবাইল রিচার্জ');
-}
-
-function handleDriverCellClick() {
-    checkAccountAndShowUpdate('ড্রাইভ অফার'); 
-}
-
-function handleTradingSectionClick() {
-    checkAccountAndShowUpdate('ট্রেডিং সেকশন');
-}
-
-function handleSeeMoreClick() {
-    checkAndOpenPage('p-more', 'আরো দেখুন');
-}
   
 // নোটিফিকেশন পেজ খোলা
 function openNotifications() {
@@ -17596,64 +17372,137 @@ function contactForWeb(serviceName) {
     window.open(telegramUrl, '_blank');
 }
 
-// বোনাস কার্ডগুলোর জন্য ফাংশন
-function handleBonusClick(type) {
-    checkAccountStatus(() => {
-        // অ্যাকাউন্ট একটিভ থাকলে এই মেসেজ দেখাবে
-        Swal.fire({
-            title: 'আপডেট চলছে!',
-            text: 'অতি শীঘ্রই চালু করা হবে। ধন্যবাদ!',
-            icon: 'info',
-            confirmButtonText: 'ঠিক আছে',
-            confirmButtonColor: '#1e3a8a',
-            background: '#fff',
-            borderRadius: '20px'
-        });
-    });
-}
 
-// ইনকাম বা অন্যান্য কার্ডগুলোর জন্য ফাংশন
-function handleIncomeClick(type) {
-    checkAccountStatus(() => {
-        // অ্যাকাউন্ট একটিভ থাকলে এই মেসেজ দেখাবে
-        Swal.fire({
-            title: 'আপডেট চলছে!',
-            text: 'অতি শীঘ্রই চালু করা হবে। ধন্যবাদ!',
-            icon: 'info',
-            confirmButtonText: 'ঠিক আছে',
-            confirmButtonColor: '#1e3a8a',
-            background: '#fff',
-            borderRadius: '20px'
-        });
-    });
-}
 
-// কমন স্ট্যাটাস চেকার ফাংশন
-function checkAccountStatus(callback) {
-    if (typeof curUser === 'undefined' || curUser.status !== 'active') {
-        // একাউন্ট একটিভ না থাকলে ভেরিফাই পপআপ আসবে
-        Swal.fire({
-            title: 'অ্যাকাউন্ট অ্যাক্টিভ করুন!',
-            text: 'এই ফিচারটি ব্যবহার করতে হলে আপনার অ্যাকাউন্টটি আগে অ্যাক্টিভ করা প্রয়োজন।',
-            icon: 'info',
-            showCancelButton: true,
-            confirmButtonText: 'এখনই করুন',
-            cancelButtonText: 'পরে করবো',
-            confirmButtonColor: '#1e3a8a',
-            cancelButtonColor: '#6c757d',
-            background: '#fff',
-            borderRadius: '20px'
-        }).then((result) => {
-            if (result.isConfirmed) {
+// ==========================================================================
+// ১. হেলপার ফাংশন (ভেরিফিকেশন চেক ও পপআপ)
+// ==========================================================================
+
+// অ্যাকাউন্ট ভেরিফিকেশন পপআপ (ইনঅ্যাক্টিভ ইউজারদের জন্য)
+function showVerificationAlert(serviceName) {
+    Swal.fire({
+        title: 'অ্যাকাউন্ট ভেরিফিকেশন প্রয়োজন!',
+        text: `${serviceName} ব্যবহার করতে হলে আপনার অ্যাকাউন্টটি একটিভ থাকা বাধ্যতামূলক।`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'এখনই একটিভ করুন',
+        cancelButtonText: 'পরে করব',
+        confirmButtonColor: '#2ecc71',
+        cancelButtonColor: '#d33',
+        background: '#fff',
+        borderRadius: '20px'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (typeof openPage === 'function') {
                 openPage('p-fund'); 
             }
-        });
+        }
+    });
+}
+
+// অ্যাক্টিভ চেক করে পেজে নিয়ে যাওয়ার জন্য (বাকি সব বাটনের জন্য)
+function checkAndOpenPage(pageName, serviceName) {
+    if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
+        showVerificationAlert(serviceName);
     } else {
-        // একাউন্ট একটিভ থাকলে নির্দিষ্ট কাজটি করবে
-        callback();
+        if (typeof openPage === 'function') {
+            openPage(pageName);
+        } else {
+            let page = document.getElementById(pageName);
+            if (page) {
+                page.style.display = 'block';
+                page.classList.remove('d-none');
+            }
+        }
     }
 }
-// নম্বর কপি ফাংশন
+
+// অ্যাকাউন্ট অ্যাক্টিভ থাকলে "আপডেট চলছে" দেখানোর জন্য (শুধুমাত্র ডেইলি বোনাসের জন্য)
+function checkAccountAndShowUpdate(serviceName) {
+    if (typeof curUser !== 'undefined' && curUser.status !== 'active') {
+        showVerificationAlert(serviceName);
+    } else {
+        Swal.fire({
+            title: 'আপডেট চলছে!',
+            text: `${serviceName} এর কাজ চলছে। অতি শীঘ্রই লঞ্চ করা হবে, ধন্যবাদ।`,
+            icon: 'info',
+            confirmButtonText: 'ঠিক আছে',
+            confirmButtonColor: '#1877f2',
+            background: '#fff',
+            borderRadius: '20px'
+        });
+    }
+}
+
+// ==========================================================================
+// ২. আপনার নির্দিষ্ট বাটনগুলোর ক্লিক হ্যান্ডলারসমূহ
+// ==========================================================================
+
+function handleMicroJobClick() {
+    checkAndOpenPage('p-micro', 'মাইক্রো জব');
+}
+
+function handleAdsIncomeClick() {
+    checkAndOpenPage('p-ads', 'বিজ্ঞাপন দেখে আয়');
+}
+
+function handleGmailCreateClick() {
+    checkAndOpenPage('p-gmail-create', 'জিমেইল সেল');
+}
+
+function handleFbCreateClick() {
+    checkAndOpenPage('p-fb-create', 'ফেসবুক সেল');
+}
+
+function handleIgCreateClick() {
+    checkAndOpenPage('p-ig-create', 'ইনস্টাগ্রাম সেল');
+}
+
+function handleTelegramSellClick() {
+    checkAndOpenPage('p-telegram-sell', 'টেলিগ্রাম সেল');
+}
+
+function handleWhatsAppSellClick() {
+    checkAndOpenPage('p-whatsapp-sell', 'হোয়াটসঅ্যাপ সেল');
+}
+
+function handleJobPostClick() {
+    checkAndOpenPage('p-post', 'জব পোস্ট');
+}
+
+function handleInvestmentClick() {
+    checkAndOpenPage('p-invest', 'ইনভেস্টমেন্ট');
+}
+
+// ট্রেনিং সেকশন (সরাসরি পেজ ওপেন হবে অ্যাক্টিভ থাকলে)
+function handleTrainingClick() {
+    checkAndOpenPage('p-training', 'ট্রেনিং সেকশন');
+}
+
+function handleSocialServiceClick() {
+    checkAndOpenPage('p-social', 'সোশাল সার্ভিস');
+}
+
+// ডেইলি বোনাস (অ্যাক্টিভ থাকলে 'আপডেট চলছে' দেখাবে, ইনঅ্যাক্টিভ থাকলে লক দেখাবে)
+function handleDailyBonusClick() {
+    checkAccountAndShowUpdate('ডেইলি বোনাস');
+}
+
+function handleTargetBonusClick() {
+    checkAndOpenPage('p-target', 'টার্গেট বোনাস');
+}
+
+function handleLeadershipClick() {
+    checkAndOpenPage('p-leader', 'লিডারশীপ');
+}
+
+function handleSeeMoreClick() {
+    checkAndOpenPage('p-more', 'আরো দেখুন');
+}
+// ==========================================================================
+// ৩. অন্যান্য সহায়ক ফাংশন
+// ==========================================================================
+
 function copyNumber() {
     navigator.clipboard.writeText(selectedNumber);
     Swal.fire({
@@ -17665,10 +17514,6 @@ function copyNumber() {
         timer: 1500
     });
 }
-
-
-
-
 
     
 </script>
