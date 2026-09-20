@@ -2626,7 +2626,7 @@ div[onclick="toggleBloodModal()"]:active {
 <!-- Font Awesome আইকন লাইব্রেরি -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<div id="auth-section" style="font-family: 'Poppins', sans-serif; background: #f4f7fe; min-height: 100vh; box-sizing: border-box;">
+<div id="auth-section" class="auth-boot-hidden" style="font-family: 'Poppins', sans-serif; background: #f4f7fe; min-height: 100vh; box-sizing: border-box;">
     
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -2783,6 +2783,17 @@ if (typeof openPage !== 'function') { function openPage(pageId) { alert(pageId +
     <div style="padding: 20px;">
         
 <style>
+    /* Refresh/Login flicker fix: auth UI stays hidden until session restore finishes. */
+    #auth-section.auth-boot-hidden {
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    #auth-section.auth-ready {
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+    }
     /* ইনপুটের ভেতরের সাদা লেখা (Placeholder) স্পষ্ট করার জন্য */
     #login-box input::placeholder {
         color: #888 !important;
@@ -12169,7 +12180,7 @@ async function handleAuth(m) {
         }
             
         try {
-            let res = await fetch(`${SHEETDB_API_URL}/search?email=${e}`);
+            let res = await fetch(`${SHEETDB_API_URL}/search?email=${encodeURIComponent(e)}`, { cache: 'no-store' });
             let sheetUsers = await res.json();
             
             if(sheetUsers && sheetUsers.length > 0 && sheetUsers[0].email === e) {
@@ -12399,19 +12410,166 @@ async function handleAuth(m) {
 
 
 /* ============================================================
-   PERMANENT LOGIN + PHONE BACK PROTECTION
-   Refresh দিলে Logout হবে না।
-   শুধু Sidebar-এর logout() session মুছে দেবে।
+   PERMANENT LOGIN + REFRESH + LIVE SHEET BALANCE SYNC
+   Refresh দিলে Login page flash করবে না।
+   Saved session থাকলে সরাসরি Home থাকবে।
+   Sheet-এ balance বদলালে পরের refresh-এই website-এ update হবে।
    ============================================================ */
 (function initPermanentLogin() {
     let restoreTimer = null;
     let restoreAttempts = 0;
     const MAX_ATTEMPTS = 30;
 
+    function showLoginScreen() {
+        const auth = document.getElementById('auth-section');
+        const userApp = document.getElementById('user-app');
+        const adminApp = document.getElementById('admin-app');
+
+        if (userApp) userApp.classList.add('d-none');
+        if (adminApp) adminApp.classList.add('d-none');
+        if (auth) {
+            auth.classList.remove('auth-boot-hidden');
+            auth.classList.add('auth-ready');
+        }
+    }
+
+    function hideLoginScreen() {
+        const auth = document.getElementById('auth-section');
+        if (auth) {
+            auth.classList.remove('auth-ready');
+            auth.classList.add('auth-boot-hidden');
+        }
+    }
+
+    function cacheUser(user) {
+        try {
+            localStorage.setItem('v7_logged_email', user.email || '');
+            localStorage.setItem('v7_logged_user', JSON.stringify({
+                email: user.email || '',
+                name: user.name || '',
+                role: user.role || 'user',
+                referCode: user.referCode || '',
+                bal: parseFloat(user.bal || 0),
+                status: user.status || 'active'
+            }));
+            localStorage.setItem('v7_userName', user.name || '');
+            localStorage.setItem('v7_userEmail', user.email || '');
+            localStorage.setItem('v7_userReferCode', user.referCode || '');
+            localStorage.setItem('v7_userBalance', parseFloat(user.bal || 0));
+            localStorage.setItem('v7_userStatus', user.status || '');
+        } catch (e) {
+            console.error('Session cache error:', e);
+        }
+    }
+
+    /*
+     * SheetDB থেকে সর্বশেষ balance/status নেওয়া।
+     * গুরুত্বপূর্ণ: শুধু login করার সময় নয়—refresh/session restore-এর সময়ও
+     * এই sync হবে।
+     */
+    async function syncUserFromSheet(email) {
+        if (!email || typeof SHEETDB_API_URL === 'undefined') return null;
+
+        try {
+            const res = await fetch(
+                `${SHEETDB_API_URL}/search?email=${encodeURIComponent(email)}`,
+                {
+                    method: 'GET',
+                    cache: 'no-store'
+                }
+            );
+
+            if (!res.ok) throw new Error('SheetDB HTTP ' + res.status);
+
+            const rows = await res.json();
+            if (!Array.isArray(rows) || !rows.length) return null;
+
+            const sheetUser = rows.find(
+                x => String(x.email || '').toLowerCase() === String(email).toLowerCase()
+            ) || rows[0];
+
+            const sheetBalance = parseFloat(sheetUser.balance);
+            const sheetStatus = String(sheetUser.status || 'active').toLowerCase().trim();
+
+            if (!Number.isNaN(sheetBalance)) {
+                let localUser = null;
+
+                if (typeof db !== 'undefined' && Array.isArray(db.users)) {
+                    localUser = db.users.find(
+                        x => String(x.email || '').toLowerCase() === String(email).toLowerCase()
+                    );
+                }
+
+                // যদি local db-তে user থাকে, Sheet-এর balance/status সেটি দিয়ে replace হবে।
+                if (localUser) {
+                    const oldBalance = parseFloat(localUser.bal || 0);
+                    const difference = sheetBalance - oldBalance;
+
+                    if (Math.abs(difference) > 0.000001) {
+                        if (!localUser.incomeHistory) localUser.incomeHistory = [];
+
+                        const d = new Date();
+                        const datePart = d.toISOString().split('T')[0];
+                        localUser.incomeHistory.unshift({
+                            amount: difference.toFixed(2),
+                            date: datePart,
+                            fullDate: d.toLocaleString('bn-BD'),
+                            note: difference > 0 ? 'Added Balance (Sheet Sync)' : 'Subtract Balance (Sheet Sync)'
+                        });
+
+                        // পুরোনো balance-এর উপর আবার যোগ নয়;
+                        // Sheet-এর current balance-ই source of truth।
+                        localUser.bal = sheetBalance;
+                    } else {
+                        localUser.bal = sheetBalance;
+                    }
+
+                    localUser.status = sheetStatus;
+
+                    if (typeof curUser !== 'undefined' && curUser &&
+                        String(curUser.email || '').toLowerCase() === String(email).toLowerCase()) {
+                        curUser = localUser;
+                    }
+
+                    // Local cache-ও immediately update হবে।
+                    localStorage.setItem('v7_u', JSON.stringify(db.users));
+                    cacheUser(localUser);
+
+                    return localUser;
+                }
+
+                // local db-তে user না থাকলে cached session-কে Sheet data দিয়ে update।
+                let cached = null;
+                try {
+                    cached = JSON.parse(localStorage.getItem('v7_logged_user') || 'null');
+                } catch (e) {}
+
+                const merged = {
+                    ...(cached || {}),
+                    email: sheetUser.email || email,
+                    name: (cached && cached.name) || sheetUser.name || String(email).split('@')[0],
+                    role: (cached && cached.role) || 'user',
+                    referCode: (cached && cached.referCode) || sheetUser.id || '',
+                    bal: sheetBalance,
+                    status: sheetStatus
+                };
+
+                cacheUser(merged);
+                return merged;
+            }
+        } catch (err) {
+            // Internet/SheetDB unavailable হলে cached/local data দিয়েই app চালু হবে।
+            console.warn('Sheet balance sync failed:', err);
+        }
+
+        return null;
+    }
+
     function showLoggedInApp(user) {
         if (!user) return false;
 
         curUser = user;
+        hideLoginScreen();
 
         const auth = document.getElementById('auth-section');
         const userApp = document.getElementById('user-app');
@@ -12429,10 +12587,20 @@ async function handleAuth(m) {
 
             if (typeof renderUser === 'function') renderUser();
 
-            // লগইন restore হওয়ার পর সবসময় Home page
+            // Refresh/restore-এর পর সবসময় Home-এ থাকবে।
             if (typeof openPage === 'function' && document.getElementById('p-home')) {
                 openPage('p-home');
             }
+
+            // UI balance-ও fresh Sheet balance দিয়ে সঙ্গে সঙ্গে update।
+            const balEl = document.getElementById('user-balance');
+            const uBalEl = document.getElementById('u-bal');
+            const freshBal = parseFloat(user.bal || 0).toFixed(2);
+
+            if (balEl) balEl.innerText = freshBal + " BDT";
+            if (uBalEl) uBalEl.innerText = freshBal;
+
+            if (typeof updateUIBalance === 'function') updateUIBalance();
 
             const status = String(user.status || '').toLowerCase().trim();
             if (status === 'inactive') {
@@ -12445,20 +12613,24 @@ async function handleAuth(m) {
         return true;
     }
 
-    function restoreSession() {
+    async function restoreSession() {
         const email = localStorage.getItem('v7_logged_email');
+
         if (!email) {
             history.replaceState({ page: 'login' }, '', location.pathname);
+            showLoginScreen();
             return true;
         }
 
-        // প্রথমে db.users থেকে fresh user নেওয়া হবে
         let user = null;
+
+        // ১) Local DB/cache থেকে দ্রুত session পাওয়া।
         if (typeof db !== 'undefined' && Array.isArray(db.users)) {
-            user = db.users.find(x => String(x.email || '').toLowerCase() === String(email).toLowerCase());
+            user = db.users.find(
+                x => String(x.email || '').toLowerCase() === String(email).toLowerCase()
+            );
         }
 
-        // db-তে এখনও data না এলে cached session ব্যবহার করবে
         if (!user) {
             try {
                 const cached = JSON.parse(localStorage.getItem('v7_logged_user') || 'null');
@@ -12475,39 +12647,29 @@ async function handleAuth(m) {
                 restoreTimer = setTimeout(restoreSession, 500);
                 return false;
             }
-            // Session key আছে কিন্তু user data পাওয়া যায়নি—Logout করা হবে না।
-            // ফলে পরে data এলে আবার restore করা যাবে।
+
+            // Session key আছে কিন্তু data এখনও পাওয়া যায়নি।
+            // Login page দেখাব না; retry চলতে থাকবে।
             return false;
         }
 
-        // db-এর fresh data cache-এও রেখে দিই
-        try {
-            localStorage.setItem('v7_logged_email', user.email);
-            localStorage.setItem('v7_logged_user', JSON.stringify({
-                email: user.email,
-                name: user.name || '',
-                role: user.role || 'user',
-                referCode: user.referCode || '',
-                bal: user.bal || 0,
-                status: user.status || 'active'
-            }));
-            localStorage.setItem('v7_userName', user.name || '');
-            localStorage.setItem('v7_userEmail', user.email || '');
-            localStorage.setItem('v7_userReferCode', user.referCode || '');
-            localStorage.setItem('v7_userBalance', user.bal || 0);
-            localStorage.setItem('v7_userStatus', user.status || '');
-        } catch (e) {}
+        // ২) সবচেয়ে গুরুত্বপূর্ণ: Login ছাড়াই SheetDB-এর latest balance/status sync।
+        const sheetUser = await syncUserFromSheet(email);
+        if (sheetUser) user = sheetUser;
+
+        // ৩) Fresh user cache করে সরাসরি Home।
+        cacheUser(user);
 
         if (showLoggedInApp(user)) {
             history.replaceState({ page: 'p-home' }, '', '#home');
         }
+
         return true;
     }
 
-    function startRestore() {
-        // Login state থাকলে restore করবে; key না থাকলে Login page স্বাভাবিক থাকবে
+    async function startRestore() {
         restoreAttempts = 0;
-        restoreSession();
+        await restoreSession();
     }
 
     if (document.readyState === 'loading') {
@@ -12516,7 +12678,7 @@ async function handleAuth(m) {
         startRestore();
     }
 
-    // অন্য script/API পরে db.users load করলে আবার check করবে
+    // db/users অন্য script দিয়ে পরে প্রস্তুত হলে একবার আবার sync।
     window.addEventListener('load', () => {
         setTimeout(() => restoreSession(), 150);
     }, { once: true });
@@ -12741,7 +12903,7 @@ function logout() {
     sessionKeys.forEach(key => localStorage.removeItem(key));
     curUser = null;
 
-    // পুরোনো history state সরিয়ে Login page-এ ফিরবে
+    // Intentional logout: session clear করার পরেই Login page দেখাবে।
     history.replaceState({ page: 'login' }, '', location.pathname);
     location.reload();
 }
@@ -18697,7 +18859,6 @@ window.onload = () => {
 
 </body>
 </html>
-
 
 
 
