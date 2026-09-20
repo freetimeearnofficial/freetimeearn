@@ -3101,348 +3101,77 @@ function toggleSignupPassword() {
   </div>
 
 
+  
+  
   <!-- =====================================================
-        BALANCE CARD
-  ====================================================== -->
-  <div
-    class="balance-card"
-    onclick="toggleBalance()"
-    title="Tap Balance"
-    role="button"
-  >
-
-    <!-- Wallet Icon -->
-    <div class="balance-icon">
-      <i class="fas fa-wallet"></i>
+      BALANCE CARD
+====================================================== -->
+<div
+  class="balance-card"
+  onclick="toggleBalance()"
+  title="Tap Balance"
+  role="button"
+>
+  <!-- Balance Content -->
+  <div class="balance-content">
+    <!-- প্রথমে এই লেখা দেখা যাবে -->
+    <div id="balance-text" class="balance-tap">
+      Tap Balance
     </div>
 
-
-    <!-- Balance Content -->
-    <div class="balance-content">
-
-      <!-- প্রথমে এই লেখা দেখা যাবে -->
-      <div
-        id="balance-text"
-        class="balance-tap"
-      >
-        Tap Balance
-      </div>
-
-      <!-- Tap করলে এই Balance দেখা যাবে -->
-      <div
-        id="balance-amount"
-        class="balance-amount balance-hidden"
-      >
-        ৳ <span id="u-bal">0.00</span>
-      </div>
-
+    <!-- Tap করলে এই Balance দেখা যাবে -->
+    <div id="balance-amount" class="balance-amount balance-hidden">
+      ৳ <span id="u-bal">0.00</span>
     </div>
-
-
-    <!-- Eye -->
-    <div class="balance-eye">
-      <i
-        id="balance-eye"
-        class="fas fa-eye"
-      ></i>
-    </div>
-
   </div>
+</div>
 
-
-  <!-- =====================================================
-        RIGHT : NOTIFICATION
-  ====================================================== -->
-  <div class="notification-container">
-
-    <button
-      type="button"
-      onclick="openCustomNotification(event)"
-      class="header-action"
-      title="Notifications"
-      aria-label="Notifications"
-    >
-
-      <i class="fas fa-bell"></i>
-
-
-      <!-- Notification Number -->
-      <span
-        id="custom-noti-dot"
-        class="notification-dot"
-      >
-        1
-      </span>
-
-    </button>
-
-  </div>
 
 </nav>
-
 
 <!-- =========================================================
      HEADER CSS
 ========================================================= -->
 
 <style>
-
-/* =========================================================
-   MAIN HEADER
-========================================================= */
-
-.premium-header {
-
-  width: 100%;
-
-  height: 64px;
-
-  background: #ffffff;
-
-  padding: 7px 10px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  border-radius: 0px;
-
-  border: none;
-
-  border-bottom: 1px solid #d1fae5;
-
-  box-shadow:
-    0 3px 14px rgba(0, 100, 45, 0.12);
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 1000;
-
-  box-sizing: border-box;
-
-  font-family: 'Poppins', sans-serif;
-
-  overflow: hidden;
-
-}
-
-
-/* =========================================================
-   SLIDER / MENU BUTTON
-========================================================= */
-
-.header-icon-wrapper {
-
-  width: 42px;
-
-  height: 42px;
-
-  min-width: 42px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #f0fdf4;
-
-  border: 1px solid #bbf7d0;
-
-  border-radius: 6px;
-
-  cursor: pointer;
-
-  color: #15803d;
-
-  box-sizing: border-box;
-
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-
-}
-
-
-/* Hover */
-
-.header-icon-wrapper:hover {
-
-  background: #dcfce7;
-
-  box-shadow:
-    0 3px 8px rgba(22,163,74,0.15);
-
-}
-
-
-/* Click */
-
-.header-icon-wrapper:active {
-
-  transform: scale(0.93);
-
-}
-
-
-/* Menu Icon */
-
-.header-icon-wrapper i {
-
-  font-size: 18px;
-
-  color: #15803d;
-
-}
-
-
-/* =========================================================
-   LONG LOGO CONTAINER
-========================================================= */
-
-.brand-container {
-
-  height: 50px;
-
-  flex: 1;
-
-  min-width: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: flex-start;
-
-  overflow: hidden;
-
-}
-
-
-/* =========================================================
-   LONG LOGO
-========================================================= */
-
-.brand-logo {
-
-  height: 48px;
-
-  width: auto;
-
-  max-width: 100%;
-
-  object-fit: contain;
-
-  object-position: left center;
-
-  display: block;
-
-  flex-shrink: 0;
-
-}
-
-
 /* =========================================================
    BALANCE CARD
 ========================================================= */
-
 .balance-card {
-
-  height: 44px;
-
-  min-width: 112px;
-
-  max-width: 145px;
-
-  padding: 4px 8px;
-
+  height: 36px;               /* হাইট কমিয়ে আরও ছোট করা হয়েছে */
+  min-width: 105px;           /* প্রস্থ কমানো হয়েছে */
+  max-width: 160px;
+  padding: 6px 10px 6px 10px; /* প্যাডিং ছোট করা হয়েছে */
+  margin-right: 10px;         /* কার্ডের বাইরে ডান পাশে হালকা ফাঁকা তৈরি করার জন্য */
   flex-shrink: 0;
-
   display: flex;
-
   align-items: center;
-
-  gap: 6px;
-
+  justify-content: center;
+  gap: 4px;
   background: #f0fdf4;
-
-  border: 1px solid #bbf7d0;
-
-  border-radius: 6px;
-
+  border: 2px solid #15803d;  /* সবুজ বর্ডার */
+  border-radius: 50px;        /* সম্পূর্ণ গোলাকার/Pill Shape */
   color: #166534;
-
   cursor: pointer;
-
   box-sizing: border-box;
-
   transition:
     background 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
-
 }
-
 
 /* Balance Hover */
 
 .balance-card:hover {
-
   background: #dcfce7;
-
-  box-shadow:
-    0 3px 8px rgba(22,163,74,0.12);
-
+  box-shadow: 0 3px 8px rgba(22,163,74,0.12);
 }
 
 
 /* Balance Click */
 
 .balance-card:active {
-
   transform: scale(0.95);
-
-}
-
-
-/* =========================================================
-   WALLET ICON
-========================================================= */
-
-.balance-icon {
-
-  width: 28px;
-
-  height: 28px;
-
-  min-width: 28px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: #dcfce7;
-
-  border-radius: 5px;
-
-}
-
-
-.balance-icon i {
-
-  color: #16a34a;
-
-  font-size: 13px;
-
 }
 
 
@@ -3451,19 +3180,12 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .balance-content {
-
   flex: 1;
-
   min-width: 0;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   overflow: hidden;
-
 }
 
 
@@ -3472,17 +3194,11 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .balance-tap {
-
   color: #15803d;
-
-  font-size: 10px;
-
+  font-size: 13px;            /* সাইজ ব্যালেন্সের সাথে মানানসই */
   font-weight: 700;
-
   line-height: 1;
-
   white-space: nowrap;
-
 }
 
 
@@ -3491,17 +3207,11 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .balance-amount {
-
   color: #166534;
-
-  font-size: 13px;
-
+  font-size: 15px;            /* ছোট কার্ডে সুন্দর দেখানোর জন্য ১৫px */
   font-weight: 800;
-
   line-height: 1;
-
   white-space: nowrap;
-
 }
 
 
@@ -3510,37 +3220,110 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .balance-hidden {
-
   display: none !important;
+}
 
+  
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.premium-header {
+  width: 100%;
+  height: 64px;
+  background: #ffffff;
+  padding: 7px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 0px;
+  border: none;
+  border-bottom: 1px solid #d1fae5;
+  box-shadow: 0 3px 14px rgba(0, 100, 45, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
 }
 
 
 /* =========================================================
-   BALANCE EYE
+   SLIDER / MENU BUTTON
 ========================================================= */
 
-.balance-eye {
-
-  width: 20px;
-
-  min-width: 20px;
-
+.header-icon-wrapper {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  flex-shrink: 0;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #15803d;
+  box-sizing: border-box;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
-.balance-eye i {
+/* Hover */
 
-  color: #16a34a;
+.header-icon-wrapper:hover {
+  background: #dcfce7;
+  box-shadow: 0 3px 8px rgba(22,163,74,0.15);
+}
 
-  font-size: 11px;
 
+/* Click */
+
+.header-icon-wrapper:active {
+  transform: scale(0.93);
+}
+
+
+/* Menu Icon */
+
+.header-icon-wrapper i {
+  font-size: 18px;
+  color: #15803d;
+}
+
+
+/* =========================================================
+   LONG LOGO CONTAINER
+========================================================= */
+
+.brand-container {
+  height: 50px;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LONG LOGO
+========================================================= */
+
+.brand-logo {
+  height: 48px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  flex-shrink: 0;
 }
 
 
@@ -3549,23 +3332,14 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .notification-container {
-
   width: 42px;
-
   height: 42px;
-
   min-width: 42px;
-
   flex-shrink: 0;
-
   position: relative;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
 }
 
 
@@ -3574,72 +3348,47 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .header-action {
-
   width: 42px;
-
   height: 42px;
-
   padding: 0;
-
   margin: 0;
-
   border: 1px solid #bbf7d0;
-
   outline: none;
-
   border-radius: 6px;
-
   background: #f0fdf4;
-
   color: #15803d;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   cursor: pointer;
-
   box-sizing: border-box;
-
   transition:
     background 0.2s ease,
     transform 0.2s ease,
     box-shadow 0.2s ease;
-
 }
 
 
 /* Notification Hover */
 
 .header-action:hover {
-
   background: #dcfce7;
-
-  box-shadow:
-    0 3px 8px rgba(22,163,74,0.15);
-
+  box-shadow: 0 3px 8px rgba(22,163,74,0.15);
 }
 
 
 /* Notification Click */
 
 .header-action:active {
-
   transform: scale(0.93);
-
 }
 
 
 /* Bell */
 
 .header-action i {
-
   color: #15803d;
-
   font-size: 17px;
-
 }
 
 
@@ -3648,191 +3397,90 @@ function toggleSignupPassword() {
 ========================================================= */
 
 .notification-dot {
-
   position: absolute;
-
   top: -2px;
-
   right: -2px;
-
   width: 15px;
-
   height: 15px;
-
   background: #ef4444;
-
   border: 1px solid #ffffff;
-
   border-radius: 50%;
-
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   color: #ffffff;
-
   font-size: 9px;
-
   font-weight: 800;
-
   line-height: 1;
-
-  box-shadow:
-    0 2px 5px rgba(0,0,0,0.18);
-
+  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
   pointer-events: none;
-
 }
 
 
 /* =========================================================
-   MOBILE HEADER
+   MOBILE HEADER RESPONSIVE
 ========================================================= */
 
 @media (max-width: 600px) {
-
   .premium-header {
-
     height: 60px;
-
     padding: 6px 7px;
-
     gap: 5px;
-
   }
-
 
   /* Slider */
-
   .header-icon-wrapper {
-
     width: 39px;
-
     height: 39px;
-
     min-width: 39px;
-
   }
-
 
   .header-icon-wrapper i {
-
     font-size: 16px;
-
   }
-
 
   /* Logo */
-
   .brand-container {
-
     height: 46px;
-
   }
-
 
   .brand-logo {
-
     height: 43px;
-
     max-width: 100%;
-
   }
 
+/* Balance Card */
+  .balance-card {
+    min-width: 55px;
+    height: 34px;
+    padding: 4px 28px 4px 8px;
 
-  /* Balance */
-
-  .balance-card {
-
-    min-width: 91px;
-
-    height: 40px;
-
-    padding: 3px 5px;
-
-    gap: 4px;
-
-  }
-
-
-  .balance-icon {
-
-    width: 25px;
-
-    height: 25px;
-
-    min-width: 25px;
-
-  }
-
-
-  .balance-icon i {
-
-    font-size: 11px;
-
-  }
+  }
 
 
   .balance-tap {
-
-    font-size: 9px;
-
+    font-size: 11px;
   }
-
 
   .balance-amount {
-
-    font-size: 11px;
-
+    font-size: 20px;
   }
-
-
-  .balance-eye {
-
-    width: 18px;
-
-    min-width: 18px;
-
-  }
-
-
-  .balance-eye i {
-
-    font-size: 10px;
-
-  }
-
 
   /* Notification */
-
   .notification-container {
-
     width: 39px;
-
     height: 39px;
-
     min-width: 39px;
-
   }
-
 
   .header-action {
-
     width: 39px;
-
     height: 39px;
-
   }
-
 
   .header-action i {
-
     font-size: 16px;
-
   }
-
 }
 
 
@@ -3841,52 +3489,28 @@ function toggleSignupPassword() {
 ========================================================= */
 
 @media (max-width: 390px) {
-
   .premium-header {
-
     padding-left: 5px;
-
     padding-right: 5px;
-
     gap: 4px;
-
   }
-
 
   .brand-logo {
-
-    height: 40px;
-
+    height: 38px;
   }
-
 
   .balance-card {
-
-    min-width: 86px;
-
+    min-width: 85px;
+    padding: 3px 8px 3px 6px;
   }
-
-
-  .balance-icon {
-
-    display: none;
-
-  }
-
 
   .balance-tap {
-
-    font-size: 8px;
-
+    font-size: 10px;
   }
-
 
   .balance-amount {
-
-    font-size: 10px;
-
+    font-size: 12px;
   }
-
 }
 
 
@@ -3895,37 +3519,24 @@ function toggleSignupPassword() {
 ========================================================= */
 
 @media (max-width: 340px) {
-
   .brand-logo {
-
-    height: 37px;
-
+    height: 34px;
   }
-
 
   .balance-card {
-
-    min-width: 80px;
-
-    padding-left: 4px;
-
-    padding-right: 4px;
-
+    min-width: 78px;
+    padding: 2px 6px 2px 5px;
   }
 
-
-  .balance-eye {
-
-    display: none;
-
+  .balance-tap {
+    font-size: 9px;
   }
 
+  .balance-amount {
+    font-size: 11px;
+  }
 }
-
 </style>
-
-
-
 <!-- =========================================================
      BALANCE JAVASCRIPT
 ========================================================= -->
@@ -4413,7 +4024,6 @@ function toggleSidebar() {
     }
 </style>
 
-
 <!-- Swiper CSS (হেড সেকশনে যদি আগে যোগ না করে থাকেন) -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -4468,6 +4078,160 @@ function toggleSidebar() {
     });
 </script>
 
+
+<!-- =========================================================
+     TICKER WITH NOTIFICATION (HTML & CSS TOGETHER)
+========================================================= -->
+
+<style>
+/* টিকার আউটসাইড কন্টেইনার (দুই পাশে ফাঁকা রাখার জন্য) */
+.ticker-container-box {
+  width: 100%;
+  padding: 10px 15px; /* কভার ফটোর সাথে মিলিয়ে ২ পাশে ১৫px প্যাডিং */
+  box-sizing: border-box;
+}
+
+/* টিকার কন্টেইনার */
+.ticker-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: #ffffff;             /* ব্যাকগ্রাউন্ড সাদা */
+  border: 1px solid #15803d;      /* সবুজ বর্ডার */
+  border-radius: 6px;
+  padding: 6px 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* বামপাশের আপডেট লেবেল */
+.ticker-label {
+  font-weight: bold;
+  white-space: nowrap;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #15803d;                 /* লেবেল ও আইকন সবুজ */
+  font-size: 14px;
+}
+
+/* মাঝখানের রানিং টেক্সট কন্টেইনার */
+.ticker-content-wrapper {
+  flex-grow: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-content {
+  display: inline-block;
+  animation: ticker 15s linear infinite;
+}
+
+.ticker-content span {
+  margin-right: 30px;
+  color: #166534;                 /* টেক্সট কালার */
+  font-size: 14px;
+}
+
+/* রানিং টেক্সটের ভেতরের আইকন */
+.ticker-content i {
+  color: #15803d !important;      /* সবুজ আইকন */
+  margin-right: 5px;
+}
+
+/* ডানপাশের নোটিফিকেশন আইকন কন্টেইনার */
+.ticker-notification {
+  margin-left: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* নোটিফিকেশন বাটন */
+.notification-btn {
+  background: #ffffff;            /* ব্যাকগ্রাউন্ড সাদা */
+  border: 1px solid #15803d;      /* সবুজ বর্ডার */
+  border-radius: 50%;             /* গোলাকার শেপ */
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  color: #15803d;                 /* নোটিফিকেশন আইকন সবুজ */
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.notification-btn:hover {
+  background: #f0fdf4;            /* হোভার করলে হালকা সবুজ ব্যাকগ্রাউন্ড */
+}
+
+/* নোটিফিকেশন ডট / ব্যাজ */
+.notification-dot {
+  position: absolute;
+  top: -3px;
+  right: -3px;
+  background: #ef4444;            /* লাল নোটিফিকেশন ডট */
+  color: white;
+  border: 1px solid #ffffff;
+  border-radius: 50%;
+  padding: 2px 5px;
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* অ্যানিমেশন */
+@keyframes ticker {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
+
+<!-- টিকার HTML অংশ (দুই পাশে ফাঁকা সহ) -->
+<div class="ticker-container-box">
+  <div class="ticker-wrapper">
+    <!-- বামপাশের আপডেট অংশ -->
+    <div class="ticker-label">
+      <i class="fas fa-bullhorn"></i> নোটিশ:
+    </div>
+
+    <!-- মাঝখানের রানিং টেক্সট -->
+    <div class="ticker-content-wrapper">
+      <div class="ticker-content">
+        <span><i class="fas fa-bell"></i> স্বাগতম! আমাদের প্ল্যাটফর্মে যুক্ত হওয়ার জন্য আপনাকে ধন্যবাদ।</span>
+        <span><i class="fas fa-bell"></i> প্রতিদিন নতুন নতুন কাজ দেওয়া হয়, কাজ শেষ করে সাথে সাথেই পেমেন্ট নিন।</span>
+        <span><i class="fas fa-bell"></i> বন্ধুদের রেফার করে জিতে নিন আকর্ষণীয় বোনাস!</span>
+      </div>
+    </div>
+
+    <!-- ডানপাশের নোটিফিকেশন আইকন -->
+    <div class="ticker-notification">
+      <button
+        type="button"
+        onclick="openCustomNotification(event)"
+        class="notification-btn"
+        title="Notifications"
+        aria-label="Notifications"
+      >
+        <i class="fas fa-bell"></i>
+        <span id="custom-noti-dot" class="notification-dot">1</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
 
 
 <div id="settingsModal" class="modal-overlay" 
