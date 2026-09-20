@@ -16,7 +16,7 @@
     opacity: 0.9;
 }
         :root { --main: #6c5ce7; --bg: #f4f7fe; --card: #ffffff; --text: #2d3436; --bkash: #e2136e; --nagad: #f7941d; --rocket: #8c3494; }
-        body { background-color: var(--bg); font-family: 'Poppins', 'Hind Siliguri', sans-serif; padding-bottom: 90px; color: var(--text); overflow-x: hidden; }
+        html, body { background-color: var(--bg); } body { background-color: var(--bg); font-family: 'Poppins', 'Hind Siliguri', sans-serif; padding-bottom: 90px; color: var(--text); overflow-x: hidden; }
 
         #loader-overlay { position: fixed; inset: 0; background: rgba(255,255,255,0.9); display: none; align-items: center; justify-content: center; z-index: 10000; backdrop-filter: blur(8px); }
         .spinner { width: 45px; height: 45px; border: 4px solid #eee; border-top: 4px solid var(--main); border-radius: 50%; animation: spin 0.8s linear infinite; }
@@ -12653,15 +12653,35 @@ async function handleAuth(m) {
             return false;
         }
 
-        // ২) সবচেয়ে গুরুত্বপূর্ণ: Login ছাড়াই SheetDB-এর latest balance/status sync।
-        const sheetUser = await syncUserFromSheet(email);
-        if (sheetUser) user = sheetUser;
-
-        // ৩) Fresh user cache করে সরাসরি Home।
+        // ২) IMPORTANT: cached/local user-কে আগে দেখাই।
+        // এতে refresh-এর সময় Google Sheet response-এর জন্য Home আটকে থাকবে না।
         cacheUser(user);
 
         if (showLoggedInApp(user)) {
             history.replaceState({ page: 'p-home' }, '', '#home');
+        }
+
+        // ৩) Google Sheet থেকে latest balance/status background-এ sync হবে।
+        // Home already visible থাকবে, তাই সাদা screen / loading jump হবে না।
+        try {
+            const sheetUser = await syncUserFromSheet(email);
+            if (sheetUser) {
+                user = sheetUser;
+                cacheUser(user);
+
+                // Background sync শেষ হলে শুধু প্রয়োজনীয় UI update।
+                if (typeof curUser !== 'undefined') curUser = user;
+                if (typeof renderUser === 'function') renderUser();
+
+                const balEl = document.getElementById('user-balance');
+                const uBalEl = document.getElementById('u-bal');
+                const freshBal = parseFloat(user.bal || 0).toFixed(2);
+                if (balEl) balEl.innerText = freshBal + " BDT";
+                if (uBalEl) uBalEl.innerText = freshBal;
+                if (typeof updateUIBalance === 'function') updateUIBalance();
+            }
+        } catch (e) {
+            console.warn('Background Sheet sync failed; cached Home remains active.', e);
         }
 
         return true;
@@ -14176,9 +14196,13 @@ function controlSplashScreen() {
     }, 2500); // ২.৫ সেকেন্ড পর
 }
 
-// পেজ লোড হলে স্প্ল্যাশ স্ক্রিন কন্ট্রোল করা
+// Refresh-এর সময় splash/loader যেন Home-কে ঢেকে না রাখে।
 window.addEventListener('load', function() {
-    controlSplashScreen();
+    const splash = document.getElementById('splash-screen');
+    if (splash) {
+        splash.style.display = 'none';
+        splash.classList.add('fade-out-splash');
+    }
 });
 function togglePass(inputId, iconId) {
     let input = document.getElementById(inputId);
@@ -18859,7 +18883,6 @@ window.onload = () => {
 
 </body>
 </html>
-
 
 
 
