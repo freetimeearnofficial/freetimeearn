@@ -2942,328 +2942,64 @@ function toggleSignupPassword() {
     }
 </style>
 <div id="user-app" class="d-none"> <div id="p-home-main"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+
 <!-- =========================================================
-     FREE TIME EARN - PREMIUM HEADER
+     FREE TIME EARN - PREMIUM HEADER (FIXED & SPACED)
 ========================================================= -->
-
-<style>
-/* =====================================================
-   DARK GREEN THEME STYLES
-====================================================== */
-
-/* গ্লোবাল গাড় সবুজ কালার ভ্যারিয়েবল */
-:root {
-  --dark-green-primary: #024a29;   /* মূল গাড় সবুজ */
-  --dark-green-secondary: #01331c; /* অতিরিক্ত গাড় সবুজ (গ্র্যাডিয়েন্টের জন্য) */
-  --dark-green-light: #e6f4ed;     /* হালকা ব্যাকগ্রাউন্ড শেড */
-  --dark-green-border: #a3d9bc;    /* বর্ডার কালার */
-  --accent-gold: #ffc107;          /* নোটিফিকেশন ব্যাজের হাইলাইট */
-}
-
-/* প্রিমিয়াম হেডার কন্টেইনার */
-.premium-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-  background: #ffffff;
-  box-shadow: 0 4px 15px rgba(2, 74, 41, 0.08);
-  position: relative;
-}
-
-/* বাম পাশের মেনু আইকন */
-.header-icon-wrapper {
-  font-size: 20px;
-  color: var(--dark-green-primary);
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-}
-
-.header-icon-wrapper:hover {
-  background-color: var(--dark-green-light);
-  color: var(--dark-green-secondary);
-}
-
-/* লোগো কন্টেইনার */
-.brand-container .brand-logo {
-  height: 38px;
-  object-fit: contain;
-}
-
-/* ব্যালেন্স কার্ড (গাড় সবুজ ব্যাকগ্রাউন্ড ও টেক্সট) */
-.balance-card {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(135deg, var(--dark-green-primary), var(--dark-green-secondary));
-  padding: 6px 14px;
-  border-radius: 20px;
-  color: #ffffff;
-  cursor: pointer;
-  box-shadow: 0 3px 10px rgba(2, 74, 41, 0.25);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.balance-card:active {
-  transform: scale(0.96);
-}
-
-/* ব্যালেন্স আইকন */
-.balance-icon i {
-  font-size: 14px;
-  color: #ffffff;
-}
-
-/* ব্যালেন্স কন্টেন্ট ও টেক্সট */
-.balance-content {
-  font-family: 'Hind Siliguri', sans-serif;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.3px;
-}
-
-.balance-tap {
-  color: #ffffff;
-}
-
-.balance-amount {
-  color: #ffffff;
-}
-
-.balance-hidden {
-  display: none;
-}
-
-/* আই আইকন */
-.balance-eye i {
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* নোটিফিকেশন বাটন */
-.notification-container .header-action {
-  position: relative;
-  background: var(--dark-green-light);
-  border: none;
-  outline: none;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dark-green-primary);
-  font-size: 18px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.notification-container .header-action:hover {
-  background-color: var(--dark-green-primary);
-  color: #ffffff;
-}
-
-/* নোটিফিকেশন ডট/সংখ্যা */
-.notification-dot {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: #d9534f; /* নোটিফিকেশন রেড ডট */
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: bold;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #ffffff;
-}
-</style>
-
 <nav class="premium-header" id="premiumHeader">
-
-  <!-- =====================================================
-        LEFT : SLIDER / MENU
-  ====================================================== -->
-  <div
-    class="header-icon-wrapper"
-    onclick="toggleSidebar()"
-    title="Menu"
-    aria-label="Open Menu"
-  >
+  <!-- Sidebar Menu Button -->
+  <div class="header-icon-wrapper" onclick="toggleSidebar()" title="Menu">
     <i class="fas fa-bars"></i>
   </div>
 
-
-  <!-- =====================================================
-        CENTER : LONG LOGO ONLY
-  ====================================================== -->
+  <!-- Brand Logo -->
   <div class="brand-container">
-    <img
-      src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260917_163625_976.png"
-      alt="Free Time Earn"
-      class="brand-logo"
-    >
+    <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/IMG_20260917_163625_976.png" alt="Free Time Earn" class="brand-logo">
   </div>
 
-
-  
-  
-  <!-- =====================================================
-      BALANCE CARD
-====================================================== -->
-<div
-  class="balance-card"
-  onclick="toggleBalance()"
-  title="Tap Balance"
-  role="button"
->
-  <!-- Balance Content -->
-  <div class="balance-content">
-    <!-- প্রথমে এই লেখা দেখা যাবে -->
-    <div id="balance-text" class="balance-tap">
-      Tap Balance
+  <!-- Right Side Actions (Balance & Notification) -->
+  <div class="header-right-actions">
+    <div class="balance-card" onclick="toggleBalance()" title="Tap Balance">
+      <div class="balance-content">
+        <span id="balance-text" class="balance-tap">Tap Balance</span>
+        <span id="balance-amount" class="balance-amount balance-hidden">৳ <span id="u-bal">0.00</span></span>
+      </div>
     </div>
-
-    <!-- Tap করলে এই Balance দেখা যাবে -->
-    <div id="balance-amount" class="balance-amount balance-hidden">
-      ৳ <span id="u-bal">0.00</span>
-    </div>
-  </div>
-</div>
-
 
 </nav>
 
-<!-- =========================================================
-     HEADER CSS
-========================================================= -->
-
 <style>
 /* =========================================================
-   BALANCE CARD
+   DARK GREEN THEME & HEADER STYLES
 ========================================================= */
-.balance-card {
-  height: 36px;               /* হাইট কমিয়ে আরও ছোট করা হয়েছে */
-  min-width: 105px;           /* প্রস্থ কমানো হয়েছে */
-  max-width: 160px;
-  padding: 6px 10px 6px 10px; /* প্যাডিং ছোট করা হয়েছে */
-  margin-right: 10px;         /* কার্ডের বাইরে ডান পাশে হালকা ফাঁকা তৈরি করার জন্য */
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  background: #f0fdf4;
-  border: 2px solid #15803d;  /* সবুজ বর্ডার */
-  border-radius: 50px;        /* সম্পূর্ণ গোলাকার/Pill Shape */
-  color: #166534;
-  cursor: pointer;
-  box-sizing: border-box;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+:root {
+  --dark-green-primary: #024a29;
+  --dark-green-secondary: #01331c;
+  --dark-green-light: #e6f4ed;
+  --dark-green-border: #a3d9bc;
 }
-
-/* Balance Hover */
-
-.balance-card:hover {
-  background: #dcfce7;
-  box-shadow: 0 3px 8px rgba(22,163,74,0.12);
-}
-
-
-/* Balance Click */
-
-.balance-card:active {
-  transform: scale(0.95);
-}
-
-
-/* =========================================================
-   BALANCE CONTENT
-========================================================= */
-
-.balance-content {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-
-/* =========================================================
-   TAP BALANCE TEXT
-========================================================= */
-
-.balance-tap {
-  color: #15803d;
-  font-size: 13px;            /* সাইজ ব্যালেন্সের সাথে মানানসই */
-  font-weight: 700;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-
-/* =========================================================
-   REAL BALANCE
-========================================================= */
-
-.balance-amount {
-  color: #166534;
-  font-size: 15px;            /* ছোট কার্ডে সুন্দর দেখানোর জন্য ১৫px */
-  font-weight: 800;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-
-/* =========================================================
-   HIDDEN BALANCE
-========================================================= */
-
-.balance-hidden {
-  display: none !important;
-}
-
-  
-/* =========================================================
-   MAIN HEADER
-========================================================= */
 
 .premium-header {
   width: 100%;
   height: 64px;
   background: #ffffff;
-  padding: 7px 10px;
+  padding: 0 14px; /* বাম ও ডানে পর্যাপ্ত স্পেস */
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-radius: 0px;
-  border: none;
+  justify-content: space-between;
+  gap: 12px;
   border-bottom: 1px solid #d1fae5;
   box-shadow: 0 3px 14px rgba(0, 100, 45, 0.12);
   position: sticky;
   top: 0;
   z-index: 1000;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', 'Hind Siliguri', sans-serif;
   overflow: hidden;
 }
 
-
-/* =========================================================
-   SLIDER / MENU BUTTON
-========================================================= */
-
+/* Sidebar Menu Icon Wrapper (ফাঁকা মার্জিনসহ) */
 .header-icon-wrapper {
   width: 42px;
   height: 42px;
@@ -3274,461 +3010,228 @@ function toggleSignupPassword() {
   justify-content: center;
   background: #f0fdf4;
   border: 1px solid #bbf7d0;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   color: #15803d;
-  box-sizing: border-box;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  margin-right: 4px; /* আইকনের পাশে ফাঁকা মার্জিন */
+  transition: all 0.2s ease;
 }
-
-
-/* Hover */
 
 .header-icon-wrapper:hover {
   background: #dcfce7;
   box-shadow: 0 3px 8px rgba(22,163,74,0.15);
 }
 
-
-/* Click */
-
 .header-icon-wrapper:active {
   transform: scale(0.93);
 }
-
-
-/* Menu Icon */
 
 .header-icon-wrapper i {
   font-size: 18px;
   color: #15803d;
 }
 
-
-/* =========================================================
-   LONG LOGO CONTAINER
-========================================================= */
-
+/* Brand Logo Container */
 .brand-container {
-  height: 50px;
   flex: 1;
-  min-width: 0;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   overflow: hidden;
+  margin-left: 4px;
 }
 
-
-/* =========================================================
-   LONG LOGO
-========================================================= */
-
 .brand-logo {
-  height: 48px;
+  height: 42px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  object-position: left center;
-  display: block;
+}
+
+/* Right Actions Container (Balance + Notification) */
+.header-right-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* ব্যালেন্স এবং নোটিফিকেশনের মাঝে ফাঁকা জায়গা */
   flex-shrink: 0;
 }
 
+/* Balance Card (ডান পাশে ও অন্যান্য উপাদানের মাঝে ফাঁকা মার্জিন) */
+.balance-card {
+  height: 38px;
+  min-width: 95px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+  border: 2px solid #15803d;
+  border-radius: 50px;
+  color: #166534;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
 
-/* =========================================================
-   NOTIFICATION CONTAINER
-========================================================= */
+.balance-card:hover {
+  background: #dcfce7;
+  box-shadow: 0 3px 8px rgba(22,163,74,0.12);
+}
 
+.balance-card:active {
+  transform: scale(0.95);
+}
+
+.balance-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balance-tap {
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.balance-amount {
+  color: #166534;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.balance-hidden {
+  display: none !important;
+}
+
+/* Notification Container & Button */
 .notification-container {
-  width: 42px;
-  height: 42px;
-  min-width: 42px;
-  flex-shrink: 0;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-/* =========================================================
-   NOTIFICATION BUTTON
-========================================================= */
-
 .header-action {
   width: 42px;
   height: 42px;
   padding: 0;
-  margin: 0;
   border: 1px solid #bbf7d0;
-  outline: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #f0fdf4;
   color: #15803d;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-sizing: border-box;
-  transition:
-    background 0.2s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
-
-
-/* Notification Hover */
 
 .header-action:hover {
   background: #dcfce7;
   box-shadow: 0 3px 8px rgba(22,163,74,0.15);
 }
 
-
-/* Notification Click */
-
-.header-action:active {
-  transform: scale(0.93);
-}
-
-
-/* Bell */
-
 .header-action i {
+  font-size: 16px;
   color: #15803d;
-  font-size: 17px;
 }
-
-
-/* =========================================================
-   NOTIFICATION RED DOT
-========================================================= */
 
 .notification-dot {
   position: absolute;
   top: -2px;
   right: -2px;
-  width: 15px;
-  height: 15px;
+  width: 16px;
+  height: 16px;
   background: #ef4444;
-  border: 1px solid #ffffff;
-  border-radius: 50%;
+  border: 2px solid #ffffff;
+  border-radius:50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-size: 9px;
   font-weight: 800;
-  line-height: 1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.18);
-  pointer-events: none;
 }
 
-
-/* =========================================================
-   MOBILE HEADER RESPONSIVE
-========================================================= */
-
-@media (max-width: 600px) {
+/* Responsive Adjustments */
+@media (max-width: 480px) {
   .premium-header {
-    height: 60px;
-    padding: 6px 7px;
-    gap: 5px;
+    padding: 0 10px;
+    gap: 8px;
   }
-
-  /* Slider */
   .header-icon-wrapper {
-    width: 39px;
-    height: 39px;
-    min-width: 39px;
-  }
-
-  .header-icon-wrapper i {
-    font-size: 16px;
-  }
-
-  /* Logo */
-  .brand-container {
-    height: 46px;
-  }
-
-  .brand-logo {
-    height: 43px;
-    max-width: 100%;
-  }
-
-/* Balance Card */
-  .balance-card {
-    min-width: 55px;
-    height: 34px;
-    padding: 4px 28px 4px 8px;
-
-  }
-
-
-  .balance-tap {
-    font-size: 11px;
-  }
-
-  .balance-amount {
-    font-size: 20px;
-  }
-
-  /* Notification */
-  .notification-container {
-    width: 39px;
-    height: 39px;
-    min-width: 39px;
-  }
-
-  .header-action {
-    width: 39px;
-    height: 39px;
-  }
-
-  .header-action i {
-    font-size: 16px;
-  }
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 390px) {
-  .premium-header {
-    padding-left: 5px;
-    padding-right: 5px;
-    gap: 4px;
-  }
-
-  .brand-logo {
+    width: 38px;
     height: 38px;
+    min-width: 38px;
   }
-
-  .balance-card {
-    min-width: 85px;
-    padding: 3px 8px 3px 6px;
-  }
-
-  .balance-tap {
-    font-size: 10px;
-  }
-
-  .balance-amount {
-    font-size: 12px;
-  }
-}
-
-
-/* =========================================================
-   VERY SMALL SCREEN
-========================================================= */
-
-@media (max-width: 340px) {
   .brand-logo {
-    height: 34px;
+    height: 36px;
   }
-
   .balance-card {
-    min-width: 78px;
-    padding: 2px 6px 2px 5px;
+    height: 34px;
+    min-width: 85px;
+    padding: 0 10px;
   }
-
-  .balance-tap {
-    font-size: 9px;
-  }
-
-  .balance-amount {
-    font-size: 11px;
+  .header-action {
+    width: 38px;
+    height: 38px;
   }
 }
 </style>
-<!-- =========================================================
-     BALANCE JAVASCRIPT
-========================================================= -->
 
 <script>
-
-/*
-=========================================================
-BALANCE SYSTEM
-
-Default:
-Tap Balance
-
-Tap করলে:
-Balance দেখাবে
-
-৫ সেকেন্ড পরে:
-আবার Tap Balance দেখাবে
-=========================================================
-*/
-
-
+/* =========================================================
+   BALANCE JAVASCRIPT LOGIC
+========================================================= */
 let balanceTimer = null;
 
+function formatBalance(){
+  let balEl = document.getElementById('u-bal');
+  if(!balEl) return;
+  let raw = balEl.innerText.replace(/,/g,'');
+  let num = parseFloat(raw) || 0;
+  balEl.innerText = num.toLocaleString('en-BD', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
 
 function toggleBalance() {
+  const tapText = document.getElementById("balance-text");
+  const amount = document.getElementById("balance-amount");
 
-  const tapText =
-    document.getElementById("balance-text");
-
-  const balance =
-    document.getElementById("balance-amount");
-
-  const eye =
-    document.getElementById("balance-eye");
-
-
-  /* Element না থাকলে stop */
-
-  if (!tapText || !balance) {
-    return;
-  }
-
-
-  /* আগের Timer থাকলে বন্ধ */
+  if (!tapText || !amount) return;
 
   if (balanceTimer) {
-
     clearTimeout(balanceTimer);
-
     balanceTimer = null;
-
   }
 
-
-  /* Tap Balance hide */
-
-  tapText.style.display = "none";
-
-
-  /* Balance show */
-
-  balance.classList.remove("balance-hidden");
-
-
-  /* Eye icon পরিবর্তন */
-
-  if (eye) {
-
-    eye.classList.remove("fa-eye");
-
-    eye.classList.add("fa-eye-slash");
-
-  }
-
-
-  /*
-  =====================================================
-  ৫ সেকেন্ড পরে আবার Tap Balance
-  =====================================================
-  */
+  formatBalance();
+  tapText.classList.add("balance-hidden");
+  amount.classList.remove("balance-hidden");
 
   balanceTimer = setTimeout(function() {
-
-    /* Balance hide */
-
-    balance.classList.add("balance-hidden");
-
-
-    /* Tap Balance show */
-
-    tapText.style.display = "block";
-
-
-    /* Eye আবার normal */
-
-    if (eye) {
-
-      eye.classList.remove("fa-eye-slash");
-
-      eye.classList.add("fa-eye");
-
-    }
-
-
+    amount.classList.add("balance-hidden");
+    tapText.classList.remove("balance-hidden");
     balanceTimer = null;
-
   }, 5000);
-
 }
-
-
-
-/*
-=========================================================
-SET USER BALANCE
-
-আপনার website-এর JavaScript থেকে
-এই function call করলে balance পরিবর্তন হবে।
-
-Example:
-
-setUserBalance(710);
-
-তাহলে দেখাবে:
-
-৳ 710.00
-=========================================================
-*/
 
 function setUserBalance(amount) {
-
-  const balance =
-    document.getElementById("userBalance");
-
-
-  if (!balance) {
-    return;
-  }
-
-
-  /* Number format */
-
-  const numericAmount =
-    Number(amount);
-
-
-  if (isNaN(numericAmount)) {
-
-    balance.textContent = "0.00";
-
-    return;
-
-  }
-
-
-  balance.textContent =
-    numericAmount.toFixed(2);
-
+  const balEl = document.getElementById("u-bal");
+  if (!balEl) return;
+  let numericAmount = Number(amount);
+  if (isNaN(numericAmount)) numericAmount = 0;
+  balEl.textContent = numericAmount.toFixed(2);
+  formatBalance();
 }
 
-
-/*
-=========================================================
-DEFAULT BALANCE
-
-আপনার actual balance system থাকলে
-এই লাইনটি আপনার existing balance
-system দিয়ে replace করতে পারবেন।
-
-Example:
-
-setUserBalance(user.balance);
-=========================================================
-*/
-
-
-// setUserBalance(0);
-
+document.addEventListener('DOMContentLoaded', formatBalance);
 </script>
 
+
+  
 <div id="custom-noti-popup-overlay" onclick="closeCustomNotification(event)" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 99998; align-items: center; justify-content: center; padding: 15px; box-sizing: border-box;">
 <div id="custom-noti-popup" class="aypoth-popup-box" onclick="event.stopPropagation()" style="position: relative; width: 100%; max-width: 380px; background: white; color: #333; border-radius: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.2); padding: 14px; z-index: 99999; border: 1px solid rgba(0,0,0,0.1); box-sizing: border-box; animation: popupScale 0.3s ease; font-family: 'Poppins', sans-serif;">
         
@@ -4043,8 +3546,10 @@ function toggleSidebar() {
     <div class="swiper-wrapper">
         <!-- প্রথম স্লাইড -->
         <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/49afcce7-65dc-494f-abd3-e3b322d20140.png
-            " style="width: 100%; display: block; border-radius: 8px;">
+
+    <img src="https://raw.githubusercontent.com/freetimeearnofficial/freetimeearn/refs/heads/main/9cc24ed6-c233-4eae-8ede-d8f13a2d8064.png" style="width: 100%; display: block; border-radius: 8px;">
+        
+        
         </div>
         
 
@@ -6407,128 +5912,132 @@ function showCompanyTerms(){
     #activation-card button:active {
         transform: scale(0.95);
         background: #f0f0f0 !important;
+
     }
 </style>
 
 <div class="container mt-2" style="padding: 0 16px; font-family: 'Poppins', sans-serif;">
-<style>
+
+
+  <style>
 @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@600;700&family=Poppins:wght@600;700&display=swap');
 
-/* মূল বাইরের বড় কার্ড (ফুল উইডথ ও সাইড প্যাডিং ছাড়া) */
+/* মূল বাইরের কার্ড - প্রিমিয়াম গ্রিন গ্রেডিয়েন্ট ও গ্লাস ইফেক্ট */
 .main-wrapper-card {
   width: 100%;
   box-sizing: border-box;
-  background: linear-gradient(145deg, #ffffff 0%, #f4fbf7 100%);
-  border-radius: 20px;
-  padding: 16px 8px;
-  border: 1px solid #d4edda;
-  box-shadow: 0 10px 30px rgba(0, 80, 35, 0.08);
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border-radius: 24px;
+  padding: 18px 10px;
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 12px 35px rgba(22, 163, 74, 0.12);
   position: relative;
   overflow: hidden;
 }
 
-/* ৩ কলামের গ্রিড (স্পেস অপটিমাইজড) */
+/* ৩ কলামের গ্রিড */
 .premium-grid-3col {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 10px;
 }
 
-/* বাটন কার্ড ও এনিমেশন */
+/* প্রিমিয়াম বাটন কার্ড */
 .premium-card {
   position: relative;
   background: #ffffff;
-  border-radius: 14px 4px 14px 4px;
-  padding: 12px 2px 8px;
+  border-radius: 16px;
+  padding: 14px 4px 10px;
   text-align: center;
   cursor: pointer;
-  border: 1.2px solid #c8e6c9;
-  box-shadow: 0 4px 10px rgba(0, 100, 40, 0.05);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1.5px solid #e2f8eb;
+  box-shadow: 0 6px 15px rgba(22, 163, 74, 0.06);
+  transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 90px;
+  min-height: 95px;
 }
 
+/* কার্ডের ওপর প্রিমিয়াম রঙিন লাইন */
 .premium-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 3.5px;
-  background: linear-gradient(90deg, #00b09b, #0a7a42, #96c93d);
-  border-radius: 14px 4px 0 0;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981, #059669);
+  border-radius: 0 0 4px 4px;
+  opacity: 0.8;
+  transition: all 0.3s ease;
 }
 
 /* মাউস/টাচ এনিমেশন */
 .premium-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(10, 122, 66, 0.15);
-  border-color: #81c784;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.18);
+  border-color: #86efac;
+  background: linear-gradient(180deg, #ffffff 0%, #f7fee7 100%);
+}
+
+.premium-card:hover::before {
+  left: 5%;
+  right: 5%;
+  opacity: 1;
 }
 
 .premium-card:active {
-  transform: scale(0.93);
-  box-shadow: 0 2px 6px rgba(10, 122, 66, 0.1);
+  transform: scale(0.95);
+  box-shadow: 0 3px 8px rgba(22, 163, 74, 0.1);
 }
 
-/* ডায়মন্ড আইকন বক্স */
+/* ইউনিক আইকন বক্স (গোল ও গ্রিন থিম) */
 .icon-box {
-  width: 38px;
-  height: 38px;
-  margin: 2px auto 8px;
-  background: linear-gradient(135deg, #022c1a 0%, #0a7a42 50%, #1eb85e 100%);
-  border-radius: 10px;
-  transform: rotate(45deg);
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 8px;
+  background: linear-gradient(145deg, #059669 0%, #047857 100%);
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(10, 122, 66, 0.22);
+  box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
   position: relative;
   flex-shrink: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .premium-card:hover .icon-box {
-  transform: rotate(45deg) scale(1.08);
+  transform: scale(1.1) rotate(5deg);
+  background: linear-gradient(145deg, #10b981 0%, #059669 100%);
 }
 
 .icon-box svg {
-  width: 19px;
-  height: 19px;
-  fill: white;
-  transform: rotate(-45deg);
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
 }
 
-.icon-box::after {
-  content: '';
-  position: absolute;
-  width: 44px;
-  height: 44px;
-  border: 1px dashed rgba(10, 122, 66, 0.25);
-  border-radius: 12px;
-}
-
+/* টেক্সট ডিজাইন */
 .premium-card span {
   display: block;
   font-family: 'Hind Siliguri', 'Poppins', sans-serif;
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  color: #0e2e1e;
-  line-height: 1.2;
+  color: #064e3b;
+  line-height: 1.3;
 }
 
+/* রেসপন্সিভ ডিজাইন */
 @media (max-width: 360px) {
-  .main-wrapper-card { padding: 12px 4px; }
-  .premium-grid-3col { gap: 6px; }
-  .icon-box { width: 32px; height: 32px; margin-bottom: 6px; }
-  .icon-box svg { width: 16px; height: 16px; }
-  .icon-box::after { width: 38px; height: 38px; }
-  .premium-card span { font-size: 9.5px; }
-  .premium-card { padding: 10px 1px 6px; min-height: 80px; }
+  .main-wrapper-card { padding: 12px 6px; }
+  .premium-grid-3col { gap: 8px; }
+  .icon-box { width: 34px; height: 34px; margin-bottom: 6px; border-radius: 10px; }
+  .icon-box svg { width: 17px; height: 17px; }
+  .premium-card span { font-size: 10px; }
+  .premium-card { padding: 10px 2px 8px; min-height: 85px; }
 }
 </style>
 
@@ -6623,15 +6132,15 @@ function showCompanyTerms(){
       </div>
       <span>সোশাল সার্ভিস</span>
     </div>
-<!-- ১২. ক্যাপচা টাইপিং -->
-<div class="premium-card" onclick="handleCaptchaClick()">
-  <div class="icon-box" style="background: linear-gradient(135deg, #16a34a 0%, #15803d 100%); color: white; border: none; box-shadow: 0 4px 12px rgba(22,163,74,0.3);">
-    <i class="fas fa-keyboard" style="font-size: 22px; color: white;"></i>
-  </div>
-  <span>ক্যাপচা টাইপিং</span>
-</div>
 
-    
+    <!-- ১২. ক্যাপচা টাইপিং -->
+    <div class="premium-card" onclick="handleCaptchaClick()">
+      <div class="icon-box">
+        <svg viewBox="0 0 24 24"><path d="M20 5H4c-1.1 0-1.99.9-1.99 2L2 17c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-9 3h2v2h-2V8zm0 3h2v2h-2v-2zM8 8h2v2H8V8zm0 3h2v2H8v-2zm-1 2H5v-2h2v2zm0-3H5V8h2v2zm9 7H8v-2h8v2zm0-4h-2v-2h2v2zm0-3h-2V8h2v2z"/></svg>
+      </div>
+      <span>ক্যাপচা টাইপিং</span>
+    </div>
+
     <!-- ১৩. টারগেট বোনাস -->
     <div class="premium-card" onclick="handleTargetBonusClick()">
       <div class="icon-box">
@@ -6648,594 +6157,688 @@ function showCompanyTerms(){
       <span>লিডারশীপ</span>
     </div>
 
-    <!-- ১৫. আরো দেখুন -->
-    <div class="premium-card" onclick="handleSeeMoreClick()">
-      <div class="icon-box">
-        <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm-6 6a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0z"/></svg>
-      </div>
-      <span>আরো দেখুন</span>
-    </div>
+   
 
+  <!-- ১৫. আরো দেখুন -->
+<div class="premium-card" onclick="handleSeeMoreClick()">
+  <div class="icon-box">
+    <svg viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm-6 6a2 2 0 1 0 0 4 2 2 0 0 0-4 0zm6 0a2 2 0 1 0 0 4 2 2 0 0 0-4 0z"/></svg>
   </div>
+  <span>আরো দেখুন</span>
 </div>
-  <!-- =========================================================
-     CSS
-========================================================= -->
 
 <style>
+/* =========================================================
+   FREE TIME EARN — PREMIUM GREEN SIDEBAR (FIXED)
+   ========================================================= */
 
-*{
-    box-sizing:border-box;
+:root{
+    --green:#00a86b;
+    --green-dark:#006b45;
+    --green-deep:#003d2a;
+    --green-light:#e9fff5;
+    --text:#17211d;
+    --muted:#718078;
+    --border:#e5eee9;
 }
 
-/* Main Grid */
-.service-section-container{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:12px;
+/* ---------- OVERLAY ---------- */
+
+.sidebar-overlay{
+    position:fixed;
+    inset:0;
     width:100%;
-    margin:0 0 25px;
-    padding:0;
+    height:100%;
+    background:rgba(0,15,10,0.65);
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
+    opacity:0;
+    visibility:hidden;
+    z-index:9998;
+    transition: opacity .35s ease, visibility .35s ease;
 }
 
-/* Section Heading */
-.section-header-box{
-    grid-column:1/-1;
-    width:100%;
-    margin:14px 0 2px;
-    padding:0 0 8px;
-    border-bottom:2px solid #f1f1f1;
+.sidebar-overlay.active{
+    opacity:1;
+    visibility:visible;
 }
 
-.section-header-box h2{
-    margin:0;
-    font-family:'Hind Siliguri','Poppins',sans-serif;
-    font-size:16px;
-    line-height:1.4;
-    font-weight:800;
-    color:#222;
+
+/* ---------- DRAWER (Fixed white space bug) ---------- */
+
+.side-drawer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:305px;
+    max-width:86vw;
+    height:100vh;
+    z-index:9999;
+    pointer-events:none;
+    transform:translateX(-100%);
+    transition: transform .42s cubic-bezier(.22,1,.36,1);
+    will-change:transform;
 }
 
-/* Card */
-.service-section-container .service-card{
-    width:100%;
-    min-width:0;
-    min-height:155px;
+.side-drawer.active{
+    transform:translateX(0);
+    pointer-events:auto;
+}
 
-    padding:10px 7px 8px;
 
-    background:#fff;
-    border:1px solid #ededed;
-    border-radius:12px;
+/* ---------- MAIN PANEL ---------- */
 
+.drawer-content{
+    width:100% !important;
+    height:100vh !important;
+    background:#f8fbfa !important;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:space-between;
-
-    text-align:center;
     overflow:hidden;
-
-    cursor:pointer;
-
-    box-shadow:0 4px 15px rgba(0,0,0,.05);
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease,
-        border-color .2s ease;
+    border-right:1px solid rgba(255,255,255,.7);
+    box-shadow: 15px 0 50px rgba(0,40,25,.35);
+    font-family: 'Poppins', 'Hind Siliguri', sans-serif;
+    position:relative;
 }
 
-/* Touch */
-.service-section-container .service-card:active{
-    transform:scale(.96);
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.drawer-header{
+    position:relative;
+    flex-shrink:0;
+    overflow:hidden;
+    background:
+        radial-gradient(circle at 90% 0%, rgba(47,255,166,.25), transparent 34%),
+        radial-gradient(circle at 0% 100%, rgba(0,255,145,.13), transparent 35%),
+        linear-gradient(145deg, #003d2a 0%, #006b45 52%, #008c5a 100%) !important;
+    padding:20px 16px 15px !important;
+    box-shadow: 0 8px 28px rgba(0,94,61,.24);
 }
 
-/* Icon */
-.service-section-container .icon-circle{
-    width:48px;
-    height:48px;
-    min-width:48px;
-    min-height:48px;
-
-    margin:0 auto 7px;
-
+.drawer-header::before{
+    content:"";
+    position:absolute;
+    width:150px;
+    height:150px;
+    right:-70px;
+    top:-80px;
     border-radius:50%;
+    background: rgba(255,255,255,.08);
+    filter:blur(2px);
+}
 
+.drawer-header::after{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    left:-55px;
+    bottom:-60px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.10);
+}
+
+
+/* ---------- PROFILE ---------- */
+
+.drawer-profile{
+    position:relative;
+    z-index:2;
+    text-align:center;
+}
+
+.drawer-profile-image{
+    position:relative;
+    display:inline-block;
+    margin-bottom:4px;
+}
+
+.drawer-profile-image img{
+    width:84px !important;
+    height:84px !important;
+    object-fit:cover;
+    border-radius:18px !important;
+    border:2.5px solid rgba(255,255,255,.95) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,.25), 0 0 0 4px rgba(255,255,255,.12);
+    display:block;
+}
+
+.drawer-online-dot{
+    position:absolute;
+    right:-2px;
+    bottom:-2px;
+    width:13px;
+    height:13px;
+    background:#18e77b;
+    border:2px solid #006b45;
+    border-radius:50%;
+    box-shadow: 0 0 10px rgba(24,231,123,.8);
+}
+
+
+/* ---------- NAME ---------- */
+
+.drawer-user-name{
     display:flex;
     align-items:center;
     justify-content:center;
+    gap:5px;
+    margin:6px 0 8px;
+}
 
-    border:2px solid #fff;
-
-    box-shadow:0 5px 12px rgba(0,0,0,.12);
-
+.drawer-user-name h5{
+    margin:0;
     color:#fff;
+    font-size:20px;
+    font-weight:700;
+    letter-spacing:.3px;
 }
 
-.service-section-container .icon-circle svg{
-    width:23px;
-    height:23px;
-    display:block;
-    fill:currentColor;
+.drawer-verified{
+    width:18px;
+    height:18px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:#008c5a;
+    border-radius:100%;
+    font-size:7.5px;
+    box-shadow: 0 3px 1pxx rgba(0,0,0,.18);
 }
 
-/* Content */
-.service-section-container .card-content{
-    width:100%;
-    min-width:0;
-    flex:1;
 
+/* =========================================================
+   PREMIUM CARDS (Redesigned for better look)
+   ========================================================= */
+
+.drawer-info{
+    position:relative;
+    z-index:2;
     display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;
-
-    margin:0 0 8px;
+    gap:6px;
+    width:100%;
+    max-width:265px;
+    margin:0 auto;
 }
 
-.service-section-container .card-content h3{
-    width:100%;
-
-    margin:0 0 3px;
-
-    font-family:'Hind Siliguri','Poppins',sans-serif;
-
-    font-size:12px;
-    line-height:1.35;
-
-    font-weight:800;
-
-    color:#222;
-
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
+  .premium-member-card{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:center; 
+  gap:7px; 
+  min-height:20px; 
+  background: linear-gradient(135deg, rgba(255,255,255,.22), rgba(255,255,255,.08)); 
+  border:1px solid rgba(255,255,255,.25); 
+  border-radius:10px; 
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 4px 12px rgba(0,0,0,.12); 
+  backdrop-filter:blur(12px);
+  width: fit-content;
+  padding: 4px 14px;
+  margin: 0 auto;
+}
+.premium-member-card i{ 
+  color:#ffd700; 
+  font-size:12px; 
+}
+.premium-member-card span{ 
+  color:#fff; 
+  font-size:12px; 
+  font-weight:800; 
+  letter-spacing:.8px; 
 }
 
-.service-section-container .card-content p{
-    width:100%;
 
-    margin:0;
-
-    font-family:'Hind Siliguri','Poppins',sans-serif;
-
-    font-size:9px;
-    line-height:1.35;
-
-    color:#777;
-
-    display:-webkit-box;
-    -webkit-box-orient:vertical;
-    -webkit-line-clamp:2;
-
-    overflow:hidden;
+.referral-card{ 
+  display:flex; 
+  align-items:center; 
+  justify-content:space-between; 
+  min-height:30px; 
+  padding:0 10px; 
+  background:rgba(255,255,255,.12); 
+  border:1px solid rgba(255,255,255,.18); 
+  border-radius:10px; 
+  backdrop-filter:blur(10px);
+  width: 85%;
+  margin: 0 auto;
+  gap: 12px;
 }
-
-/* Button */
-.service-section-container .card-btn{
-    width:100%;
+.referral-left{ 
+  display:flex; 
+  align-items:center; 
+  gap:6px; 
+}
+.referral-left i{ 
+  color:#52f5ad; 
+  font-size:10px; 
+}
+.referral-left span{ 
+  color:rgba(255,255,255,.8); 
+  font-size:9.5px; 
+  font-weight:600; 
+}
+.referral-left b{ 
+  color:#fff; 
+  font-size:10.5px; 
+  font-weight:800;
+  margin-left: 4px; /* Refer: আর নাম্বারের মাঝে ফাঁকা */
+  letter-spacing: .5px;
+}
+.referral-copy{ 
+  color:#fff; 
+  font-size:11px; 
+  cursor:pointer; 
+  padding:4px;
+  margin-left: 6px; /* কপি আইকনের সাথে হালকা ফাঁকা */
+  transition:transform .2s ease, color .2s ease; 
+}
+.referral-copy:active{ 
+  transform:scale(.8); 
+  color:#55ffb0; 
+}
+.join-date-card{
     min-height:28px;
-
-    padding:5px 3px;
-    margin:0;
-
-    border:none;
-    outline:none;
-
-    border-radius:7px;
-
-    background:linear-gradient(135deg,#ff416c,#ff4b2b);
-
-    color:#fff;
-
-    font-family:'Hind Siliguri','Poppins',sans-serif;
-
-    font-size:10px;
-    font-weight:800;
-
-    line-height:1;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
-    white-space:nowrap;
-
-    cursor:pointer;
-
-    transition:.2s ease;
+    gap:6px;
+    background:rgba(255,255,255,.09);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:9px;
 }
 
-.service-section-container .card-btn:active{
-    transform:scale(.95);
+.join-date-card i{
+    color:#53f2ae;
+    font-size:9px;
 }
 
-/* Yellow Button */
-.service-section-container .dark-btn{
-    color:#222;
-}
-
-
-/* =========================================================
-   MOBILE — ALWAYS 4 CARDS IN ONE ROW
-========================================================= */
-
-@media(max-width:600px){
-
-    .service-section-container{
-        grid-template-columns:repeat(4,minmax(0,1fr));
-        gap:8px;
-    }
-
-    .service-section-container .service-card{
-        min-height:150px;
-        padding:9px 5px 7px;
-        border-radius:10px;
-    }
-
-    .service-section-container .icon-circle{
-        width:42px;
-        height:42px;
-        min-width:42px;
-        min-height:42px;
-    }
-
-    .service-section-container .icon-circle svg{
-        width:20px;
-        height:20px;
-    }
-
-    .service-section-container .card-content h3{
-        font-size:10px;
-    }
-
-    .service-section-container .card-content p{
-        font-size:8px;
-    }
-
-    .service-section-container .card-btn{
-        min-height:25px;
-        padding:4px 2px;
-        font-size:8px;
-        border-radius:6px;
-    }
-
-    .section-header-box h2{
-        font-size:15px;
-    }
+.join-date-card span{
+    color:rgba(255,255,255,.82);
+    font-size:9.5px;
+    font-weight:600;
 }
 
 
 /* =========================================================
-   VERY SMALL PHONE — STILL 4 CARDS
-========================================================= */
+   MENU
+   ========================================================= */
 
-@media(max-width:380px){
+.scrollable-menu{
+    flex:1;
+    overflow-y:auto;
+    padding:12px 11px !important;
+    background: linear-gradient(180deg, #f7fbf9 0%, #ffffff 100%) !important;
+    scrollbar-width:thin;
+    scrollbar-color:#00a86b transparent;
+}
 
-    .service-section-container{
-        grid-template-columns:repeat(4,minmax(0,1fr));
-        gap:6px;
-    }
+.scrollable-menu::-webkit-scrollbar{
+    width:4px;
+}
 
-    .service-section-container .service-card{
-        min-height:145px;
-        padding:8px 4px 6px;
-        border-radius:9px;
-    }
+.scrollable-menu::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, #00c982, #007a50);
+    border-radius:10px;
+}
 
-    .service-section-container .icon-circle{
-        width:38px;
-        height:38px;
-        min-width:38px;
-        min-height:38px;
-    }
-
-    .service-section-container .icon-circle svg{
-        width:18px;
-        height:18px;
-    }
-
-    .service-section-container .card-content h3{
-        font-size:9px;
-    }
-
-    .service-section-container .card-content p{
-        font-size:7px;
-    }
-
-    .service-section-container .card-btn{
-        min-height:24px;
-        font-size:7px;
-        border-radius:5px;
-    }
-
-    .section-header-box h2{
-        font-size:14px;
-    }
+.menu-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px !important;
 }
 
 
 /* =========================================================
-   DESKTOP
-========================================================= */
+   MENU BUTTON (Clean & Modern)
+   ========================================================= */
 
-@media(min-width:768px){
-
-    .service-section-container{
-        grid-template-columns:repeat(4,minmax(0,1fr));
-        gap:15px 12px;
-    }
-
-    .service-section-container .service-card{
-        min-height:165px;
-        padding:12px 8px 9px;
-    }
-
-    .service-section-container .icon-circle{
-        width:50px;
-        height:50px;
-        min-width:50px;
-        min-height:50px;
-    }
-
-    .service-section-container .card-content h3{
-        font-size:13px;
-    }
-
-    .service-section-container .card-content p{
-        font-size:10px;
-    }
-
-    .service-section-container .card-btn{
-        min-height:28px;
-        font-size:10.5px;
-    }
+.custom-menu-btn{
+    position:relative;
+    width:100%;
+    min-height:46px;
+    display:flex;
+    align-items:center;
+    padding:7px 10px !important;
+    background:#fff !important;
+    border:1px solid #e1ece6 !important;
+    border-bottom:2px solid #d4e4dc !important;
+    border-radius:12px !important;
+    color:#18231e !important;
+    box-shadow: 0 3px 10px rgba(0,63,40,.04) !important;
+    transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease !important;
+    overflow:hidden;
 }
 
+.custom-menu-btn::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:50%;
+    width:3px;
+    height:0;
+    background: linear-gradient(180deg, #00c982, #007a50);
+    border-radius:0 5px 5px 0;
+    transform: translateY(-50%);
+    transition: height .22s ease;
+}
+
+.custom-menu-btn:hover{
+    background:#f2fcf6 !important;
+    border-color:#a8e2c2 !important;
+    box-shadow: 0 5px 15px rgba(0,137,89,.08) !important;
+    transform:translateX(2px);
+}
+
+.custom-menu-btn:active{
+    transform: scale(.97) translateX(1px);
+    background:#e8faef !important;
+}
+
+.menu-icon{
+    width:32px !important;
+    height:32px !important;
+    flex:0 0 32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-right:10px !important;
+    border-radius:10px !important;
+    background: linear-gradient(145deg, #00b878, #007c52) !important;
+    color:#fff !important;
+    box-shadow: 0 4px 10px rgba(0,139,89,.18);
+}
+
+.menu-icon i{
+    font-size:12px !important;
+}
+
+.menu-text{
+    flex:1;
+    text-align:left;
+    font-size:12.5px !important;
+    font-weight:700 !important;
+    color:#223029 !important;
+}
+
+.menu-arrow{
+    font-size:9.5px !important;
+    color:#a1aea8 !important;
+    margin-left:5px;
+    transition: transform .2s ease, color .2s ease;
+}
+
+.custom-menu-btn:hover .menu-arrow{
+    color:#009866 !important;
+    transform:translateX(3px);
+}
+
+.custom-menu-btn:hover::before{
+    height:24px;
+}
+
+.social-icon{
+    background: linear-gradient(145deg, #00ae75, #006d48) !important;
+}
+
+
+/* =========================================================
+   LOGOUT
+   ========================================================= */
+
+.drawer-footer{
+    padding:10px 11px 12px;
+    background: rgba(255,255,255,.98);
+    border-top:1px solid #e1ece6;
+    flex-shrink:0;
+    box-shadow: 0 -5px 20px rgba(0,55,35,.04);
+}
+
+.logout-btn{
+    min-height:44px !important;
+    background: linear-gradient(135deg, #f0fff6, #e3fbe8) !important;
+    border:1px solid #bcead2 !important;
+    color:#007a4e !important;
+}
+
+.logout-btn .menu-icon{
+    background: linear-gradient(145deg, #00a86b, #006842) !important;
+}
+
+.logout-btn .menu-text{
+    color:#007a4e !important;
+    font-weight:800 !important;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media(max-width:420px){
+    .side-drawer{
+        width:285px !important;
+    }
+}
 </style>
 
 
-<!-- ১. সিএসএস (CSS) স্টাইল -->
-<style>
-    /* সাইডবার ডিফল্ট অবস্থায় স্ক্রিনের বাইরে (বামে) লুকানো থাকবে */
-    .side-drawer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-        height: 100vh;
-        transform: translateX(-100%);
-        /* স্লাইডার স্মুথ করার জন্য কাস্টম ট্রানজিশন টাইমিং */
-        transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
-        will-change: transform;
-    }
+<!-- =========================================================
+     OVERLAY
+     ========================================================= -->
 
-    /* Active ক্লাস যুক্ত হলে স্ক্রিনে স্লাইড করে আসবে */
-    .side-drawer.active {
-        transform: translateX(0) !important;
-    }
+<div id="sidebar-overlay"
+     class="sidebar-overlay"
+     onclick="toggleSidebar()">
+</div>
 
-    /* ওভারলে স্টাইল - স্মুথ ফ্যাড ইন/আউট */
-    .sidebar-overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(3px);
-        z-index: 999;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.35s ease, visibility 0.35s ease;
-    }
 
-    .sidebar-overlay.active {
-        opacity: 1;
-        visibility: visible;
-    }
+<!-- =========================================================
+     PREMIUM SIDEBAR
+     ========================================================= -->
 
-    /* বাটন ও মেনু আইটেম স্টাইল */
-    .custom-menu-btn {
-        background: #ffffff !important; 
-        border: 1px solid #e2e8f0 !important; 
-        border-bottom: 2px solid #cbd5e1 !important; 
-        border-radius: 6px !important; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02) !important;
-        margin-bottom: 2px;
-        transition: all 0.2s ease-in-out !important;
-        box-sizing: border-box;
-    }
-    .custom-menu-btn:active {
-        background: #f1f5f9 !important;
-        border-bottom: 1px solid #cbd5e1 !important;
-        transform: translateY(1px);
-        box-shadow: none !important;
-    }
-
-    /* কাস্টম স্ক্রোলবার স্টাইল (গাড় সবুজ লুক) */
-    .scrollable-menu::-webkit-scrollbar {
-        width: 5px;
-    }
-    .scrollable-menu::-webkit-scrollbar-track {
-        background: #f1f1f1;
-    }
-    .scrollable-menu::-webkit-scrollbar-thumb {
-        background: #0b4f2c;
-        border-radius: 10px;
-    }
-</style>
-
-<!-- ২. এইচটিএমএল (HTML) স্ট্রাকচার -->
-<div id="sidebar-overlay" class="sidebar-overlay" onclick="toggleSidebar()"></div>
-
-<!-- বাম পাশের সাইডবার -->
 <div id="left-sidebar" class="side-drawer">
-    <div class="drawer-content" style="background: #ffffff; height: 100vh; width: 280px; font-family: 'Poppins', sans-serif; display: flex; flex-direction: column; overflow: hidden; box-shadow: 5px 0 25px rgba(0,0,0,0.25);">
-        
-        <!-- പ്രিমিয়াম গাড় সবুজ হেডার -->
-        <div class="drawer-header" style="background: linear-gradient(135deg, #022e1a 0%, #0b4f2c 60%, #011f11 100%); padding: 35px 20px 25px; position: relative; z-index: 10; flex-shrink: 0; box-shadow: 0 8px 20px rgba(2, 46, 26, 0.3); overflow: hidden;">
 
-            <!-- লাইটিং ইফেক্ট -->
-            <div style="position: absolute; top: -50px; right: -50px; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.08); filter: blur(20px); border-radius: 50%; pointer-events: none;"></div>
-            <div style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.05); filter: blur(15px); border-radius: 50%; pointer-events: none;"></div>
+    <div class="drawer-content">
 
-            <div style="text-align: center; position: relative; z-index: 2;">
-                
-                <!-- প্রোফাইল পিকচার -->
-                <div style="position: relative; display: inline-block; margin-bottom: 5px;">
-                    <img src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg" 
-                         id="user-dp" 
-                         alt="User Profile"
-                         style="width: 85px; height: 85px; border-radius: 4px; border: 2.5px solid rgba(255, 255, 255, 0.8); object-fit: cover; box-shadow: 0 8px 20px rgba(0,0,0,0.3);">
-                
-                    <!-- একটিভ ডট -->
-                    <div style="position: absolute; bottom: -4px; right: -4px; background: #00e676; width: 14px; height: 14px; border-radius: 2px; border: 2.5px solid #022e1a;"></div>
+        <!-- ================= HEADER ================= -->
+        <div class="drawer-header">
+            <div class="drawer-profile">
+
+                <!-- PROFILE -->
+                <div class="drawer-profile-image">
+                    <img src="https://raw.githubusercontent.com/earnflowbd/earnflow/refs/heads/main/IMG_20260916_214251_530.jpg"
+                        id="user-dp"
+                        alt="User Profile">
+                    <span class="drawer-online-dot"></span>
                 </div>
 
-                <!-- ইউজার নেম -->
-                <h5 id="user-name" style="font-weight: 800; color: #ffffff; margin: 12px 0 10px; font-size: 19px; letter-spacing: 0.8px; text-transform: uppercase;">Abu Sufian</h5>
-                
-                <!-- র‍্যাংক কার্ড (গাড় সবুজ শেড) -->
-                <div style="display: flex; justify-content: center;">
-                    <div style="background: rgba(0, 0, 0, 0.25); backdrop-filter: blur(12px); padding: 6px 14px; border-radius: 4px; display: flex; align-items: center; gap: 6px; border: 1px solid rgba(255, 255, 255, 0.15);">
-                        <i class="fas fa-crown" style="font-size: 10px; color: #ffc107;"></i> 
-                        <span id="user-rank" style="font-size: 10px; font-weight: 800; color: #ffffff; text-transform: uppercase; letter-spacing: 0.8px;">General Member</span>
+                <!-- USER NAME -->
+                <div class="drawer-user-name">
+                    <h5 id="user-name">Abu Sufian</h5>
+                    <span class="drawer-verified" title="Verified User">
+                        <i class="fas fa-check"></i>
+                    </span>
+                </div>
+
+                <!-- INFO -->
+                <div class="drawer-info">
+
+                    <!-- PREMIUM MEMBER -->
+                    <div class="premium-member-card">
+                        <i class="fas fa-crown"></i>
+                        <span id="user-rank">PREMIUM MEMBER</span>
                     </div>
-                </div>
 
-                <!-- রেফার কার্ড -->
-                <div id="refer-section" style="display: flex; margin-top: 18px; background: rgba(0, 0, 0, 0.2); backdrop-filter: blur(12px); padding: 8px 14px; border-radius: 4px; align-items: center; justify-content: space-between; max-width: 250px; margin-left: auto; margin-right: auto; border: 1px solid rgba(255, 255, 255, 0.15); box-sizing: border-box;">
-                    <div style="display: flex; align-items: center; gap: 6px;">
-                        <i class="fas fa-gift" style="color: #ffffff; font-size: 11px;"></i>
-                        <span style="font-size: 10px; color: rgba(255, 255, 255, 0.85); font-weight: 700; text-transform: uppercase;">Refer:</span>
-                        <b id="user-ref" style="color: #ffffff; font-size: 13px; letter-spacing: 1px; font-weight: 900;">XYZ123</b>
+                    <!-- REFER -->
+                    <div id="refer-section" class="referral-card">
+                        <div class="referral-left">
+                            <i class="fas fa-gift"></i>
+                            <span>Refer Code:</span>
+                            <b id="user-ref">123456</b>
+                        </div>
+                        <i class="far fa-copy referral-copy"
+                            onclick="copyRef()"
+                            title="Copy Refer Code">
+                        </i>
                     </div>
-                    <i class="far fa-copy" onclick="copyRef()" style="color: rgba(255, 255, 255, 0.85); cursor: pointer; font-size: 13px; padding: 4px;"></i>
-                </div>
 
+
+                </div>
             </div>
         </div>
 
-        <!-- স্ক্রোলযোগ্য মেনু সেকশন (flex: 1 দেওয়া হয়েছে যাতে মাঝের অংশ স্ক্রোল হয়) -->
-        <div class="scrollable-menu" style="flex: 1; overflow-y: auto; padding: 18px 14px; background: #fcfcfc;">
-            <div class="menu-group" style="display: flex; flex-direction: column; gap: 8px;">
+        <!-- ================= MENU ================= -->
+        <div class="scrollable-menu">
+            <div class="menu-group">
 
-                <!-- হোমপেজ -->
-                <button class="custom-menu-btn" onclick="openPage('home'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #022e1a 0%, #0b4f2c 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(2, 46, 26, 0.2);">
-                        <i class="fas fa-th-large" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">হোম</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- HOME -->
+                <button class="custom-menu-btn" onclick="openPage('home'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-home"></i></span>
+                    <span class="menu-text">হোম</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- উত্তোলন করুন -->
-                <button class="custom-menu-btn" onclick="openPage('p-withdraw'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #0b4f2c 0%, #02381e 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(11, 79, 44, 0.2);">
-                        <i class="fas fa-hand-holding-usd" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">উত্তোলন করুন</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- WITHDRAW -->
+                <button class="custom-menu-btn" onclick="openPage('p-withdraw'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-wallet"></i></span>
+                    <span class="menu-text">উত্তোলন করুন</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- একাউন্ট সেটিংস -->
-                <button class="custom-menu-btn" onclick="openSettings(); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #02381e 0%, #011f11 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(2, 56, 30, 0.2);">
-                        <i class="fas fa-user-cog" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">একাউন্ট সেটিংস</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- ACCOUNT SETTINGS -->
+                <button class="custom-menu-btn" onclick="openSettings(); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-user-cog"></i></span>
+                    <span class="menu-text">একাউন্ট সেটিংস</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- ১. ফেসবুক -->
-                <button class="custom-menu-btn" onclick="window.open('https://www.facebook.com/share/g/1EXQP9c2K7/'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #1877f2 0%, #0b51b3 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(24,119,242,0.2);">
-                        <i class="fab fa-facebook-f" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">ফেসবুক</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- FACEBOOK -->
+                <button class="custom-menu-btn" onclick="window.open('https://www.facebook.com/share/g/1EXQP9c2K7/'); toggleSidebar()">
+                    <span class="menu-icon social-icon"><i class="fab fa-facebook-f"></i></span>
+                    <span class="menu-text">ফেসবুক</span>
+                    <i class="fas fa-external-link-alt menu-arrow"></i>
                 </button>
 
-                <!-- ২. ইউটিউব -->
-                <button class="custom-menu-btn" onclick="window.open('https://www.youtube.com/@EarnFlowV7Q6V'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #ff0000 0%, #b30000 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(255,0,0,0.2);">
-                        <i class="fab fa-youtube" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">ইউটিউব</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- YOUTUBE -->
+                <button class="custom-menu-btn" onclick="window.open('https://www.youtube.com/@EarnFlowV7Q6V'); toggleSidebar()">
+                    <span class="menu-icon social-icon"><i class="fab fa-youtube"></i></span>
+                    <span class="menu-text">ইউটিউব</span>
+                    <i class="fas fa-external-link-alt menu-arrow"></i>
                 </button>
 
-                <!-- ৩. টেলিগ্রাম -->
-                <button class="custom-menu-btn" onclick="window.open('https://t.me/+T7HHA5IU-zU1Yzdl'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #229ed9 0%, #0e6d9c 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(34,158,217,0.2);">
-                        <i class="fab fa-telegram-plane" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">টেলিগ্রাম</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- TELEGRAM -->
+                <button class="custom-menu-btn" onclick="window.open('https://t.me/+T7HHA5IU-zU1Yzdl'); toggleSidebar()">
+                    <span class="menu-icon social-icon"><i class="fab fa-telegram-plane"></i></span>
+                    <span class="menu-text">টেলিগ্রাম</span>
+                    <i class="fas fa-external-link-alt menu-arrow"></i>
                 </button>
 
-                <!-- ৪. হোয়াটসঅ্যাপ -->
-                <button class="custom-menu-btn" onclick="window.open('https://chat.whatsapp.com/HxwG64AjsVC7nUtM9LWoSd?s=cl&p=a&ilr=0&amv=0'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(37,211,102,0.2);">
-                        <i class="fab fa-whatsapp" style="font-size: 12px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">হোয়াটসঅ্যাপ</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- WHATSAPP -->
+                <button class="custom-menu-btn" onclick="window.open('https://chat.whatsapp.com/HxwG64AjsVC7nUtM9LWoSd?s=cl&p=a&ilr=0&amv=0'); toggleSidebar()">
+                    <span class="menu-icon social-icon"><i class="fab fa-whatsapp"></i></span>
+                    <span class="menu-text">হোয়াটসঅ্যাপ</span>
+                    <i class="fas fa-external-link-alt menu-arrow"></i>
                 </button>
 
-                <!-- ৫. ইনকাম রিভিউ -->
-                <button class="custom-menu-btn" onclick="openPage('income-review'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #022e1a 0%, #0b4f2c 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(2, 46, 26, 0.2);">
-                        <i class="fas fa-star" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">ইনকাম রিভিউ</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- INCOME REVIEW -->
+                <button class="custom-menu-btn" onclick="openPage('income-review'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-chart-line"></i></span>
+                    <span class="menu-text">ইনকাম রিভিউ</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- এডমিন প্রোফাইল -->
-                <button class="custom-menu-btn" onclick="openPage('p-admin-profile'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #0b4f2c 0%, #02381e 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(11, 79, 44, 0.2);">
-                        <i class="fas fa-id-badge" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">এডমিন প্রোফাইল</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- ADMIN PROFILE -->
+                <button class="custom-menu-btn" onclick="openPage('p-admin-profile'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-id-badge"></i></span>
+                    <span class="menu-text">এডমিন প্রোফাইল</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- গোপনীয়তা নীতি -->
-                <button class="custom-menu-btn" onclick="openPage('privacy'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #02381e 0%, #011f11 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(2, 56, 30, 0.2);">
-                        <i class="fas fa-shield-alt" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">গোপনীয়তা নীতি</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- PRIVACY -->
+                <button class="custom-menu-btn" onclick="openPage('privacy'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-shield-alt"></i></span>
+                    <span class="menu-text">গোপনীয়তা নীতি</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
-                <!-- নিয়মাবলী ও শর্তাবলী -->
-                <button class="custom-menu-btn" onclick="openPage('p-about'); toggleSidebar()" style="display: flex; align-items: center; width: 100%; padding: 10px 10px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; color: #222;">
-                    <span style="background: linear-gradient(135deg, #022e1a 0%, #0b4f2c 100%); color: white; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; flex-shrink: 0; box-shadow: 0 3px 6px rgba(2, 46, 26, 0.2);">
-                        <i class="fas fa-file-contract" style="font-size: 11px;"></i>
-                    </span> 
-                    <span style="flex: 1; text-align: left; font-size: 13px;">নিয়মাবলী ও শর্তাবলী</span>
-                    <i class="fas fa-angle-right" style="font-size: 11px; color: #aaa;"></i>
+                <!-- TERMS -->
+                <button class="custom-menu-btn" onclick="openPage('p-about'); toggleSidebar()">
+                    <span class="menu-icon"><i class="fas fa-file-contract"></i></span>
+                    <span class="menu-text">নিয়মাবলী ও শর্তাবলী</span>
+                    <i class="fas fa-chevron-right menu-arrow"></i>
                 </button>
 
             </div>
         </div>
 
-        <!-- ফুটার লগআউট বাটন (এটি ফিক্সড করা হয়েছে, স্ক্রোল করবে না) -->
-        <div style="padding: 12px 14px; background: #ffffff; border-top: 1px solid #e2e8f0; flex-shrink: 0; position: sticky; bottom: 0; z-index: 20;">
-            <button class="custom-menu-btn logout-btn" onclick="logout()" style="background: #fff1f2 !important; border: 1px solid #ffe4e6 !important; border-bottom: 2px solid #fecdd3 !important; display: flex; align-items: center; padding: 10px 10px; border-radius: 6px !important; width: 100%; cursor: pointer;">
-                <span style="background: #ffe4e6; color: #e11d48; width: 28px; height: 28px; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-right: 12px; font-size: 12px; flex-shrink: 0;">
-                    <i class="fas fa-sign-out-alt"></i>
-                </span> 
-                <span style="color: #e11d48; font-weight: 700; font-size: 13px;">লগ আউট</span>
+        <!-- ================= LOGOUT ================= -->
+        <div class="drawer-footer">
+            <button class="custom-menu-btn logout-btn" onclick="logout()">
+                <span class="menu-icon"><i class="fas fa-sign-out-alt"></i></span>
+                <span class="menu-text">লগ আউট</span>
+                <i class="fas fa-arrow-right menu-arrow"></i>
             </button>
         </div>
 
     </div>
 </div>
+
+<script>
+/* =========================================================
+   PREMIUM SIDEBAR CONTROL
+   ========================================================= */
+
+function toggleSidebar(){
+    const sidebar = document.getElementById('left-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
+    if(!sidebar || !overlay) return;
+
+    const isOpen = sidebar.classList.contains('active');
+    if(isOpen){
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    } else {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+        const sidebar = document.getElementById('left-sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if(sidebar && sidebar.classList.contains('active')){
+            sidebar.classList.remove('active');
+            if(overlay) overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
+let sidebarTouchStartX = 0;
+document.addEventListener('touchstart', function(e){
+    sidebarTouchStartX = e.changedTouches[0].screenX;
+}, {passive:true});
+
+document.addEventListener('touchend', function(e){
+    const sidebar = document.getElementById('left-sidebar');
+    if(!sidebar || !sidebar.classList.contains('active')) return;
+    const endX = e.changedTouches[0].screenX;
+    const distance = sidebarTouchStartX - endX;
+    if(distance > 70){
+        sidebar.classList.remove('active');
+        const overlay = document.getElementById('sidebar-overlay');
+        if(overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}, {passive:true});
+</script>
 
 <!-- ওনার / এডমিন প্রোফাইল পেজ -->
 <div id="p-admin-profile" class="p-page d-none" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0f172a; z-index: 1500; overflow-y: auto; padding-bottom: 50px; font-family: 'Poppins', sans-serif;">
