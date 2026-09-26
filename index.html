@@ -6166,7 +6166,8 @@ function showCompanyTerms(){
   </div>
   <span>আরো দেখুন</span>
 </div>
-
+</div>
+  </div>
 <style>
 /* =========================================================
    FREE TIME EARN — PREMIUM GREEN SIDEBAR (FIXED)
@@ -15038,13 +15039,595 @@ function showCountdown(targetTime, targetPage) {
         }
     });
 }
+function withdrawReq() {
+
+    let amt = parseFloat(document.getElementById('w-amt').value);
+
+    let num = document.getElementById('w-num').value;
+
+    let method = currentWithdrawMethod || "Bkash";
+
+    let withdrawPage = document.getElementById('p-withdraw');
+
+
+
+    // --- নতুন রাত ১২টা (Midnight) সিস্টেম লজিক ---
+
+    const now = new Date();
+
+    const midnight = new Date();
+
+    midnight.setHours(24, 0, 0, 0); // আজকের রাত ১২টা (অর্থাৎ আগামীকালের শুরু)
+
+
+
+    if (curUser.lastWithdrawDate) {
+
+        const lastWithdraw = new Date(curUser.lastWithdrawDate);
+
+        const todayStart = new Date();
+
+        todayStart.setHours(0, 0, 0, 0); // আজকের দিনের শুরু (রাত ১২:০০)
+
+
+
+        // যদি শেষ উইথড্র আজকের তারিখের রাত ১২টার পরে হয়ে থাকে
+
+        if (lastWithdraw > todayStart) {
+
+            let timerInterval;
+
+            return Swal.fire({
+
+                target: withdrawPage,
+
+                icon: 'warning',
+
+                title: 'উইথড্র লিমিট!',
+
+                html: `
+
+                    <p style="font-size: 14px;">আপনি আজকে একবার উইথড্র করেছেন।</p>
+
+                    <div style="background: #f1f5f9; padding: 15px; border-radius: 15px; margin-top: 10px; border: 1px solid #e2e8f0;">
+
+                        <span style="font-size: 11px; color: #64748b; display: block; font-weight: 700; text-transform: uppercase;">পরবর্তী উইথড্র করা যাবে</span>
+
+                        <b id="w-countdown" style="font-size: 24px; color: #ff4757; font-family: 'Courier New', Courier, monospace;">00:00:00</b>
+
+                    </div>
+
+                    <p style="font-size: 11px; color: #94a3b8; margin-top: 10px;">প্রতিদিন রাত ১২টার পর নতুন লিমিট শুরু হয়।</p>
+
+                `,
+
+                confirmButtonText: 'ঠিক আছে',
+
+                confirmButtonColor: '#475569',
+
+                didOpen: () => {
+
+                    const timerDoc = document.getElementById('w-countdown');
+
+                    timerInterval = setInterval(() => {
+
+                        const currentTime = new Date().getTime();
+
+                        const distance = midnight.getTime() - currentTime;
+
+
+
+                        if (distance < 0) {
+
+                            clearInterval(timerInterval);
+
+                            Swal.close();
+
+                            return;
+
+                        }
+
+
+
+                        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+
+                        timerDoc.innerHTML = 
+
+                            (hours < 10 ? "0" + hours : hours) + ":" + 
+
+                            (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+
+                            (seconds < 10 ? "0" + seconds : seconds);
+
+                    }, 1000);
+
+                },
+
+                willClose: () => { clearInterval(timerInterval); }
+
+            });
+
+        }
+
+    }
+
+    // --- লিমিট চেক শেষ ---
+
+
+
+    // মেথড অনুযায়ী লোগো সিলেক্ট
+
+    let methodLogo = method.toLowerCase() === 'bkash' 
+
+        ? 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/bkash_logo.png' 
+
+        : 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/nagad_logo.png';
+
+
+
+    let charge = 0;
+
+
+
+if (amt === 100 || amt === 200) {
+
+    // ১০০ অথবা ২০০ টাকা উইথড্র করলে ফিক্সড ৫ টাকা খরচ
+
+    charge = 5;
+
+} else if (amt >= 300) {
+
+    // ৩০০ টাকা বা তার বেশি হলে ২% খরচ কাটবে
+
+    charge = amt * 0.02;
+
+} else {
+
+    // ১০০ টাকার নিচে অন্য কোনো অ্যামাউন্ট হলে (যদি এলাউড থাকে) ২% বা আপনার ইচ্ছেমতো চার্জ দিতে পারেন
+
+    charge = amt * 0.02; 
+
+}
+
+
+
+let finalAmount = amt - charge;
+
+
+
+    // ১. প্রাথমিক ভ্যালিডেশন
+
+    if (!amt || !num) {
+
+        return Swal.fire({ target: withdrawPage, icon: 'error', text: 'সব তথ্য সঠিকভাবে দিন', toast: true, position: 'top', showConfirmButton: false, timer: 2000 });
+
+    }
+
+    if (amt < 100) {
+
+        return Swal.fire({ target: withdrawPage, icon: 'warning', text: 'মিনিমাম ১০০ টাকা উইথড্র করতে হবে', toast: true, position: 'top', showConfirmButton: false, timer: 2000 });
+
+    }
+
+    if (curUser.bal < amt) {
+
+        return Swal.fire({ target: withdrawPage, icon: 'error', title: 'পর্যাপ্ত ব্যালেন্স নেই!', text: `আপনার বর্তমান ব্যালেন্স ৳${curUser.bal.toFixed(2)}`, confirmButtonColor: '#ff4757' });
+
+    }
+
+
+
+    // ২. কনফার্মেশন পপআপ
+
+    Swal.fire({
+
+        target: withdrawPage,
+
+        title: 'নিরাপত্তা যাচাই',
+
+        width: '360px',
+
+        background: '#ffffff',
+
+        showConfirmButton: false,
+
+        allowOutsideClick: true,
+
+        html: `
+
+            <div style="background: #fdf2f2; border-radius: 20px; padding: 15px; margin-bottom: 20px; border: 1px solid #ffebeb;">
+
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+
+                    <div style="display: flex; align-items: center; gap: 10px;">
+
+                         <img src="${methodLogo}" style="width: 35px; border-radius: 8px;" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3406/3406828.png'">
+
+                         <div style="text-align: left;">
+
+                            <small style="color: #888; font-size: 10px; font-weight: 700; text-transform: uppercase;">Method</small>
+
+                            <div style="color: #333; font-weight: 800; font-size: 14px;">${method}</div>
+
+                         </div>
+
+                    </div>
+
+                    <div style="text-align: right;">
+
+                        <small style="color: #888; font-size: 10px; font-weight: 700; text-transform: uppercase;">Number</small>
+
+                        <div style="color: #333; font-weight: 800; font-size: 13px;">${num}</div>
+
+                    </div>
+
+                </div>
+
+                <hr style="border: 0; border-top: 1px dashed #ffcccc; margin: 10px 0;">
+
+                <div style="display: flex; justify-content: space-between; font-weight: 700;">
+
+<span style="color: #666; font-size: 12px;">পরিমাণ: ৳${amt}</span>
+
+<span style="color: #ff4757; font-size: 12px;">
+
+    চার্জ (${amt === 100 || amt === 200 ? 'ফিক্সড' : '২%'}): ৳${charge.toFixed(2)}
+
+</span>
+
+</div>
+
+<div style="text-align:center; color: #2ecc71; font-weight: 900; font-size: 16px; margin-top: 10px; background: white; border-radius: 10px; padding: 5px;">
+
+    পাবেন: ৳${finalAmount.toFixed(2)}
+
+</div>
+
+
+
+            <div style="margin-bottom: 25px;">
+
+                <label style="display:block; font-size: 12px; color: #666; margin-bottom: 8px; text-align: left; font-weight: 600;">একাউন্ট পাসওয়ার্ড প্রদান করুন:</label>
+
+                <input type="password" id="w-pass-check" placeholder="••••••••" 
+
+                    style="width: 100%; padding: 14px; border-radius: 15px; border: 2px solid #eee; outline: none; transition: 0.3s; text-align: center; font-weight: bold; font-size: 18px; letter-spacing: 5px;">
+
+                <div id="pass-msg" style="font-size: 11px; margin-top: 8px; font-weight: 800; height: 15px;"></div>
+
+            </div>
+
+
+
+            <div id="hold-ui-box" style="display: none; animation: fadeInUp 0.5s ease;">
+
+                <p style="font-size: 11px; color: #ff0000; font-weight: 700; margin-bottom: 15px;">পাসওয়ার্ড সঠিক! এবার উইথড্র করতে গোল বাটনে চেপে ধরুন</p>
+
+                <div id="hold-container" style="position: relative; width: 110px; height: 110px; margin: 0 auto; cursor: pointer; transition: 0.5s;">
+
+                    <svg width="110" height="110" style="transform: rotate(-90deg);">
+
+                        <circle cx="55" cy="55" r="50" stroke="#f1f5f9" stroke-width="8" fill="none" />
+
+                        <circle id="hold-progress" cx="55" cy="55" r="50" stroke="#ff0000" stroke-width="8" fill="none" 
+
+                            stroke-dasharray="314" stroke-dashoffset="314" style="transition: stroke-dashoffset 0.1s linear;" />
+
+                    </svg>
+
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: #ff0000; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 20px rgba(255,0,0,0.3);">
+
+                        <i class="fas fa-hand-pointer" style="color: white; font-size: 32px; animation: pulse 1.5s infinite;"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        `,
+
+        didOpen: () => {
+
+            const passInput = document.getElementById('w-pass-check');
+
+            const passMsg = document.getElementById('pass-msg');
+
+            const holdUIBox = document.getElementById('hold-ui-box');
+
+            const progressCircle = document.getElementById('hold-progress');
+
+            const holdContainer = document.getElementById('hold-container');
+
+
+
+            passInput.addEventListener('input', () => {
+
+                if (passInput.value === curUser.pass) {
+
+                    passInput.style.borderColor = "#2ecc71";
+
+                    passInput.style.backgroundColor = "#f0fff4";
+
+                    passInput.readOnly = true; 
+
+                    passMsg.innerText = "পাসওয়ার্ড সঠিক! (✓)";
+
+                    passMsg.style.color = "#2ecc71";
+
+                    holdUIBox.style.display = "block";
+
+                } else if (passInput.value.length >= 4) {
+
+                    passInput.style.borderColor = "#ff4757";
+
+                    passMsg.innerText = "ভুল পাসওয়ার্ড! আবার চেষ্টা করুন।";
+
+                    passMsg.style.color = "#ff4757";
+
+                    holdUIBox.style.display = "none";
+
+                }
+
+            });
+
+
+
+            let holdTimer;
+
+            let isHolding = false;
+
+
+
+            const startHold = (e) => {
+
+                e.preventDefault();
+
+                isHolding = true;
+
+                let startTime = Date.now();
+
+                holdTimer = setInterval(() => {
+
+                    let elapsed = Date.now() - startTime;
+
+                    let percentage = Math.min(elapsed / 1500, 1);
+
+                    let progress = 314 - (percentage * 314);
+
+                    progressCircle.style.strokeDashoffset = progress;
+
+
+
+                    if (percentage >= 1) {
+
+                        clearInterval(holdTimer);
+
+                        if (isHolding) {
+
+                            Swal.close();
+
+                            // সফল হওয়ার পর টাইমস্ট্যাম্প আপডেট
+
+                            curUser.lastWithdrawDate = Date.now(); 
+
+                            executeWithdraw(amt, finalAmount, num, method, withdrawPage); 
+
+                        }
+
+                    }
+
+                }, 50);
+
+            };
+
+
+
+            const endHold = () => {
+
+                isHolding = false;
+
+                clearInterval(holdTimer);
+
+                progressCircle.style.strokeDashoffset = 314;
+
+            };
+
+
+
+            holdContainer.addEventListener('mousedown', startHold);
+
+            holdContainer.addEventListener('touchstart', startHold);
+
+            window.addEventListener('mouseup', endHold);
+
+            window.addEventListener('touchend', endHold);
+
+        }
+
+    });
+
+}
 
 
 
 
 
+// চোখের আইকন টগল করার ফাংশন
 
-  
+function toggleWithdrawNum(fullNum, maskedNum) {
+
+    const numDisplay = document.getElementById('display-num');
+
+    const eyeIcon = document.getElementById('eye-icon');
+
+
+
+    if (numDisplay.innerText.includes('*')) {
+
+        numDisplay.innerText = fullNum;
+
+        eyeIcon.classList.remove('fa-eye');
+
+        eyeIcon.classList.add('fa-eye-slash');
+
+    } else {
+
+        numDisplay.innerText = maskedNum;
+
+        eyeIcon.classList.remove('fa-eye-slash');
+
+        eyeIcon.classList.add('fa-eye');
+
+    }
+
+}
+
+
+
+let currentWithdrawMethod = 'Bkash'; // ডিফল্ট সিলেক্টেড থাকবে
+
+
+
+function selectWithdrawMethod(method) {
+
+    currentWithdrawMethod = method;
+
+    
+
+    // সব কার্ডের স্টাইল আগের নরমাল অবস্থায় ফিরিয়ে আনা
+
+    document.querySelectorAll('.w-method-card').forEach(card => {
+
+        card.style.borderColor = '#e2e8f0'; // ডিফল্ট চারপাশের বর্ডার
+
+        card.style.borderBottomColor = '#cbd5e1'; // ডিফল্ট নিচের ডিপ বর্ডার
+
+        card.style.background = '#ffffff'; // ডিফল্ট ব্যাকগ্রাউন্ড
+
+        card.style.transform = 'scale(1)'; // আগের সাইজে আনা
+
+    });
+
+
+
+    // ক্লিক করা কার্ডটিকে প্রফেশনাল লাইট ব্লু থিমে হাইলাইট করা
+
+    const activeCard = document.getElementById('w-' + method);
+
+    if (activeCard) {
+
+        activeCard.style.borderColor = '#3b82f6'; // একটিভ নীল বর্ডার
+
+        activeCard.style.borderBottomColor = '#2563eb'; // একটিভ নিচের ডিপ নীল বর্ডার
+
+        activeCard.style.background = '#f0f7ff'; // হালকা নীল ব্যাকগ্রাউন্ড
+
+        activeCard.style.transform = 'scale(1.05)'; // সামান্য বড় হবে
+
+        activeCard.style.transition = 'all 0.2s ease-in-out'; // স্মুথ অ্যানিমেশন
+
+    }
+
+    
+
+    // টেস্ট করার জন্য কনসোলে দেখতে পারেন ঠিকঠাক সিলেক্ট হচ্ছে কিনা
+
+    console.log("Selected Method: " + currentWithdrawMethod);
+
+}
+
+
+
+// পেজ লোড হওয়ার সাথে সাথে ডিফল্ট মেথডটি (Bkash) যেন সিলেক্টেড দেখায়
+
+window.onload = function() {
+
+    selectWithdrawMethod(currentWithdrawMethod);
+
+};
+
+
+
+function renderWithdrawHistory() {
+    const listContainer = document.getElementById('withdraw-hist-list');
+    if (!listContainer || !curUser) return;
+
+    if (!db.withdraws) db.withdraws = [];
+    const userWithdraws = db.withdraws.filter(w => w.user === curUser.email).reverse();
+
+    if (userWithdraws.length === 0) {
+        listContainer.innerHTML = `
+            <div style="text-align: center; padding: 60px 20px;">
+                <div style="background: #f8f9fa; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px;">
+                    <i class="fas fa-wallet" style="font-size: 25px; color: #ced4da;"></i>
+                </div>
+                <p style="font-size: 14px; color: #adb5bd; font-weight: 500;">এখনো কোনো উইথড্র রেকর্ড নেই</p>
+            </div>`;
+        return;
+    }
+
+    let html = '';
+    userWithdraws.forEach(w => {
+        // ⚡ ডিফল্ট স্ট্যাটাস কনফিগারেশন সরাসরি Success (Green) করে দেওয়া হয়েছে
+        let statusConfig = { 
+            color: '#10b981', 
+            bg: '#d1fae5', 
+            icon: 'fa-check-circle' 
+        };
+
+        // যদি কোনো কারণে এডমিন রিজেক্ট করে, শুধু তখনই লাল দেখাবে
+        if (w.status === 'Rejected') {
+            statusConfig = { color: '#ef4444', bg: '#fee2e2', icon: 'fa-times-circle' };
+        } else if (w.status === 'Pending') {
+            // উইথড্র করার সাথে সাথে যদি ডাটাবেজে Pending-ও থাকে, ইউজারকে এখানে সরাসরি Success-ই দেখাবে
+            statusConfig = { color: '#10b981', bg: '#d1fae5', icon: 'fa-check-circle' };
+            w.status = 'Success'; 
+        }
+
+        // মেথড অনুযায়ী ডাইনামিক ইমেজ লোগো (bKash / Nagad)
+        let methodIcon = w.method.toLowerCase() === 'bkash' 
+            ? 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/bkash_logo.png' 
+            : 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/nagad_logo.png';
+
+        html += `
+            <div style="background: white; padding: 15px; border-radius: 22px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #f1f5f9; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="background: #f8fafc; width: 45px; height: 45px; border-radius: 12px; display: flex; align-items: center; justify-content: center; border: 1px solid #f1f5f9; overflow: hidden;">
+                         <img src="${methodIcon}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3406/3406828.png'">
+                    </div>
+                    
+                    <div>
+                        <div style="font-weight: 800; color: #1e293b; font-size: 14px; display: flex; align-items: center; gap: 5px;">
+                            ${w.method} Payout
+                        </div>
+                        <div style="font-size: 10px; color: #94a3b8; font-weight: 600; margin-top: 2px;">
+                            <i class="far fa-calendar-alt"></i> ${w.time}
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: right;">
+                    <div style="font-weight: 900; color: #1e293b; font-size: 15px; margin-bottom: 5px;">
+                        - ৳${w.amt.toFixed(2)}
+                    </div>
+                    <div style="background: ${statusConfig.bg}; color: ${statusConfig.color}; font-size: 9px; padding: 4px 10px; border-radius: 50px; display: inline-flex; align-items: center; gap: 4px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px;">
+                        <i class="fas ${statusConfig.icon}" style="font-size: 8px;"></i> ${w.status}
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    listContainer.innerHTML = html;
+}
+
 
 // পেমেন্ট ট্যাবে ক্লিক করলে এই ফাংশনটি কল হবে
 function renderAdminPayments() {
@@ -17899,1363 +18482,6 @@ window.onload = () => {
     }
     if (typeof updateUI === "function") updateUI();
 };
-
-
-function withdrawReq() {
-
-    let amt = parseFloat(document.getElementById('w-amt').value);
-    let num = document.getElementById('w-num').value;
-    let method = currentWithdrawMethod || "Bkash";
-    let withdrawPage = document.getElementById('p-withdraw');
-
-    // ==========================================
-    // ♾️ UNLIMITED DAILY WITHDRAW SYSTEM
-    // ==========================================
-    // এখানে কোনো Daily 1-time limit নেই।
-    // Midnight countdown / lastWithdrawDate check সম্পূর্ণ বাদ।
-    // ইউজার দিনে যতবার ইচ্ছা Withdraw করতে পারবে,
-    // তবে প্রতিবার balance, amount ও security validation হবে.
-
-
-    // ==========================================
-    // 💳 METHOD LOGO
-    // ==========================================
-
-    let methodLogo = method.toLowerCase() === 'bkash'
-        ? 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/bkash_logo.png'
-        : 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/nagad_logo.png';
-
-
-    // ==========================================
-    // 💰 WITHDRAW CHARGE
-    // ==========================================
-
-    let charge = 0;
-
-    if (amt === 100 || amt === 200) {
-
-        // ১০০ অথবা ২০০ টাকা = ফিক্সড ৫ টাকা চার্জ
-        charge = 5;
-
-    } else if (amt >= 300) {
-
-        // ৩০০ বা তার বেশি = ২% চার্জ
-        charge = amt * 0.02;
-
-    } else {
-
-        // ১০০ টাকার নিচে Allow হলে ২%
-        charge = amt * 0.02;
-    }
-
-
-    let finalAmount = amt - charge;
-
-
-    // ==========================================
-    // 🔐 BASIC VALIDATION
-    // ==========================================
-
-    if (!amt || !num) {
-
-        return Swal.fire({
-            target: withdrawPage,
-            icon: 'error',
-            title: 'তথ্য অসম্পূর্ণ',
-            text: 'সব তথ্য সঠিকভাবে পূরণ করুন।',
-            toast: true,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 2200
-        });
-
-    }
-
-
-    if (amt < 100) {
-
-        return Swal.fire({
-            target: withdrawPage,
-            icon: 'warning',
-            title: 'মিনিমাম Withdraw',
-            text: 'মিনিমাম ১০০ টাকা Withdraw করতে হবে।',
-            toast: true,
-            position: 'top',
-            showConfirmButton: false,
-            timer: 2200
-        });
-
-    }
-
-
-    if (curUser.bal < amt) {
-
-        return Swal.fire({
-            target: withdrawPage,
-            icon: 'error',
-            title: 'পর্যাপ্ত ব্যালেন্স নেই!',
-            html: `
-                <div style="
-                    margin-top:8px;
-                    padding:14px;
-                    background:#f0fdf4;
-                    border:1px solid #bbf7d0;
-                    border-radius:14px;
-                    color:#166534;
-                    font-weight:700;
-                ">
-                    বর্তমান ব্যালেন্স<br>
-                    <span style="font-size:22px;color:#16a34a;">
-                        ৳${Number(curUser.bal).toFixed(2)}
-                    </span>
-                </div>
-            `,
-            confirmButtonText: 'ঠিক আছে',
-            confirmButtonColor: '#16a34a'
-        });
-
-    }
-
-
-    // ==========================================
-    // 🔐 PREMIUM SECURITY VERIFICATION
-    // ==========================================
-
-    Swal.fire({
-
-        target: withdrawPage,
-
-        title: `
-            <div style="
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                gap:8px;
-                color:#14532d;
-                font-size:20px;
-                font-weight:900;
-            ">
-                <span style="
-                    width:34px;
-                    height:34px;
-                    border-radius:12px;
-                    background:linear-gradient(135deg,#16a34a,#059669);
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    color:white;
-                    box-shadow:0 6px 16px rgba(22,163,74,.25);
-                ">
-                    <i class="fas fa-shield-halved" style="font-size:16px;"></i>
-                </span>
-
-                নিরাপত্তা যাচাই
-            </div>
-        `,
-
-        width: '390px',
-
-        background: '#f8fffa',
-
-        showConfirmButton: false,
-
-        allowOutsideClick: true,
-
-        customClass: {
-            popup: 'premium-withdraw-popup'
-        },
-
-        html: `
-
-            <style>
-
-                .premium-withdraw-popup{
-                    border-radius:28px !important;
-                    border:1px solid rgba(22,163,74,.12) !important;
-                    box-shadow:
-                        0 25px 70px rgba(20,83,45,.18),
-                        0 5px 20px rgba(0,0,0,.05) !important;
-                    overflow:hidden;
-                }
-
-                .pw-method-card{
-                    background:linear-gradient(
-                        145deg,
-                        #ffffff,
-                        #f0fdf4
-                    );
-                    border:1px solid #dcfce7;
-                    border-radius:20px;
-                    padding:14px;
-                    box-shadow:
-                        0 8px 25px rgba(22,163,74,.07);
-                }
-
-                .pw-input{
-                    width:100%;
-                    box-sizing:border-box;
-                    padding:15px 16px;
-                    border-radius:16px;
-                    border:2px solid #dcfce7;
-                    outline:none;
-                    background:#ffffff;
-                    color:#14532d;
-                    transition:.25s ease;
-                    text-align:center;
-                    font-weight:900;
-                    font-size:18px;
-                    letter-spacing:5px;
-                }
-
-                .pw-input:focus{
-                    border-color:#16a34a;
-                    background:#f0fdf4;
-                    box-shadow:
-                        0 0 0 4px rgba(22,163,74,.08);
-                }
-
-                .pw-hold{
-                    position:relative;
-                    width:120px;
-                    height:120px;
-                    margin:0 auto;
-                    cursor:pointer;
-                    user-select:none;
-                    -webkit-user-select:none;
-                    touch-action:none;
-                }
-
-                .pw-hold svg{
-                    width:120px;
-                    height:120px;
-                    transform:rotate(-90deg);
-                    overflow:visible;
-                }
-
-                .pw-hold-bg{
-                    stroke:#dcfce7;
-                    stroke-width:8;
-                    fill:none;
-                }
-
-                .pw-hold-progress{
-                    stroke:#16a34a;
-                    stroke-width:8;
-                    fill:none;
-                    stroke-linecap:round;
-                    filter:drop-shadow(
-                        0 4px 7px rgba(22,163,74,.28)
-                    );
-                }
-
-                .pw-hold-button{
-                    position:absolute;
-                    top:50%;
-                    left:50%;
-                    transform:translate(-50%,-50%);
-                    width:86px;
-                    height:86px;
-                    border-radius:50%;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    background:linear-gradient(
-                        145deg,
-                        #22c55e,
-                        #059669
-                    );
-                    color:white;
-                    box-shadow:
-                        0 12px 30px rgba(22,163,74,.30),
-                        inset 0 1px 0 rgba(255,255,255,.3);
-                    transition:.2s ease;
-                }
-
-                .pw-hold:active .pw-hold-button{
-                    transform:
-                        translate(-50%,-50%)
-                        scale(.93);
-                }
-
-                .pw-hold-button i{
-                    font-size:30px;
-                    animation:pwPulse 1.5s infinite;
-                }
-
-                @keyframes pwPulse{
-                    0%,100%{
-                        transform:scale(1);
-                        opacity:1;
-                    }
-                    50%{
-                        transform:scale(1.12);
-                        opacity:.75;
-                    }
-                }
-
-                @keyframes pwFade{
-                    from{
-                        opacity:0;
-                        transform:translateY(10px);
-                    }
-                    to{
-                        opacity:1;
-                        transform:translateY(0);
-                    }
-                }
-
-                .pw-fade{
-                    animation:pwFade .35s ease;
-                }
-
-            </style>
-
-
-            <!-- =================================
-                 SUMMARY CARD
-            ================================== -->
-
-            <div class="pw-method-card" style="margin-bottom:16px;">
-
-                <div style="
-                    display:flex;
-                    align-items:center;
-                    justify-content:space-between;
-                    gap:10px;
-                ">
-
-                    <div style="
-                        display:flex;
-                        align-items:center;
-                        gap:11px;
-                        min-width:0;
-                    ">
-
-                        <div style="
-                            width:46px;
-                            height:46px;
-                            border-radius:14px;
-                            background:#ffffff;
-                            border:1px solid #dcfce7;
-                            display:flex;
-                            align-items:center;
-                            justify-content:center;
-                            overflow:hidden;
-                            box-shadow:0 5px 15px rgba(22,163,74,.08);
-                        ">
-
-                            <img
-                                src="${methodLogo}"
-                                style="
-                                    width:100%;
-                                    height:100%;
-                                    object-fit:cover;
-                                "
-                                onerror="
-                                    this.src='https://cdn-icons-png.flaticon.com/512/3406/3406828.png'
-                                "
-                            >
-
-                        </div>
-
-
-                        <div style="text-align:left;min-width:0;">
-
-                            <div style="
-                                font-size:9px;
-                                color:#86a98f;
-                                font-weight:800;
-                                text-transform:uppercase;
-                                letter-spacing:.8px;
-                            ">
-                                PAYMENT METHOD
-                            </div>
-
-                            <div style="
-                                color:#14532d;
-                                font-size:15px;
-                                font-weight:900;
-                                margin-top:2px;
-                            ">
-                                ${method}
-                            </div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div style="text-align:right;">
-
-                        <div style="
-                            font-size:9px;
-                            color:#86a98f;
-                            font-weight:800;
-                            text-transform:uppercase;
-                            letter-spacing:.8px;
-                        ">
-                            NUMBER
-                        </div>
-
-                        <div style="
-                            color:#166534;
-                            font-size:13px;
-                            font-weight:900;
-                            margin-top:3px;
-                        ">
-                            ${num}
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div style="
-                    height:1px;
-                    background:linear-gradient(
-                        90deg,
-                        transparent,
-                        #bbf7d0,
-                        transparent
-                    );
-                    margin:14px 0;
-                "></div>
-
-
-                <div style="
-                    display:grid;
-                    grid-template-columns:1fr 1fr;
-                    gap:10px;
-                ">
-
-                    <div style="
-                        background:#f8fffa;
-                        border:1px solid #ecfdf5;
-                        border-radius:14px;
-                        padding:11px;
-                        text-align:left;
-                    ">
-
-                        <div style="
-                            color:#86a98f;
-                            font-size:9px;
-                            font-weight:800;
-                        ">
-                            WITHDRAW
-                        </div>
-
-                        <div style="
-                            color:#14532d;
-                            font-size:16px;
-                            font-weight:900;
-                            margin-top:3px;
-                        ">
-                            ৳${amt.toFixed(2)}
-                        </div>
-
-                    </div>
-
-
-                    <div style="
-                        background:#f8fffa;
-                        border:1px solid #ecfdf5;
-                        border-radius:14px;
-                        padding:11px;
-                        text-align:left;
-                    ">
-
-                        <div style="
-                            color:#86a98f;
-                            font-size:9px;
-                            font-weight:800;
-                        ">
-                            CHARGE
-                        </div>
-
-                        <div style="
-                            color:#15803d;
-                            font-size:16px;
-                            font-weight:900;
-                            margin-top:3px;
-                        ">
-                            ৳${charge.toFixed(2)}
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div style="
-                    margin-top:11px;
-                    padding:12px;
-                    border-radius:15px;
-                    background:linear-gradient(
-                        135deg,
-                        #dcfce7,
-                        #ecfdf5
-                    );
-                    border:1px solid #bbf7d0;
-                    text-align:center;
-                ">
-
-                    <div style="
-                        color:#166534;
-                        font-size:10px;
-                        font-weight:800;
-                        letter-spacing:.5px;
-                    ">
-                        YOU WILL RECEIVE
-                    </div>
-
-                    <div style="
-                        color:#15803d;
-                        font-size:22px;
-                        font-weight:950;
-                        margin-top:2px;
-                    ">
-                        ৳${finalAmount.toFixed(2)}
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================
-                 UNLIMITED BADGE
-            ================================== -->
-
-            <div style="
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                gap:7px;
-                padding:9px 12px;
-                margin-bottom:17px;
-                border-radius:13px;
-                background:#f0fdf4;
-                border:1px solid #bbf7d0;
-                color:#15803d;
-                font-size:11px;
-                font-weight:800;
-            ">
-
-                <i class="fas fa-infinity"></i>
-
-                দৈনিক Withdraw Limit নেই
-
-            </div>
-
-
-            <!-- =================================
-                 PASSWORD
-            ================================== -->
-
-            <div style="
-                margin-bottom:20px;
-                text-align:left;
-            ">
-
-                <label style="
-                    display:block;
-                    color:#166534;
-                    font-size:11px;
-                    font-weight:800;
-                    margin-bottom:8px;
-                ">
-
-                    <i class="fas fa-lock" style="margin-right:5px;"></i>
-
-                    একাউন্ট পাসওয়ার্ড দিন
-
-                </label>
-
-
-                <input
-                    type="password"
-                    id="w-pass-check"
-                    class="pw-input"
-                    placeholder="••••••••"
-                    autocomplete="off"
-                >
-
-
-                <div
-                    id="pass-msg"
-                    style="
-                        font-size:11px;
-                        margin-top:8px;
-                        font-weight:800;
-                        min-height:16px;
-                        text-align:center;
-                    "
-                ></div>
-
-            </div>
-
-
-            <!-- =================================
-                 HOLD TO WITHDRAW
-            ================================== -->
-
-            <div
-                id="hold-ui-box"
-                style="
-                    display:none;
-                    animation:pwFade .35s ease;
-                "
-            >
-
-                <div style="
-                    background:#f0fdf4;
-                    border:1px solid #bbf7d0;
-                    border-radius:15px;
-                    padding:10px;
-                    margin-bottom:16px;
-                ">
-
-                    <div style="
-                        color:#166534;
-                        font-size:11px;
-                        font-weight:800;
-                        line-height:1.5;
-                    ">
-
-                        <i class="fas fa-circle-check"></i>
-
-                        পাসওয়ার্ড সঠিক
-
-                    </div>
-
-                    <div style="
-                        color:#65a30d;
-                        font-size:10px;
-                        margin-top:2px;
-                    ">
-
-                        Withdraw করতে নিচের বাটনটি ধরে রাখুন
-
-                    </div>
-
-                </div>
-
-
-                <div
-                    id="hold-container"
-                    class="pw-hold"
-                >
-
-                    <svg viewBox="0 0 120 120">
-
-                        <circle
-                            class="pw-hold-bg"
-                            cx="60"
-                            cy="60"
-                            r="50"
-                        />
-
-                        <circle
-                            id="hold-progress"
-                            class="pw-hold-progress"
-                            cx="60"
-                            cy="60"
-                            r="50"
-                            stroke-dasharray="314"
-                            stroke-dashoffset="314"
-                        />
-
-                    </svg>
-
-
-                    <div class="pw-hold-button">
-
-                        <i class="fas fa-hand-pointer"></i>
-
-                    </div>
-
-                </div>
-
-
-                <div style="
-                    text-align:center;
-                    margin-top:9px;
-                    color:#86a98f;
-                    font-size:9px;
-                    font-weight:700;
-                ">
-
-                    ১.৫ সেকেন্ড ধরে রাখুন
-
-                </div>
-
-            </div>
-
-        `,
-
-
-        // ==========================================
-        // POPUP OPEN
-        // ==========================================
-
-        didOpen: () => {
-
-            const passInput =
-                document.getElementById('w-pass-check');
-
-            const passMsg =
-                document.getElementById('pass-msg');
-
-            const holdUIBox =
-                document.getElementById('hold-ui-box');
-
-            const progressCircle =
-                document.getElementById('hold-progress');
-
-            const holdContainer =
-                document.getElementById('hold-container');
-
-
-            // ==========================================
-            // 🔐 PASSWORD CHECK
-            // ==========================================
-
-            passInput.addEventListener('input', () => {
-
-                if (passInput.value === curUser.pass) {
-
-                    passInput.style.borderColor = "#16a34a";
-                    passInput.style.backgroundColor = "#f0fdf4";
-
-                    passInput.readOnly = true;
-
-                    passMsg.innerHTML = `
-                        <span style="color:#16a34a;">
-                            <i class="fas fa-circle-check"></i>
-                            পাসওয়ার্ড সঠিক
-                        </span>
-                    `;
-
-                    holdUIBox.style.display = "block";
-
-                }
-
-                else if (passInput.value.length >= 4) {
-
-                    passInput.style.borderColor = "#fca5a5";
-                    passInput.style.backgroundColor = "#fffafa";
-
-                    passMsg.innerHTML = `
-                        <span style="color:#dc2626;">
-                            <i class="fas fa-circle-xmark"></i>
-                            ভুল পাসওয়ার্ড
-                        </span>
-                    `;
-
-                    holdUIBox.style.display = "none";
-
-                }
-
-                else {
-
-                    passInput.style.borderColor = "#dcfce7";
-                    passInput.style.backgroundColor = "#ffffff";
-
-                    passMsg.innerHTML = "";
-
-                    holdUIBox.style.display = "none";
-
-                }
-
-            });
-
-
-            // ==========================================
-            // 👆 HOLD TO WITHDRAW
-            // ==========================================
-
-            let holdTimer = null;
-
-            let isHolding = false;
-
-            let completed = false;
-
-
-            const startHold = (e) => {
-
-                e.preventDefault();
-
-                if (completed) return;
-
-                isHolding = true;
-
-                let startTime = Date.now();
-
-
-                clearInterval(holdTimer);
-
-
-                holdTimer = setInterval(() => {
-
-                    if (!isHolding) {
-
-                        clearInterval(holdTimer);
-
-                        return;
-
-                    }
-
-
-                    let elapsed =
-                        Date.now() - startTime;
-
-
-                    let percentage =
-                        Math.min(elapsed / 1500, 1);
-
-
-                    let progress =
-                        314 - (percentage * 314);
-
-
-                    progressCircle.style.strokeDashoffset =
-                        progress;
-
-
-                    if (percentage >= 1) {
-
-                        clearInterval(holdTimer);
-
-                        completed = true;
-
-                        isHolding = false;
-
-
-                        progressCircle.style.strokeDashoffset = 0;
-
-
-                        setTimeout(() => {
-
-                            Swal.close();
-
-                            // =================================
-                            // IMPORTANT:
-                            // lastWithdrawDate আর ব্যবহার করা হচ্ছে না
-                            // =================================
-
-                            executeWithdraw(
-                                amt,
-                                finalAmount,
-                                num,
-                                method,
-                                withdrawPage
-                            );
-
-                        }, 180);
-
-                    }
-
-                }, 30);
-
-            };
-
-
-            const endHold = () => {
-
-                if (completed) return;
-
-                isHolding = false;
-
-                clearInterval(holdTimer);
-
-                progressCircle.style.strokeDashoffset = 314;
-
-            };
-
-
-            // Desktop
-            holdContainer.addEventListener(
-                'mousedown',
-                startHold
-            );
-
-
-            // Mobile
-            holdContainer.addEventListener(
-                'touchstart',
-                startHold,
-                { passive:false }
-            );
-
-
-            window.addEventListener(
-                'mouseup',
-                endHold
-            );
-
-
-            window.addEventListener(
-                'touchend',
-                endHold
-            );
-
-        }
-
-    });
-
-}
-
-
-
-// ======================================================
-// 👁️ WITHDRAW NUMBER SHOW / HIDE
-// ======================================================
-
-function toggleWithdrawNum(fullNum, maskedNum) {
-
-    const numDisplay =
-        document.getElementById('display-num');
-
-    const eyeIcon =
-        document.getElementById('eye-icon');
-
-
-    if (!numDisplay || !eyeIcon) return;
-
-
-    if (numDisplay.innerText.includes('*')) {
-
-        numDisplay.innerText = fullNum;
-
-        eyeIcon.classList.remove('fa-eye');
-
-        eyeIcon.classList.add('fa-eye-slash');
-
-    }
-
-    else {
-
-        numDisplay.innerText = maskedNum;
-
-        eyeIcon.classList.remove('fa-eye-slash');
-
-        eyeIcon.classList.add('fa-eye');
-
-    }
-
-}
-
-
-
-// ======================================================
-// 💳 WITHDRAW METHOD
-// ======================================================
-
-let currentWithdrawMethod = 'Bkash';
-
-
-// ======================================================
-// 🟢 PREMIUM METHOD SELECTION
-// ======================================================
-
-function selectWithdrawMethod(method) {
-
-    currentWithdrawMethod = method;
-
-
-    document.querySelectorAll('.w-method-card').forEach(card => {
-
-        card.style.borderColor = '#dcfce7';
-
-        card.style.borderBottomColor = '#bbf7d0';
-
-        card.style.background =
-            'linear-gradient(145deg,#ffffff,#f8fffa)';
-
-        card.style.transform = 'scale(1)';
-
-        card.style.boxShadow =
-            '0 5px 18px rgba(22,163,74,.05)';
-
-        card.style.transition =
-            'all .25s ease';
-
-    });
-
-
-    const activeCard =
-        document.getElementById('w-' + method);
-
-
-    if (activeCard) {
-
-        activeCard.style.borderColor =
-            '#16a34a';
-
-        activeCard.style.borderBottomColor =
-            '#15803d';
-
-        activeCard.style.background =
-            'linear-gradient(145deg,#f0fdf4,#dcfce7)';
-
-        activeCard.style.transform =
-            'scale(1.035)';
-
-        activeCard.style.boxShadow =
-            '0 10px 28px rgba(22,163,74,.16)';
-
-    }
-
-
-    console.log(
-        "Selected Withdraw Method: " +
-        currentWithdrawMethod
-    );
-
-}
-
-
-
-// ======================================================
-// 🚀 DEFAULT METHOD
-// ======================================================
-
-window.addEventListener('load', function() {
-
-    selectWithdrawMethod(
-        currentWithdrawMethod
-    );
-
-});
-
-
-
-// ======================================================
-// 📜 WITHDRAW HISTORY
-// ======================================================
-
-function renderWithdrawHistory() {
-
-    const listContainer =
-        document.getElementById('withdraw-hist-list');
-
-
-    if (!listContainer || !curUser) return;
-
-
-    if (!db.withdraws)
-
-        db.withdraws = [];
-
-
-    const userWithdraws =
-        db.withdraws
-            .filter(w => w.user === curUser.email)
-            .reverse();
-
-
-    // ==========================================
-    // EMPTY STATE
-    // ==========================================
-
-    if (userWithdraws.length === 0) {
-
-        listContainer.innerHTML = `
-
-            <div style="
-                text-align:center;
-                padding:55px 20px;
-            ">
-
-                <div style="
-                    width:72px;
-                    height:72px;
-                    margin:0 auto 15px;
-                    border-radius:22px;
-                    display:flex;
-                    align-items:center;
-                    justify-content:center;
-                    background:linear-gradient(
-                        145deg,
-                        #dcfce7,
-                        #f0fdf4
-                    );
-                    border:1px solid #bbf7d0;
-                    box-shadow:
-                        0 10px 25px rgba(22,163,74,.08);
-                ">
-
-                    <i
-                        class="fas fa-wallet"
-                        style="
-                            font-size:26px;
-                            color:#16a34a;
-                        "
-                    ></i>
-
-                </div>
-
-
-                <div style="
-                    font-size:14px;
-                    color:#166534;
-                    font-weight:800;
-                ">
-
-                    এখনো কোনো Withdraw নেই
-
-                </div>
-
-
-                <div style="
-                    font-size:10px;
-                    color:#86a98f;
-                    margin-top:5px;
-                    font-weight:600;
-                ">
-
-                    আপনার Withdraw history এখানে দেখা যাবে
-
-                </div>
-
-            </div>
-
-        `;
-
-        return;
-
-    }
-
-
-    let html = '';
-
-
-    // ==========================================
-    // HISTORY ITEMS
-    // ==========================================
-
-    userWithdraws.forEach(w => {
-
-
-        // ==========================================
-        // STATUS CONFIG
-        // ==========================================
-
-        let statusConfig = {
-
-            color: '#15803d',
-
-            bg: '#dcfce7',
-
-            icon: 'fa-check-circle'
-
-        };
-
-
-        if (w.status === 'Rejected') {
-
-            statusConfig = {
-
-                color: '#dc2626',
-
-                bg: '#fee2e2',
-
-                icon: 'fa-times-circle'
-
-            };
-
-        }
-
-        else if (w.status === 'Pending') {
-
-            statusConfig = {
-
-                color: '#b45309',
-
-                bg: '#fef3c7',
-
-                icon: 'fa-clock'
-
-            };
-
-        }
-
-
-        // ==========================================
-        // METHOD ICON
-        // ==========================================
-
-        let methodIcon =
-            w.method.toLowerCase() === 'bkash'
-
-            ? 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/bkash_logo.png'
-
-            : 'https://raw.githubusercontent.com/tuhin-shikder/asset/main/nagad_logo.png';
-
-
-        // ==========================================
-        // HISTORY CARD
-        // ==========================================
-
-        html += `
-
-            <div style="
-                position:relative;
-                background:
-                    linear-gradient(
-                        145deg,
-                        #ffffff,
-                        #fafffb
-                    );
-                padding:14px;
-                border-radius:20px;
-                margin-bottom:11px;
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                gap:12px;
-                border:1px solid #ecfdf5;
-                box-shadow:
-                    0 7px 22px rgba(22,163,74,.06);
-                transition:.25s ease;
-            ">
-
-
-                <!-- LEFT -->
-
-                <div style="
-                    display:flex;
-                    align-items:center;
-                    gap:11px;
-                    min-width:0;
-                ">
-
-
-                    <div style="
-                        flex-shrink:0;
-                        width:46px;
-                        height:46px;
-                        border-radius:14px;
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        overflow:hidden;
-                        background:#f0fdf4;
-                        border:1px solid #dcfce7;
-                    ">
-
-                        <img
-                            src="${methodIcon}"
-                            style="
-                                width:100%;
-                                height:100%;
-                                object-fit:cover;
-                            "
-                            onerror="
-                                this.src='https://cdn-icons-png.flaticon.com/512/3406/3406828.png'
-                            "
-                        >
-
-                    </div>
-
-
-                    <div style="
-                        min-width:0;
-                    ">
-
-                        <div style="
-                            color:#14532d;
-                            font-size:13px;
-                            font-weight:900;
-                            display:flex;
-                            align-items:center;
-                            gap:5px;
-                        ">
-
-                            ${w.method} Payout
-
-                        </div>
-
-
-                        <div style="
-                            color:#86a98f;
-                            font-size:9px;
-                            font-weight:700;
-                            margin-top:3px;
-                            white-space:nowrap;
-                        ">
-
-                            <i class="far fa-calendar-alt"></i>
-
-                            ${w.time}
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- RIGHT -->
-
-                <div style="
-                    text-align:right;
-                    flex-shrink:0;
-                ">
-
-
-                    <div style="
-                        color:#14532d;
-                        font-size:15px;
-                        font-weight:950;
-                        margin-bottom:5px;
-                    ">
-
-                        - ৳${Number(w.amt).toFixed(2)}
-
-                    </div>
-
-
-                    <div style="
-                        background:${statusConfig.bg};
-                        color:${statusConfig.color};
-                        font-size:8px;
-                        padding:5px 9px;
-                        border-radius:30px;
-                        display:inline-flex;
-                        align-items:center;
-                        gap:4px;
-                        font-weight:900;
-                        text-transform:uppercase;
-                        letter-spacing:.3px;
-                        border:1px solid rgba(22,163,74,.08);
-                    ">
-
-                        <i
-                            class="fas ${statusConfig.icon}"
-                            style="font-size:8px;"
-                        ></i>
-
-                        ${w.status || 'Success'}
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        `;
-
-    });
-
-
-    listContainer.innerHTML = html;
-
-}
-
-
-
   
 </script>
 
